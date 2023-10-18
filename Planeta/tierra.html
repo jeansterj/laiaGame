@@ -40,18 +40,25 @@
 </header>
 
 <body>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
 
 <script>
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+var backgroundTexture = new THREE.TextureLoader().load('./Imagenes/space4k.jpg');
+scene.background = backgroundTexture;
+
+
     var loader = new THREE.TextureLoader();
-    var texture = loader.load('./Imagenes/prueba.jpg');  // Reemplaza esta URL con la URL de tu textura de la Tierra
+    var texture = loader.load('./Imagenes/tierra4k.jpg');  // Reemplaza esta URL con la URL de tu textura de la Tierra
     var geometry = new THREE.SphereGeometry(1, 64, 64);
     var material = new THREE.MeshBasicMaterial({ map: texture });
     var sphere = new THREE.Mesh(geometry, material);
@@ -62,7 +69,7 @@
 
     function render() {
         requestAnimationFrame(render);         
-          sphere.rotation.y += 0.005;          
+          sphere.rotation.y += 0.0005;          
         renderer.render(scene, camera);
     }
     render();
