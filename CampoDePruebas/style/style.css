@@ -112,7 +112,7 @@
     
     .wrapper.active{
     
-        height: 520px;
+         height: 820px; /* modificar en el completo a este valor */
     }
     
     .wrapper .form-box{
@@ -138,7 +138,6 @@
     position: absolute;
     transition: none;
     transform: translateX(400px);
-    /* display: none; */
     }
     
     
