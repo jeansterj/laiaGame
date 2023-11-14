@@ -1,24 +1,26 @@
+DROP DATABASE laiaData;
 CREATE DATABASE laiaData;
 USE laiaData;
 
+
+
+
+CREATE TABLE ROLES (
+idRol int PRIMARY KEY auto_increment,
+rol varchar (255) NOT NULL
+
+);
 CREATE TABLE  USUARIOS(
 idUsuario int PRIMARY KEY ,
 nombre  varchar(255) NOT NULL,
 nombreUsuario varchar (255) UNIQUE,
 contraseña varchar (255) NOT NULL,
 apellido1 varchar(255) NOT NULL,
-apellido2 varchar (255),
-fechaNacimiento date NOT NULL
 
+fechaNacimiento date NOT NULL,
+id_Rol int ,
+FOREIGN KEY (id_Rol) REFERENCES ROLES (idRol)
 );
-
-
-CREATE TABLE ROLES (
-idRol int PRIMARY KEY,
-roles varchar (255) NOT NULL,
-
-);
-
 
 
 
@@ -33,27 +35,24 @@ idUsuario int,
 idjuegos int,
 puntuacion int,
 
-FOREIGN KEY (idUsuario) REFERENCES USUARIOS (idUsuario)
+FOREIGN KEY (idUsuario) REFERENCES USUARIOS (idUsuario),
 FOREIGN KEY (idjuegos) REFERENCES JUEGOS (idjuegos)
 
 );
 
+-- Insertar el rol de superadmin en la tabla ROLES
+INSERT INTO ROLES ( rol)
+VALUES ('SUPERADMIN'),('ADMIN'),('JUGADOR');
 
 -- Insertar un superadmin en la tabla USUARIOS
-INSERT INTO USUARIOS (idUsuario, nombre, nombreUsuario, contraseña, apellido1, apellido2, fechaNacimiento)
-VALUES (1, 'WarcelonaWatcher', 'SuperAdminUser', 'superadmin123', 'Apellido1Super', 'Apellido2Super', '1990-01-01');
+INSERT INTO USUARIOS (idUsuario, nombre, nombreUsuario, contraseña, apellido1, fechaNacimiento,id_Rol)
+VALUES (1, 'WarcelonaWatcher', 'SuperAdminUser', 'superadmin123', 'Apellido1Super', '1990-01-01',1),
+(2, 'Admin', 'AdminUser', 'admin123', 'Apellido1Admin',  '1990-01-01',2)
 
--- Insertar el rol de superadmin en la tabla ROLES
-INSERT INTO ROLES (idRol, idUsu, superAdmin, bAdmin)
-VALUES (1, 1, TRUE,TRUE);
+;
 
-
-
-
-
-
-
-
+INSERT INTO JUEGOS ( idjuegos,descripcion)
+VALUES (1,'Warcelona'),(2,'Brasil'),(3,'Kenia'),(4,'India');
 
 
 
