@@ -1,55 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esfera Tierra</title>
 
+<<<<<<< Updated upstream:index.php
     <link rel="stylesheet" href="style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+=======
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+>>>>>>> Stashed changes:Planeta/tierra.html
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
 </head>
 
-<header>
-    <h2 class="logo">Logo</h2>
-    <nav class="navigation">
-        <button class="btnIniciar">Iniciar Sesion</button>
-        <a href="#">ES/</a>
-        <a href="#">CAT/</a>
-        <a href="#">ENG</a>
-
-    </nav>
-</header>
-
-
-
-
 <body>
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <button class="btnLogin-popup">Iniciar Sesion</button>
+            <a href="#">ES/</a>
+            <a href="#">CAT/</a>
+            <a href="#">ENG</a>
+
+        </nav>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        var backgroundTexture = new THREE.TextureLoader().load('./Imagenes/space4k.jpg');
+        scene.background = backgroundTexture;
+        var loader = new THREE.TextureLoader();
+        var texture = loader.load(
+        './Imagenes/cartoon1.jpg'); // Reemplaza esta URL con la URL de tu textura de la Tierra
+        var geometry = new THREE.SphereGeometry(1, 64, 64);
+        var material = new THREE.MeshBasicMaterial({
+            map: texture
+        });
+        var sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+        var controls = new THREE.OrbitControls(camera, renderer.domElement);
+        camera.position.z = 5;
+
+        function render() {
+            requestAnimationFrame(render);
+            sphere.rotation.y += 0.0005;
+            renderer.render(scene, camera);
+        }
+        render();
+    </script>
+
     <div class="wrapper">
-        <div class="form-box iniciar">
-             <h2>Iniciar Sesion</h2>
-             <form action="#">
+        <span class="iconClose">
+            <ion-icon name="close-circle-outline"></ion-icon>
+        </span>
+        <div class="form-box login">
+            <h2>Iniciar Sesion</h2>
+            <form action="#">
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
                     <input type="email" name="email" required>
-                    <label name="email">Email</label>
+                    <label >Email</label>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
                     <input type="password" name="password" required>
-                    <label name="password">Password</label>
+                    <label>Password</label>
                 </div>
+                <button type="submit" class="btn">Iniciar Sesion</button>
+                <div class="loginRegister">
+                    <p>¿No tienes cuenta?</p> <a href="#" class="registerLink">Registrate</a>
                 </div>
-               <button type="submit" class="btn">Iniciar Sesion</button>
-               <div class="iniciar-Registro">
-                <p>¿No tienes cuenta?</p> <a href="#" class="link-Registro">Registrate</a>
-               </div>
-    
-             </form>   
+            </form>
+            
+        </div>
+        <div class="form-box register">
+            <h2>Registro</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </span>
+                    <input type="text" name="userName" required>
+                    <label >Nombre de Usuario</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="email" name="email" required>
+                    <label >Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div >
+<label ><input type="checkbox">Acepto los terminos y condiciones</label>
+                </div>
+                <button type="submit" class="btn">Registro</button>
+                <div class="loginRegister">
+                    <p>¿Ya tienes cuenta?</p> <a href="#" class="loginLink">Inicia Sesion</a>
+                </div>
+            </form>
+            
         </div>
     </div>
+<<<<<<< Updated upstream:index.php
 
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
@@ -163,5 +243,7 @@ scene.background = backgroundTexture;
     }
     render();
 </script>
+=======
+>>>>>>> Stashed changes:Planeta/tierra.html
 </body>
-</html>
+</html> 

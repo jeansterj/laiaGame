@@ -1,10 +1,6 @@
 CREATE DATABASE laiaData;
 USE laiaData;
 
-
-
-
-
 CREATE TABLE  USUARIOS(
 idUsuario int PRIMARY KEY ,
 nombre  varchar(255) NOT NULL,
@@ -17,53 +13,30 @@ fechaNacimiento date NOT NULL
 );
 
 
-
-
-
-
-
-
 CREATE TABLE ROLES (
 idRol int PRIMARY KEY,
-idUsu int ,
-superAdmin boolean,
-bAdmin boolean,
-
-FOREIGN KEY (idUsu) REFERENCES USUARIOS (idUsuario)
-
+roles varchar (255) NOT NULL,
 
 );
 
 
 
 
-
-
-
-
+CREATE TABLE JUEGOS(
+idjuegos int PRIMARY KEY,
+descripcion varchar(255) NOT NULL
+);
 
 CREATE TABLE PUNTUACION(
-idPuntuacion int PRIMARY KEY,
-idUsu int,
-puntuacionWarcelona int,
-puntuacionBrasil int,
-puntuacionKenia int,
-puntuacionIndia int,
 
-FOREIGN KEY (idUsu) REFERENCES USUARIOS (idUsuario)
+idUsuario int,
+idjuegos int,
+puntuacion int,
 
-
-
-
-
-
-
-
+FOREIGN KEY (idUsuario) REFERENCES USUARIOS (idUsuario)
+FOREIGN KEY (idjuegos) REFERENCES JUEGOS (idjuegos)
 
 );
-
-
-
 
 
 -- Insertar un superadmin en la tabla USUARIOS

@@ -112,7 +112,7 @@
     
     .wrapper.active{
     
-         height: 820px; /* modificar en el completo a este valor */
+         height: 720px; /* modificar en el completo a este valor */
     }
     
     .wrapper .form-box{
@@ -272,4 +272,21 @@ color: white;
 .form-box input{
 
     color: white;
+}
+
+.fecha_Naci{
+
+    padding-bottom: 50px ;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }

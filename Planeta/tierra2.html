@@ -31,7 +31,7 @@
     
     
         var loader = new THREE.TextureLoader();
-        var texture = loader.load('./Imagenes/pollonBueno1.png');  // Reemplaza esta URL con la URL de tu textura de la Tierra
+        var texture = loader.load('./Imagenes/pollonNinos.png');  // Reemplaza esta URL con la URL de tu textura de la Tierra
         var geometry = new THREE.SphereGeometry(1, 64, 64);
         var material = new THREE.MeshBasicMaterial({ map: texture });
         var sphere = new THREE.Mesh(geometry, material);
@@ -126,7 +126,7 @@
             renderer.render(scene, camera);
         }
         render();
-    </script>
+</script>
     <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
@@ -188,6 +188,29 @@
                     <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <input type="text" name="nombre" required>
+                    <label>Nombre</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </span>
+                    <input type="text" name="primer_Apellido" required>
+                    <label>Apellido/s</label>
+                </div>
+                <div class="input-box">
+                    <label for="fecha_Nacimiento" class="fecha_Naci"> Fecha de Nacimiento</label>
+                    <span class="icon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </span>
+                    <input type="date" name="fecha_Nacimiento" required>
+                    <label></label>  <!--  Falta, que no se pueda poner una fecha mayor que la actual y hacer controladores de los campos -->
+                </div>
+                <div>
                 <div>
                     <label><input type="checkbox"> Acepto los términos y condiciones</label>
                 </div>
@@ -199,7 +222,6 @@
             </form>
         </div>
     </div>
-
 
 </body>
 </html>
