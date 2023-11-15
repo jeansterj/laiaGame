@@ -7,7 +7,7 @@
     }
     
     body{
-        margin: 0;
+    
         display: flex;
         justify-content: center;
         align-items: center;
@@ -63,9 +63,11 @@
     .navigation a:hover::after {
         transform: scaleX(1);
     }
-    
-   
-    
+
+    .navigation .btnLogin-popup:hover {
+        background: black;
+    }
+      
     .navigation .btnLogin-popup {
         width: 130px;
         height: 50px;
@@ -97,12 +99,21 @@
         --bs-modal-bg: transparent!important;
         justify-content: center;
         align-items: center;
+
 }
 .modal .modal-content{
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     backdrop-filter: blur(20px);
     border-radius: 20px;
+
+    position: relative;
+    width: 400px;
+    height: 440px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+    transform: scale(0);
 }
 
 .modal {
@@ -183,4 +194,135 @@
 
 .hydrated {
     visibility: inherit;
+}
+
+.fecha_Naci{
+
+    padding-bottom: 50px ;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.modal .modal-content.active-popup{
+    transform: scale(1);
+
+}
+
+.modal .modal-content.active{
+
+     height: 720px; /* modificar en el completo a este valor */
+}
+
+.modal .modal-content .form-box{
+
+width: 100%;
+padding: 40px;
+
+}
+
+.modal .modal-content .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.modal .modal-content.active .form-box.login{
+
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.modal .modal-content .form-box.register{
+
+position: absolute;
+transition: none;
+transform: translateX(400px);
+}
+
+
+.modal .modal-content.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+ 
+.modal .modal-content .iconClose{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 2em;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px ;
+cursor: pointer;
+z-index: 1;
+
+}
+
+.input-box label{
+
+position: absolute;
+top: 50%;
+left: 5px;
+transform: translateY(-50%);
+font-size: 1em;
+color: white;
+font-weight: 500;
+pointer-events: none;
+transition: .5s;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+
+.loginRegister{
+
+    font-size: 0.9em;
+text-align: center;
+font-weight: 500;
+margin: 25px 0 10px;
+
+}
+
+.loginRegister p a{
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.loginRegister p a:hover{
+
+    text-decoration: underline;
+}
+
+.input-box label,
+.input-box input::placeholder {
+color: black;
+}
+
+.modal .modal-content button{
+
+color:black;
+}
+
+.form-box a {
+color: black;
+
 }

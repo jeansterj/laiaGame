@@ -1,7 +1,7 @@
 addEventListener("DOMContentLoaded", (event) => {
 
 
-    const wrapper = document.querySelector('.wrapper');
+    const wrapper = document.querySelector('.modal .modal-content');
     const loginLink = document.querySelector('.loginLink');
     const registerLink = document.querySelector('.registerLink');
     const btnPopup = document.querySelector('.btnLogin-popup');
