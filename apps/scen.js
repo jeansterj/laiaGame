@@ -4,11 +4,11 @@ var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-var backgroundTexture = new THREE.TextureLoader().load('./Imagenes/space4k.jpg');
+var backgroundTexture = new THREE.TextureLoader().load('../Imagenes/space4k.jpg');
 scene.background = backgroundTexture;
 
 var loader = new THREE.TextureLoader();
-var texture = loader.load('./Imagenes/pollonNinos.png');
+var texture = loader.load('../Imagenes/mapWorld.png');
 var geometry = new THREE.SphereGeometry(1, 64, 64);
 var material = new THREE.MeshBasicMaterial({ map: texture });
 var sphere = new THREE.Mesh(geometry, material);
