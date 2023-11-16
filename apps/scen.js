@@ -67,9 +67,14 @@ function onMouseClick(event) {
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObject(imageSprite);
     if (intersects.length > 0) {
-        console.log('Sprite clicked!');
+        mostrarModalBCN();
     }
 }
+
+function mostrarModalBCN() {
+    console.log("hola")
+    $('#modalbcn').modal('show');
+  }
 
 function checkIntersection() {
     raycaster.setFromCamera(mouse, camera);

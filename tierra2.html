@@ -11,14 +11,18 @@
 </head>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <body>
 
     <header>
         <a class="logo" href="http://127.0.0.1:5500/tierra2.html"><img src="./Imagenes/logo.png" alt="logo_centiks"></a>
         <nav class="navigation">
             <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar Sesion</button>
         <!-- Modal -->
-        <div class="modal fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal modalLogin fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content"> 
                     <div  class="popupContainer">
@@ -107,6 +111,24 @@
             <a href="#">ENG</a>
         </nav>
     </header>
+    <div class="modal fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="miModalLabel">Mi Modal</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Contenido del modal...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 <script src="./apps/scen.js"></script>
 <script src="./apps/main.js"></script>
