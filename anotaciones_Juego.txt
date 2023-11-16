@@ -1,0 +1,9 @@
+-Falta traducir la web 
+
+
+-Falta decidir si se van a poner con controladores con javascript 
+
+
+-cuando tengamos que llevar el registro de los juegos que ha jugado, 
+debemos de guardar en una sesion de cookie local el registro y despues se vuelque
+en la base de datos, asi se guarda el control cuando se abre y cierra una web 
