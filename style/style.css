@@ -93,7 +93,7 @@
     text-align: center;
 }
 
-.modalLogin{
+.modal{
         color: white;
         --bs-modal-bg: transparent!important;
         justify-content: center;
@@ -160,7 +160,7 @@
     padding: 40px;
 }
 
-.modalLogin button{
+.modal button{
 
     color:white;
 }
@@ -334,5 +334,20 @@ a.registerLink {
 a.loginLink {
     margin-left: 0;
 }   
+
+.modalStory .modal-content{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+
+    position: relative;
+    width: 400px;
+    height: 440px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+
 
 

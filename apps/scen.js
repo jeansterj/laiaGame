@@ -63,62 +63,17 @@ function onMouseMove(event) {
     checkIntersection();
 }
 
-// function onMouseClick(event) {
-//     raycaster.setFromCamera(mouse, camera);
-//     var intersects = raycaster.intersectObject(imageSprite);
-//     if (intersects.length > 0) {
-//         mostrarModalBCN();
-//     }
-// }
 function onMouseClick(event) {
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObject(imageSprite);
-
     if (intersects.length > 0) {
-        var modal = document.getElementById('modalbcn');
 
-        if (modal) {
-            var showEvent = new Event('show.bs.modal');
-            modal.dispatchEvent(showEvent);
+        let myModal = new bootstrap.Modal(document.getElementById('modalbcn'))
 
+        myModal.show();
 
-            modal.classList.add('show');
-            modal.style.display = 'block';
-
-            var shownEvent = new Event('shown.bs.modal');
-            modal.dispatchEvent(shownEvent);
-
-
-            var closeButton = modal.querySelector('.btn-secondary');
-            if (closeButton) {
-                closeButton.addEventListener('click', function () {
-                    modal.classList.remove('show');
-                    modal.style.display = 'none';
-
-                    var hiddenEvent = new Event('hidden.bs.modal');
-                    modal.dispatchEvent(hiddenEvent);
-
-                });
-            }
-        }
     }
 }
-
-
-// function mostrarModalBCN() {
-//     console.log("hola");
-
-//     // Obtener el modal por su ID
-//     var modal = document.getElementById('modalbcn');
-
-//     // Asegurarse de que el modal existe
-//     if (modal) {
-//         // Mostrar el modal cambiando su estilo de display a 'block'
-//         modal.style.display = 'block';
-
-//         // Puedes agregar aquí cualquier otra lógica que necesites al mostrar el modal
-//     }
-// }
 
 
 function checkIntersection() {
