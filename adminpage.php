@@ -57,6 +57,10 @@
   else if ($_SESSION['rol'] == 2) {
      $usuarios = selectUsers();
      echo  "Estas logueado como"  . ' ' . $_SESSION['user'] . " y tu rol es Admin";   
+ }  else if ($_SESSION['rol'] == 3) {
+    header('Location: ./tierra2.php');
+    exit();
+
  }
        
                 
