@@ -1,16 +1,5 @@
 <?php
 session_start();
-
-if (isset($_SESSION['loginError']) && $_SESSION['loginError']) {
-    echo '<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let myModal = new bootstrap.Modal(document.getElementById("loginForm"));
-            myModal.show();
-        });
-    </script>';
-
-    $_SESSION['loginError'] = false;
-}
 ?>
 
 
@@ -100,7 +89,7 @@ if (isset($_SESSION['loginError']) && $_SESSION['loginError']) {
                                 <label>Apellido/s</label>
                             </div>
                             <div class="input-box">
-                                <label for="fecha_Nacimiento" class="fecha_Naci"> Fecha de Nacimiento</label>
+                                <label for="fecha_Nacimiento" class="fecha_Naci" name="fecha_Nacimiento"> Fecha de Nacimiento</label>
                                 <span class="icon">
                                     <ion-icon name="calendar-outline"></ion-icon>
                                 </span>

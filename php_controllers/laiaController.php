@@ -11,7 +11,8 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
-    $loginfaile = true;
+   
+
 
   
 
@@ -25,13 +26,14 @@ if (isset($_POST['login'])) {
             $_SESSION["rol"] = $usuario['id_Rol'];
 
 
-            	    $loginfaile = false;
        
 
 
                  //  echo($_SESSION['rol']);
             
             // echo " todo bien cabron ";
+
+            
            
             
 
@@ -48,13 +50,6 @@ if (isset($_POST['login'])) {
 
 
 
-        if ($loginfaile) {
-            
-$_SESSION['loginError'] = true;
-header('Location: ../tierra2.php');
-exit();
-
-        }
        
     }
 
@@ -79,9 +74,11 @@ if(isset($_POST['registro'])) {
     
     
     registrarUsuario( $nombre, $nombreUsuario, $contrasena, $apellido1, $fechaNacimiento);
+    header('Location: ../tierra2.php');
+
     
     }catch (Exception $e) {
-        echo "no va ";
+        echo "error al registrar usuario: " . $e->getMessage();
     }
 }
 

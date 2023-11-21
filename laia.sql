@@ -11,7 +11,7 @@ rol varchar (255) NOT NULL
 
 );
 CREATE TABLE  USUARIOS(
-idUsuario int PRIMARY KEY ,
+idUsuario int PRIMARY KEY auto_increment ,
 nombre  varchar(255) NOT NULL,
 nombreUsuario varchar (255) UNIQUE,
 contrasena varchar (255) NOT NULL,
@@ -45,9 +45,9 @@ INSERT INTO ROLES ( rol)
 VALUES ('SUPERADMIN'),('ADMIN'),('JUGADOR');
 
 -- Insertar un superadmin en la tabla USUARIOS
-INSERT INTO USUARIOS (idUsuario, nombre, nombreUsuario, contrasena, apellido1, fechaNacimiento,id_Rol)
-VALUES (1, 'WarcelonaWatcher', 'SuperAdminUser', 'superadmin123', 'Apellido1Super', '1990-01-01',1),
-(2, 'Admin', 'AdminUser', 'admin123', 'Apellido1Admin',  '1990-01-01',2)
+INSERT INTO USUARIOS ( nombre, nombreUsuario, contrasena, apellido1, fechaNacimiento,id_Rol)
+VALUES ('WarcelonaWatcher', 'SuperAdminUser', 'superadmin123', 'Apellido1Super', '1990-01-01',1),
+('Admin', 'AdminUser', 'admin123', 'Apellido1Admin',  '1990-01-01',2)
 
 ;
 
