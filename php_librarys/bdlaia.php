@@ -81,7 +81,7 @@ function selectUser()
     $conexion = openDB();
 
 
-    $sentenciatext = "select nombreUsuario , contrasena from USUARIOS;";
+    $sentenciatext = "select nombreUsuario , contrasena,id_Rol,idUsuario from USUARIOS;";
 
 
 
@@ -134,7 +134,7 @@ JOIN
 LEFT JOIN
     PUNTUACION P ON U.idUsuario = P.idUsuario
 LEFT JOIN
-    JUEGOS J ON P.idjuegos = J.idjuegos  
+    JUEGOS J ON P.idjuegos = J.idjuegos
 ORDER BY
     U.idUsuario;
 ";
@@ -158,6 +158,63 @@ ORDER BY
     $conexion = closeDB();
     return $resultado;
 }
+
+
+function selectUsers(){
+
+
+    $conexion = openDB();
+
+
+    $sentenciatext = "SELECT
+    U.idUsuario AS usuario_id,
+    U.nombre AS nombreReal,
+    U.nombreUsuario AS nombreUsuario,
+    U.contrasena AS contrasena,
+    U.apellido1 AS usuario_apellido,
+    U.fechaNacimiento AS fecha_nacimiento,
+    R.rol AS rol,
+    J.descripcion AS nombre_juego,  
+    P.puntuacion AS puntuacion
+FROM
+    USUARIOS U
+JOIN
+    ROLES R ON U.id_Rol = R.idRol
+LEFT JOIN
+    PUNTUACION P ON U.idUsuario = P.idUsuario
+LEFT JOIN
+    JUEGOS J ON P.idjuegos = J.idjuegos
+WHERE
+    rol = 'JUGADOR'
+ORDER BY
+    U.idUsuario;"
+;
+
+
+
+    $sentencia = $conexion->prepare($sentenciatext);
+    $sentencia->execute();
+    $resultado = $sentencia->fetchAll();
+ 
+    $conexion = closeDB();
+    return $resultado;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -212,98 +269,107 @@ function deleteGameInfo($idUsuario){
 
 }
 
-function updateUser(){
+
+function updateNombreUsuario($idUsuario, $nombreUsuario){
+
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    nombreUsuario = :nombreUsuario
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':nombreUsuario', $nombreUsuario);
+   
 
 
-
-
-
-
-
-}
-
-
-function updateGameInfo($idGame){ 
     
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+}
+
+
+
+function updateContrasena($idUsuario, $contrasena){
+
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    contrasena = :contrasena
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':contrasena', $contrasena);
+   
+
+
     
 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function updatePokemon($idPoke, $nuevoPokedex, $nuevoNombre, $nuevaregion, $nuevadescripcion, $nuevacoleccion, $nuevaimagen, $nuevolink)
-{
-    try {
-        $conexion = openDB();
-        $sentenciaText = "UPDATE pokemon 
-                         SET numPokedex = :newPokedex, 
-                             nombrePoke = :newnombrePoke,  
-                             idRegion = :newRegion, 
-                             descripcion = :nuevadescripcion, 
-                             coleccion = :nuevacoleccion, 
-                             imagenPoke = :nuevaimagen, 
-                             link = :nuevolink 
-                         WHERE idPoke = :idPoke";
-        $sentencia = $conexion->prepare($sentenciaText);
-        $sentencia->bindParam(':idPoke', $idPoke);
-        $sentencia->bindParam(':newPokedex', $nuevoPokedex);
-        $sentencia->bindParam(':newnombrePoke', $nuevoNombre);
-        $sentencia->bindParam(':newRegion', $nuevaregion);
-        $sentencia->bindParam(':nuevadescripcion', $nuevadescripcion);
-        $sentencia->bindParam(':nuevacoleccion', $nuevacoleccion);
-        $sentencia->bindParam(':nuevaimagen', $nuevaimagen);
-        $sentencia->bindParam(':nuevolink', $nuevolink);
-        $sentencia->execute();
-
-    } catch (PDOException $e) {
-        $_SESSION['error'] = errorMessage($e);
-    }
+    $sentencia->execute();
     $conexion = closeDB();
-    return $idPoke;
+
 
 }
 
-function updateTipoPoke($idPoke, $idTipo, $idTipo2)
-{
-    try {
-        $conexion = openDB();
-        $sentenciaText = "UPDATE poketiponm
-        SET 
-            idTipo = :idTipo, 
-            idTipo2 = :idTipo2 
-        WHERE idPoke = :idPoke";
 
-        $sentencia = $conexion->prepare($sentenciaText);
-        $sentencia->bindParam(':idPoke', $idPoke);
-        $sentencia->bindParam(':idTipo', $idTipo);
-        $sentencia->bindParam(':idTipo2', $idTipo2);
-        $sentencia->execute();
-    } catch (Exception $e) {
-        $_SESSION['error'] = errorMessage($e);
 
-    }
 
+
+
+
+function updateNombreReal($idUsuario, $nombre){
+
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    nombre = :nombre
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':nombre', $nombre);
+   
+
+
+    
+
+    $sentencia->execute();
     $conexion = closeDB();
+
+
+}
+
+
+
+function updateApellido($idUsuario, $apellido1){
+
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    apellido1 = :apellido1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':apellido1', $apellido1);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
 }
 
 
@@ -311,14 +377,55 @@ function updateTipoPoke($idPoke, $idTipo, $idTipo2)
 
 
 
+function updateData($idUsuario, $fechaNacimiento){
+
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    fechaNacimiento = :fechaNacimiento
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':fechaNacimiento', $fechaNacimiento);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+}
 
 
 
 
+function updateRol($idUsuario, $id_Rol){
+
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    id_Rol = :id_Rol
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':id_Rol', $id_Rol);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+}
 
 
 
-
-
-
-?>
+// falta crear el updatecontrasena

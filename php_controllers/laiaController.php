@@ -1,4 +1,5 @@
 <?php
+
 require_once('../php_librarys/bdlaia.php');
 
 
@@ -10,18 +11,29 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
+  
 
     foreach ($usuarios as $usuario) {
        
-        if ($usuario['nombreUsuario'] == $username && $usuario['contrasena'] == $password) {
+        if ($usuario['nombreUsuario'] === $username && $usuario['contrasena'] === $password) {
+            
+
+            $_SESSION["user"] = $usuario['nombreUsuario'];
+            $_SESSION["idUser"] = $usuario['idUsuario'];
+            $_SESSION["rol"] = $usuario['id_Rol'];
 
 
+       
 
 
+//  echo($_SESSION['rol']);
+ 
+// echo " todo bien cabron ";
            
             
 
-        header('Location: ../Planeta/tierra2.html');
+         header('Location: ../Planeta/adminpage.php');
+        exit();
         
            
         }
@@ -30,7 +42,7 @@ if (isset($_POST['login'])) {
 
 
  }catch (Exception $e) {
-    
+    echo"algo salio mal";
 
 
  }
@@ -39,7 +51,7 @@ if (isset($_POST['login'])) {
 
 
 if(isset($_POST['registro'])) { 
-  
+    try {
     $nombre = $_POST['nombre'];
     $nombreUsuario = $_POST['userName'];
     $contrasena = $_POST['password'];
@@ -48,6 +60,10 @@ if(isset($_POST['registro'])) {
     
     
     registrarUsuario( $nombre, $nombreUsuario, $contrasena, $apellido1, $fechaNacimiento);
+    
+    }catch (Exception $e) {
+        echo "no va ";
+    }
 }
 
 
@@ -89,53 +105,101 @@ if (isset($_POST['delete'])) {
 
 
     
-elseif (isset($_POST['update'])) {
+if (isset($_POST['updatenombreUsuario'])) {
+
     try {
-
-        $imagenTmpPath = $_FILES['newimagenPoke']['tmp_name'];
-        $imagenNombre = $_FILES['newimagenPoke']['name'];
-
-        // Define la carpeta de destino donde se almacenará la imagen
-        $carpetaDestino = $_SERVER['DOCUMENT_ROOT'] . "/coleccionM07/imgdata/";
-
-        // Combina la carpeta de destino y el nombre del archivo para obtener la ruta completa
-        $imagenRuta = $carpetaDestino . $imagenNombre;
-        move_uploaded_file($imagenTmpPath, $imagenRuta);
-        $imagenRuta = str_replace($_SERVER['DOCUMENT_ROOT'], '', $imagenRuta);
-
-
-
-
-       $idPoke= updatePokemon( $_POST['idPoke'],$_POST['newPokedex'],$_POST['newnombre'],$_POST['newidRegion'],$_POST['newdescripcion'],
-        $_POST['newcoleccion'], $imagenRuta,$_POST['newlink']);
-        updateTipoPoke($_POST['idPoke'],$_POST['newidTipo'],$_POST['newidTipo2']);
-// acabar el update pokemon crack
-
-      //   function updatePokemon($idPoke,$nuevoPokedex,$nuevoNombre,$nuevaregion,$nuevadescripcion,$nuevacoleccion,$nuevaimagen,$nuevolink)
-        header('Location: ../webApp/index.php');
+        updateNombreUsuario($_POST['usuario_id'],$_POST['newnombreUsuario'] );
+        header('Location: ../Planeta/adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        echo " va mal cabron";
+        // echo "Error: " . $e->getMessage();
     }
+
+   
+    
 }
 
 
 
+if (isset($_POST["updateNombreReal"])) {
+
+    try {
+        updateNombreReal($_POST['usuario_id'],$_POST['newnombrereal'] );
+        header('Location: ../Planeta/adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " va mal cabron";
+        // echo "Error: " . $e->getMessage();
+    }
+
+
+}
+
     
 
+if (isset($_POST["updateApellido"])) {
+
+    try {
+        updateApellido($_POST['usuario_id'],$_POST['newapellido'] );
+        header('Location: ../Planeta/adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " va mal cabron";
+        // echo "Error: " . $e->getMessage();
+    }
+
+
+}
 
 
 
 
 
 
+if (isset($_POST["updateData"])) {
+
+    try {
+        updateData($_POST['usuario_id'],$_POST['newdata'] );
+        header('Location: ../Planeta/adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " va mal cabron";
+        // echo "Error: " . $e->getMessage();
+    }
+
+
+}
+
+if (isset($_POST["updateRol"])) {
+
+    try {
+        updateRol($_POST['usuario_id'],$_POST['newrol'] );
+        header('Location: ../Planeta/adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " va mal cabron";
+        // echo "Error: " . $e->getMessage();
+    }
+
+
+}
 
 
 
+// if (isset($_POST["updateContrasena"])) {
+
+//     try {
+//         updateRol($_POST['usuario_id'],$_POST['newcontrasena'] );
+//         header('Location: ../Planeta/adminpage.php');
+//         exit();
+//     } catch (Exception $e) {
+//         echo " va mal cabron";
+//         // echo "Error: " . $e->getMessage();
+//     }
 
 
-
-
+// }
 
 
 
