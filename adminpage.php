@@ -96,8 +96,6 @@
                                             <form action="../php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
-
-
                                                 <input type="hidden" name="usuario_id"
                                                     value="<?= $usuario['usuario_id'] ?>">
                                                 <input autofocus class="form-control mb-3" type="text"

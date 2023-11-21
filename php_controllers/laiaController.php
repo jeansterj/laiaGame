@@ -11,6 +11,7 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
+
   
 
     foreach ($usuarios as $usuario) {
@@ -23,12 +24,13 @@ if (isset($_POST['login'])) {
             $_SESSION["rol"] = $usuario['id_Rol'];
 
 
+
        
 
 
-//  echo($_SESSION['rol']);
- 
-// echo " todo bien cabron ";
+                 //  echo($_SESSION['rol']);
+            
+            // echo " todo bien cabron ";
            
             
 
@@ -36,7 +38,13 @@ if (isset($_POST['login'])) {
         exit();
         
            
+        }else {
+            header('Location: ../tierra2.php');
+
+
+
         }
+       
     }
 
 
