@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
            
             
 
-         header('Location: ../Planeta/adminpage.php');
+         header('Location: ../adminpage.php');
         exit();
         
            
@@ -76,7 +76,7 @@ if (isset($_POST['delete'])) {
     try {
         deleteGameInfo($_POST['usuario_id']);
        deleteUser($_POST['usuario_id']);
-        header('Location: ../Planeta/adminpage.php');
+        header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
         echo " va mal cabron";
@@ -109,7 +109,7 @@ if (isset($_POST['updatenombreUsuario'])) {
 
     try {
         updateNombreUsuario($_POST['usuario_id'],$_POST['newnombreUsuario'] );
-        header('Location: ../Planeta/adminpage.php');
+        header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
         echo " va mal cabron";
@@ -126,7 +126,7 @@ if (isset($_POST["updateNombreReal"])) {
 
     try {
         updateNombreReal($_POST['usuario_id'],$_POST['newnombrereal'] );
-        header('Location: ../Planeta/adminpage.php');
+        header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
         echo " va mal cabron";
@@ -142,7 +142,7 @@ if (isset($_POST["updateApellido"])) {
 
     try {
         updateApellido($_POST['usuario_id'],$_POST['newapellido'] );
-        header('Location: ../Planeta/adminpage.php');
+        header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
         echo " va mal cabron";
@@ -161,7 +161,7 @@ if (isset($_POST["updateData"])) {
 
     try {
         updateData($_POST['usuario_id'],$_POST['newdata'] );
-        header('Location: ../Planeta/adminpage.php');
+        header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
         echo " va mal cabron";
@@ -175,7 +175,7 @@ if (isset($_POST["updateRol"])) {
 
     try {
         updateRol($_POST['usuario_id'],$_POST['newrol'] );
-        header('Location: ../Planeta/adminpage.php');
+        header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
         echo " va mal cabron";

@@ -27,7 +27,7 @@
                     <div  class="popupContainer">
                     <div class="form-box login ">
                         <h2>Iniciar Sesion</h2>
-                        <form action="#">
+                        <form action="./php_controllers/laiaController.php" method="POST">
                             <div class="input-box">
                                 <span class="icon">
                                     <ion-icon name="person-circle-outline"></ion-icon>
@@ -42,7 +42,7 @@
                                 <input type="password" name="password" required>
                                 <label>Password</label>
                             </div>
-                            <button type="button" class="btn">Iniciar Sesion</button>
+                            <button type="submit" name="login" class="btn">Iniciar Sesion</button>
             
                             <div class="loginRegister">
                                 <p>¿No tienes cuenta?</p>
@@ -53,7 +53,7 @@
                 </div>
                     <div class="form-box register">
                         <h2>Registro</h2>
-                        <form action="#">
+                        <form action="./php_controllers/laiaController.php" method="POST">
                             <div class="input-box">
                                 <span class="icon">
                                     <ion-icon name="person-circle-outline"></ion-icon>
@@ -94,7 +94,7 @@
                             <div>
                                 <label><input type="checkbox"> Acepto los términos y condiciones</label>
                             </div>
-                            <button type="submit" class="btn">Registro</button>
+                            <button type="submit" class="btn" name="registro">Registro</button>
                             <div class="loginRegister">
                                 <p>¿Ya tienes cuenta?</p>
                                 <a href="#" class="loginLink">Inicia Sesion</a>

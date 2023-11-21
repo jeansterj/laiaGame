@@ -1,4 +1,4 @@
-<?php require_once('../php_librarys/bdlaia.php'); 
+<?php require_once('./php_librarys/bdlaia.php'); 
 
 
 
