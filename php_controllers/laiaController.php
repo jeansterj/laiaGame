@@ -11,6 +11,7 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
+    $loginfaile = true;
 
   
 
@@ -24,7 +25,7 @@ if (isset($_POST['login'])) {
             $_SESSION["rol"] = $usuario['id_Rol'];
 
 
-
+            	    $loginfaile = false;
        
 
 
@@ -42,6 +43,16 @@ if (isset($_POST['login'])) {
             header('Location: ../tierra2.php');
 
 
+
+        }
+
+
+
+        if ($loginfaile) {
+            
+$_SESSION['loginError'] = true;
+header('Location: ../tierra2.php');
+exit();
 
         }
        

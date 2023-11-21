@@ -1,4 +1,18 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+if (isset($_SESSION['loginError']) && $_SESSION['loginError']) {
+    echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let myModal = new bootstrap.Modal(document.getElementById("loginForm"));
+            myModal.show();
+        });
+    </script>';
+
+    $_SESSION['loginError'] = false;
+}
+?>
+
 
 
 <!DOCTYPE html>
