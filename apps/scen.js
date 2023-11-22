@@ -102,7 +102,7 @@ intersects.forEach((intersect) => {
        
         
         //Logica del cambio de textura de las bombillas
-        intersect.object.material.map = newTexture1;
+        intersect.object.material.map = textureCompleted;
         intersect.object.material.needsUpdate = true;     
         
               
