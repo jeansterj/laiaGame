@@ -27,7 +27,16 @@ session_start();
         <nav class="navigation">
         <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa">Desarrolladores</button>
     
-        <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar Sesion</button>
+        <?php if (isset($_SESSION['user'])) : ?>
+            <!-- Si la sesión está iniciada, muestra el botón "Cerrar Sesión" -->
+            <button class="btn btnLogin-popup" onclick="window.location.href='./logout.php'" name="logoutLink">CERRAR SESION</button>
+
+
+        <?php else : ?>
+            <!-- Si la sesión no está iniciada, muestra el botón "Iniciar Sesión" -->
+            <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar Sesión</button>
+        <?php endif; ?>
+        
         <!-- Modal -->
         <div class="modal modalLogin fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
