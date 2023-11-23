@@ -247,7 +247,6 @@ transition: none;
 transform: translateX(400px);
 }
 
-
 .modalLogin .modal-content.active .form-box.register{
     transition: transform .18s ease;
     transform: translateX(0);
@@ -349,5 +348,55 @@ a.loginLink {
     transition: transform .5s ease, height .2s ease;
 }
 
+.navigation .basicButton{
+
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+
+}
+
+.navigation .basicButton:hover {
+    background: black;
+}
+
+.imagen-redonda {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
 
 
+.modalDesa .modal-content {
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+
+    position: relative;
+    width: 500px;
+    height: 550px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+
+.contenido-modal {
+    display: flex;
+    align-items: center;
+}
+
+.textos-modal {
+    flex: 1;
+}

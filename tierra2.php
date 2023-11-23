@@ -25,7 +25,7 @@ session_start();
     <header>
         <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img src="./Imagenes/logo.png" alt="logo_centiks"></a>
         <nav class="navigation">
-        <button type="button" class="" data-bs-toggle="modal" data-bs-target="#miModal">Desarrolladores</button>
+        <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa">Desarrolladores</button>
     
         <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar Sesion</button>
         <!-- Modal -->
@@ -120,31 +120,60 @@ session_start();
    
 
     <!-- Modal Desarrolladores -->
-    <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal modalDesa fade" id="modalDesa" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="miModalLabel">Desarrolladores</h5>
-                </div>
                 <div class="modal-body">
                     <!-- Contenido del modal -->
-                    <p>Pedro</p>
+                    <div class="contenido-modal">
+                        <img src="./Imagenes/jean.png" alt="pedro_Imagen" class="imagen-redonda">
+                        <div class="textos-modal">
+                            <h2>Pedro</h2>
+                            <p>Crador y desarrollador de Brazil</p>
+                        </div>
+                    </div>
+
                 </div>
+                <hr>
+
+                <div class="modal-body">
+                    <div class="contenido-modal">
+                        <img src="./Imagenes/jean.png" alt="aleix_Imagen" class="imagen-redonda">
+                        <div class="textos-modal">
+                            <h2>Aleix</h2>
+                            <p>Crador y desarrollador de India</p>
+                        </div>
+                    </div>
+                    <!-- Contenido del modal -->
+
+                </div>
+                <hr>
+
                 <div class="modal-body">
                     <!-- Contenido del modal -->
-                    <p>Aleix</p>
-                </div>
-                <div class="modal-body">
-                    <!-- Contenido del modal -->
-                    <p>Jean</p>
-                </div>
-                <div class="modal-body">
-                    <!-- Contenido del modal -->
-                    <p>Alex</p>
+
+                    <div class="contenido-modal">
+                        <img src="./Imagenes/jean.png" alt="jean_Imagen" class="imagen-redonda">
+                        <div class="textos-modal">
+                            <h2>Jean</h2>
+                            <p>Crador y desarrollador de Kenia Memory</p>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="modal-body">
+                        <!-- Contenido del modal -->
+                        <div class="contenido-modal">
+                            <img src="./Imagenes/jean.png" alt="alex_Imagen" class="imagen-redonda">
+                            <div class="textos-modal">
+                                <h2>Alex</h2>
+                                <p>Crador y desarrollador de Warcelona</p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
         </nav>
     </header>
 
@@ -155,9 +184,6 @@ session_start();
     <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="miModalLabel">Mi Modal</h5>
-              </button>
             </div>
             <div class="modal-body">
               Contenido del modal...

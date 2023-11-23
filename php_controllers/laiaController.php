@@ -26,6 +26,15 @@ if (isset($_POST['login'])) {
             $_SESSION["idUser"] = $usuario['idUsuario'];
             $_SESSION["rol"] = $usuario['id_Rol'];
 
+            if ($_SESSION['rol'] == 3) {
+                header('Location: ./tierra2.php');
+                exit();
+               
+            }  else {
+                header('Location: ../adminpage.php');
+                 exit();
+           
+            }
 
        
 
