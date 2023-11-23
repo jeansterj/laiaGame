@@ -190,25 +190,22 @@ session_start();
 
 
     <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
-            </div>
             <div class="modal-body">
-              Contenido del modal...
+                <h2>Iniciar Sesion</h2>
+              <div class="colModalIntroLore1">
+                <p>En las vibrantes calles de Barcelona, Laia, una ingeniera audaz y talentosa, enfrenta un desafío único. Su misión es navegar a través de las peligrosas calles de la ciudad, evadiendo atracadores con astucia y utilizando sus habilidades en electricidad. En este juego de supervivencia, Laia debe recolectar la mayor cantidad de dinero posible mientras utiliza sus poderes eléctricos para zafarse de los peligros. ¿Podrás ayudar a Laia a salir ilesa y con el botín en mano?</p>
+                <button>JUGAR</button>
+            </div>
+              <div class="colModalIntroLore2">
+                <img src=".\Imagenes\laia.png" alt="" class="liderbcn">
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="modal modalStory fade" id="modalini" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            </div>
-            <div class="modal-body">
-              Contenido del modal...
-            </div>
-          </div>
-        </div>
-      </div>
+
 </body>
 
 <script src="./apps/translations.js"></script>
