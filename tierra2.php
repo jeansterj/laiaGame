@@ -36,16 +36,15 @@ session_start();
             <!-- Si la sesión no está iniciada, muestra el botón "Iniciar Sesión" -->
             <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar Sesión</button>
         <?php endif; ?>
-        
 
-            <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar Sesion</button>
+
         <!-- Modal -->
         <div class="modal modalLogin fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content"> 
                     <div  class="popupContainer">
                     <div class="form-box login ">
-                        <h2>Iniciar Sesion</h2>
+                        <h2 data-translate="IniciarSesion">Iniciar Sesion</h2>
                         <form action="./php_controllers/laiaController.php" method="POST">
                             <div class="input-box">
                                 <span class="icon">
@@ -124,17 +123,75 @@ session_start();
             </div>
             </div>
         </div>
-            <a href="#">ES/</a>
-            <a href="#">CAT/</a>
-            <a href="#">ENG</a>
+        <a href="#" id="esLink">ES</a>
+        <a href="#" id="catLink">CAT</a>
+        <a href="#" id="engLink">ENG</a>
+
+
+
+        
+    <!-- Modal Desarrolladores -->
+    <div class="modal modalDesa fade" id="modalDesa" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- Contenido del modal -->
+                    <div class="contenido-modal">
+                        <img src="./Imagenes/pedro.png" alt="pedro_Imagen" class="imagen-redonda">
+                        <div class="textos-modal">
+                            <h2>Pedro</h2>
+                            <p>Crador y desarrollador de Brazil</p>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+
+                <div class="modal-body">
+                    <div class="contenido-modal">
+                        <img src="./Imagenes/jean.png" alt="aleix_Imagen" class="imagen-redonda">
+                        <div class="textos-modal">
+                            <h2>Aleix</h2>
+                            <p>Crador y desarrollador de India</p>
+                        </div>
+                    </div>
+                    <!-- Contenido del modal -->
+
+                </div>
+                <hr>
+
+                <div class="modal-body">
+                    <!-- Contenido del modal -->
+
+                    <div class="contenido-modal">
+                        <img src="./Imagenes/jean.png" alt="jean_Imagen" class="imagen-redonda">
+                        <div class="textos-modal">
+                            <h2>Jean</h2>
+                            <p>Crador y desarrollador de Kenia Memory</p>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="modal-body">
+                        <!-- Contenido del modal -->
+                        <div class="contenido-modal">
+                            <img src="./Imagenes/jean.png" alt="alex_Imagen" class="imagen-redonda">
+                            <div class="textos-modal">
+                                <h2>Alex</h2>
+                                <p>Crador y desarrollador de Warcelona</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
+
+
     <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="miModalLabel">Mi Modal</h5>
-              </button>
             </div>
             <div class="modal-body">
               Contenido del modal...
@@ -142,13 +199,9 @@ session_start();
           </div>
         </div>
       </div>
-      </header>
-    <div class="modal modalStory fade" id="modalini" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
+      <div class="modal modalStory fade" id="modalini" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="miModalLabel">Mi Modal</h5>
-              </button>
             </div>
             <div class="modal-body">
               Contenido del modal...
@@ -157,6 +210,8 @@ session_start();
         </div>
       </div>
 </body>
+
+<script src="./apps/translations.js"></script>
 <script src="./apps/scen.js"></script>
 <script src="./apps/main.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
