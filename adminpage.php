@@ -41,6 +41,7 @@
                     <th>Juego</th>
                     <th>Puntuacion</th>
                     <th>Eliminar Usuario</th>
+               
                 </tr>
             </thead>
 
