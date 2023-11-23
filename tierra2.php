@@ -207,6 +207,7 @@ session_start();
       </div>
 
 
+    
       <div class="modal modalStory fade" id="modalini" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">

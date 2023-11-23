@@ -97,14 +97,22 @@ function onMouseClick(event) {
             intersect.object.material.needsUpdate = true;     
             
         } else if (intersect.object === imageSprite2) {
-            console.log('imageSprite2 clicked!');
+
+
+            let myModal = new bootstrap.Modal(document.getElementById('modalBrazil'))
+            myModal.show();
             
         } else if (intersect.object === imageSprite3) {
-            console.log('imageSprite3 clicked!');
-            
+
+            let myModal = new bootstrap.Modal(document.getElementById('modalKenia'))
+            myModal.show();
+
+
         } else if (intersect.object === imageSprite4) {
-            console.log('imageSprite4 clicked!');
+
             
+            let myModal = new bootstrap.Modal(document.getElementById('modalIndia'))
+            myModal.show();
         }
     });
 }
