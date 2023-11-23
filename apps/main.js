@@ -6,7 +6,6 @@ addEventListener("DOMContentLoaded", (event) => {
     const registerLink = document.querySelector('.registerLink');
     const btnPopup = document.querySelector('.btnLogin-popup');
     
-    
     registerLink.addEventListener('click', ()=> {wrapper.classList.add('active');});
     
     loginLink.addEventListener('click', ()=> {wrapper.classList.remove('active');});
@@ -16,4 +15,7 @@ addEventListener("DOMContentLoaded", (event) => {
 
 });
 
-
+function onMouseClick() {
+    let myModal = new bootstrap.Modal(document.getElementById('miModal'));
+    myModal.hide();
+  }

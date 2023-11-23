@@ -1,8 +1,9 @@
 
 {
     "IniciarSesion": {
-        "en": "HOlaaaaaa",
-        "es": "Bienvenido"
+        "en": "pjp",
+        "es": "Bienvenido",
+        "cat": "Benvingut"
     },
     "parrafo": {
         "en": "This is an example of translation.",
