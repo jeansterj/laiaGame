@@ -1,81 +1,76 @@
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
-var renderer = new THREE.WebGLRenderer();
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
+let renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-var backgroundTexture = new THREE.TextureLoader().load('./Imagenes/space4k.jpg');
+let backgroundTexture = new THREE.TextureLoader().load('./Imagenes/space4k.jpg');
 scene.background = backgroundTexture;
 
-
-var loader = new THREE.TextureLoader();
-var texture = loader.load('./Imagenes/mapWorld.png');  // Reemplaza esta URL con la URL de tu textura de la Tierra
-var geometry = new THREE.SphereGeometry(1, 64, 64);
-var material = new THREE.MeshBasicMaterial({ map: texture });
-var sphere = new THREE.Mesh(geometry, material);
+let loader = new THREE.TextureLoader();
+let texture = loader.load('./Imagenes/pollonBueno1.png');  // Reemplaza esta URL con la URL de tu textura de la Tierra
+let geometry = new THREE.SphereGeometry(1, 64, 64);
+let material = new THREE.MeshBasicMaterial({ map: texture });
+let sphere = new THREE.Mesh(geometry, material);
 scene.add(sphere);
 
-var controls = new THREE.OrbitControls(camera, renderer.domElement);
+let controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.minDistance = 3;  
+controls.maxDistance = 8; 
 camera.position.z = 5;
 
-var outlineMaterial1 = new THREE.ShaderMaterial({
+let outlineMaterial1 = new THREE.ShaderMaterial({
     side: THREE.BackSide,
     uniforms: {},
     vertexShader: `
         void main() {
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
             gl_Position = projectionMatrix * mvPosition;
-            gl_Position.xyz += normalize(gl_Position.xyz) * 0.05;  // Ajusta el valor 0.05 según el grosor del contorno deseado
+            gl_Position.xyz += normalize(gl_Position.xyz) * 0.09;
         }
     `,
     fragmentShader: `
         void main() {
-            gl_FragColor = vec4(0.5, 1.0, 1.0, 1.0);  // Color azul celeste
+            gl_FragColor = vec4(0.5, 1.0, 1.0, 1.0);
         }
     `
 });
 
-var outlineMesh1 = new THREE.Mesh(geometry, outlineMaterial1);
+let outlineMesh1 = new THREE.Mesh(geometry, outlineMaterial1);
 scene.add(outlineMesh1);
 
-var imageTexture = new THREE.TextureLoader().load('./Imagenes/bombillaApagada.png');
-var imageTextureCompletada = new THREE.TextureLoader().load('./Imagenes/BombillaEncendida.png');
+let imageTexture = new THREE.TextureLoader().load('./Imagenes/bombillaApagada.png');
+let imageTextureCompletada = new THREE.TextureLoader().load('./Imagenes/BombillaEncendida.png');
 
+let spriteMaterial = new THREE.SpriteMaterial({ map: imageTexture });
+let spriteMaterial2 = new THREE.SpriteMaterial({ map: imageTexture });
+let spriteMaterial3 = new THREE.SpriteMaterial({ map: imageTexture });
+let spriteMaterial4 = new THREE.SpriteMaterial({ map: imageTexture });
 
-//materiales de las bombillas
-var spriteMaterial = new THREE.SpriteMaterial({ map: imageTexture });
-var spriteMaterial2 = new THREE.SpriteMaterial({ map: imageTexture });
-var spriteMaterial3 = new THREE.SpriteMaterial({ map: imageTexture });
-var spriteMaterial4 = new THREE.SpriteMaterial({ map: imageTexture });
-
-
-//Sprites de las bombillas y colocacion en el mapa 
-var imageSprite = new THREE.Sprite(spriteMaterial);
+let imageSprite = new THREE.Sprite(spriteMaterial);
 imageSprite.position.set(0, 1, 0); 
 imageSprite.scale.set(0.1, 0.1, 1); 
 scene.add(imageSprite);        
 
-var imageSprite2 = new THREE.Sprite(spriteMaterial2);
+let imageSprite2 = new THREE.Sprite(spriteMaterial2);
 imageSprite2.position.set(0, 1, 0); 
 imageSprite2.scale.set(0.1, 0.1, 1); 
 scene.add(imageSprite2);   
 
-var imageSprite3 = new THREE.Sprite(spriteMaterial3);
+let imageSprite3 = new THREE.Sprite(spriteMaterial3);
 imageSprite3.position.set(0, 1, 0); 
 imageSprite3.scale.set(0.1, 0.1, 1); 
 scene.add(imageSprite3);
 
-var imageSprite4 = new THREE.Sprite(spriteMaterial4);
+let imageSprite4 = new THREE.Sprite(spriteMaterial4);
 imageSprite4.position.set(0, 1, 0); 
 imageSprite4.scale.set(0.1, 0.1, 1); 
 scene.add(imageSprite4);     
 
-//textura bombilla encendida
-var textureCompleted = new THREE.TextureLoader().load('./Imagenes/BombillaEncendida.png');    
+let textureCompleted = new THREE.TextureLoader().load('./Imagenes/BombillaEncendida.png');    
 
-
-var raycaster = new THREE.Raycaster();
-var mouse = new THREE.Vector2();
+let raycaster = new THREE.Raycaster();
+let mouse = new THREE.Vector2();
 
 window.addEventListener('mousemove', onMouseMove, false);
 window.addEventListener('click', onMouseClick, false);
@@ -88,99 +83,84 @@ function onMouseMove(event) {
 }
 
 function onMouseClick(event) {
-raycaster.setFromCamera(mouse, camera);
-var intersects = raycaster.intersectObjects([imageSprite, imageSprite2, imageSprite3, imageSprite4]);
+    raycaster.setFromCamera(mouse, camera);
+    let intersects = raycaster.intersectObjects([imageSprite, imageSprite2, imageSprite3, imageSprite4]);
 
-//Logica del click de las bombillas     
-intersects.forEach((intersect) => {
-    if (intersect.object === imageSprite) {
-        console.log('imageSprite clicked!'); 
+    intersects.forEach((intersect) => {
+        if (intersect.object === imageSprite) {
+            console.log('imageSprite clicked!'); 
 
-        let myModal = new bootstrap.Modal(document.getElementById('modalbcn'))
+            let myModal = new bootstrap.Modal(document.getElementById('modalbcn'))
+            myModal.show();
 
-        myModal.show();
-       
-        
-        //Logica del cambio de textura de las bombillas
-        intersect.object.material.map = textureCompleted;
-        intersect.object.material.needsUpdate = true;     
-        
-              
-        
-    } else if (intersect.object === imageSprite2) {
-        console.log('imageSprite2 clicked!');
-
-        
-        
-    } else if (intersect.object === imageSprite3) {
-        console.log('imageSprite3 clicked!');
-       
-       
-    } else if (intersect.object === imageSprite4) {
-        console.log('imageSprite4 clicked!');
-       
-       
-    }
-});
+            intersect.object.material.map = textureCompleted;
+            intersect.object.material.needsUpdate = true;     
+            
+        } else if (intersect.object === imageSprite2) {
+            console.log('imageSprite2 clicked!');
+            
+        } else if (intersect.object === imageSprite3) {
+            console.log('imageSprite3 clicked!');
+            
+        } else if (intersect.object === imageSprite4) {
+            console.log('imageSprite4 clicked!');
+            
+        }
+    });
 }
 
 function checkIntersection() {
-raycaster.setFromCamera(mouse, camera);
+    raycaster.setFromCamera(mouse, camera);
 
-//Logica de deteccion de click de las bombilla
-var intersectsSprite1 = raycaster.intersectObject(imageSprite);
-var intersectsSprite2 = raycaster.intersectObject(imageSprite2);
-var intersectsSprite3 = raycaster.intersectObject(imageSprite3);
-var intersectsSprite4 = raycaster.intersectObject(imageSprite4);
+    let intersectsSprite1 = raycaster.intersectObject(imageSprite);
+    let intersectsSprite2 = raycaster.intersectObject(imageSprite2);
+    let intersectsSprite3 = raycaster.intersectObject(imageSprite3);
+    let intersectsSprite4 = raycaster.intersectObject(imageSprite4);
 
-if (intersectsSprite1.length > 0) {
-    imageSprite.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
-} else {
-    imageSprite.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
+    if (intersectsSprite1.length > 0) {
+        imageSprite.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
+    } else {
+        imageSprite.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
+    }
+
+    if (intersectsSprite2.length > 0) {
+        imageSprite2.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
+    } else {
+        imageSprite2.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
+    }
+
+    if (intersectsSprite3.length > 0) {
+        imageSprite3.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
+    } else {
+        imageSprite3.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
+    }
+
+    if (intersectsSprite4.length > 0) {
+        imageSprite4.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
+    } else {
+        imageSprite4.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
+    }
 }
 
-if (intersectsSprite2.length > 0) {
-    imageSprite2.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
-} else {
-    imageSprite2.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
-}
-
-if (intersectsSprite3.length > 0) {
-    imageSprite3.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
-} else {
-    imageSprite3.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
-}
-
-
-if (intersectsSprite4.length > 0) {
-    imageSprite4.scale.lerp(new THREE.Vector3(0.25, 0.25, 1), 0.1);
-} else {
-    imageSprite4.scale.lerp(new THREE.Vector3(0.2, 0.2, 1), 0.1);
-}
-}
-
-//funcion para colocar la bombillas 
-function bombillas(sprite,radio, theta, phi)
-{
-    var x = radio * Math.sin(theta) * Math.cos(phi);
-    var y = radio * Math.cos(theta);
-    var z = radio * Math.sin(theta) * Math.sin(phi);
+function bombillas(sprite, radio, theta, phi) {
+    let x = radio * Math.sin(theta) * Math.cos(phi);
+    let y = radio * Math.cos(theta);
+    let z = radio * Math.sin(theta) * Math.sin(phi);
 
     sprite.position.set(x, y, z);        
     sprite.position.applyEuler(sphere.rotation);   
             
 }
 
-
 function render() {
     requestAnimationFrame(render);         
     sphere.rotation.y += 0.0005;
     outlineMesh1.rotation.y += 0.005;   
     
-    bombillas(imageSprite, 1.09,7.57,6.4); 
-    bombillas(imageSprite2, 1.09,8.47,6.4);
-    bombillas(imageSprite3, 1.09,8.47,7.4);
-    bombillas(imageSprite4, 1.09,8.47,10.4);             
+    bombillas(imageSprite, 1.09,7.38,6.52); 
+    bombillas(imageSprite2, 1.09,8.10,7.49);
+    bombillas(imageSprite3, 1.09,8.0,5.85);
+    bombillas(imageSprite4, 1.09,7.77,5.1);             
                   
                   
     renderer.render(scene, camera);
