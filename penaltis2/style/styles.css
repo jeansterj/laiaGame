@@ -1,0 +1,213 @@
+
+
+
+#contenedor-padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+
+
+/* aqui va lo nuevo*/
+
+.game-board {
+    display: grid;
+    
+   
+    
+  
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+   width: 621px;
+   height: 213px;
+    justify-items: center; /* Centra horizontalmente las celdas */
+    align-items: center; /* Centra verticalmente las celdas */
+    position :relative;
+    top : -443px;
+    right: -46px;
+    color :  rgb(182, 104, 134); 
+    text-align: center; 
+    
+  }
+  
+  
+ 
+  
+
+  
+
+  #campo-de-juego {
+    position: relative; 
+    width: 725px; 
+    height: 500px;
+  }
+  
+  #campo-de-juego img {
+    
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
+    left: 0; 
+    z-index: -1; 
+  }
+
+
+
+
+  .custom-btn {
+    width: 50px;
+    height: 50px;
+    background-color:#139648;
+    position : relative;
+    bottom: 280px;
+    right: -15px;
+   
+
+  
+  }
+
+ 
+
+
+
+
+
+.cell {
+  width: 100px; 
+  height: 50px; 
+  background-color: transparent; 
+  border: none; 
+}
+
+
+.custom-card{
+position: relative;
+bottom: 0px;
+right: 170px;
+
+}
+
+
+
+.custom-btn2 {
+  width: 50px;
+  height: 50px;
+  
+  position : relative;
+  bottom: 280px;
+  right: -15px;
+ 
+
+
+}
+
+
+.start {
+  background-color: transparent;
+  border: none;
+  height: 200px;
+  width: 200px;
+  position: relative;
+ 
+    border: none;
+    outline: none;
+  
+  top:280px;
+  left: 620px;
+ 
+}
+
+
+
+
+body {
+  background-image: url('../img/brasil/brasil3.png');
+  background-size: cover; /* Ajusta el tamaño de la imagen al tamaño del cuerpo del documento */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen de fondo en su posición, incluso al desplazarse */
+  background-position: center center; /* Centra la imagen en el cuerpo del documento */
+  overflow: hidden;
+}
+
+
+
+
+#explicacion{
+  height: 250px;
+  width: 150px;
+position: relative;
+left:0px;
+top: 20px;
+
+
+
+
+}
+
+
+
+#explicacion img {
+ width: 50px;  
+ height: 50px;
+ position: relative;
+ 
+}
+
+
+
+
+#caja-generador{
+  display: flex;
+  flex-direction: row;
+width: 240px;
+height: 100px;
+
+}
+
+
+
+
+ div#caja-generador div{
+  width: 24px;
+  height: 100px;
+  
+  
+
+  /* background-color: #139648; */
+
+} 
+
+#end-screen{
+  display : none;
+  position: relative;
+  top : 200px;
+  left: 625px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+
+
+
+}
+
+#start-screen{
+ position: relative;
+ top: 50%;
+left: 60%;
+transform: translate(-50%, -50%);
+
+} 
+
+
+
+
+ 
