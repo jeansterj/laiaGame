@@ -152,6 +152,39 @@ function bombillas(sprite, radio, theta, phi) {
             
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+   
+    if (!getCookie('yaVisitado')) {
+        let myModal = new bootstrap.Modal(document.getElementById('modalini'));
+        myModal.show();
+
+        
+        setCookie('yaVisitado', 'true', 30); // La cookie expira en 30 días
+    }
+});
+
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+
 function render() {
     requestAnimationFrame(render);         
     sphere.rotation.y += 0.0005;
@@ -160,8 +193,8 @@ function render() {
     bombillas(imageSprite, 1.09,7.38,6.52); 
     bombillas(imageSprite2, 1.09,8.10,7.49);
     bombillas(imageSprite3, 1.09,8.0,5.85);
-    bombillas(imageSprite4, 1.09,7.77,5.1);             
-                  
+    bombillas(imageSprite4, 1.09,7.77,5.1);          
+          
                   
     renderer.render(scene, camera);
 }
