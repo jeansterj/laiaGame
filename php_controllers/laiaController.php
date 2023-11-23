@@ -1,4 +1,5 @@
 <?php
+// session_start();
 
 require_once('../php_librarys/bdlaia.php');
 
@@ -219,7 +220,19 @@ if (isset($_POST["updateRol"])) {
 
 
 
+if (isset($_POST["brasildata"])) {
 
+    try {
+        insertBrasil($_POST['idUsuario'],$_POST['puntuacion'] );
+        header('Location: ../adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " va mal cabron";
+         echo "Error: " . $e->getMessage();
+    }
+
+
+}
 
 
 
