@@ -429,3 +429,90 @@ function updateRol($idUsuario, $id_Rol){
 
 
 // falta crear el updatecontrasena
+
+
+
+function insertBrasil($idUsuario, $puntuacion){
+
+    $conexion = openDB();
+    $sentenciaText = "INSERT INTO puntuacion (idUsuario, idjuegos, puntuacion) 
+    VALUES (:idUsuario, 2, :puntuacion)";   
+
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':puntuacion', $puntuacion);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+}
+
+
+
+
+function insertWarcelona($idUsuario, $puntuacion){
+
+    $conexion = openDB();
+    $sentenciaText = "INSERT INTO puntuacion (idUsuario, idjuegos, puntuacion) 
+    VALUES (:idUsuario, 1, :puntuacion)";   
+
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':puntuacion', $puntuacion);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+}
+
+function insertKenia($idUsuario, $puntuacion){
+
+    $conexion = openDB();
+    $sentenciaText = "INSERT INTO puntuacion (idUsuario, idjuegos, puntuacion) 
+    VALUES (:idUsuario, 3, :puntuacion)";   
+
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':puntuacion', $puntuacion);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+}
+
+
+
+function insertIndia($idUsuario, $puntuacion){
+
+    $conexion = openDB();
+    $sentenciaText = "INSERT INTO puntuacion (idUsuario, idjuegos, puntuacion) 
+    VALUES (:idUsuario, 4, :puntuacion)";   
+
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':puntuacion', $puntuacion);
+   
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+}
