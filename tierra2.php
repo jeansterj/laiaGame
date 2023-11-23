@@ -126,7 +126,7 @@ session_start();
                 <div class="modal-body">
                     <!-- Contenido del modal -->
                     <div class="contenido-modal">
-                        <img src="./Imagenes/jean.png" alt="pedro_Imagen" class="imagen-redonda">
+                        <img src="./Imagenes/pedro.png" alt="pedro_Imagen" class="imagen-redonda">
                         <div class="textos-modal">
                             <h2>Pedro</h2>
                             <p>Crador y desarrollador de Brazil</p>

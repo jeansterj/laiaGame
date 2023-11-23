@@ -8,7 +8,7 @@ let backgroundTexture = new THREE.TextureLoader().load('./Imagenes/space4k.jpg')
 scene.background = backgroundTexture;
 
 let loader = new THREE.TextureLoader();
-let texture = loader.load('./Imagenes/pollonBueno1.png');  // Reemplaza esta URL con la URL de tu textura de la Tierra
+let texture = loader.load('./Imagenes/mapWolrd.png');  // Reemplaza esta URL con la URL de tu textura de la Tierra
 let geometry = new THREE.SphereGeometry(1, 64, 64);
 let material = new THREE.MeshBasicMaterial({ map: texture });
 let sphere = new THREE.Mesh(geometry, material);
