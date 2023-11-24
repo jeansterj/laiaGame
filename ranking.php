@@ -25,17 +25,19 @@
 ?>
     <div class="container">
     <form method="post" action="">
-            <button type="submit" name="españa" value="1">WARCELONA</button>
-            <button type="submit" name="brasil" value="2">BRASIL</button>
-            <button type="submit" name="kenia" value="3">KENIA</button>
-            <button type="submit" name="india" value="4">INDIA</button>
-            <button type="submit" name="global" value="Global">GLOBAL</button>
+        
+            <button class="btn btn-danger" type="submit" name="españa" value="1">WARCELONA</button>
+            <button  class ="btn btn-info" type="submit" name="brasil" value="2">BRASIL</button>
+            <button  class ="btn btn-light" type="submit" name="kenia" value="3">KENIA</button>
+            <button  class ="btn btn-info" type="submit" name="india" value="4">INDIA</button>
+            <button class ="btn btn-light" type="submit" name="global" value="Global">GLOBAL</button>
         </form>
 
                 
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th> Posicion  </th>
                     <th>Nombre Usuario</th>
                     
                     <th>Puntuacion</th>
@@ -72,13 +74,17 @@
                     $ranking = rankingxPais(1);
                  }
 
-
+                 $posicion=0;
                
                 
                 
                 ?>
                 <?php foreach ($ranking as $puntuacion) { ?>
+                  
                     <tr>
+                        <td>
+                      <?php   $posicion++; ?>
+                            <?php echo $posicion ?>
                         <td>
                        
                            <?php echo $puntuacion['nombreUsuario']; ?>
