@@ -233,6 +233,83 @@ session_start();
         </div>
     </div>
 
+    <div class="modal modalStory fade" id="modalBrazil" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="colModalIntroLore1">
+                        <h2>BRASIL</h2>
+                        <p>Tras su partida de Barcelona, Laia llega a Brasil, solo para encontrarse 
+                            con un apagón masivo. En este juego, Laia debe usar su ingenio y habilidades 
+                            en ingeniería para restaurar la electricidad. Golpeando dianas estratégicamente colocadas, 
+                            generará la energía necesaria para iluminar Brasil de nuevo. Cada diana es un reto en sí mismo, 
+                            y solo la precisión y la rapidez de Laia pueden salvar el día. </br>¿Estás listo para electrificar Brasil con Laia?</p>
+                        <div class="buttons">    
+                            <button class="jugarButton">JUGAR</button>
+                            <button class="rankingButton">RANKING</button>
+                        </div>
+                    </div>
+                    <div class="colModalIntroLore2">
+                        <img src=".\Imagenes\Brasil.png" alt="" class="liderbcn">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modalStory fade" id="modalKenia" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="colModalIntroLore1">
+                        <h2>KENIA</h2>
+                        <p>Después de su éxito en Brasil, Laia se embarca en una nueva aventura en Kenya. 
+                            Aquí, su objetivo es generar electricidad para los lugareños mediante un antiguo
+                             y místico ritual africano. En este juego de parejas, cada acierto en el emparejamiento 
+                             de símbolos mágicos desencadena un flujo de energía. Laia debe ser rápida y precisa en 
+                             sus elecciones para canalizar la energía necesaria a las aldeas. ¿Podrás ayudar a Laia a 
+                             iluminar Kenya con la sabiduría de sus ancestros?</p>
+                        <div class="buttons">    
+                            <button class="jugarButton">JUGAR</button>
+                            <button class="rankingButton">RANKING</button>
+                        </div>
+                    </div>
+                    <div class="colModalIntroLore2">
+                        <img src=".\Imagenes\Kenya.png" alt="" class="liderbcn">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modalStory fade" id="modalIndia" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="colModalIntroLore1">
+                        <h2>INDIA</h2>
+                        <p>En su última aventura, Laia, la ingeniera apasionada por la energía sostenible, 
+                            se dirige a la bulliciosa India, específicamente al corazón de Bangalore. 
+                            Aquí, se enfrenta al desafío de llevar luz a las casas del pueblo, cada una marcada 
+                            con la cantidad de electricidad que necesita diariamente. Este rompecabezas requiere 
+                            una meticulosa gestión de recursos y una estrategia inteligente. ¿Estás listo para 
+                            ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en la gestión de energías renovables?</p>
+                        <div class="buttons">    
+                            <button class="jugarButton">JUGAR</button>
+                            <button class="rankingButton">RANKING</button>
+                        </div>
+                    </div>
+                    <div class="colModalIntroLore2">
+                        <img src=".\Imagenes\India.png" alt="" class="liderbcn">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <div class="modal modalStory fade" id="modalini" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"

@@ -469,3 +469,84 @@ a.loginLink {
 .buttons {
     text-align: center;
 }
+
+/* modal brazil */
+
+.modal#modalBrazil {
+    --bs-modal-width: 400px;
+}
+
+#modalBrazil .modal-body {
+    display: flex;
+}
+
+.modal#modalBrazil {
+    --bs-modal-width: 800px;
+}
+
+#modalBrazil h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalBrazil p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+/* modal kenia */
+
+.modal#modalKenia {
+    --bs-modal-width: 400px;
+}
+
+#modalKenia .modal-body {
+    display: flex;
+}
+
+.modal#modalKenia {
+    --bs-modal-width: 800px;
+}
+
+#modalKenia h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalKenia p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+/* modal India */
+
+.modal#modalIndia {
+    --bs-modal-width: 400px;
+}
+
+#modalIndia .modal-body {
+    display: flex;
+}
+
+.modal#modalIndia {
+    --bs-modal-width: 800px;
+}
+
+#modalIndia h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalIndia p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
