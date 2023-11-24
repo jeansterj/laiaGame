@@ -516,3 +516,69 @@ function insertIndia($idUsuario, $puntuacion){
     $conexion = closeDB();
 
 }
+
+
+
+
+
+function rankingxPais($idPais) {
+    $conexion = openDB();
+    
+   
+    $sentenciaText = "SELECT
+        U.nombreUsuario AS nombreUsuario,
+        J.descripcion AS nombre_juego,
+        P.puntuacion AS puntuacion 
+    FROM        
+        PUNTUACION P            
+    JOIN
+        JUEGOS J ON P.idjuegos = J.idjuegos
+    JOIN
+        USUARIOS U ON P.idUsuario = U.idUsuario
+    WHERE
+        J.idjuegos = :idPais  
+    ORDER BY
+        P.puntuacion DESC
+    LIMIT 10;";
+    
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idPais', $idPais, PDO::PARAM_INT); 
+    $sentencia->execute();
+    $resultado = $sentencia->fetchAll();
+    
+    $conexion = closeDB();
+    return $resultado;
+}
+
+function rankingGlobal() {
+    $conexion = openDB();
+    
+    $sentenciaText = "SELECT
+    nombreUsuario,
+    SUM(maxPuntuacion) AS totalPuntuacion
+FROM (
+    SELECT
+        U.nombreUsuario,
+        MAX(P.puntuacion) AS maxPuntuacion
+    FROM        
+        PUNTUACION P            
+    JOIN
+        JUEGOS J ON P.idjuegos = J.idjuegos
+    JOIN
+        USUARIOS U ON P.idUsuario = U.idUsuario
+    GROUP BY
+        U.nombreUsuario, J.idjuegos
+) AS maxScores
+GROUP BY
+    nombreUsuario
+ORDER BY
+    totalPuntuacion DESC
+LIMIT 10;";
+    
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado = $sentencia->fetchAll();
+    
+    $conexion = closeDB();
+    return $resultado;
+}
