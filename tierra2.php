@@ -222,7 +222,8 @@ session_start();
                             ilesa y con el botín en mano?</p>
                         <div class="buttons">    
                             <button class="jugarButton">JUGAR</button>
-                            <button class="rankingButton">RANKING</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
