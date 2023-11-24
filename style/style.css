@@ -415,7 +415,7 @@ a.loginLink {
 
     position: relative;
     width: 800px;
-    height: 640px;
+    height: 500px;
     display: flex;
     overflow: hidden;
     transition: transform .5s ease, height .2s ease;
@@ -427,4 +427,45 @@ a.loginLink {
 
 .liderbcn{
     width: 200px;
+}
+
+.jugarButton{
+    background-color: green;
+    padding: 10px 30px;
+    width: 180px;
+    border: 2px solid green;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+.rankingButton{
+    background-color: orange;
+    padding: 10px 30px;
+    margin-left: 20px;
+    width: 180px;
+    border: 2px solid orange;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+#modalbcn h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalbcn p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+.buttons {
+    text-align: center;
 }
