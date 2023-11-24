@@ -221,7 +221,7 @@ session_start();
                             utiliza sus poderes eléctricos para zafarse de los peligros. ¿Podrás ayudar a Laia a salir
                             ilesa y con el botín en mano?</p>
                         <div class="buttons">    
-                            <button class="jugarButton">JUGAR</button>
+                            <button class="jugarButton" >JUGAR</button>
                             <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
 
                         </div>
@@ -247,8 +247,8 @@ session_start();
                             generará la energía necesaria para iluminar Brasil de nuevo. Cada diana es un reto en sí mismo, 
                             y solo la precisión y la rapidez de Laia pueden salvar el día. </br>¿Estás listo para electrificar Brasil con Laia?</p>
                         <div class="buttons">    
-                            <button class="jugarButton">JUGAR</button>
-                            <button class="rankingButton">RANKING</button>
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
