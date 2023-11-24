@@ -8,7 +8,7 @@
             "name": "Launch Chrome",
             "request": "launch",
             "type": "chrome",
-            "url": "http://localhost:8080/laiaGame/tierra2.php"
+            "url": "http://localhost:8080/Laia-Game/tierra2.php"
         },
         
     ]

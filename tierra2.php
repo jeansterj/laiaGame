@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php require_once('./php_librarys/bdlaia.php'); ?>
 
 
 
@@ -207,8 +205,7 @@ session_start();
     </header>
 
 
-    <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
-        aria-hidden="true">
+    <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -222,7 +219,7 @@ session_start();
                             ilesa y con el botín en mano?</p>
                         <div class="buttons">    
                             <button class="jugarButton" >JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <button class="rankingButton" data-bs-toggle="modal" data-bs-target="#modalranking">RANKING</button>
 
                         </div>
                     </div>
@@ -331,6 +328,107 @@ session_start();
                     <div class="colModalIntroLore2">
                         <img src=".\Imagenes\laia.png" alt="" class="liderbcn">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal modalStory fade" id="modalranking" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                        <h2>RANKING</h2>
+                        <form method="post" action="">
+        
+            <button class="btn btn-danger" type="submit" name="españa" value="1">WARCELONA</button>
+            <button  class ="btn btn-info" type="submit" name="brasil" value="2">BRASIL</button>
+            <button  class ="btn btn-light" type="submit" name="kenia" value="3">KENIA</button>
+            <button  class ="btn btn-info" type="submit" name="india" value="4">INDIA</button>
+            <button class ="btn btn-light" type="submit" name="global" value="Global">GLOBAL</button>
+        </form>
+
+                
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> Posicion  </th>
+                    <th>Nombre Usuario</th>
+                    
+                    <th>Puntuacion</th>
+                  
+               
+                </tr>
+            </thead>
+
+            <body>
+                <?php 
+                  
+                 
+                  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['brasil'])) {
+                      $paiselegido = $_POST['brasil'];
+                      $ranking = rankingxPais($paiselegido);
+          
+                    } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['españa'])) {
+                        $paiselegido = $_POST['españa'];
+                        $ranking = rankingxPais($paiselegido);
+                  }
+                  else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kenia'])) {
+                    $paiselegido = $_POST['kenia'];
+                    $ranking = rankingxPais($paiselegido);
+                }
+                 else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['india'])) {
+                    $paiselegido = $_POST['india'];
+                    $ranking = rankingxPais($paiselegido);
+                 }
+                 else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['global'])) {
+                    $paiselegido = $_POST['global'];
+                    $ranking = rankingGlobal();
+                 }
+                 else{
+                    $ranking = rankingxPais(2);
+                 }
+
+                 $posicion=0;
+               
+                
+                
+                ?>
+                <?php foreach ($ranking as $puntuacion) { ?>
+                  
+                    <tr>
+                        <td>
+                      <?php   $posicion++; ?>
+                            <?php echo $posicion ?>
+                        <td>
+                       
+                           <?php echo $puntuacion['nombreUsuario']; ?>
+
+                        
+                        </td>
+                       
+                        <td>
+                            <?php
+                            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['global'])) {
+                               echo $puntuacion['totalPuntuacion'];
+                                
+                            }else{
+                                 echo $puntuacion['puntuacion']; 
+                            }
+                             
+                                ?>
+           
+
+
+
+                        </td>
+
+                    </tr>
+                <?php } ?>
+                </tbody>
+        </table>
+    </div>
                 </div>
             </div>
         </div>
