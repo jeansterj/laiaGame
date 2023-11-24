@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     
     <title>Kenia Memory</title>
 </head>
@@ -73,4 +73,4 @@
 
 </html>
 
-<script src="apps/app.js"></script>
+<script src="./apps/app.js"></script>

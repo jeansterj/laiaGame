@@ -3,8 +3,9 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #905010;
     background-image: url(../img/fondo.jpg);
-    background-size: cover
+    background-size: cover;
 }
+
 
 main {
     width: 730px;
@@ -35,7 +36,10 @@ button {
     font-weight: bold;
     border-radius: 8px;
     box-shadow: 2px 0 0 0;
+    position: relative; /* Asegúrate de que los botones tengan posición absoluta para moverse libremente */
+    transition: all 0.3s ease;
 }
+
 
 .section2 {
 

@@ -54,7 +54,7 @@ function blockCard() {
 
     for (let i = 0; i <= 19; i++) {
         let block = document.getElementById(i)
-        block.innerHTML =`<img src="./img/${numeros[i]}.png" alt=""></img>` ;
+        block.innerHTML =`<img src="./../img/${numeros[i]}.png" alt=""></img>` ;
         block.disabled = true;
 
 
@@ -80,7 +80,7 @@ function voltear(id) {
 
         tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
-        tarjeta1.innerHTML = `<img src="./img/${primerResultado}.png" alt=""></img>` ;
+        tarjeta1.innerHTML = `<img src="./../img/${primerResultado}.png" alt=""></img>` ;
 
         tarjeta1.setAttribute('data-found', 'true');
 
@@ -89,7 +89,7 @@ function voltear(id) {
 
         tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
-        tarjeta2.innerHTML = `<img src="./img/${segundoResultado}.png" alt=""></img>`;
+        tarjeta2.innerHTML = `<img src="./../img/${segundoResultado}.png" alt=""></img>`;
 
         tarjeta2.disabled = true;
 
