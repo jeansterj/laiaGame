@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
                                                 <input type="hidden" name="usuario_id"
@@ -146,7 +146,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -210,7 +210,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -283,7 +283,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -332,7 +332,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -397,7 +397,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -458,7 +458,7 @@
 
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 

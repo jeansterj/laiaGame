@@ -21,6 +21,10 @@ include('../php_librarys/bdlaia.php');
 <body>
  
   <div id="start-screen" class="start-screen">
+  <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php">
+    <img style="width: 175px; height: 85px; position: relative; top: 80px;" src="../Imagenes/logo.png" alt="logo_centiks">
+</a>
+
     <button class="start custom-btn2" onclick="startGame() ,reproducirAudio();">
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
     </button>
@@ -68,6 +72,8 @@ include('../php_librarys/bdlaia.php');
 
   <div id="content" style="display: none">
     <div class="container">
+    <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img  style="width: 175px; height: 85px; "src="../Imagenes/logo.png"
+                alt="logo_centiks"></a>
       <div class="row">
         <div class="col-md-8">
           <div id="campo de juego" class="centered">
