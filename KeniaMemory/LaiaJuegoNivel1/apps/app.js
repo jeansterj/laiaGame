@@ -5,7 +5,7 @@ let segundoResultado = null;
 let moves = 0;
 let aciertos = 0;
 let temp = false;
-let timer = 40;
+const timer = 40;
 let timerRegre = null;
 let timeIni = timer;
 
