@@ -73,4 +73,4 @@
 
 </html>
 
-<script src="./apps/app.js"></script>
+<script src="./apps/app2.js"></script>

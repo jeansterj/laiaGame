@@ -5,7 +5,7 @@ let segundoResultado = null;
 let moves = 0;
 let aciertos = 0;
 let temp = false;
-const timer = 40;
+let timer = 100;
 let timerRegre = null;
 let timeIni = timer;
 
@@ -15,7 +15,7 @@ let showTime = document.getElementById('time');
 
 let tarjetaDestapada = 0;
 
-let numeros = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+let numeros = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
 
 numeros = numeros.sort(() => { return Math.random() - 0.5 });
 
@@ -49,6 +49,8 @@ function blockCard() {
 
 
     }
+
+
 
 }
 
@@ -99,7 +101,6 @@ function voltear(id) {
                 showTime.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
                 showMove.innerHTML = `Movimientos: ${moves} bien`;
 
-
                 if (totalTime < 20 || moves < 12) { 
                     puntos=80;
 
@@ -132,7 +133,12 @@ function voltear(id) {
 
             }, 800);
 
+
+
         }
+
     }
+
+
 
 }
