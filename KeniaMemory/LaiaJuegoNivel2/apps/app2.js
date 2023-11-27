@@ -22,6 +22,29 @@ let puntos;
 let totalTime;
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const numRows = 4;
+    const numCols = 5;
+    const memoryTable = document.getElementById("memory-table");
+
+    for (let i = 0; i < numRows; i++) {
+        const row = document.createElement("tr");
+        for (let j = 0; j < numCols; j++) {
+            const button = document.createElement("button");
+            const id = i * numCols + j;
+            button.id = id.toString();
+            button.dataset.id = Math.floor(id / 2);
+            button.dataset.found = "false";
+            button.onclick = function () {
+                voltear(id);
+            };
+            row.appendChild(document.createElement("td").appendChild(button));
+        }
+        memoryTable.appendChild(row);
+    }
+});
+
+
 document.querySelectorAll('button').forEach(button => {
     let dataId = button.getAttribute('data-id');
     numeros.push(dataId);
@@ -164,6 +187,10 @@ function voltear(id) {
     }
 
     }
+
+
+
+
 
 
     function cambiarCartasDeLugar() {    
