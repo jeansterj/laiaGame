@@ -217,9 +217,19 @@
                             juego de supervivencia, Laia debe recolectar la mayor cantidad de dinero posible mientras
                             utiliza sus poderes eléctricos para zafarse de los peligros. ¿Podrás ayudar a Laia a salir
                             ilesa y con el botín en mano?</p>
-                        <div class="buttons">    
-                            <button class="jugarButton" >JUGAR</button>
-                            <button class="rankingButton" data-bs-toggle="modal" data-bs-target="#modalranking">RANKING</button>
+                        <div class="buttons">  
+                        <?php 
+                           if(isset($_SESSION['user'])): ?>
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php else:
+
+?>
+
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php endif; ?>  
+                           
 
                         </div>
                     </div>
@@ -244,8 +254,17 @@
                             generará la energía necesaria para iluminar Brasil de nuevo. Cada diana es un reto en sí mismo, 
                             y solo la precisión y la rapidez de Laia pueden salvar el día. </br>¿Estás listo para electrificar Brasil con Laia?</p>
                         <div class="buttons">    
+                           <?php 
+                           if(isset($_SESSION['user'])): ?>
                             <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
                             <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php else:
+
+?>
+
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
@@ -270,8 +289,17 @@
                              sus elecciones para canalizar la energía necesaria a las aldeas. ¿Podrás ayudar a Laia a 
                              iluminar Kenya con la sabiduría de sus ancestros?</p>
                         <div class="buttons">    
-                            <button class="jugarButton">JUGAR</button>
-                            <button class="rankingButton">RANKING</button>
+                        <?php 
+                           if(isset($_SESSION['user'])): ?>
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php else:
+
+?>
+
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
@@ -296,8 +324,17 @@
                             una meticulosa gestión de recursos y una estrategia inteligente. ¿Estás listo para 
                             ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en la gestión de energías renovables?</p>
                         <div class="buttons">    
-                            <button class="jugarButton">JUGAR</button>
-                            <button class="rankingButton">RANKING</button>
+                        <?php 
+                           if(isset($_SESSION['user'])): ?>
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php else:
+
+?>
+
+                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
+                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
