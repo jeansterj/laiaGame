@@ -14,10 +14,14 @@ let showAciertos = document.getElementById('aciertos');
 let showTime = document.getElementById('time');
 
 let tarjetaDestapada = 0;
+let puntos;
+let totalTime;
 
 let numeros = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
 
 numeros = numeros.sort(() => { return Math.random() - 0.5 });
+
+console.log(numeros);
 
 
 function contarTiempo() {
@@ -69,6 +73,8 @@ function voltear(id) {
 
         tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
+        console.log(primerResultado);
+
         tarjeta1.innerHTML = `<img src="./../img/${primerResultado}.png" alt=""></img>` ;
 
         
@@ -77,6 +83,8 @@ function voltear(id) {
 
         tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
+        console.log(segundoResultado);
+
         tarjeta2.innerHTML = `<img src="./../img/${segundoResultado}.png" alt=""></img>`;
 
         tarjeta2.disabled = true;
