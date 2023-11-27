@@ -5,7 +5,7 @@ let segundoResultado = null;
 let moves = 0;
 let aciertos = 0;
 let temp = false;
-let timer = 100;
+let timer = 40;
 let timerRegre = null;
 let timeIni = timer;
 
@@ -17,6 +17,24 @@ let tarjetaDestapada = 0;
 let puntos;
 let totalTime;
 let numeros = [];
+
+//Medidor de puntos, movimientos, Aciertos
+
+const tiempoVolteo = 800;
+
+const maxAciertos = 8;
+
+const minTime = 20;
+const minMoves = 12;
+
+const madTime = 25;
+const madMoves = 16;
+
+const medTime = 30;
+const medMoves = 20;
+
+const maxTime = 35;
+const maxMoves = 24;
 
 showTime.innerHTML = `Tiempo: ${timer} segundos`;
 
@@ -102,30 +120,34 @@ function voltear(id) {
             showAciertos.innerHTML = `Aciertos: ${aciertos}`;
 
 
-            if (aciertos == 8) {
+            if (aciertos == maxAciertos) {
                 clearInterval(timerRegre);
 
                 showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
                 showTime.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
                 showMove.innerHTML = `Movimientos: ${moves} bien`;
 
-                if (totalTime < 20 || moves < 12) { 
+                if (totalTime < minTime || moves < minMoves) { 
+
                     puntos=80;
 
-                 } else if (totalTime < 25 || moves < 16) {
+                 } else if (totalTime < madTime || moves < madMoves) {
                     
                     puntos=60; 
-                } else if  (totalTime < 30 || moves < 20) { 
+
+                } else if  (totalTime < medTime || moves < medMoves) { 
                     
                     puntos=40; 
-                } else if (totalTime < 35 || moves < 25) { 
+
+                } else if (totalTime < maxTime || moves < madMoves) { 
+
                     puntos=20; 
+
                 } else {
 
                     puntos = 0;
                 }
             }
-
 
         } else {
 
@@ -139,19 +161,15 @@ function voltear(id) {
                 tarjetaDestapada = 0;
 
 
-            }, 800);
-
-
-
+            }, tiempoVolteo);
         }
 
     }
 
-
-
 }
 
 function mostrarImagen(id,resultado) {
+
     tarjeta = document.getElementById(id);
        
     tarjeta.innerHTML = `<img src="./../img/${resultado}.png" alt=""></img>`;

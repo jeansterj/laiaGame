@@ -21,6 +21,28 @@ let cartasNoEncontradas = [];
 let puntos;
 let totalTime;
 
+//Medidor de puntos, movimientos, Aciertos
+
+const tiempoVolteo = 800;
+const cartaEspecial = 9;
+
+const maxAciertos = 10;
+
+const minTime = 35;
+const minMoves = 20;
+
+const madTime = 40;
+const madMoves = 25;
+
+const medTime = 45;
+const medMoves = 30;
+
+const midTime = 50;
+const midMoves = 35;
+
+const maxTime = 55;
+const maxMoves = 40;
+
 showTime.innerHTML = `Tiempo: ${timer} segundos`;
 
 document.querySelectorAll('button').forEach(button => {
@@ -100,14 +122,14 @@ function voltear(id) {
             showAciertos.innerHTML = `Aciertos: ${aciertos}`;
          
 
-            if (primerResultado == 9 || segundoResultado == 9) {
+            if (primerResultado == cartaEspecial || segundoResultado == cartaEspecial) {
                 
                 cambiarCartasDeLugar();
                 }
 
                 
 
-            if (aciertos == 10) {
+            if (aciertos == maxAciertos) {
                 clearInterval(timerRegre);
 
                 totalTime = timeIni - timer;
@@ -116,18 +138,18 @@ function voltear(id) {
                 showTime.innerHTML = `Acabaste en : ${totalTime} segundos`;
                 showMove.innerHTML = `Movimientos: ${moves} bien`;
 
-                if (totalTime < 35 || moves < 20) { 
+                if (totalTime < minTime || moves < minMoves) { 
                     puntos=100;
 
-                 } else if (totalTime < 40 || moves < 25) {
+                 } else if (totalTime < madTime || moves < madMoves) {
                     
                     puntos=80; 
-                } else if  (totalTime < 45 || moves < 30) { 
+                } else if  (totalTime < medTime || moves < medMoves) { 
                     
                     puntos=60; 
-                } else if (totalTime < 50 || moves < 35) { 
+                } else if (totalTime < midTime || moves < midMoves) { 
                     puntos=40; 
-                } else if (totalTime < 55 || moves < 40) { 
+                } else if (totalTime < maxTime || moves < maxMoves) { 
                     puntos=20; 
                 } else {
 
@@ -151,7 +173,7 @@ function voltear(id) {
         tarjeta1.setAttribute('data-found', 'false');
         tarjeta2.setAttribute('data-found', 'false');
 
-        }, 800);
+        }, tiempoVolteo);
 
         }
     }
