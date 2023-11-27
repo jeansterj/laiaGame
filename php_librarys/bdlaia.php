@@ -87,7 +87,8 @@ function selectUser($nombreusuario,$contrasena)
 
     $sentencia = $conexion->prepare($sentenciatext);
     $sentencia->execute();
-    $resultado = $sentencia->fetchAll();
+    $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    // importante poner el fetch assoc para que en el asociativo que devuelve solo devuelva por nombre de   los campos.
 
 
 
@@ -100,7 +101,7 @@ function selectUser($nombreusuario,$contrasena)
 
 
     $conexion = closeDB();
-    return $resultado;
+    return $resultado[0];
 }
 
 
