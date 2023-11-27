@@ -21,29 +21,7 @@ let cartasNoEncontradas = [];
 let puntos;
 let totalTime;
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const numRows = 4;
-    const numCols = 5;
-    const memoryTable = document.getElementById("memory-table");
-
-    for (let i = 0; i < numRows; i++) {
-        const row = document.createElement("tr");
-        for (let j = 0; j < numCols; j++) {
-            const button = document.createElement("button");
-            const id = i * numCols + j;
-            button.id = id.toString();
-            button.dataset.id = Math.floor(id / 2);
-            button.dataset.found = "false";
-            button.onclick = function () {
-                voltear(id);
-            };
-            row.appendChild(document.createElement("td").appendChild(button));
-        }
-        memoryTable.appendChild(row);
-    }
-});
-
+showTime.innerHTML = `Tiempo: ${timer} segundos`;
 
 document.querySelectorAll('button').forEach(button => {
     let dataId = button.getAttribute('data-id');
@@ -74,7 +52,6 @@ function contarTiempo() {
 
 function blockCard() {
 
-
     for (let i = 0; i <= 19; i++) {
         let block = document.getElementById(i)
         block.innerHTML =`<img src="./../img/${numeros[i]}.png" alt=""></img>` ;
@@ -101,22 +78,15 @@ function voltear(id) {
 
     if (tarjetaDestapada == 1) {
 
-        tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
-        tarjeta1.innerHTML = `<img src="./../img/${primerResultado}.png" alt=""></img>` ;
 
-        tarjeta1.setAttribute('data-found', 'true');
 
-        tarjeta1.disabled = true;
+        tarjeta1 = mostrarImagen(id,primerResultado);
+
     } else if (tarjetaDestapada == 2) {
-
-        tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
-        tarjeta2.innerHTML = `<img src="./../img/${segundoResultado}.png" alt=""></img>`;
 
-        tarjeta2.disabled = true;
-
-        tarjeta2.setAttribute('data-found', 'true');
+        tarjeta2 = mostrarImagen(id,segundoResultado);
 
         moves++;
 
@@ -188,7 +158,17 @@ function voltear(id) {
 
     }
 
+function mostrarImagen(id,resultado) {
+    tarjeta = document.getElementById(id);
+       
+    tarjeta.innerHTML = `<img src="./../img/${resultado}.png" alt=""></img>`;
 
+    tarjeta.disabled = true;
+
+    tarjeta.setAttribute('data-found', 'true');
+
+    return tarjeta;
+}
 
 
 
