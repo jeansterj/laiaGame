@@ -91,6 +91,7 @@ position: relative;
 bottom: 0px;
 right: 170px;
 
+
 }
 
 
@@ -210,4 +211,37 @@ transform: translate(-50%, -50%);
 
 
 
+
+
+
+#explicacionpr{
+  height: 200px;
+  width: 500px;
+  position: relative;
+  top: 200px;
+  color: red;
+  font-size: 20px;
+  left: 200px;
  
+ 
+ 
+}
+
+
+
+
+.start2 {
+  background-color: transparent;
+  border: none;
+  height: 200px;
+  width: 200px;
+  position: relative;
+ 
+    border: none;
+    outline: none;
+    top : -20px;
+  
+  
+    
+ 
+}

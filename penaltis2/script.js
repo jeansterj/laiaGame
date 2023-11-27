@@ -337,15 +337,15 @@ function controlarAudio() {
 
 
 
-  if (imagencontrol.currentSrc ===  "http://localhost:8080/penaltis2/img/volumemute.png") {
+  if (imagencontrol.src ===  "http://localhost:8080/penaltis2/img/volumemute.png") {
     musica.pause();
     console.log("musicapausada");
-    imagencontrol.src = "../penaltis2/img/volumenplay.png";
+    imagencontrol.src = "http://localhost:8080/penaltis2/img/volumenplay.png";
 
   } else {
     musica.play();
     console.log("musicaactiva");
-    imagencontrol.src = "../penaltis2/img/volumemute.png";
+    imagencontrol.src = "http://localhost:8080/penaltis2/img/volumemute.png";
 
 
 
