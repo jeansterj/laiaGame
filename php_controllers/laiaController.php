@@ -1,7 +1,4 @@
-<?php
-// session_start();
-
-require_once('../php_librarys/bdlaia.php');
+<?php require_once('../php_librarys/bdlaia.php');
 
 
 
@@ -10,6 +7,7 @@ require_once('../php_librarys/bdlaia.php');
 if (isset($_POST['login'])) {
     try {
     $usuario1 = selectUser($_POST['userName'], $_POST['password']);
+
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
@@ -26,6 +24,7 @@ if (isset($_POST['login'])) {
             $_SESSION["user"] = $usuario1['nombreUsuario'];
             $_SESSION["idUser"] = $usuario1['idUsuario'];
             $_SESSION["rol"] = $usuario1['id_Rol'];
+            $_SESSION["nombre"] = 'PRUEBA';
 
             if ($_SESSION['rol'] == 3) {
                 header('Location: ../tierra2.php');

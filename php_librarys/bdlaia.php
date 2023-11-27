@@ -81,7 +81,7 @@ function selectUser($nombreusuario,$contrasena)
     $conexion = openDB();
 
 
-    $sentenciatext = "select nombreUsuario , contrasena,id_Rol,idUsuario from usuarios where nombreUsuario='$nombreusuario' AND contrasena ='$contrasena';";
+    $sentenciatext = "select nombreUsuario ,contrasena,id_Rol,idUsuario from usuarios where nombreUsuario='$nombreusuario' AND contrasena ='$contrasena';";
 
 
 
