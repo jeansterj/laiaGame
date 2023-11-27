@@ -48,7 +48,7 @@
         <section class="section2">
 
             <h2 class="stats" id="aciertos">Aciertos: 0</h2>
-            <h2 class="stats" id="time">Tiempo: 30 segundos</h2>
+            <h2 class="stats" id="time">Tiempo: 40 segundos</h2>
             <h2 class="stats" id="move">Movimientos: 0</h2>
 
 
