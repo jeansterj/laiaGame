@@ -167,7 +167,6 @@ function voltear(id) {
 
 
     function cambiarCartasDeLugar() {    
-        let cartasNoEncontradas = [];
         
         for (let i = 0; i <= 19; i++) {
             let carta = document.getElementById(i);

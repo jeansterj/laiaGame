@@ -41,9 +41,7 @@
                     <td><button id="15" onclick="voltear(15)"></button></td>
                 </tr>
             </table>
-
-
-
+            
         </section>
         <section class="section2">
 
