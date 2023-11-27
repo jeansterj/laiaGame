@@ -11,6 +11,29 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
+
+    if ($usuario1['nombreUsuario'] == $username && $usuario1['contrasena'] == $password) {
+
+
+
+        
+            
+
+        $_SESSION["user"] = $usuario1['nombreUsuario'];
+        $_SESSION["idUser"] = $usuario1['idUsuario'];
+        $_SESSION["rol"] = $usuario1['id_Rol'];
+        
+
+        if ($_SESSION['rol'] == 3) {
+            header('Location: ../tierra2.php');
+            exit();
+           
+        }  else {
+            header('Location: ../adminpage.php');
+             exit();
+       
+        }
+    
     
    
    
@@ -19,30 +42,12 @@ if (isset($_POST['login'])) {
   
 
 
-            
-
-            $_SESSION["user"] = $usuario1['nombreUsuario'];
-            $_SESSION["idUser"] = $usuario1['idUsuario'];
-            $_SESSION["rol"] = $usuario1['id_Rol'];
-            
-
-            if ($_SESSION['rol'] == 3) {
-                header('Location: ../tierra2.php');
-                exit();
-               
-            }  else {
-                header('Location: ../adminpage.php');
-                 exit();
-           
-            }
-
        
 
 
-                 //  echo($_SESSION['rol']);
-            
-            // echo " todo bien cabron ";
-
+    }else{
+        throw new Exception("Invalid username or password");
+    }
             
            
             
@@ -50,7 +55,7 @@ if (isset($_POST['login'])) {
        
 
  }catch (Exception $e) {
-    echo"algo salio mal";
+    echo "error al registrar usuario: " . $e->getMessage();
 
 
  }
