@@ -15,7 +15,7 @@ let showTime = document.getElementById('time');
 
 let tarjetaDestapada = 0;
 
-let numeros = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+let numeros = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
 
 numeros = numeros.sort(() => { return Math.random() - 0.5 });
 
