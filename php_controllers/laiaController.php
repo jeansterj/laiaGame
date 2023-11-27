@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
 
 
     }else{
-        throw new Exception("Invalid username or password");
+        throw new Exception("Invalid username or password ") ;
     }
             
            
@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
        
 
  }catch (Exception $e) {
-    echo "error al registrar usuario: " . $e->getMessage();
+    echo "error al logearse : " . $e->getMessage();
 
 
  }
