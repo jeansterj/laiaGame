@@ -16,6 +16,7 @@ let showTime = document.getElementById('time');
 let tarjetaDestapada = 0;
 let puntos;
 let totalTime;
+let numeros = [];
 
 showTime.innerHTML = `Tiempo: ${timer} segundos`;
 
@@ -53,7 +54,7 @@ function blockCard() {
 
     for (let i = 0; i <= 15; i++) {
         let block = document.getElementById(i)
-        block.innerHTML =`<img src="./img/${numeros[i]}.png" alt=""></img>` ;
+        block.innerHTML =`<img src="./../img/${numeros[i]}.png" alt=""></img>` ;
         block.disabled = true;
 
 
@@ -76,23 +77,17 @@ function voltear(id) {
 
     if (tarjetaDestapada == 1) {
 
-        tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
-        console.log(primerResultado);
 
-        tarjeta1.innerHTML = `<img src="./img/${primerResultado}.png" alt=""></img>` ;
+        tarjeta1 = mostrarImagen(id,primerResultado);
 
-        
-        tarjeta1.disabled = true;
+      
     } else if (tarjetaDestapada == 2) {
-
-        tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
-        console.log(segundoResultado);
 
-        tarjeta2.innerHTML = `<img src="./img/${segundoResultado}.png" alt=""></img>`;
 
-        tarjeta2.disabled = true;
+       tarjeta2 = mostrarImagen(id,segundoResultado);
+
 
         moves++;
 
@@ -154,4 +149,14 @@ function voltear(id) {
 
 
 
+}
+
+function mostrarImagen(id,resultado) {
+    tarjeta = document.getElementById(id);
+       
+    tarjeta.innerHTML = `<img src="./../img/${resultado}.png" alt=""></img>`;
+
+    tarjeta.disabled = true;
+
+    return tarjeta;
 }
