@@ -6,25 +6,26 @@ require_once('../php_librarys/bdlaia.php');
 
 
 
+
 if (isset($_POST['login'])) {
     try {
-    $usuarios = selectUser();
+    $usuario1 = selectUser($_POST['userName'], $_POST['password']);
 
     $username = $_POST['userName'];
     $password = $_POST['password'];
+    
+   
    
 
 
   
 
-    foreach ($usuarios as $usuario) {
-       
-        if ($usuario['nombreUsuario'] === $username && $usuario['contrasena'] === $password) {
+
             
 
-            $_SESSION["user"] = $usuario['nombreUsuario'];
-            $_SESSION["idUser"] = $usuario['idUsuario'];
-            $_SESSION["rol"] = $usuario['id_Rol'];
+            $_SESSION["user"] = $usuario1['nombreUsuario'];
+            $_SESSION["idUser"] = $usuario1['idUsuario'];
+            $_SESSION["rol"] = $usuario1['id_Rol'];
 
             if ($_SESSION['rol'] == 3) {
                 header('Location: ../tierra2.php');
@@ -47,23 +48,7 @@ if (isset($_POST['login'])) {
            
             
 
-         header('Location: ../adminpage.php');
-        exit();
-        
-           
-        }else {
-            header('Location: ../tierra2.php');
-
-
-
-        }
-
-
-
        
-    }
-
-
 
  }catch (Exception $e) {
     echo"algo salio mal";
