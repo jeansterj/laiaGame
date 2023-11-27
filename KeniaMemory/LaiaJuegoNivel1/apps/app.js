@@ -20,6 +20,7 @@ let numeros = [];
 
 //Medidor de puntos, movimientos, Aciertos
 
+const seconsTrans = 1000;
 const tiempoVolteo = 800;
 
 const maxAciertos = 8;
@@ -62,7 +63,7 @@ function contarTiempo() {
 
         }
 
-    }, 1000)
+    }, seconsTrans)
 
 
 }

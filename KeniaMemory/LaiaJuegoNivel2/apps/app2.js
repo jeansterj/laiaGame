@@ -67,7 +67,7 @@ function contarTiempo() {
 
         }
 
-    }, 1000)
+    }, seconsTrans)
 
 
 }
