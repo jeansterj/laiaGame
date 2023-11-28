@@ -17,7 +17,6 @@ let showTime = document.getElementById('time');
 let tarjetaDestapada = 0;
 let puntos;
 let totalTime;
-let numeros = [];
 
 //Medidor de puntos, movimientos, Aciertos
 
@@ -39,13 +38,38 @@ const maxTime = 35;
 const maxMoves = 24;
 
 showTime.innerHTML = `Tiempo: ${timer} segundos`;
-showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
-showMove.innerHTML = `Movimientos: ${moves} bien`;
+showAciertos.innerHTML = `Aciertos: ${aciertos}`;
+showMove.innerHTML = `Movimientos: ${moves}`;
 
-document.querySelectorAll('button').forEach(button => {
-    let dataId = button.getAttribute('data-id');
-    numeros.push(dataId);
-});
+let rows = 4;
+let cols = 4;
+
+// Obtén la referencia a la tabla
+let table = document.getElementById("memoryTable");
+
+// Bucle para crear las filas y columnas
+for (let i = 0; i < rows; i++) {
+    // Crea una fila
+    let row = table.insertRow(i);
+
+    for (let j = 0; j < cols; j++) {
+        // Crea una celda en la fila
+        let cell = row.insertCell(j);
+
+        // Crea un botón en la celda
+        let button = document.createElement("button");
+        button.id = i * cols + j; // Asigna un ID único al botón
+        button.onclick = function() {
+            voltear(this.id); // Asigna la función de voltear al evento click
+        };
+
+        // Añade el botón a la celda
+        cell.appendChild(button);
+    }
+}
+
+let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+
 
 numeros = numeros.sort(() => { return Math.random() - 0.5 });
 
