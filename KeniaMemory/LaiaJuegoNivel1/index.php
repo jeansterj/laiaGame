@@ -50,9 +50,9 @@
         </section>
         <section class="section2">
 
-            <h2 class="stats" id="aciertos">Aciertos: 0</h2>
+            <h2 class="stats" id="aciertos">Aciertos: </h2>
             <h2 class="stats" id="time">Tiempo: segundos</h2>
-            <h2 class="stats" id="move">Movimientos: 0</h2>
+            <h2 class="stats" id="move">Movimientos: </h2>
 
 
         </section>

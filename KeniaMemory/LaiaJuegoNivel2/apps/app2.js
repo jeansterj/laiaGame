@@ -1,3 +1,4 @@
+let tarjeta = null;
 let tarjeta1 = null;
 let tarjeta2 = null;
 let primerResultado = null;
@@ -44,6 +45,8 @@ const maxTime = 55;
 const maxMoves = 40;
 
 showTime.innerHTML = `Tiempo: ${timer} segundos`;
+showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
+showMove.innerHTML = `Movimientos: ${moves} bien`;
 
 document.querySelectorAll('button').forEach(button => {
     let dataId = button.getAttribute('data-id');
