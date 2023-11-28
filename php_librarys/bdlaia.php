@@ -31,11 +31,15 @@ function errorMessage($e)
         switch ($e->errorInfo[1]) {
 
             case 1062:
-                $mensaje = 'Registro duplicado';
+                $mensaje = 'Nombre de usuario ya en uso ';
                 break;
+                
             case 1451:
                 $mensaje = 'Registro con elementos duplicados';
                 break;
+                case 0 :
+                    $mensaje = 'Usuario o contraseña invalidos';
+                    break;
             default:
                 $mensaje = $e->errorInfo[1] . ' - ' . $e->errorInfo[2];
                 break;
@@ -76,7 +80,7 @@ function closeDB()
 function selectUser($nombreusuario,$contrasena)
 {
 
-
+try{
 
     $conexion = openDB();
 
@@ -90,7 +94,15 @@ function selectUser($nombreusuario,$contrasena)
     $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     // importante poner el fetch assoc para que en el asociativo que devuelve solo devuelva por nombre de   los campos.
 
+} catch (PDOException $e) {
+       
+    $_SESSION['error'] = errorMessage($e);
+    // $ciudad['id_ciudad'] = $id_ciudad;
+    // $ciudad['nombre'] = $nombre;
+    // $_SESSION['ciudad'] = $ciudad;
 
+
+}
 
 
 
@@ -101,7 +113,8 @@ function selectUser($nombreusuario,$contrasena)
 
 
     $conexion = closeDB();
-    return $resultado[0];
+    
+    return (!empty($resultado) ? $resultado[0] : null);
 }
 
 
@@ -583,3 +596,5 @@ LIMIT 10;";
     $conexion = closeDB();
     return $resultado;
 }
+
+

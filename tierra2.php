@@ -2,6 +2,8 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,11 +31,19 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 
 <body>
+    
 
     <header>
+    
         <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img src="./Imagenes/logo.png"
                 alt="logo_centiks"></a>
+                
+                <?php require_once('./php_partials/mensajes.php'); ?> 
+
         <nav class="navigation">
+        
+        
+            
             <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa">Sobre
                 Nosotros</button>
 
@@ -49,7 +59,7 @@
                     Sesión</button>
             <?php endif; ?>
 
-
+          
             <!-- Modal -->
             <div class="modal modalLogin fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">

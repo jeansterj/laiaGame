@@ -5,62 +5,45 @@
 
 
 if (isset($_POST['login'])) {
-    try {
-    $usuario1 = selectUser($_POST['userName'], $_POST['password']);
-
-
     $username = $_POST['userName'];
     $password = $_POST['password'];
 
-    if ($usuario1['nombreUsuario'] == $username && $usuario1['contrasena'] == $password) {
+    try {
+        $userData = selectUser($username, $password);
 
+        if ($userData !== null && isset($userData['nombreUsuario'])) {
+            // Set session variables
 
+            $_SESSION["user"] = $userData['nombreUsuario'];
+            $_SESSION["idUser"] = $userData['idUsuario'];
+            $_SESSION["rol"] = $userData['id_Rol'];
 
-        
-            
-
-        $_SESSION["user"] = $usuario1['nombreUsuario'];
-        $_SESSION["idUser"] = $usuario1['idUsuario'];
-        $_SESSION["rol"] = $usuario1['id_Rol'];
-        
-
-        if ($_SESSION['rol'] == 3) {
-            header('Location: ../tierra2.php');
-            exit();
-           
-        }  else {
-            header('Location: ../adminpage.php');
-             exit();
-       
+            // Redirect based on the user's role
+            if ($_SESSION['rol'] == 3) {
+                header('Location: ../tierra2.php');
+                exit();
+            } else {
+                header('Location: ../adminpage.php');
+                exit();
+            }
+        } else {
+            throw new Exception("Usuario y/o contrasña erroneos.");
         }
-    
-    
-   
-   
-
-
-  
-
-
-       
-
-
-    }else{
-        throw new Exception("Invalid username or password ") ;
+    } catch (Exception $e) {
+        $errorMessage = errorMessage($e);
+        $_SESSION['error'] = $errorMessage;
+        header('Location: ../tierra2.php');
+        exit();
     }
-            
+}
+
+    
            
             
 
        
 
- }catch (Exception $e) {
-    echo "error al logearse : " . $e->getMessage();
 
-
- }
-    
-}
 
 
 if(isset($_POST['registro'])) { 
@@ -77,7 +60,10 @@ if(isset($_POST['registro'])) {
 
     
     }catch (Exception $e) {
-        echo "error al registrar usuario: " . $e->getMessage();
+        $errorMessage = errorMessage($e);
+        $_SESSION['error'] = $errorMessage;
+        header('Location: ../tierra2.php');
+        exit();
     }
 }
 
