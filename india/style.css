@@ -1,7 +1,7 @@
 #gameBoard {
     width: 630px;
     height: 630px;
-    background-color:  #097B29;;
+    background-color:  #449d5d;;
     display: flex;
     flex-wrap: wrap;
 }
@@ -17,7 +17,7 @@
 
 #elementsBoard {
     width: 100%;
-    padding: 50px;
+    padding-left: 50px;
 
 }
 
@@ -28,6 +28,8 @@
 
 div.piece {
     width: fit-content;
+    display: flex;
+    cursor: grab;
 }
 .square[squareid="42"] img{
         width: 90px;
@@ -54,6 +56,197 @@ div.piece {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 2%;
     padding: 50px;
+    flex-direction: column;
+    position: relative;
+    padding-top: 50px; 
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    background-color: rgb(112 112 112 / 12%);
 }
+body{
+    background-image: url('./img/india.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.piece {
+    border: 2px solid #000; 
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+    background-color: #449d5d;
+  }
+
+  button{
+    border: 2px solid #000; 
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .progressBar {
+    width: 100%;
+    height: 30px;
+    border: 5px solid #ffdf00;
+    position: relative;
+    background-color: rgb(252, 250, 170);
+    border-radius: 15px;
+  }
+  
+#currentProgress {
+  width: 0; 
+  height: 25px; 
+  background-color: #ffdf00; 
+  transition: width 1s ease;
+}
+
+.headrow {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 70px;
+}
+.col1{
+    width: 20%;
+    display: flex;
+}
+
+.milestone {
+    position: absolute;
+    height: 40px; 
+    width: 40px; 
+    background-size: cover;
+    margin-top: 25px;
+}
+
+.milestone-40 {
+    left: 40%;
+    background-image: url('img/house1.png'); 
+}
+
+.milestone-40::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px; 
+    background-color: #000; 
+    left: 0;
+}
+
+.milestone-60 {
+    left: 60%;
+    background-image: url('img/house2.png'); 
+}
+
+.milestone-60::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px; 
+    background-color: #000; 
+    left: 0;
+    z-index: 1; 
+}
+
+.milestone-80 {
+    left: 80%;
+    background-image: url('img/house4.png'); 
+}
+
+.milestone-80::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px; 
+    background-color: #000; 
+    left: 0;
+    z-index: 1; 
+}
+
+.milestone-100 {
+    left: 100%;
+    background-image: url('img/house3.png'); 
+    margin-top: 22px;
+}
+
+.milestone-100::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px; 
+    background-color: #000; 
+    left: 0;
+    z-index: 1; 
+}
+.milestone-label {
+    position: absolute;
+    top: 50%;
+    left: 140%;
+    transform: translate(-50%, -50%);
+    color: #000; /* Puedes ajustar el color según tus preferencias */
+    font-size: 16px; /* Puedes ajustar el tamaño de la fuente según tus preferencias */
+    font-weight: bold;
+}
+
+.col2{
+    width: 70%;
+}
+
+
+.row{
+    width: 100%;
+}
+
+.col3{
+    width: 60%!important;
+}
+
+.col4{
+    width: 40%!important;
+}
+
+p#scoreHTML {
+    padding-left: 10px;
+}
+
+#elementsBoard div{
+    align-items: center;
+}
+
+#deleteLastElement{
+    background-image: url('img/paper-bin.png'); 
+    background-size: 80px 80px;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    /* background-color: transparent; */
+    background-color: #da3f3f;
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+
+p{
+    margin-top: 0px;
+    font-size: 45px;
+}
+
+tr td:nth-child(2) {
+    padding-left: 100px;
+}
+th{
+    padding-left: 100px;
+}
+button#deleteLastElement{
+    transform: scale(0.98);
+            /* Scaling button to 0.98 to its original size */
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            /* Lowering the shadow */
+        }
