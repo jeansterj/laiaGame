@@ -2,10 +2,11 @@ import { Character } from './character.js';
 import { Projectile } from './projectile.js';
 import { EnemySpawner } from './enemySpawner.js';
 import { ChargeEnemy } from './chargeEnemy.js';
+import { Enemy } from './enemy.js';
 
 const character = new Character(80, 80);
 const projectiles = [];
-const enemySpawner = new EnemySpawner(450);
+const enemySpawner = new EnemySpawner(1750);
 
 let keysPressed = {};
 
@@ -26,36 +27,74 @@ function startTimer() {
     }, 1000);
 }
 
+function difficulty()
+{ 
+    if(character.level == 2)
+    {
+        enemySpawner.chargeEnemyRate = 0.1;
+        enemySpawner.spawnRate = 650;
+        enemySpawner.normalH = 1000;
+    }
+    else if(character.level == 3)
+    {
+        enemySpawner.areaDamageEnemyRate = 0.1;
+        enemySpawner.spawnRate = 550;       
+    }
+    else if(character.level == 4)
+    {
+        enemySpawner.spawnRate = 450; 
+    }
+    else if(character.level == 5)
+    {
+        enemySpawner.tankEnemyRate = 0.1;        
+        
+    }
+    else if(character.level == 6)
+    {
+        
+        enemySpawner.chargeEnemyRate = 0.15;       
+        enemySpawner.spawnRate = 350; 
+        
+    }
+    else if(character.level == 7)
+    {
+        enemySpawner.explosionEnemyRate = 0.1;       
+        
+    }
+    else if(character.level == 8)
+    {
+        enemySpawner.spawnRate = 300;    
+        
+    }
+    else if(character.level == 9)
+    {             
+         
+        enemySpawner.tankEnemyRate = 0.12;
+        enemySpawner.explosionEnemyRate = 0.15;  
+        enemySpawner.chargeEnemyRate = 0.2;
+        enemySpawner.areaDamageEnemyRate = 0.15;
+                
+    }
+    else if(character.level == 10)
+    {             
+        enemySpawner.spawnRate = 250; 
+                
+    }  
+}
+
 function formatTime(totalSeconds) {
     const minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
-    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
-    if(seconds == 30)
-    {
-        enemySpawner.spawnRate = 350;
-    }
+    const seconds = (totalSeconds % 60).toString().padStart(2, '0');   
     return `${minutes}:${seconds}`;
 }
 
 function createStartScreen() {
     const startScreen = document.createElement('div');
     startScreen.id = 'start-screen';
-    startScreen.style.position = 'absolute';
-    startScreen.style.width = '100%';
-    startScreen.style.height = '100%';
-    startScreen.style.backgroundColor = 'white';
-    startScreen.style.display = 'flex';
-    startScreen.style.justifyContent = 'center';
-    startScreen.style.alignItems = 'center';
-    startScreen.style.zIndex = '1000'; 
 
     const startButton = document.createElement('button');
-    startButton.style.width = "20%";
-    startButton.style.height = "20%";
-    
-    startButton.style.backgroundImage = 'url("images/warcelonaButton.png")'; 
-    startButton.style.backgroundSize = 'cover'; 
+    startButton.classList.add('start-button');
     startButton.addEventListener('click', startGame);
-
 
     startScreen.appendChild(startButton);
     document.body.appendChild(startScreen);
@@ -75,6 +114,7 @@ function gameLoop() {
         character.handleArrowKeys(keysPressed);    
         handleShooting(keysPressed);    
         enemySpawner.update(character);
+        difficulty();
 
         let toDestroy = { enemies: [], projectiles: [] };
 
@@ -310,18 +350,5 @@ function handleShooting(keysPressed) {
     }
 }
 
-
-
-// Función para inicializar elementos gráficos de vida y experiencia
-/*function initializeUI() {
-    // Aquí debes implementar la creación de los elementos del DOM para vida y experiencia,
-    // incluyendo sus animaciones y estilos.
-}
-
-// Inicializar la interfaz de usuario antes de iniciar el bucle del juego
-initializeUI();
-*/
-
-// Comenzar el bucle del juego
 createStartScreen();
 

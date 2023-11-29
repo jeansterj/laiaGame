@@ -1,7 +1,7 @@
 import { Enemy } from './enemy.js';
 
 export class ChargeEnemy extends Enemy {
-  constructor(x, y, health = 20) {
+  constructor(x, y, health) {
     super(x, y, health);    
     this.originalSpeed = 2;
     this.chargeSpeed = this.originalSpeed * 7;
