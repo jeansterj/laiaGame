@@ -31,11 +31,15 @@ function errorMessage($e)
         switch ($e->errorInfo[1]) {
 
             case 1062:
-                $mensaje = 'Registro duplicado';
+                $mensaje = 'Nombre de usuario ya en uso ';
                 break;
+                
             case 1451:
                 $mensaje = 'Registro con elementos duplicados';
                 break;
+                case 0 :
+                    $mensaje = 'Usuario o contraseña invalidos';
+                    break;
             default:
                 $mensaje = $e->errorInfo[1] . ' - ' . $e->errorInfo[2];
                 break;
@@ -73,23 +77,32 @@ function closeDB()
 
 
 
-function selectUser()
+function selectUser($nombreusuario,$contrasena)
 {
 
-
+try{
 
     $conexion = openDB();
 
 
-    $sentenciatext = "select nombreUsuario , contrasena,id_Rol,idUsuario from USUARIOS;";
+    $sentenciatext = "select nombreUsuario ,contrasena,id_Rol,idUsuario from usuarios where nombreUsuario='$nombreusuario' AND contrasena ='$contrasena';";
 
 
 
     $sentencia = $conexion->prepare($sentenciatext);
     $sentencia->execute();
-    $resultado = $sentencia->fetchAll();
+    $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    // importante poner el fetch assoc para que en el asociativo que devuelve solo devuelva por nombre de   los campos.
+
+} catch (PDOException $e) {
+       
+    $_SESSION['error'] = errorMessage($e);
+    // $ciudad['id_ciudad'] = $id_ciudad;
+    // $ciudad['nombre'] = $nombre;
+    // $_SESSION['ciudad'] = $ciudad;
 
 
+}
 
 
 
@@ -100,7 +113,8 @@ function selectUser()
 
 
     $conexion = closeDB();
-    return $resultado;
+    
+    return (!empty($resultado) ? $resultado[0] : null);
 }
 
 
@@ -516,3 +530,71 @@ function insertIndia($idUsuario, $puntuacion){
     $conexion = closeDB();
 
 }
+
+
+
+
+
+function rankingxPais($idPais) {
+    $conexion = openDB();
+    
+   
+    $sentenciaText = "SELECT
+        U.nombreUsuario AS nombreUsuario,
+        J.descripcion AS nombre_juego,
+        P.puntuacion AS puntuacion 
+    FROM        
+        PUNTUACION P            
+    JOIN
+        JUEGOS J ON P.idjuegos = J.idjuegos
+    JOIN
+        USUARIOS U ON P.idUsuario = U.idUsuario
+    WHERE
+        J.idjuegos = :idPais  
+    ORDER BY
+        P.puntuacion DESC
+    LIMIT 10;";
+    
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idPais', $idPais, PDO::PARAM_INT); 
+    $sentencia->execute();
+    $resultado = $sentencia->fetchAll();
+    
+    $conexion = closeDB();
+    return $resultado;
+}
+
+function rankingGlobal() {
+    $conexion = openDB();
+    
+    $sentenciaText = "SELECT
+    nombreUsuario,
+    SUM(maxPuntuacion) AS totalPuntuacion
+FROM (
+    SELECT
+        U.nombreUsuario,
+        MAX(P.puntuacion) AS maxPuntuacion
+    FROM        
+        PUNTUACION P            
+    JOIN
+        JUEGOS J ON P.idjuegos = J.idjuegos
+    JOIN
+        USUARIOS U ON P.idUsuario = U.idUsuario
+    GROUP BY
+        U.nombreUsuario, J.idjuegos
+) AS maxScores
+GROUP BY
+    nombreUsuario
+ORDER BY
+    totalPuntuacion DESC
+LIMIT 10;";
+    
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    $resultado = $sentencia->fetchAll();
+    
+    $conexion = closeDB();
+    return $resultado;
+}
+
+

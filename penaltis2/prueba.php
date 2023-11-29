@@ -19,42 +19,72 @@ include('../php_librarys/bdlaia.php');
 </head>
 
 <body>
- 
+
   <div id="start-screen" class="start-screen">
-    <button class="start custom-btn2" onclick="startGame() ,reproducirAudio();">
+    <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php">
+      <img style="width: 175px; height: 85px; position: relative; top: 80px;" src="../Imagenes/logo.png"
+        alt="logo_centiks">
+
+
+
+
+    </a>
+
+    <!-- <button class="start custom-btn2" onclick="startGame() ,reproducirAudio();">
+      <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
+    </button> -->
+    <div class="container" id="explicacionpr">
+      
+      
+      <div  id="explicacionpr"> <img src="./img/start.png" alt=""></div>
+        
+        <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
     </button>
+
+      
+
+
+
+
+
+
+
+    </div>
 
   </div>
 
   <div id="end-screen" class="end-screen">
-    <div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card  mb-3" style="max-width: 18rem;">
       <div class="card-header bg-transparent border-success">Juego finalizado!</div>
       <div class="card-body text-success">
-        <h5 class="card-title" >Puntuacion final: <p id ="puntuacion">0</p> </h5>
-        <p class="card-text" id ="textoFinal"></p>
+        <h5 class="card-title">Puntuacion final: <a id="puntuacion">0</a>
+        </h5>
+        <p class="card-text" id="textoFinal"></p>
       </div>
       <div class="card-footer bg-transparent border-success">
-
-        <button class="btn  custom-btnrejugar ">
+      <a id="textovolver"></a>
+        <button class="btn  custom-btnrejugar " id="botonfail">
           <img src="./img/replay.png" onclick="rePlay('botonreplay');" alt="Imagen" class="img-fluid w-180 h-180 mr-2"
             id="rejugar" />
+            
         </button>
-
-
-        <form action="../php_controllers/laiaController.php"  METHOD= "POST">
-          <input type="hidden" name="idUsuario"  value="<?php echo $_SESSION['idUser'];?>"  <?php  echo $_SESSION['idUser']?>>
-          <input type="hidden" name="puntuacion"value ="">
-         
-
         
-          
 
-        <button class="btn  custom-btnrejugar" type="submit" name ="brasildata">SIGUIENTE JUEGO
-         
-         </button>
+
+        <form action="../php_controllers/laiaController.php" METHOD="POST">
+          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
+          <input type="hidden" name="puntuacion" value="">
+
+
+
+
+
+          <button class="btn  custom-btnrejugar" type="submit" name="brasildata" id="siguientejuego">SIGUIENTE JUEGO
+
+          </button>
         </form>
-       
+
 
 
       </div>
@@ -68,6 +98,8 @@ include('../php_librarys/bdlaia.php');
 
   <div id="content" style="display: none">
     <div class="container">
+      <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img style="width: 175px; height: 85px; "
+          src="../Imagenes/logo.png" alt="logo_centiks"></a>
       <div class="row">
         <div class="col-md-8">
           <div id="campo de juego" class="centered">
@@ -86,9 +118,13 @@ include('../php_librarys/bdlaia.php');
             </button>
           </div>
         </div>
-        <div class="col-md-2 custom-card">
-          <div class="card p-0 d-flex" style="width: 18rem">
-            <div class="container" id="explicacion">
+
+
+
+
+        <div class="col-md-2 custom-card ">
+          <div class="card p-0 d-flex" style="width: 18rem ">
+            <div class="container " id="explicacion">
               <div><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
               <br>
               <div><img src="./img/diananorm.png" alt="diana1" /> + 1 punto</div>
@@ -98,7 +134,7 @@ include('../php_librarys/bdlaia.php');
               <div><img src="./img/diananeg.png" alt="diana2" /> - 1 punto </div>
 
             </div>
-           
+
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
@@ -107,9 +143,7 @@ include('../php_librarys/bdlaia.php');
               <li class="list-group-item">
                 ACIERTOS <span id="aciertos"></span>
               </li>
-              <!-- <li class="list-group-item">
-                  FALLOS <span id="fallos"></span>
-                </li> -->
+            
               <audio id="musica" src="./audio/musicabrazuka.mp3"></audio>
               <audio id="succsound" src="./audio/mario-coin.mp3"></audio>
               <audio id="failsound" src="./audio/mario-brosfail.wav"></audio>

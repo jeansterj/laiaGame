@@ -91,6 +91,7 @@ position: relative;
 bottom: 0px;
 right: 170px;
 
+
 }
 
 
@@ -128,10 +129,10 @@ right: 170px;
 
 body {
   background-image: url('../img/brasil/brasil3.png');
-  background-size: cover; /* Ajusta el tamaño de la imagen al tamaño del cuerpo del documento */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-attachment: fixed; /* Fija la imagen de fondo en su posición, incluso al desplazarse */
-  background-position: center center; /* Centra la imagen en el cuerpo del documento */
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position: center center; 
   overflow: hidden;
 }
 
@@ -202,7 +203,7 @@ height: 100px;
 #start-screen{
  position: relative;
  top: 50%;
-left: 60%;
+left: 40%;
 transform: translate(-50%, -50%);
 
 } 
@@ -210,4 +211,49 @@ transform: translate(-50%, -50%);
 
 
 
+
+
+
+#explicacionpr{
+  height: 200px;
+  width: 500px;
+  position: relative;
+  top: 200px;
+  color: red;
+  font-size: 20px;
+  left: 80px;
+  top : 50px;
  
+ 
+ 
+}
+
+
+
+
+.start2 {
+  background-color: transparent;
+  border: none;
+  height: 200px;
+  width: 200px;
+  position: relative;
+ 
+    border: none;
+    outline: none;
+    top : 170px;
+    left: 100px;
+    
+  
+  
+    
+ 
+}
+
+
+
+#content{
+  position: relative;
+  top: 50%;
+  left: 10%;
+}
+

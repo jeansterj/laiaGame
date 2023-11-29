@@ -1,0 +1,59 @@
+#gameBoard {
+    width: 630px;
+    height: 630px;
+    background-color:  #097B29;;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    height: 90px;
+    width: 90px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25) inset;
+}
+#generator img{
+    height: 60px;
+    width: 60px;
+}
+
+#elementsBoard {
+    width: 100%;
+    padding: 50px;
+
+}
+
+#elementsBoard img{
+    width: 90px;
+    height: 90px;
+}
+
+div.piece {
+    width: fit-content;
+}
+.square[squareid="42"] img{
+        width: 90px;
+        height: 90px;
+}
+.square[squareid="0"] img{
+    width: 90px;
+    height: 90px;
+}
+.square[squareid="6"] img{
+    width: 90px;
+    height: 90px;
+}
+.square[squareid="48"] img{
+    width: 90px;
+    height: 90px;
+}
+
+.square{
+    text-align: left!important;
+}
+
+.container.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    padding: 50px;
+}

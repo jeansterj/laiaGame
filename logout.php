@@ -5,7 +5,6 @@ session_start();
 
 session_unset();
 
-// Destruye la sesión
 session_destroy();
 
 

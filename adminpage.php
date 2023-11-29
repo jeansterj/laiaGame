@@ -18,6 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Your Title</title>
+    <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img src="./Imagenes/logo.png"
+                alt="logo_centiks"></a>
 </head>
 
 <body>
@@ -41,23 +43,44 @@
                     <th>Juego</th>
                     <th>Puntuacion</th>
                     <th>Eliminar Usuario</th>
+               
                 </tr>
             </thead>
 
             <body>
                 <?php 
+
+                
                 
 
  $usuarios;
  if ($_SESSION['rol'] == 1) {
    
      $usuarios = selectAllUsers();
-     echo  "Estas logueado como"  . ' ' . $_SESSION['user'] . 'y tu rol es Superadmin';   
+     echo  "Estas logueado como"  . ' ' . $_SESSION['user'] . 'y tu rol es Superadmin';  
+     
+      
+
+
+
+
+     
     }
+
+
+
+
+
   else if ($_SESSION['rol'] == 2) {
      $usuarios = selectUsers();
      echo  "Estas logueado como"  . ' ' . $_SESSION['user'] . " y tu rol es Admin";   
- }  else if ($_SESSION['rol'] == 3) {
+ } 
+ 
+ 
+ 
+ 
+ 
+ else if ($_SESSION['rol'] == 3) {
     header('Location: ./tierra2.php');
     exit();
 
@@ -97,7 +120,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
                                                 <input type="hidden" name="usuario_id"
@@ -145,7 +168,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -209,7 +232,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -282,7 +305,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -331,7 +354,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -396,7 +419,7 @@
                                         </div>
                                         <div class="modal-body">
 
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 
@@ -457,7 +480,7 @@
 
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="../php_controllers/laiaController.php" method="POST"
+                                            <form action="./php_controllers/laiaController.php" method="POST"
                                                 enctype="multipart/form-data">
 
 

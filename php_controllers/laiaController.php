@@ -1,77 +1,49 @@
-<?php
-// session_start();
+<?php require_once('../php_librarys/bdlaia.php');
 
-require_once('../php_librarys/bdlaia.php');
 
 
 
 
 if (isset($_POST['login'])) {
-    try {
-    $usuarios = selectUser();
-
     $username = $_POST['userName'];
     $password = $_POST['password'];
-   
 
+    try {
+        $userData = selectUser($username, $password);
 
-  
+        if ($userData !== null && isset($userData['nombreUsuario'])) {
+            // Set session variables
 
-    foreach ($usuarios as $usuario) {
-       
-        if ($usuario['nombreUsuario'] === $username && $usuario['contrasena'] === $password) {
-            
+            $_SESSION["user"] = $userData['nombreUsuario'];
+            $_SESSION["idUser"] = $userData['idUsuario'];
+            $_SESSION["rol"] = $userData['id_Rol'];
 
-            $_SESSION["user"] = $usuario['nombreUsuario'];
-            $_SESSION["idUser"] = $usuario['idUsuario'];
-            $_SESSION["rol"] = $usuario['id_Rol'];
-
+            // Redirect based on the user's role
             if ($_SESSION['rol'] == 3) {
                 header('Location: ../tierra2.php');
                 exit();
-               
-            }  else {
+            } else {
                 header('Location: ../adminpage.php');
-                 exit();
-           
+                exit();
             }
-
-       
-
-
-                 //  echo($_SESSION['rol']);
-            
-            // echo " todo bien cabron ";
-
-            
-           
-            
-
-         header('Location: ../adminpage.php');
-        exit();
-        
-           
-        }else {
-            header('Location: ../tierra2.php');
-
-
-
+        } else {
+            throw new Exception("Usuario y/o contrasña erroneos.");
         }
+    } catch (Exception $e) {
+        $errorMessage = errorMessage($e);
+        $_SESSION['error'] = $errorMessage;
+        header('Location: ../tierra2.php');
+        exit();
+    }
+}
 
-
+    
+           
+            
 
        
-    }
 
 
-
- }catch (Exception $e) {
-    echo"algo salio mal";
-
-
- }
-    
-}
 
 
 if(isset($_POST['registro'])) { 
@@ -88,7 +60,10 @@ if(isset($_POST['registro'])) {
 
     
     }catch (Exception $e) {
-        echo "error al registrar usuario: " . $e->getMessage();
+        $errorMessage = errorMessage($e);
+        $_SESSION['error'] = $errorMessage;
+        header('Location: ../tierra2.php');
+        exit();
     }
 }
 
