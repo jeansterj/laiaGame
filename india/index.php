@@ -17,7 +17,7 @@
     <div class="container text-center">
         <div class="headrow">
             <div class="col1">
-                <p>Energia</p>
+                <p>Energía</p>
                 <p id="scoreHTML">0</p>
             </div>
             <div class="col2">
