@@ -1,5 +1,5 @@
 export class Enemy {
-    constructor(x, y, health = 20) { 
+    constructor(x, y, health) { 
         this.x = x;
         this.y = y;
         this.speed = 1.5;

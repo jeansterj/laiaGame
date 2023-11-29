@@ -6,32 +6,47 @@ html, body {
 }
 
 #start-screen {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("images/warcelona2.png");
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    background-image: url("images/warcelona2.png");
 }
 
-#start-screen button {
-    padding: 20px;
-    font-size: 24px;
+#timer {
+    position: absolute; 
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    z-index: 100;
+}
+
+
+.start-button {
+    width: 1200px; 
+    height: 700px;
+    background: url("images/warcelonaButton.png") no-repeat center center;
+    background-size: cover; 
+    border: none;
     cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
 }
-
 #gameContainer {
     position: relative;
     width: 99%;
     height: 99%;
     border: 1px solid black;
     margin: 5px; 
-    background-image: url("images/suelo7.png"); 
-    background-size: contain;
    
 }
 
@@ -63,10 +78,17 @@ html, body {
 }
 
 .tank{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: darkblue;
 }
+
+.explosion{
+    width: 10px;
+    height: 10px;
+    background-color: yellowgreen;
+}
+
 
 
 
@@ -107,6 +129,12 @@ html, body {
     display: inline-block; 
     margin-right: 5px;
     animation: pulse 2s ease-in-out infinite;
+}
+
+#healthContainer
+{
+    position: absolute; 
+    top: 40px; left: 150px;
 }
 
 #expContainer {
