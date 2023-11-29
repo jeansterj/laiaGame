@@ -230,7 +230,7 @@
                         <div class="buttons">  
                         <?php 
                            if(isset($_SESSION['user'])): ?>
-                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
+                            <button class="jugarButton"onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.html'">JUGAR</button>
                             <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
 
