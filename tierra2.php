@@ -67,7 +67,7 @@
                     <div class="modal-content">
                         <div class="popupContainer">
                             <div class="form-box login ">
-                                <h2 data-translate="IniciarSesion">Iniciar Sesion</h2>
+                                <h2 data-translate="IniciarSesion">Iniciar Sesión</h2>
                                 <form action="./php_controllers/laiaController.php" method="POST">
                                     <div class="input-box">
                                         <span class="icon">
@@ -363,7 +363,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
-                        <h2>Iniciar Sesion</h2>
+                        <h2>Iniciar Sesión</h2>
                         <p>En las vibrantes calles de Barcelona, Laia, una ingeniera audaz y talentosa, enfrenta un
                             desafío único. Su misión es navegar a través de las peligrosas calles de la ciudad,
                             evadiendo atracadores con astucia y utilizando sus habilidades en electricidad. En este

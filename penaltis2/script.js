@@ -545,7 +545,7 @@ function showEndScren(){
      puntuacionInput.value = puntuacion;
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
      
-    if(puntuacion>=20){
+    if(puntuacion>=100){
       infofinal.textContent=infovictoria;
       botonfail.style.display="none";
       siguientejuego.style.display="block";
