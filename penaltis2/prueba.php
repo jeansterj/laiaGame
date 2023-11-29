@@ -34,22 +34,15 @@ include('../php_librarys/bdlaia.php');
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
     </button> -->
     <div class="container" id="explicacionpr">
-      <div class="card bg-transparent text-red bg-opacity-50 border-black   border-opacity-50 ">
-        <h1 class="text-danger bg-black">CLICKA RAPIDO </h1>
-
-        <div><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
-        <br>
-        <div><img src="./img/diananorm.png" alt="diana1" /> + 1 punto</div>
-
-
-        <br>
-        <div><img src="./img/diananeg.png" alt="diana2" /> - 1 punto </div>
+      
+      
+      <div  id="explicacionpr"> <img src="./img/start.png" alt=""></div>
         
         <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
     </button>
 
-      </div>
+      
 
 
 
@@ -62,19 +55,21 @@ include('../php_librarys/bdlaia.php');
   </div>
 
   <div id="end-screen" class="end-screen">
-    <div class="card border-success mb-3" style="max-width: 18rem;">
+    <div class="card  mb-3" style="max-width: 18rem;">
       <div class="card-header bg-transparent border-success">Juego finalizado!</div>
       <div class="card-body text-success">
-        <h5 class="card-title">Puntuacion final: <p id="puntuacion">0</p>
+        <h5 class="card-title">Puntuacion final: <a id="puntuacion">0</a>
         </h5>
         <p class="card-text" id="textoFinal"></p>
       </div>
       <div class="card-footer bg-transparent border-success">
-
-        <button class="btn  custom-btnrejugar ">
+      <a id="textovolver"></a>
+        <button class="btn  custom-btnrejugar " id="botonfail">
           <img src="./img/replay.png" onclick="rePlay('botonreplay');" alt="Imagen" class="img-fluid w-180 h-180 mr-2"
             id="rejugar" />
+            
         </button>
+        
 
 
         <form action="../php_controllers/laiaController.php" METHOD="POST">
@@ -85,7 +80,7 @@ include('../php_librarys/bdlaia.php');
 
 
 
-          <button class="btn  custom-btnrejugar" type="submit" name="brasildata">SIGUIENTE JUEGO
+          <button class="btn  custom-btnrejugar" type="submit" name="brasildata" id="siguientejuego">SIGUIENTE JUEGO
 
           </button>
         </form>

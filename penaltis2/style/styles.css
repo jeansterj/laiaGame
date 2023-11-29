@@ -221,7 +221,8 @@ transform: translate(-50%, -50%);
   top: 200px;
   color: red;
   font-size: 20px;
-  left: 200px;
+  left: 80px;
+  top : 50px;
  
  
  
@@ -239,9 +240,20 @@ transform: translate(-50%, -50%);
  
     border: none;
     outline: none;
-    top : -20px;
+    top : 170px;
+    left: 100px;
+    
   
   
     
  
 }
+
+
+
+#content{
+  position: relative;
+  top: 50%;
+  left: 10%;
+}
+

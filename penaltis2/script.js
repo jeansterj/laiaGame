@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 60;
+let durationInSeconds = 10;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -523,8 +523,13 @@ function showEndScren(){
     let punt =document.getElementById("puntuacion");
     let infofinal = document.getElementById("textoFinal");
     let puntuacion = correctClicks;
-    let infovictoria = "enhorabuena te lo has pasado";
-    let infofail ="no has conseguido suficiente energia , vuelve a intentarlo crack"
+    let infovictoria = "Enhorabuena, has conseguido suficiente energia para iluminar Brasil";
+    let infofail ="No has conseguido suficiente energia , vuelve a intentarlo "
+    let siguientejuego = document.getElementById("siguientejuego");
+    let textovolver = document.getElementById("textovolver");
+
+    let botonfail = document.getElementById("botonfail");
+   
 
     punt.textContent = puntuacion;
 
@@ -539,12 +544,18 @@ function showEndScren(){
      
      puntuacionInput.value = puntuacion;
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
-
+     
     if(puntuacion>=20){
       infofinal.textContent=infovictoria;
+      botonfail.style.display="none";
+      siguientejuego.style.display="block";
+      textovolver.textContent="";
 
     }else{
       infofinal.textContent= infofail;
+      siguientejuego.style.display="none";
+      textovolver.textContent="Volver a intentarlo";
+
 
     }
     }
