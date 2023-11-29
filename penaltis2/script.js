@@ -518,7 +518,7 @@ function clearGen(){
 
 
 function showEndScren(){
-  if(correctClicks>=20||timerElement.textContent==="00:00"){
+  if(correctClicks>=100||timerElement.textContent==="00:00"){
     console.log("Dentro de replayEvent");
     let punt =document.getElementById("puntuacion");
     let infofinal = document.getElementById("textoFinal");
