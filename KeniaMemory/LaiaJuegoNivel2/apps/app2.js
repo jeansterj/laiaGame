@@ -48,35 +48,35 @@ showTime.innerHTML = `Tiempo: ${timer} segundos`;
 showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
 showMove.innerHTML = `Movimientos: ${moves} bien`;
 
-    // Número de filas y columnas en tu juego de memoria
-    let rows = 4;
-    let cols = 5;
+        // Número de filas y columnas en tu juego de memoria
+        let rows = 4;
+        let cols = 5;
 
-    // Obtén la referencia a la tabla
-    let table = document.getElementById("memoryTable");
+        // Obtén la referencia a la tabla
+        let table = document.getElementById("memoryTable");
 
-    // Bucle para crear las filas y columnas
-    for (let i = 0; i < rows; i++) {
-        // Crea una fila
-        let row = table.insertRow(i);
+        // Bucle para crear las filas y columnas
+        for (let i = 0; i < rows; i++) {
+            // Crea una fila
+            let row = table.insertRow(i);
 
-        for (let j = 0; j < cols; j++) {
-            // Crea una celda en la fila
-            let cell = row.insertCell(j);
+            for (let j = 0; j < cols; j++) {
+                // Crea una celda en la fila
+                let cell = row.insertCell(j);
 
-            // Crea un botón en la celda
-            let button = document.createElement("button");
-            let id = i * cols + j;
-            button.id = id; // Asigna un ID único al botón
-            button.dataset.found = "false"; // Añade el atributo data-found
-            button.onclick = function() {
-                voltear(this.id); // Asigna la función de voltear al evento click
-            };
+                // Crea un botón en la celda
+                let button = document.createElement("button");
+                let id = i * cols + j;
+                button.id = id; // Asigna un ID único al botón
+                button.dataset.found = "false"; // Añade el atributo data-found
+                button.onclick = function() {
+                    voltear(this.id); // Asigna la función de voltear al evento click
+                };
 
-            // Añade el botón a la celda
-            cell.appendChild(button);
+                // Añade el botón a la celda
+                cell.appendChild(button);
+            }
         }
-    }
 
 let numeros = [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9];
 
