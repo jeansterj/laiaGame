@@ -55,7 +55,7 @@ include('../php_librarys/bdlaia.php');
   </div>
 
   <div id="end-screen" class="end-screen container text-center" style="width :350px ">
-    <div class="card border-dark mb-3 bg-transparent" style="max-width: 18rem;">
+    <div class="card border-dark mb-3 bg-info" style="max-width: 18rem;">
       <div class="card-header bg-transparent ">Juego finalizado!</div>
       <div class="card-body text-dark">
         <h5 class="card-title">Puntuacion final: <a id="puntuacion">0</a>
@@ -122,21 +122,21 @@ include('../php_librarys/bdlaia.php');
 
 
 
-        <div class="col-md-2 custom-card   font-weight-bold">
-          <div class="card p-0 d-flex bg-transparent" style="width: 18rem ">
-            <div class="container  bg-transparent " id="explicacion">
+        <div class="col-md-2 custom-card   text-dark">
+          <div class="card p-0 d-flex bg-transparent text-dark" style="width: 18rem ">
+            <div class="container  bg-transparent text-dark " id="explicacion">
               <div class ="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
               <br>
               <div><img src="./img/diananorm.png" alt="diana1" /> + 1 punto</div>
 
 
               <br>
-              <div><img src="./img/diananeg.png" alt="diana2" /> - 1 punto </div>
+              <div class=""><img src="./img/diananeg.png" alt="diana2" /> - 1 punto </div>
 
             </div>
 
 
-            <ul class="list-group list-group-flush bg-transparent">
+            <ul class="list-group list-group-flush bg-transparent text-dark">
               <li class="list-group-item bg-transparent">
                 TIEMPO RESTANTE : <span id="timer"></span>
               </li>
