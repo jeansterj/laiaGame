@@ -21,15 +21,7 @@ include('../php_librarys/bdlaia.php');
 <body>
 
   <div id="start-screen" class="start-screen">
-    <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php">
-      <img style="width: 175px; height: 85px; position: relative; top: 80px;" src="../Imagenes/logo.png"
-        alt="logo_centiks">
-
-
-
-
-    </a>
-
+    
     <!-- <button class="start custom-btn2" onclick="startGame() ,reproducirAudio();">
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
     </button> -->
@@ -123,9 +115,9 @@ include('../php_librarys/bdlaia.php');
 
 
         <div class="col-md-2 custom-card   text-dark">
-          <div class="card p-0 d-flex bg-transparent text-dark" style="width: 18rem ">
-            <div class="container  bg-transparent text-dark " id="explicacion">
-              <div class ="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
+          <div class="card p-0 d-flex bg-info text-dark" style="width: 18rem ">
+            <div class="container  bg-info text-dark " id="explicacion">
+              <div class="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
               <br>
               <div><img src="./img/diananorm.png" alt="diana1" /> + 1 punto</div>
 
@@ -136,11 +128,11 @@ include('../php_librarys/bdlaia.php');
             </div>
 
 
-            <ul class="list-group list-group-flush bg-transparent text-dark">
-              <li class="list-group-item bg-transparent">
+            <ul class="list-group list-group-flush bg-info text-dark">
+              <li class="list-group-item bg-info">
                 TIEMPO RESTANTE : <span id="timer"></span>
               </li>
-              <li class="list-group-item bg-transparent">
+              <li class="list-group-item bg-info">
                 ACIERTOS <span id="aciertos"></span>
               </li>
 
