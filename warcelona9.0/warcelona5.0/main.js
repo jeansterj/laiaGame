@@ -33,7 +33,7 @@ function difficulty()
     {
         enemySpawner.chargeEnemyRate = 0.1;
         enemySpawner.spawnRate = 650;
-        enemySpawner.normalH = 1000;
+        enemySpawner.normalH = 20;
     }
     else if(character.level == 3)
     {
