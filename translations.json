@@ -1,12 +1,18 @@
 
 {
     "IniciarSesion": {
-        "en": "pjp",
-        "es": "Bienvenido",
-        "cat": "Benvingut"
+        "en": "Login",
+        "es": "Iniciar Sesión",
+        "cat": "Inicia sesió"
     },
-    "parrafo": {
-        "en": "This is an example of translation.",
-        "es": "Este es un ejemplo de traducción."
+    "NombredeUsuario": {
+        "en": "Username",
+        "es": "Nombre de usuario",
+        "cat": "Nom d'usuari"
+    },
+    "noTienesCuenta": {
+        "en": "Username",
+        "es": "Nombre de usuario",
+        "cat": "Nom d'usuari"
     }
 }

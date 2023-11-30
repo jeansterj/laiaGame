@@ -74,7 +74,7 @@
                                             <ion-icon name="person-circle-outline"></ion-icon>
                                         </span>
                                         <input type="text" name="userName" required>
-                                        <label>Nombre de usuario</label>
+                                        <label data-translate="NombredeUsuario">Nombre de usuario</label>
                                     </div>
                                     <div class="input-box">
                                         <span class="icon">
@@ -86,7 +86,7 @@
                                     <button type="submit" name="login" class="btn">Iniciar Sesion</button>
 
                                     <div class="loginRegister">
-                                        <p>¿No tienes cuenta?</p>
+                                        <p data-translate="noTienesCuenta">¿No tienes cuenta?</p>
                                         <a href="#" name="registerLink" class="registerLink">Registrate</a>
                                     </div>
                                 </form>
