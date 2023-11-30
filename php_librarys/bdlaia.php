@@ -233,7 +233,7 @@ ORDER BY
 
 
 
-function registrarUsuario($nombre, $nombreUsuario, $contrasena, $apellido1, $fechaNacimiento, $id_Rol = 3)
+function registrarUsuario($nombre, $nombreUsuario, $contrasena, $apellido1, $fechaNacimiento, $id_Rol)
 {
     $conexion = openDB();
 
@@ -254,6 +254,8 @@ function registrarUsuario($nombre, $nombreUsuario, $contrasena, $apellido1, $fec
 
     $conexion = closeDB();
 }
+
+
 
 
 

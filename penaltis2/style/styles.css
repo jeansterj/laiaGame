@@ -89,7 +89,9 @@
 .custom-card{
 position: relative;
 bottom: 0px;
-right: 170px;
+right:-30px;
+
+
 
 
 }
@@ -173,8 +175,7 @@ height: 100px;
 
 
 
-
- div#caja-generador div{
+div#caja-generador div{
   width: 24px;
   height: 100px;
   
@@ -251,9 +252,32 @@ transform: translate(-50%, -50%);
 
 
 
-#content{
+/* #content{
   position: relative;
   top: 50%;
   left: 10%;
+} */
+
+.container.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  padding: 25px;
+  flex-direction: column;
+  position: relative;
+  padding-top: 25px; 
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  backdrop-filter: blur(20px);
+  background-color: rgb(112 112 112 / 12%);
 }
 
+
+.logo{
+  position: relative;
+  top: 50%;
+  left: 30%;
+  
+  margin-bottom: 20px;
+}

@@ -130,6 +130,7 @@
                                         <ion-icon name="calendar-outline"></ion-icon>
                                     </span>
                                     <input type="date" name="fecha_Nacimiento" required>
+                                    <input type="hidden"id="id_Rol" value="3" name="id_Rol">
                                     <label></label>
                                     <!--  Falta, que no se pueda poner una fecha mayor que la actual y hacer controladores de los campos -->
                                 </div>
