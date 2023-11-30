@@ -34,15 +34,15 @@ include('../php_librarys/bdlaia.php');
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
     </button> -->
     <div class="container" id="explicacionpr">
-      
-      
-      <div  id="explicacionpr"> <img src="./img/start.png" alt=""></div>
-        
-        <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
-      <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
-    </button>
 
-      
+
+      <div id="explicacionpr"> <img src="./img/start.png" alt=""></div>
+
+      <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
+        <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
+      </button>
+
+
 
 
 
@@ -54,22 +54,22 @@ include('../php_librarys/bdlaia.php');
 
   </div>
 
-  <div id="end-screen" class="end-screen">
-    <div class="card  mb-3" style="max-width: 18rem;">
-      <div class="card-header bg-transparent border-success">Juego finalizado!</div>
-      <div class="card-body text-success">
+  <div id="end-screen" class="end-screen container text-center" style="width :350px ">
+    <div class="card border-dark mb-3 bg-info" style="max-width: 18rem;">
+      <div class="card-header bg-transparent ">Juego finalizado!</div>
+      <div class="card-body text-dark">
         <h5 class="card-title">Puntuacion final: <a id="puntuacion">0</a>
         </h5>
         <p class="card-text" id="textoFinal"></p>
       </div>
-      <div class="card-footer bg-transparent border-success">
-      <a id="textovolver"></a>
+      <div class="card-footer bg-transparent ">
+        <a id="textovolver"></a>
         <button class="btn  custom-btnrejugar " id="botonfail">
           <img src="./img/replay.png" onclick="rePlay('botonreplay');" alt="Imagen" class="img-fluid w-180 h-180 mr-2"
             id="rejugar" />
-            
+
         </button>
-        
+
 
 
         <form action="../php_controllers/laiaController.php" METHOD="POST">
@@ -96,8 +96,8 @@ include('../php_librarys/bdlaia.php');
 
 
 
-  <div id="content" style="display: none">
-    <div class="container">
+  <div id="content" style="display: none" class="">
+    <div class="container text-center">
       <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img style="width: 175px; height: 85px; "
           src="../Imagenes/logo.png" alt="logo_centiks"></a>
       <div class="row">
@@ -122,33 +122,33 @@ include('../php_librarys/bdlaia.php');
 
 
 
-        <div class="col-md-2 custom-card ">
-          <div class="card p-0 d-flex" style="width: 18rem ">
-            <div class="container " id="explicacion">
-              <div><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
+        <div class="col-md-2 custom-card   text-dark">
+          <div class="card p-0 d-flex bg-transparent text-dark" style="width: 18rem ">
+            <div class="container  bg-transparent text-dark " id="explicacion">
+              <div class ="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
               <br>
               <div><img src="./img/diananorm.png" alt="diana1" /> + 1 punto</div>
 
 
               <br>
-              <div><img src="./img/diananeg.png" alt="diana2" /> - 1 punto </div>
+              <div class=""><img src="./img/diananeg.png" alt="diana2" /> - 1 punto </div>
 
             </div>
 
 
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
+            <ul class="list-group list-group-flush bg-transparent text-dark">
+              <li class="list-group-item bg-transparent">
                 TIEMPO RESTANTE : <span id="timer"></span>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item bg-transparent">
                 ACIERTOS <span id="aciertos"></span>
               </li>
-            
+
               <audio id="musica" src="./audio/musicabrazuka.mp3"></audio>
               <audio id="succsound" src="./audio/mario-coin.mp3"></audio>
               <audio id="failsound" src="./audio/mario-brosfail.wav"></audio>
               <audio id="2psound" src="./audio/mario-bros vida.mp3"></audio>
-              <li class="list-group-item">
+              <li class="list-group-item bg-transparent">
                 Potencia actual: <span id="potencia"></span>
                 <div id="caja-generador">
                   <div id="celda1"></div>
