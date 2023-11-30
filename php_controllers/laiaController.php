@@ -53,10 +53,16 @@ if(isset($_POST['registro'])) {
     $contrasena = $_POST['password'];
     $apellido1 = $_POST['primer_Apellido'];
     $fechaNacimiento = $_POST['fecha_Nacimiento'];
+    $idRol = $_POST['id_Rol'];
     
     
-    registrarUsuario( $nombre, $nombreUsuario, $contrasena, $apellido1, $fechaNacimiento);
-    header('Location: ../tierra2.php');
+    registrarUsuario( $nombre, $nombreUsuario, $contrasena, $apellido1, $fechaNacimiento,$idRol);
+    if($idRol==3){
+        header('Location: ../tierra2.php');
+    }elseif($idRol == 2){
+        header('Location: ../adminpage.php');
+    }
+   
 
     
     }catch (Exception $e) {
