@@ -44,18 +44,18 @@
         
         
             
-            <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa">Sobre
+            <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa" data-translate="sobreNosotros">Sobre
                 Nosotros</button>
 
             <?php if (isset($_SESSION['user'])): ?>
                 <!-- Si la sesión está iniciada, muestra el botón "Cerrar Sesión" -->
-                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'" name="logoutLink">CERRAR
+                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'" name="logoutLink" data-translate="cerrarSesion">CERRAR
                     SESION</button>
 
 
             <?php else: ?>
                 <!-- Si la sesión no está iniciada, muestra el botón "Iniciar Sesión" -->
-                <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm">Iniciar
+                <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm" data-translate="iniciarSesion">Iniciar
                     Sesión</button>
             <?php endif; ?>
 
@@ -67,27 +67,27 @@
                     <div class="modal-content">
                         <div class="popupContainer">
                             <div class="form-box login ">
-                                <h2 data-translate="IniciarSesion">Iniciar Sesión</h2>
+                                <h2 data-translate="iniciarSesion">Iniciar Sesión</h2>
                                 <form action="./php_controllers/laiaController.php" method="POST">
                                     <div class="input-box">
                                         <span class="icon">
                                             <ion-icon name="person-circle-outline"></ion-icon>
                                         </span>
                                         <input type="text" name="userName" required>
-                                        <label data-translate="NombredeUsuario">Nombre de usuario</label>
+                                        <label data-translate="nombredeUsuario">Nombre de usuario</label>
                                     </div>
                                     <div class="input-box">
                                         <span class="icon">
                                             <ion-icon name="lock-closed-outline"></ion-icon>
                                         </span>
                                         <input type="password" name="password" required>
-                                        <label>Password</label>
+                                        <label data-translate="password">Password</label>
                                     </div>
-                                    <button type="submit" name="login" class="btn">Iniciar Sesion</button>
+                                    <button type="submit" name="login" class="btn" data-translate="iniciarSesion">Iniciar Sesion</button>
 
                                     <div class="loginRegister">
                                         <p data-translate="noTienesCuenta">¿No tienes cuenta?</p>
-                                        <a href="#" name="registerLink" class="registerLink">Registrate</a>
+                                        <a href="#" name="registerLink" class="registerLink" data-translate="registrate">Registrate</a>
                                     </div>
                                 </form>
                             </div>

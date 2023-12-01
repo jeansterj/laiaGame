@@ -1,11 +1,11 @@
 
 {
-    "IniciarSesion": {
+    "iniciarSesion": {
         "en": "Login",
-        "es": "Iniciar Sesión",
+        "es": "Iniciar sesión",
         "cat": "Inicia sesió"
     },
-    "NombredeUsuario": {
+    "nombredeUsuario": {
         "en": "Username",
         "es": "Nombre de usuario",
         "cat": "Nom d'usuari"
@@ -14,5 +14,25 @@
         "en": "Username",
         "es": "Nombre de usuario",
         "cat": "Nom d'usuari"
+    },
+    "password": {
+        "en": "Password",
+        "es": "Contraseña",
+        "cat": "Contrasenya"
+    },
+    "registrate": {
+        "en": "Sign up",
+        "es": "Registrate",
+        "cat": "Registra't"
+    },
+    "sobreNosotros": {
+        "en": "About us",
+        "es": "Sobre nosotros",
+        "cat": "Sobre nosaltres"
+    },
+    "cerrarSesion": {
+        "en": "Sign off",
+        "es": "Cerrar sesión",
+        "cat": "Tancar sesió"
     }
 }
