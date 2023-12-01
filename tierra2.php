@@ -31,25 +31,26 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 
 <body>
-    
+
 
     <header>
-    
+
         <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img src="./Imagenes/logo.png"
                 alt="logo_centiks"></a>
-                
-                <?php require_once('./php_partials/mensajes.php'); ?> 
+
+        <?php require_once('./php_partials/mensajes.php'); ?>
 
         <nav class="navigation">
-        
-        
-            
+
+
+
             <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa">Sobre
                 Nosotros</button>
 
             <?php if (isset($_SESSION['user'])): ?>
                 <!-- Si la sesión está iniciada, muestra el botón "Cerrar Sesión" -->
-                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'" name="logoutLink">CERRAR
+                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'"
+                    name="logoutLink">CERRAR
                     SESION</button>
 
 
@@ -59,7 +60,7 @@
                     Sesión</button>
             <?php endif; ?>
 
-          
+
             <!-- Modal -->
             <div class="modal modalLogin fade" id="loginForm" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -130,7 +131,7 @@
                                         <ion-icon name="calendar-outline"></ion-icon>
                                     </span>
                                     <input type="date" name="fecha_Nacimiento" required>
-                                    <input type="hidden"id="id_Rol" value="3" name="id_Rol">
+                                    <input type="hidden" id="id_Rol" value="3" name="id_Rol">
                                     <label></label>
                                     <!--  Falta, que no se pueda poner una fecha mayor que la actual y hacer controladores de los campos -->
                                 </div>
@@ -216,7 +217,8 @@
     </header>
 
 
-    <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
+    <div class="modal modalStory fade" id="modalbcn" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -228,19 +230,23 @@
                             juego de supervivencia, Laia debe recolectar la mayor cantidad de dinero posible mientras
                             utiliza sus poderes eléctricos para zafarse de los peligros. ¿Podrás ayudar a Laia a salir
                             ilesa y con el botín en mano?</p>
-                        <div class="buttons">  
-                        <?php 
-                           if(isset($_SESSION['user'])): ?>
-                            <button class="jugarButton"onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.html'">JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                        <div class="buttons">
+                            <?php
+                            if (isset($_SESSION['user'])): ?>
+                                <button class="jugarButton"
+                                    onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.html'">JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
 
-?>
+                                ?>
 
-                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
-                            <?php endif; ?>  
-                           
+                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                    disabled>JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
+                            <?php endif; ?>
+
 
                         </div>
                     </div>
@@ -259,22 +265,28 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>BRASIL</h2>
-                        <p>Tras su partida de Barcelona, Laia llega a Brasil, solo para encontrarse 
-                            con un apagón masivo. En este juego, Laia debe usar su ingenio y habilidades 
-                            en ingeniería para restaurar la electricidad. Golpeando dianas estratégicamente colocadas, 
-                            generará la energía necesaria para iluminar Brasil de nuevo. Cada diana es un reto en sí mismo, 
-                            y solo la precisión y la rapidez de Laia pueden salvar el día. </br>¿Estás listo para electrificar Brasil con Laia?</p>
-                        <div class="buttons">    
-                           <?php 
-                           if(isset($_SESSION['user'])): ?>
-                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                        <p>Tras su partida de Barcelona, Laia llega a Brasil, solo para encontrarse
+                            con un apagón masivo. En este juego, Laia debe usar su ingenio y habilidades
+                            en ingeniería para restaurar la electricidad. Golpeando dianas estratégicamente colocadas,
+                            generará la energía necesaria para iluminar Brasil de nuevo. Cada diana es un reto en sí
+                            mismo,
+                            y solo la precisión y la rapidez de Laia pueden salvar el día. </br>¿Estás listo para
+                            electrificar Brasil con Laia?</p>
+                        <div class="buttons">
+                            <?php
+                            if (isset($_SESSION['user'])): ?>
+                                <button class="jugarButton"
+                                    onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
 
-?>
+                                ?>
 
-                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                    disabled>JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -293,23 +305,27 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>KENIA</h2>
-                        <p>Después de su éxito en Brasil, Laia se embarca en una nueva aventura en Kenya. 
+                        <p>Después de su éxito en Brasil, Laia se embarca en una nueva aventura en Kenya.
                             Aquí, su objetivo es generar electricidad para los lugareños mediante un antiguo
-                             y místico ritual africano. En este juego de parejas, cada acierto en el emparejamiento 
-                             de símbolos mágicos desencadena un flujo de energía. Laia debe ser rápida y precisa en 
-                             sus elecciones para canalizar la energía necesaria a las aldeas. ¿Podrás ayudar a Laia a 
-                             iluminar Kenya con la sabiduría de sus ancestros?</p>
-                        <div class="buttons">    
-                        <?php 
-                           if(isset($_SESSION['user'])): ?>
-                            <button class="jugarButton"onclick="window.location.href='./KeniaMemory/LaiaJuegoNivel2/index.php'">JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                            y místico ritual africano. En este juego de parejas, cada acierto en el emparejamiento
+                            de símbolos mágicos desencadena un flujo de energía. Laia debe ser rápida y precisa en
+                            sus elecciones para canalizar la energía necesaria a las aldeas. ¿Podrás ayudar a Laia a
+                            iluminar Kenya con la sabiduría de sus ancestros?</p>
+                        <div class="buttons">
+                            <?php
+                            if (isset($_SESSION['user'])): ?>
+                                <button class="jugarButton"
+                                    onclick="window.location.href='./KeniaMemory/LaiaJuegoNivel2/index.php'">JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
 
-?>
+                                ?>
 
-                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                    disabled>JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -328,23 +344,28 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>INDIA</h2>
-                        <p>En su última aventura, Laia, la ingeniera apasionada por la energía sostenible, 
-                            se dirige a la bulliciosa India, específicamente al corazón de Bangalore. 
-                            Aquí, se enfrenta al desafío de llevar luz a las casas del pueblo, cada una marcada 
-                            con la cantidad de electricidad que necesita diariamente. Este rompecabezas requiere 
-                            una meticulosa gestión de recursos y una estrategia inteligente. ¿Estás listo para 
-                            ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en la gestión de energías renovables?</p>
-                        <div class="buttons">    
-                        <?php 
-                           if(isset($_SESSION['user'])): ?>
-                            <button class="jugarButton"onclick="window.location.href='./India/index.php'">JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                        <p>En su última aventura, Laia, la ingeniera apasionada por la energía sostenible,
+                            se dirige a la bulliciosa India, específicamente al corazón de Bangalore.
+                            Aquí, se enfrenta al desafío de llevar luz a las casas del pueblo, cada una marcada
+                            con la cantidad de electricidad que necesita diariamente. Este rompecabezas requiere
+                            una meticulosa gestión de recursos y una estrategia inteligente. ¿Estás listo para
+                            ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en la gestión de energías
+                            renovables?</p>
+                        <div class="buttons">
+                            <?php
+                            if (isset($_SESSION['user'])): ?>
+                                <button class="jugarButton"
+                                    onclick="window.location.href='./India/index.php'">JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
 
-?>
+                                ?>
 
-                            <button class="jugarButton"onclick="window.location.href='./penaltis2/prueba.php'"disabled >JUGAR</button>
-                            <button class="rankingButton" onclick="window.location.href='./ranking.php'">RANKING</button>
+                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                    disabled>JUGAR</button>
+                                <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -364,14 +385,12 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
-                        <h2>Iniciar Sesión</h2>
-                        <p>En las vibrantes calles de Barcelona, Laia, una ingeniera audaz y talentosa, enfrenta un
-                            desafío único. Su misión es navegar a través de las peligrosas calles de la ciudad,
-                            evadiendo atracadores con astucia y utilizando sus habilidades en electricidad. En este
-                            juego de supervivencia, Laia debe recolectar la mayor cantidad de dinero posible mientras
-                            utiliza sus poderes eléctricos para zafarse de los peligros. ¿Podrás ayudar a Laia a salir
-                            ilesa y con el botín en mano?</p>
-                        <button>JUGAR</button>
+                        <h2>Laia, ens il·lumines</h2>
+                        <p>Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su
+                            misión es iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar
+                            desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
+                            que visita. Acompaña a Laia en esta saga inspiradora ¿Podrás ayudarla a cumplir su misión y
+                            alzarte con el triunfo?</p>
                     </div>
                     <div class="colModalIntroLore2">
                         <img src=".\Imagenes\laia.png" alt="" class="liderbcn">
@@ -381,105 +400,101 @@
         </div>
     </div>
 
-    
+
     <div class="modal modalStory fade" id="modalranking" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                        <h2>RANKING</h2>
-                        <form method="post" action="">
-        
-            <button class="btn btn-danger" type="submit" name="españa" value="1">WARCELONA</button>
-            <button  class ="btn btn-info" type="submit" name="brasil" value="2">BRASIL</button>
-            <button  class ="btn btn-light" type="submit" name="kenia" value="3">KENIA</button>
-            <button  class ="btn btn-info" type="submit" name="india" value="4">INDIA</button>
-            <button class ="btn btn-light" type="submit" name="global" value="Global">GLOBAL</button>
-        </form>
+                    <h2>RANKING</h2>
+                    <form method="post" action="">
 
-                
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th> Posicion  </th>
-                    <th>Nombre Usuario</th>
-                    
-                    <th>Puntuacion</th>
-                  
-               
-                </tr>
-            </thead>
+                        <button class="btn btn-danger" type="submit" name="españa" value="1">WARCELONA</button>
+                        <button class="btn btn-info" type="submit" name="brasil" value="2">BRASIL</button>
+                        <button class="btn btn-light" type="submit" name="kenia" value="3">KENIA</button>
+                        <button class="btn btn-info" type="submit" name="india" value="4">INDIA</button>
+                        <button class="btn btn-light" type="submit" name="global" value="Global">GLOBAL</button>
+                    </form>
 
-            <body>
-                <?php 
-                  
-                 
-                  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['brasil'])) {
-                      $paiselegido = $_POST['brasil'];
-                      $ranking = rankingxPais($paiselegido);
-          
-                    } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['españa'])) {
-                        $paiselegido = $_POST['españa'];
-                        $ranking = rankingxPais($paiselegido);
-                  }
-                  else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kenia'])) {
-                    $paiselegido = $_POST['kenia'];
-                    $ranking = rankingxPais($paiselegido);
-                }
-                 else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['india'])) {
-                    $paiselegido = $_POST['india'];
-                    $ranking = rankingxPais($paiselegido);
-                 }
-                 else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['global'])) {
-                    $paiselegido = $_POST['global'];
-                    $ranking = rankingGlobal();
-                 }
-                 else{
-                    $ranking = rankingxPais(2);
-                 }
 
-                 $posicion=0;
-               
-                
-                
-                ?>
-                <?php foreach ($ranking as $puntuacion) { ?>
-                  
-                    <tr>
-                        <td>
-                      <?php   $posicion++; ?>
-                            <?php echo $posicion ?>
-                        <td>
-                       
-                           <?php echo $puntuacion['nombreUsuario']; ?>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> Posicion </th>
+                                <th>Nombre Usuario</th>
 
-                        
-                        </td>
-                       
-                        <td>
+                                <th>Puntuacion</th>
+
+
+                            </tr>
+                        </thead>
+
+                        <body>
                             <?php
-                            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['global'])) {
-                               echo $puntuacion['totalPuntuacion'];
-                                
-                            }else{
-                                 echo $puntuacion['puntuacion']; 
+
+
+                            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['brasil'])) {
+                                $paiselegido = $_POST['brasil'];
+                                $ranking = rankingxPais($paiselegido);
+
+                            } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['españa'])) {
+                                $paiselegido = $_POST['españa'];
+                                $ranking = rankingxPais($paiselegido);
+                            } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kenia'])) {
+                                $paiselegido = $_POST['kenia'];
+                                $ranking = rankingxPais($paiselegido);
+                            } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['india'])) {
+                                $paiselegido = $_POST['india'];
+                                $ranking = rankingxPais($paiselegido);
+                            } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['global'])) {
+                                $paiselegido = $_POST['global'];
+                                $ranking = rankingGlobal();
+                            } else {
+                                $ranking = rankingxPais(2);
                             }
-                             
-                                ?>
-           
+
+                            $posicion = 0;
 
 
 
-                        </td>
+                            ?>
+                            <?php foreach ($ranking as $puntuacion) { ?>
 
-                    </tr>
-                <?php } ?>
-                </tbody>
-        </table>
-    </div>
+                                <tr>
+                                    <td>
+                                        <?php $posicion++; ?>
+                                        <?php echo $posicion ?>
+                                    <td>
+
+                                        <?php echo $puntuacion['nombreUsuario']; ?>
+
+
+                                    </td>
+
+                                    <td>
+                                        <?php
+                                        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['global'])) {
+                                            echo $puntuacion['totalPuntuacion'];
+
+                                        } else {
+                                            echo $puntuacion['puntuacion'];
+                                        }
+
+                                        ?>
+
+
+
+
+                                    </td>
+
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </body>
