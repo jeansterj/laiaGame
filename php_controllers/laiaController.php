@@ -86,7 +86,7 @@ if (isset($_POST['delete'])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo " no funciona ";
         // echo "Error: " . $e->getMessage();
     }
 
@@ -119,7 +119,7 @@ if (isset($_POST['updatenombreUsuario'])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo " no funciona";
         // echo "Error: " . $e->getMessage();
     }
 
@@ -136,7 +136,7 @@ if (isset($_POST["updateNombreReal"])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo "no funciona";
         // echo "Error: " . $e->getMessage();
     }
 
@@ -152,7 +152,7 @@ if (isset($_POST["updateApellido"])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo "no funciona";
         // echo "Error: " . $e->getMessage();
     }
 
@@ -171,7 +171,7 @@ if (isset($_POST["updateData"])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo "no funciona";
         // echo "Error: " . $e->getMessage();
     }
 
@@ -185,7 +185,7 @@ if (isset($_POST["updateRol"])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo " no funciona";
         // echo "Error: " . $e->getMessage();
     }
 
@@ -201,7 +201,7 @@ if (isset($_POST["updateRol"])) {
 //         header('Location: ../Planeta/adminpage.php');
 //         exit();
 //     } catch (Exception $e) {
-//         echo " va mal cabron";
+//         echo " no funciona";
 //         // echo "Error: " . $e->getMessage();
 //     }
 
@@ -217,7 +217,7 @@ if (isset($_POST["brasildata"])) {
         header('Location: ../adminpage.php');
         exit();
     } catch (Exception $e) {
-        echo " va mal cabron";
+        echo " no funciona";
          echo "Error: " . $e->getMessage();
     }
 

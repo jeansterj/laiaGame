@@ -5,8 +5,8 @@
 
 ?>
 
-<!-- <?php $usuarios = selectAllUsers(); ?>
-  <?php $usuarios2 = selectUsers(); ?>  -->
+ <?php $usuarios = selectAllUsers(); ?>
+  <?php $usuarios2 = selectUsers(); ?>  
 
 
 
