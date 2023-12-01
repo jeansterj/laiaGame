@@ -424,6 +424,9 @@ a.loginLink {
 .modal#modalbcn {
     --bs-modal-width: 800px;
 }
+.modal#modalini {
+    --bs-modal-width: 800px;
+}
 
 .liderbcn{
     width: 132px;
@@ -548,6 +551,34 @@ a.loginLink {
 }
 
 #modalIndia p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+
+/* modal intro */
+
+.modal#modalini {
+    --bs-modal-width: 400px;
+}
+
+#modalini .modal-body {
+    display: flex;
+}
+
+.modal#modalini {
+    --bs-modal-width: 800px;
+}
+
+#modalini h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalini p{
     margin: 0px 50px;
     padding-bottom: 30px;
 }
