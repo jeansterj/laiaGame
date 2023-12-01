@@ -2,18 +2,18 @@
 {
     "iniciarSesion": {
         "en": "Login",
-        "es": "Iniciar sesión",
-        "cat": "Inicia sesió"
+        "es": "Iniciar Sesión",
+        "cat": "Inicia Sesió"
     },
-    "nombredeUsuario": {
+    "nombreUsuario": {
         "en": "Username",
-        "es": "Nombre de usuario",
-        "cat": "Nom d'usuari"
+        "es": "Nombre de Usuario",
+        "cat": "Nom d'Usuari"
     },
     "noTienesCuenta": {
         "en": "Username",
-        "es": "Nombre de usuario",
-        "cat": "Nom d'usuari"
+        "es": "Nombre de Usuario",
+        "cat": "Nom d'Usuari"
     },
     "password": {
         "en": "Password",
@@ -26,13 +26,13 @@
         "cat": "Registra't"
     },
     "sobreNosotros": {
-        "en": "About us",
-        "es": "Sobre nosotros",
-        "cat": "Sobre nosaltres"
+        "en": "About Us",
+        "es": "Sobre Nosotros",
+        "cat": "Sobre Nosaltres"
     },
     "cerrarSesion": {
-        "en": "Sign off",
-        "es": "Cerrar sesión",
-        "cat": "Tancar sesió"
+        "en": "Logout",
+        "es": "Cerrar Sesión",
+        "cat": "Tancar Sesió"
     }
 }

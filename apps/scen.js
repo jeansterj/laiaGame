@@ -195,7 +195,7 @@ function getCookie(name) {
 
 function render() {
     requestAnimationFrame(render);         
-    sphere.rotation.y += 0.0020;
+    sphere.rotation.y += 0.0015;
     outlineMesh1.rotation.y += 0.005;   
     
     bombillas(imageSprite, 1.09,7.38,6.52); 

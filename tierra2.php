@@ -74,7 +74,7 @@
                                             <ion-icon name="person-circle-outline"></ion-icon>
                                         </span>
                                         <input type="text" name="userName" required>
-                                        <label data-translate="nombredeUsuario">Nombre de usuario</label>
+                                        <label data-translate="nombreUsuario">Nombre de usuario</label>
                                     </div>
                                     <div class="input-box">
                                         <span class="icon">
