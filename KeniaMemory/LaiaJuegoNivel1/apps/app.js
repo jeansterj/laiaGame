@@ -61,8 +61,6 @@ function loadingGame() {
     let rows = parseInt(rowsSelect.value);
     let cols = parseInt(colsSelect.value);
 
-
-
      tamañoArray  = cols * rows;
      maxAciertos = tamañoArray/2;
 
@@ -237,32 +235,7 @@ function voltear(id) {
 
 
             if (aciertos == maxAciertos) {
-                clearInterval(timerRegre);
-
-                showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
-                showTime.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
-                showMove.innerHTML = `Movimientos: ${moves} bien`;
-
-                if (totalTime < minTime || moves < minMoves) { 
-
-                    puntos=80;
-
-                 } else if (totalTime < madTime || moves < madMoves) {
-                    
-                    puntos=60; 
-
-                } else if  (totalTime < medTime || moves < medMoves) { 
-                    
-                    puntos=40; 
-
-                } else if (totalTime < maxTime || moves < madMoves) { 
-
-                    puntos=20; 
-
-                } else {
-
-                    puntos = 0;
-                }
+            finGame();
             }
 
         } else {
@@ -293,4 +266,35 @@ function mostrarImagen(id,resultado) {
     tarjeta.disabled = true;
 
     return tarjeta;
+}
+
+function finGame() {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("endGame").style.display = "block";
+    clearInterval(timerRegre);
+
+    showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
+    showTime.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
+    showMove.innerHTML = `Movimientos: ${moves} bien`;
+
+    if (totalTime < minTime || moves < minMoves) { 
+
+        puntos=80;
+
+     } else if (totalTime < madTime || moves < madMoves) {
+        
+        puntos=60; 
+
+    } else if  (totalTime < medTime || moves < medMoves) { 
+        
+        puntos=40; 
+
+    } else if (totalTime < maxTime || moves < madMoves) { 
+
+        puntos=20; 
+
+    } else {
+
+        puntos = 0;
+    }
 }

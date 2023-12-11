@@ -9,15 +9,15 @@
 
 <body>
 
-<div class="seleccionNivel" id="facil">
+    <div class="seleccionNivel" id="facil">
 
-<h2>Selecciona el Nivel a Jugar</h2>
+        <h2>Selecciona el Nivel a Jugar</h2>
 
-    <button type="button" onclick="primerNivel()"><img src="..\img\facil.png" alt="">
-    <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'"><img src="..\img\dificil.png" alt="">
+        <button type="button" onclick="primerNivel()"><img src="..\img\facil.png" alt="">
+            <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'"><img
+                    src="..\img\dificil.png" alt="">
 
-
-</div>
+    </div>
 
     <div class="SeleccionInicio" id="seleccion">
         <label for="rows">Filas</label>
@@ -41,7 +41,7 @@
 
     </div>
 
-    <div id="game" >
+    <div id="game">
 
         <main>
 
@@ -61,6 +61,18 @@
             </section>
 
         </main>
+    </div>
+
+    <div id="endGame">
+        <section class="section2">
+
+            <h2 class="stats" id="aciertos">Aciertos Completados </h2>
+            <h2 class="stats" id="time">Tardaste </h2>
+            <h2 class="stats" id="move">En movimientos </h2>
+
+        </section>
+
+
     </div>
 
     <script src="./apps/app.js"></script>
