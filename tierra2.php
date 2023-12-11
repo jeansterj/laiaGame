@@ -266,7 +266,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Hide this modal and show the first with the button below.
+       <?php  include_once('./rankingprueba.php')?>
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" data-bs-target="#modalbcn" data-bs-toggle="modal">Back to first</button>
