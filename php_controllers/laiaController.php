@@ -225,6 +225,25 @@ if (isset($_POST["brasildata"])) {
 }
 
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pais'])) {
+    $paiselegido = $_POST['pais'];
+
+    if ($paiselegido === 'Global') {
+        $ranking = rankingGlobal();
+    } else {
+        $ranking = rankingxPais($paiselegido);
+    }
+
+    // Devuelve los datos como HTML
+    foreach ($ranking as $index => $puntuacion) {
+        echo "<tr>
+                <td>" . ($index + 1) . "</td>
+                <td>{$puntuacion['nombreUsuario']}</td>
+                <td>{$puntuacion['puntuacion']}</td>
+              </tr>";
+    }
+    exit;
+}
 
 
 

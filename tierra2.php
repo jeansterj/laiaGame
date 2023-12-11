@@ -242,8 +242,9 @@
 
                                 <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
-                                <button class="rankingButton"
-                                    onclick="window.location.href='./ranking.php'">RANKING</button>
+                                <!-- <button class="rankingButton"
+                                    onclick="window.location.href='./ranking.php'">RANKING</button> -->
+                                    
                             <?php endif; ?>
 
 
