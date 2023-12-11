@@ -332,7 +332,7 @@
                             <?php
                             if (isset($_SESSION['user'])): ?>
                                 <button class="jugarButton"
-                                    onclick="window.location.href='./KeniaMemory/LaiaJuegoNivel2/index.php'">JUGAR</button>
+                                    onclick="window.location.href='./KeniaMemory/LaiaJuegoNivel1/index.php'">JUGAR</button>
                                 <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
