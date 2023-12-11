@@ -125,11 +125,30 @@ export function createBoard(startElements, piecesDropped) {
           square.appendChild(elementCopy);
         }
       }
+    checkhouses()
     checkFinal()
 
     
     });
   });
+}
+function checkhouses() {
+  if (arraySquareDragged.includes(0)){
+
+  }else{
+    
+  }
+  if (arraySquareDragged.includes(6)){
+    
+  }
+  if (arraySquareDragged.includes(42)){
+    
+  }
+  if (arraySquareDragged.includes(48)){
+    
+  }
+
+
 }
 
 function checkFinal() {
