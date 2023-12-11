@@ -6,7 +6,7 @@ let segundoResultado = null;
 let moves = 0;
 let aciertos = 0;
 let temp = false;
-let timer = 40;
+let timer = 0;
 let timerRegre = null;
 let timeIni = timer;
 
@@ -18,62 +18,150 @@ let tarjetaDestapada = 0;
 let puntos;
 let totalTime;
 
+let startTarjeta = 0;
+
+let numeros = [];
+let maxAciertos;
+
+
 //Medidor de puntos, movimientos, Aciertos
 
 const seconsTrans = 1000;
 const tiempoVolteo = 800;
 
-const maxAciertos = 8;
+let minTime;
+let minMoves;
 
-const minTime = 20;
-const minMoves = 12;
+let madTime;
+let madMoves;
 
-const madTime = 25;
-const madMoves = 16;
+let medTime;
+let medMoves;
 
-const medTime = 30;
-const medMoves = 20;
-
-const maxTime = 35;
-const maxMoves = 24;
+let maxTime;
+let maxMoves;
 
 showTime.innerHTML = `Tiempo: ${timer} segundos`;
 showAciertos.innerHTML = `Aciertos: ${aciertos}`;
 showMove.innerHTML = `Movimientos: ${moves}`;
 
-let rows = 4;
-let cols = 4;
+let tamañoArray  = null;
 
-// Obtén la referencia a la tabla
-let table = document.getElementById("memoryTable");
 
-// Bucle para crear las filas y columnas
-for (let i = 0; i < rows; i++) {
-    // Crea una fila
-    let row = table.insertRow(i);
-
-    for (let j = 0; j < cols; j++) {
-        // Crea una celda en la fila
-        let cell = row.insertCell(j);
-
-        // Crea un botón en la celda
-        let button = document.createElement("button");
-        button.id = i * cols + j; // Asigna un ID único al botón
-        button.onclick = function() {
-            voltear(this.id); // Asigna la función de voltear al evento click
-        };
-
-        // Añade el botón a la celda
-        cell.appendChild(button);
-    }
+function primerNivel() {
+    document.getElementById("facil").style.display = "none";
+    document.getElementById("seleccion").style.display = "block";
 }
 
-let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+function loadingGame() {
+
+    let rowsSelect = document.getElementById("rows");
+    let colsSelect = document.getElementById("cols");
+
+    let rows = parseInt(rowsSelect.value);
+    let cols = parseInt(colsSelect.value);
 
 
-numeros = numeros.sort(() => { return Math.random() - 0.5 });
 
-console.log(numeros);
+     tamañoArray  = cols * rows;
+     maxAciertos = tamañoArray/2;
+
+  iniciarArray();
+
+        // Obtén la referencia a la tabla
+    let table = document.getElementById("memoryTable")
+    // Bucle para crear las filas y columnas
+    for (let i = 0; i < rows; i++) {
+        // Crea una fila
+        let row = table.insertRow(i);
+
+        for (let j = 0; j < cols; j++) {
+            // Crea una celda en la fila
+            let cell = row.insertCell(j);
+
+            // Crea un botón en la celda
+            let button = document.createElement("button");
+            button.id = i * cols + j; // Asigna un ID único al botón
+            button.onclick = function() {
+                voltear(this.id); // Asigna la función de voltear al evento click
+            };
+
+            // Añade el botón a la celda
+            cell.appendChild(button);
+        }
+    }
+    document.getElementById("seleccion").style.display = "none";
+    document.getElementById("game").style.display = "block";
+    iniciarControlPuntaje();
+}
+
+function iniciarControlPuntaje() {
+
+    if (tamañoArray >= 8 && tamañoArray <=15) {
+
+
+minTime = 20;
+minMoves = maxAciertos+5;
+
+ madTime = minTime+5;
+ madMoves = minMoves+5;
+
+ medTime = madTime+5;
+ medMoves = madMoves+5;
+
+ maxTime = madTime+5;
+ maxMoves = madMoves+5;
+
+ timer = 30;
+
+        
+    } else if (tamañoArray >= 16 && tamañoArray <=23){
+
+      minTime = 30;
+      minMoves = maxAciertos+5;
+      madTime = minTime+5;
+      madMoves = minMoves+5;
+
+      medTime = madTime+5;
+      medMoves = madMoves+5;
+
+      maxTime = madTime+5;
+      maxMoves = madMoves+5;
+
+      timer = 45;
+
+
+    } else {
+        minTime = 45;
+        minMoves = maxAciertos+5;
+        madTime = minTime+5;
+        madMoves = minMoves+5;
+  
+        medTime = madTime+5;
+        medMoves = madMoves+5;
+  
+        maxTime = madTime+5;
+        maxMoves = madMoves+5;
+
+        timer = 60;
+
+
+    }
+    
+}
+
+
+function iniciarArray() {
+    for (let h = 0; h < tamañoArray ; h+=2) {
+        numeros[h] = startTarjeta;    
+        numeros[h+1] = startTarjeta;   
+        startTarjeta++;
+    
+    }
+
+    numeros = numeros.sort(() => { return Math.random() - 0.5 });
+
+}
 
 
 function contarTiempo() {

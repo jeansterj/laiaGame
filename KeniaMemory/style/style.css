@@ -7,7 +7,7 @@ body {
 
 
 main {
-    width: 730px;
+    width: 930px;
     margin: 100px auto;
     display: flex;
     align-items: center;
@@ -60,5 +60,69 @@ img{
 
 width: 80%;
 
+}
+
+#game{
+display: none;
+
+}
+.SeleccionInicio{
+color:black;
+font-weight: bold;
+
+display: none;
+width: 730px;
+margin: 300px auto;
+align-items: center;
+backdrop-filter: blur(10px);
+border: white bold;
+padding: 15px;
+border-radius: 8px;
+box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+.SeleccionInicio button{
+
+height: 75px;
+width: 130px;
+font-size: 40px;
+font-weight: bold;
+border-radius: 8px;
+box-shadow: 2px 0 0 0;
+
+}
+
+select{
+
+border-radius: 8px;
+
+}
+
+.seleccionNivel{
+    color:black;
+    font-weight: bold;
+    
+    display: block;
+    width: 300px;
+    margin: 300px auto;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border: white bold;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+.seleccionNivel button{
+    height: 75px;
+    width: 140px;
+    margin-right: 10px;
+    
+}
+
+.seleccionNivel img{
+    width: 100%;
 
 }
