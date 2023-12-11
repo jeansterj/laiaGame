@@ -19,3 +19,5 @@ function onMouseClick() {
     let myModal = new bootstrap.Modal(document.getElementById('miModal'));
     myModal.hide();
   }
+
+  

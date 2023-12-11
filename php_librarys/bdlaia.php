@@ -571,7 +571,7 @@ function rankingGlobal() {
     
     $sentenciaText = "SELECT
     nombreUsuario,
-    SUM(maxPuntuacion) AS totalPuntuacion
+    SUM(maxPuntuacion) AS puntuacion
 FROM (
     SELECT
         U.nombreUsuario,
@@ -588,7 +588,7 @@ FROM (
 GROUP BY
     nombreUsuario
 ORDER BY
-    totalPuntuacion DESC
+puntuacion DESC
 LIMIT 10;";
     
     $sentencia = $conexion->prepare($sentenciaText);
@@ -598,5 +598,4 @@ LIMIT 10;";
     $conexion = closeDB();
     return $resultado;
 }
-
 
