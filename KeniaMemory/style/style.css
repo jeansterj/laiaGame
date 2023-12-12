@@ -134,12 +134,28 @@ border-radius: 8px;
     
     display: none;
     width: 290px;
-    margin: 300px auto;
+    height: 770px;
+    margin: 100px auto;
     align-items: center;
     backdrop-filter: blur(10px);
     border: white bold;
     padding: 12px;
     border-radius: 8px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25) inset;
+
+}
+
+.stats2 {
+
+    border: 1px solid white;
+    height: 250px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+
+.stats2 img{
+
+    width: 60%;
 
 }

@@ -531,7 +531,7 @@ function showEndScren(){
     let botonfail = document.getElementById("botonfail");
    
 
-    punt.textContent = puntuacion;
+    // punt.textContent = puntuacion;
 
 
     document.getElementById("end-screen").style.display = "block";
@@ -543,7 +543,7 @@ function showEndScren(){
      
      
      puntuacionInput.value = puntuacion;
-     document.querySelector('input[name="puntuacion"]').value = puntuacion;
+    //  document.querySelector('input[name="puntuacion"]').value = puntuacion;
      
     if(puntuacion>=100){
       infofinal.textContent=infovictoria;

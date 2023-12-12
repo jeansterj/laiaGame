@@ -1,3 +1,11 @@
+<?php
+
+
+include('../../php_librarys/bdlaia.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -66,9 +74,22 @@
     <div id="endGame">
         <section class="section2">
 
-            <h2 class="stats" id="aciertos">Aciertos Completados </h2>
-            <h2 class="stats" id="time">Tardaste </h2>
-            <h2 class="stats" id="move">En movimientos </h2>
+            <h2 class="stats" id="aciertosEnd"></h2>
+            <h2 class="stats" id="timeEnd"></h2>
+            <h2 class="stats" id="moveEnd"></h2>
+            <h2 class="stats" id="puntosEnd"></h2>
+            <h2 class="stats2" > Has Ganado la siguiente pieza <img src="..\img\solarPanel.png" alt=""> </h2>
+
+        <form action="../../php_controllers/laiaController.php" METHOD="POST">
+          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
+          <input type="hidden" name="puntuacion" value="">
+
+
+          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego">SIGUIENTE JUEGO
+
+          </button>
+        </form>
+
 
         </section>
 

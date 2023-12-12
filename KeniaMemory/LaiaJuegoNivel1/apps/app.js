@@ -8,11 +8,19 @@ let aciertos = 0;
 let temp = false;
 let timer = 0;
 let timerRegre = null;
-let timeIni = timer;
+let timeIni; 
 
 let showMove = document.getElementById('move');
 let showAciertos = document.getElementById('aciertos');
 let showTime = document.getElementById('time');
+
+let showMoveEnd = document.getElementById('moveEnd');
+let showAciertosEnd = document.getElementById('aciertosEnd');
+let showTimeEnd = document.getElementById('timeEnd');
+let showPointEnd = document.getElementById('puntosEnd');
+let PointEnd = document.getElementById('puntuacion');
+
+
 
 let tarjetaDestapada = 0;
 let puntos;
@@ -111,6 +119,7 @@ minMoves = maxAciertos+5;
  maxMoves = madMoves+5;
 
  timer = 30;
+ timeIni = timer;
 
         
     } else if (tamañoArray >= 16 && tamañoArray <=23){
@@ -127,6 +136,7 @@ minMoves = maxAciertos+5;
       maxMoves = madMoves+5;
 
       timer = 45;
+      timeIni = timer;
 
 
     } else {
@@ -142,6 +152,7 @@ minMoves = maxAciertos+5;
         maxMoves = madMoves+5;
 
         timer = 60;
+        timeIni = timer;
 
 
     }
@@ -273,9 +284,7 @@ function finGame() {
     document.getElementById("endGame").style.display = "block";
     clearInterval(timerRegre);
 
-    showAciertos.innerHTML = `Aciertos: ${aciertos} bien`;
-    showTime.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
-    showMove.innerHTML = `Movimientos: ${moves} bien`;
+   
 
     if (totalTime < minTime || moves < minMoves) { 
 
@@ -297,4 +306,14 @@ function finGame() {
 
         puntos = 0;
     }
+
+    showAciertosEnd.innerHTML = `Felicidades llegaste a los ${aciertos} aciertos`;
+    showTimeEnd.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
+    showMoveEnd.innerHTML = `Movimientos: ${moves} `;
+    showPointEnd.innerHTML = `El total de puntos ganados son: ${puntos} `;
+
+    let  puntuacionInput = document.getElementsByName("puntuacion")[0];
+    puntuacionInput.value = puntos;
+
+
 }

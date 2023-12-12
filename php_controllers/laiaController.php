@@ -224,6 +224,48 @@ if (isset($_POST["brasildata"])) {
 
 }
 
+if (isset($_POST["Keniadata"])) {
+
+    try {
+        insertKenia($_POST['idUsuario'],$_POST['puntuacion'] );
+        header('Location: ../adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " no funciona";
+         echo "Error: " . $e->getMessage();
+    }
+
+
+}
+
+if (isset($_POST["Indiadata"])) {
+
+    try {
+        insertIndia($_POST['idUsuario'],$_POST['puntuacion'] );
+        header('Location: ../adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " no funciona";
+         echo "Error: " . $e->getMessage();
+    }
+
+
+}
+
+if (isset($_POST["Warcelonadata"])) {
+
+    try {
+        insertWarcelona($_POST['idUsuario'],$_POST['puntuacion'] );
+        header('Location: ../adminpage.php');
+        exit();
+    } catch (Exception $e) {
+        echo " no funciona";
+         echo "Error: " . $e->getMessage();
+    }
+
+
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pais'])) {
     $paiselegido = $_POST['pais'];
