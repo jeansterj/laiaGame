@@ -38,13 +38,12 @@ export class Character {
         if (Date.now() > this.invulnerableUntil) {
             this.health -= damage;
             this.invulnerableUntil = Date.now() + this.invulnerableDuration;         
-            this.blinkCharacter();         
-            
-            if (this.health <= 0) {
-                location.reload();
-            }
+            this.blinkCharacter();       
+                        
         }
-    }
+    }   
+
+    
     
     blinkCharacter() {
         const blinkTimes = 5; 
