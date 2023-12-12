@@ -135,7 +135,22 @@ function checkCompletion() {
     }  
     else {       
         imageSprite3.visible = false;
-    }                     
+    }
+    
+    if (getCookie('KenyaGameCompleted') === 'true') {
+        imageSprite3.material.map = imageTextureCompletada;
+        imageSprite3.material.needsUpdate = true; 
+        imageSprite4.visible = true;             
+    }  
+    else {       
+        imageSprite4.visible = false;
+    }     
+
+    if (getCookie('IndiaGameCompleted') === 'true') {
+        imageSprite4.material.map = imageTextureCompletada;
+        imageSprite4.material.needsUpdate = true; 
+                  
+    }     
 }
 
 function checkIntersection() {
