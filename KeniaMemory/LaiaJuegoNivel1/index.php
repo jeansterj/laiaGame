@@ -62,9 +62,9 @@ include('../../php_librarys/bdlaia.php');
 
             <section class="section2">
 
-                <h2 class="stats" id="aciertos">Aciertos: </h2>
-                <h2 class="stats" id="time">Tiempo: segundos</h2>
-                <h2 class="stats" id="move">Movimientos: </h2>
+                <h2 class="stats" id="aciertos"></h2>
+                <h2 class="stats" id="time"></h2>
+                <h2 class="stats" id="move"></h2>
 
             </section>
 
@@ -85,14 +85,23 @@ include('../../php_librarys/bdlaia.php');
           <input type="hidden" name="puntuacion" value="">
 
 
-          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego">SIGUIENTE JUEGO
-
-          </button>
+          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego">SIGUIENTE JUEGO </button>
         </form>
-
 
         </section>
 
+    </div>
+
+    <div id="loserGame">
+        <section class="section2">
+
+            <h2 class="stats3" id="byeEnd"></h2>
+            <button type="button" onclick="resetGame()"><img src="..\img\facil.png" alt="">
+            <button type="button" onclick="window.location.href='../../tierra2.php'"><img src="..\img\facil.png" alt="">
+
+
+
+        </section>
 
     </div>
 
