@@ -235,8 +235,6 @@
                             if (isset($_SESSION['user'])): ?>
                                 <button class="jugarButton"
                                     onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.html'">JUGAR</button>
-                                <button class="rankingButton"
-                                    onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:
 
                                 ?>
@@ -263,16 +261,9 @@
     <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
                 <div class="modal-body">
                     <?php include_once('./rankingprueba.php') ?>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#modalbcn" data-bs-toggle="modal">Back to
-                        first</button>
+                    <button class="rankingButton" data-bs-target="#modalbcn" data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
