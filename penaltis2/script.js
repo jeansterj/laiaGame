@@ -16,6 +16,10 @@ let audiosucc = document.getElementById("succsound");
 
 let audiofail = document.getElementById("failsound");
 let audio2p = document.getElementById("2psound");
+let dificultad = 1000;
+let dificultad1 = Math.floor(Math.random() * 1000) + 800;
+let dificultad2 = Math.floor(Math.random() * 800) + 400;
+let dificultad3 = Math.floor(Math.random() * 200) + 100;
 
 
 function createGameBoard(rows, cols) {
@@ -136,7 +140,7 @@ function loadRandomImage() {
     imageIsShowing = false;
     loadRandomImage();
 
-  }, Math.floor(Math.random() * 1000) + 400);
+  }, dificultad);
 }
 
 function stopGame() {
@@ -573,7 +577,27 @@ function showEndScren(){
     }
     }
 
+   
 
 
 
+}
+
+
+
+function DIF1(){
+  dificultad = dificultad1;
+  console.log("dificultad 1");
+  
+} 
+
+function DIF2(){
+  dificultad = dificultad2;
+  console.log("dificultad 2")
+  
+}
+
+function DIF3(){
+  dificultad = dificultad3;
+  
 }

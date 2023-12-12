@@ -31,8 +31,9 @@ include('../php_librarys/bdlaia.php');
 
       <!-- <div id="explicacionpr"> <img src="./img/start.png" alt=""></div> -->
       
-      <button class="btn btn-light" onclick ="dificultad1();">DIFICULTAD1</button>
-      <button class="btn btn-info"" onclick ="dificultad2();"">DIFICULTAD2</button>
+      <button class="btn btn-light" onclick ="DIF1()">DIFICULTAD1</button>
+      <button class="btn btn-info"" onclick ="DIF2()"">DIFICULTAD2</button>
+      <button class="btn btn-dark"" onclick ="DIF3()"">DIFICULTAD3</button>
 
      
 
