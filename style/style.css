@@ -608,9 +608,9 @@ button.btnRankingIndia{
     height: 70px;
     background-repeat: no-repeat;
     /* background-color: transparent; */
-    background-color: #da3f3f;
     border: 2px solid #000;
     border-radius: 15px;
+    transition: transform 0.3s ease;
 }
 
 
@@ -629,3 +629,24 @@ button.btnRankingIndia{
 .modal#bcnranking {
     --bs-modal-width: 800px;
 }
+
+form#rankingForm {
+    text-align: center;
+    margin-inline: 36px;
+    text-align-last: justify;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.rankingsFlags button:hover {
+    transform: scale(1.1); 
+}
+
+.table>:not(caption)>*>*{
+    background-color: transparent;
+    color: #ffffff;
+    
+}
+
+
+
