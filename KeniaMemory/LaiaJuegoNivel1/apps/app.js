@@ -20,7 +20,7 @@ let showTimeEnd = document.getElementById('timeEnd');
 let showPointEnd = document.getElementById('puntosEnd');
 let PointEnd = document.getElementById('puntuacion');
 
-
+let end = document.getElementById('byeEnd');
 
 let tarjetaDestapada = 0;
 let puntos;
@@ -53,10 +53,11 @@ showTime.innerHTML = `Tiempo: ${timer} segundos`;
 showAciertos.innerHTML = `Aciertos: ${aciertos}`;
 showMove.innerHTML = `Movimientos: ${moves}`;
 
-let tamañoArray  = null;
+let tamanoArray  = null;
 
 
 function primerNivel() {
+    document.getElementById("loserGame").style.display = "none";
     document.getElementById("facil").style.display = "none";
     document.getElementById("seleccion").style.display = "block";
 }
@@ -69,8 +70,8 @@ function loadingGame() {
     let rows = parseInt(rowsSelect.value);
     let cols = parseInt(colsSelect.value);
 
-     tamañoArray  = cols * rows;
-     maxAciertos = tamañoArray/2;
+     tamanoArray  = cols * rows;
+     maxAciertos = tamanoArray/2;
 
   iniciarArray();
 
@@ -103,7 +104,7 @@ function loadingGame() {
 
 function iniciarControlPuntaje() {
 
-    if (tamañoArray >= 8 && tamañoArray <=15) {
+    if (tamanoArray >= 8 && tamanoArray <=15) {
 
 
 minTime = 20;
@@ -118,11 +119,11 @@ minMoves = maxAciertos+5;
  maxTime = madTime+5;
  maxMoves = madMoves+5;
 
- timer = 30;
+ timer = 5;
  timeIni = timer;
 
         
-    } else if (tamañoArray >= 16 && tamañoArray <=23){
+    } else if (tamanoArray >= 16 && tamanoArray <=23){
 
       minTime = 30;
       minMoves = maxAciertos+5;
@@ -159,9 +160,8 @@ minMoves = maxAciertos+5;
     
 }
 
-
 function iniciarArray() {
-    for (let h = 0; h < tamañoArray ; h+=2) {
+    for (let h = 0; h < tamanoArray ; h+=2) {
         numeros[h] = startTarjeta;    
         numeros[h+1] = startTarjeta;   
         startTarjeta++;
@@ -171,7 +171,6 @@ function iniciarArray() {
     numeros = numeros.sort(() => { return Math.random() - 0.5 });
 
 }
-
 
 function contarTiempo() {
 
@@ -184,6 +183,11 @@ function contarTiempo() {
             clearInterval(timerRegre);
 
             blockCard();
+            console.log("entrooooo");
+
+            loserGame();
+            console.log("entrooooo");
+
 
         }
 
@@ -191,20 +195,14 @@ function contarTiempo() {
 
 
 }
-
 function blockCard() {
-
-
-    for (let i = 0; i <= 15; i++) {
-        let block = document.getElementById(i)
-        block.innerHTML =`<img src="./../img/${numeros[i]}.png" alt=""></img>` ;
-        block.disabled = true;
-
-
+    for (let i = 0; i < tamanoArray; i++) {
+        let block = document.getElementById(i);
+        if (block) {  // Verifica si el elemento existe antes de manipularlo
+            block.innerHTML = `<img src="./../img/${numeros[i]}.png" alt=""></img>`;
+            block.disabled = true;
+        }
     }
-
-
-
 }
 
 function voltear(id) {
@@ -247,7 +245,8 @@ function voltear(id) {
 
             if (aciertos == maxAciertos) {
             finGame();
-            }
+            } 
+            
 
         } else {
 
@@ -318,6 +317,49 @@ function finGame() {
     setCookie('KenyaGameCompleted', 'true', 7);
 
 
+}
+
+
+function loserGame() {
+    
+    document.getElementById("game").style.display = "none";
+    document.getElementById("loserGame").style.display = "block";
+
+    end.innerHTML = `Lo sentimos, no has ganado, ¿Deseas volver a Intentarlo?`;
+
+    console.log("entrooooo");
+
+}
+
+function resetGame() {
+tarjeta= null;
+tarjeta1= null;
+tarjeta2= null;
+primerResultado= null;
+segundoResultado= null;
+moves = 0;
+aciertos = 0;
+temp= false;
+timer = 0;
+timerRegre= null;
+timeIni= null;
+tarjetaDestapada = 0;
+puntos = 0;
+totalTime = 0;
+startTarjeta =0;
+maxAciertos = 0;
+tamanoArray = 0;
+minTime= 0;
+minMoves= 0;
+madTime= 0;
+madMoves= 0;
+medTime= 0;
+medMoves= 0;
+maxTime= 0;
+maxMoves= 0;
+numeros = [];
+
+primerNivel();
 }
 
 function setCookie(name, value, days) {
