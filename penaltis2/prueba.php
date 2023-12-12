@@ -21,6 +21,7 @@ include('../php_librarys/bdlaia.php');
 <body>
 
   <div id="start-screen" class="start-screen">
+   
     
     <!-- <button class="start custom-btn2" onclick="startGame() ,reproducirAudio();">
       <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
@@ -28,11 +29,12 @@ include('../php_librarys/bdlaia.php');
     <div class="container" id="explicacionpr">
 
 
-      <div id="explicacionpr"> <img src="./img/start.png" alt=""></div>
+      <!-- <div id="explicacionpr"> <img src="./img/start.png" alt=""></div> -->
+      
+      <button class="btn btn-light" onclick ="dificultad1();">DIFICULTAD1</button>
+      <button class="btn btn-info"" onclick ="dificultad2();"">DIFICULTAD2</button>
 
-      <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
-        <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
-      </button>
+     
 
 
 
@@ -43,6 +45,9 @@ include('../php_librarys/bdlaia.php');
 
 
     </div>
+    <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
+        <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
+      </button>
 
   </div>
 
