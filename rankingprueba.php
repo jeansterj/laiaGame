@@ -7,18 +7,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <title>Tu Título</title>
-    
+    <title>RANKINGS</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container rankingsFlags">
         <form method="post" action="" id="rankingForm" name="rankingForm">
-            <button class="btn btn-danger" type="button" onclick="cargarTabla(1)">WARCELONA</button>
-            <button class="btn btn-info" type="button" onclick="cargarTabla(2)">BRASIL</button>
-            <button class="btn btn-light" type="button" onclick="cargarTabla(3)">KENIA</button>
-            <button class="btn btn-info" type="button" onclick="cargarTabla(4)">INDIA</button>
-            <button class="btn btn-light" type="button" onclick="cargarTabla('Global')">GLOBAL</button>
+            <button class="btnRankingBcn" type="button" onclick="cargarTabla(1)"></button>
+            <button class="btnRankingBrasil" type="button" onclick="cargarTabla(2)"></button>
+            <button class="btnRankingKenia" type="button" onclick="cargarTabla(3)"></button>
+            <button class="btnRankingIndia" type="button" onclick="cargarTabla(4)"></button>
+            <button class="btnRankingGlobal" type="button" onclick="cargarTabla('Global')"></button>
         </form>
 
         <table class="table table-striped">
