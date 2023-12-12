@@ -327,40 +327,47 @@ function loserGame() {
 
     end.innerHTML = `Lo sentimos, no has ganado, ¿Deseas volver a Intentarlo?`;
 
-    console.log("entrooooo");
 
 }
 
-function resetGame() {
-tarjeta= null;
-tarjeta1= null;
-tarjeta2= null;
-primerResultado= null;
-segundoResultado= null;
-moves = 0;
-aciertos = 0;
-temp= false;
-timer = 0;
-timerRegre= null;
-timeIni= null;
-tarjetaDestapada = 0;
-puntos = 0;
-totalTime = 0;
-startTarjeta =0;
-maxAciertos = 0;
-tamanoArray = 0;
-minTime= 0;
-minMoves= 0;
-madTime= 0;
-madMoves= 0;
-medTime= 0;
-medMoves= 0;
-maxTime= 0;
-maxMoves= 0;
-numeros = [];
+// function resetGame() {
+// tarjeta= null;
+// tarjeta1= null;
+// tarjeta2= null;
+// primerResultado= null;
+// segundoResultado= null;
+// moves = 0;
+// aciertos = 0;
+// temp= false;
+// timer = 0;
+// timerRegre= null;
+// timeIni= null;
+// tarjetaDestapada = 0;
+// puntos = 0;
+// totalTime = 0;
+// startTarjeta =0;
+// maxAciertos = 0;
+// tamanoArray = 0;
+// minTime= 0;
+// minMoves= 0;
+// madTime= 0;
+// madMoves= 0;
+// medTime= 0;
+// medMoves= 0;
+// maxTime= 0;
+// maxMoves= 0;
+// table = null;
+// rowSelect = null;
+// colsSelect= null;
+// rows= null;
+// cols= null;
+// i = 0;
+// cell = null;
+// button =null;
+// numeros = [];
 
-primerNivel();
-}
+// primerNivel();
+// }
 
 function setCookie(name, value, days) {
     var expires = "";

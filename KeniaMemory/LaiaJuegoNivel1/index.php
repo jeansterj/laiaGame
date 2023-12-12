@@ -45,7 +45,7 @@ include('../../php_librarys/bdlaia.php');
             <option value="7">Siete</option>
         </select>
 
-        <button onclick="loadingGame()">Jugar</button>
+        <button onclick="loadingGame()"><img src="..\img\play.png" alt="playGame"></button>
 
     </div>
 
@@ -85,7 +85,7 @@ include('../../php_librarys/bdlaia.php');
           <input type="hidden" name="puntuacion" value="">
 
 
-          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego">SIGUIENTE JUEGO </button>
+          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego"><img src="..\img\logo.png" alt="volverLanding"> </button>
         </form>
 
         </section>
@@ -93,11 +93,11 @@ include('../../php_librarys/bdlaia.php');
     </div>
 
     <div id="loserGame">
-        <section class="section2">
+        <section class="section2 just">
 
             <h2 class="stats3" id="byeEnd"></h2>
-            <button type="button" onclick="resetGame()"><img src="..\img\facil.png" alt="">
-            <button type="button" onclick="window.location.href='../../tierra2.php'"><img src="..\img\facil.png" alt="">
+            <button type="button" onclick="window.location.href='./index.php'"><img src="..\img\replay.png" alt="reiniciarJuego" class="ajusteImg">
+            <button type="button" onclick="window.location.href='../../tierra2.php'"><img src="..\img\logo.png" alt="volverLanding">
 
 
 

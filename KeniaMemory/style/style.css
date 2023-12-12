@@ -91,6 +91,12 @@ box-shadow: 2px 0 0 0;
 
 }
 
+.SeleccionInicio img{
+    width: 60%;
+
+    
+}
+
 select{
 
 border-radius: 8px;
@@ -165,7 +171,7 @@ border-radius: 8px;
     
     display: none;
     width: 400px;
-    height: 250px;
+    height: 220px;
     margin: 300px auto;
     align-items: center;
     backdrop-filter: blur(10px);
@@ -184,9 +190,25 @@ border-radius: 8px;
     box-sizing: border-box;
 
 }
-.stats3 button{
+
+#loserGame button{
     height: 75px;
     width: 140px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.section2.just{
+    width: 400px !important;
+
+}
+
+#loserGame img{
+
+    width: 60%;
+
+}
+.ajusteImg{
     
 }
