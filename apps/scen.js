@@ -1,3 +1,4 @@
+
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
 let renderer = new THREE.WebGLRenderer();
@@ -91,17 +92,15 @@ function onMouseClick(event) {
             console.log('imageSprite clicked!'); 
 
             let myModal = new bootstrap.Modal(document.getElementById('modalbcn'))
-            myModal.show();
-
-            intersect.object.material.map = textureCompleted;
-            intersect.object.material.needsUpdate = true;     
+            myModal.show();          
+           
             
         } else if (intersect.object === imageSprite2) {
 
 
             let myModal = new bootstrap.Modal(document.getElementById('modalBrazil'))
-            myModal.show();
-            
+            myModal.show();          
+          
         } else if (intersect.object === imageSprite3) {
 
             let myModal = new bootstrap.Modal(document.getElementById('modalKenia'))
@@ -115,6 +114,43 @@ function onMouseClick(event) {
             myModal.show();
         }
     });
+}
+
+function checkCompletion() {
+    
+    if (getCookie('WarcelonaGameCompleted') === 'true') {
+        imageSprite.material.map = imageTextureCompletada;
+        imageSprite.material.needsUpdate = true; 
+        imageSprite2.visible = true;             
+    }  
+    else {       
+        imageSprite2.visible = false;
+    }       
+    
+    
+    if (getCookie('brasilGameCompleted') === 'true') {
+        imageSprite2.material.map = imageTextureCompletada;
+        imageSprite2.material.needsUpdate = true; 
+        imageSprite3.visible = true;             
+    }  
+    else {       
+        imageSprite3.visible = false;
+    }
+    
+    if (getCookie('KenyaGameCompleted') === 'true') {
+        imageSprite3.material.map = imageTextureCompletada;
+        imageSprite3.material.needsUpdate = true; 
+        imageSprite4.visible = true;             
+    }  
+    else {       
+        imageSprite4.visible = false;
+    }     
+
+    if (getCookie('IndiaGameCompleted') === 'true') {
+        imageSprite4.material.map = imageTextureCompletada;
+        imageSprite4.material.needsUpdate = true; 
+                  
+    }     
 }
 
 function checkIntersection() {
@@ -196,12 +232,14 @@ function getCookie(name) {
 function render() {
     requestAnimationFrame(render);         
     sphere.rotation.y += 0.0015;
-    outlineMesh1.rotation.y += 0.005;   
+    outlineMesh1.rotation.y += 0.005; 
     
+    checkCompletion();
+
     bombillas(imageSprite, 1.09,7.38,6.52); 
     bombillas(imageSprite2, 1.09,8.10,7.49);
     bombillas(imageSprite3, 1.09,8.0,5.85);
-    bombillas(imageSprite4, 1.09,7.77,5.1);          
+    bombillas(imageSprite4, 1.09,7.77,5.1);         
           
                   
     renderer.render(scene, camera);

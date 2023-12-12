@@ -3,10 +3,13 @@ import { Projectile } from './projectile.js';
 import { EnemySpawner } from './enemySpawner.js';
 import { ChargeEnemy } from './chargeEnemy.js';
 import { Enemy } from './enemy.js';
+import { GameManager } from '../../apps/gameManager.js';
 
 const character = new Character(80, 80);
 const projectiles = [];
 const enemySpawner = new EnemySpawner(1750);
+
+
 
 let keysPressed = {};
 
@@ -107,10 +110,26 @@ function startGame() {
     requestAnimationFrame(gameLoop);
 }
 
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
 
 function gameLoop() {
     if(!character.isChoosing)
     {
+        if (character.health <= 0) {  
+                   
+            setCookie('WarcelonaGameCompleted', 'true', 7);
+            location.reload();
+        }
+    
         character.handleArrowKeys(keysPressed);    
         handleShooting(keysPressed);    
         enemySpawner.update(character);

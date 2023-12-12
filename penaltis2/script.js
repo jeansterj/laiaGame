@@ -169,6 +169,7 @@ function updateTimer() {
   timerElement.textContent = formattedTime;
   if (durationInSeconds === 0) {
     showEndScren();
+
   }
   
 }
@@ -516,6 +517,16 @@ function clearGen(){
 
 }
 
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
 
 function showEndScren(){
   if(correctClicks>=100||timerElement.textContent==="00:00"){
@@ -528,10 +539,12 @@ function showEndScren(){
     let siguientejuego = document.getElementById("siguientejuego");
     let textovolver = document.getElementById("textovolver");
 
+    setCookie('brasilGameCompleted', 'true', 7);    
+
     let botonfail = document.getElementById("botonfail");
    
 
-    punt.textContent = puntuacion;
+     punt.textContent = puntuacion;
 
 
     document.getElementById("end-screen").style.display = "block";
@@ -564,12 +577,3 @@ function showEndScren(){
 
 
 }
-
-
-
-
-
-
-
-
-

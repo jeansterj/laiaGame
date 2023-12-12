@@ -582,3 +582,50 @@ a.loginLink {
     margin: 0px 50px;
     padding-bottom: 30px;
 }
+
+/* Modal Ranking */
+
+button.btnRankingBcn{
+    background-image: url('../Imagenes/flagEspanita.png');   
+}
+
+button.btnRankingBrasil{
+    background-image: url('../Imagenes/flagBrasil.png'); 
+}
+
+button.btnRankingKenia{
+    background-image: url('../Imagenes/flagKenia.png'); 
+}
+
+button.btnRankingIndia{
+    background-image: url('../Imagenes/flagIndia.png'); 
+}
+
+.rankingsFlags button{
+    background-size: 110px 73px;
+    background-position: center;
+    width: 100px;
+    height: 70px;
+    background-repeat: no-repeat;
+    /* background-color: transparent; */
+    background-color: #da3f3f;
+    border: 2px solid #000;
+    border-radius: 15px;
+}
+
+
+.modalRankings .modal-content {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    position: relative;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+.modal#bcnranking {
+    --bs-modal-width: 800px;
+}

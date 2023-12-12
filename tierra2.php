@@ -31,31 +31,30 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
 
 <body>
-
-
     <header>
-
         <a class="logo" href="http://localhost:8080/laiaGame/tierra2.php"><img src="./Imagenes/logo.png"
                 alt="logo_centiks"></a>
-
         <?php require_once('./php_partials/mensajes.php'); ?>
 
         <nav class="navigation">
-        
-        
-            
-            <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa" data-translate="sobreNosotros">Sobre
+
+
+
+            <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa"
+                data-translate="sobreNosotros">Sobre
                 Nosotros</button>
 
             <?php if (isset($_SESSION['user'])): ?>
                 <!-- Si la sesión está iniciada, muestra el botón "Cerrar Sesión" -->
-                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'" name="logoutLink" data-translate="cerrarSesion">CERRAR
+                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'"
+                    name="logoutLink" data-translate="cerrarSesion">CERRAR
                     SESION</button>
 
 
             <?php else: ?>
                 <!-- Si la sesión no está iniciada, muestra el botón "Iniciar Sesión" -->
-                <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm" data-translate="iniciarSesion">Iniciar
+                <button class="btnLogin-popup" name="loginLink" data-bs-toggle="modal" data-bs-target="#loginForm"
+                    data-translate="iniciarSesion">Iniciar
                     Sesión</button>
             <?php endif; ?>
 
@@ -83,11 +82,13 @@
                                         <input type="password" name="password" required>
                                         <label data-translate="password">Password</label>
                                     </div>
-                                    <button type="submit" name="login" class="btn" data-translate="iniciarSesion">Iniciar Sesion</button>
+                                    <button type="submit" name="login" class="btn"
+                                        data-translate="iniciarSesion">Iniciar Sesion</button>
 
                                     <div class="loginRegister">
                                         <p data-translate="noTienesCuenta">¿No tienes cuenta?</p>
-                                        <a href="#" name="registerLink" class="registerLink" data-translate="registrate">Registrate</a>
+                                        <a href="#" name="registerLink" class="registerLink"
+                                            data-translate="registrate">Registrate</a>
                                     </div>
                                 </form>
                             </div>
@@ -244,9 +245,10 @@
                                     disabled>JUGAR</button>
                                 <!-- <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button> -->
-                                    
+
                             <?php endif; ?>
-                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+                            <button class="rankingButton" data-bs-target="#bcnranking"
+                                data-bs-toggle="modal">RANKING</button>
 
 
                         </div>
@@ -258,22 +260,23 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <?php  include_once('./rankingprueba.php')?>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#modalbcn" data-bs-toggle="modal">Back to first</button>
-      </div>
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <?php include_once('./rankingprueba.php') ?>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#modalbcn" data-bs-toggle="modal">Back to
+                        first</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <div class="modal modalStory fade" id="modalBrazil" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
         aria-hidden="true">
