@@ -621,7 +621,7 @@ button.btnRankingIndia{
     border-radius: 20px;
     position: relative;
     width: 800px;
-    height: 500px;
+    height: 700px;
     display: flex;
     overflow: hidden;
     transition: transform .5s ease, height .2s ease;
