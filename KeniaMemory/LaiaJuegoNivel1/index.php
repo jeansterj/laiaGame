@@ -28,24 +28,27 @@ include('../../php_librarys/bdlaia.php');
     </div>
 
     <div class="SeleccionInicio" id="seleccion">
+        <div>
         <label for="rows">Filas</label>
         <select class="form-select form-select-sm" aria-label="Small select example" id="rows">
             <option selected>Selecciona Cuantas filas deseas</option>
-            <option value="2">Dos</option>
-            <option value="4">Cuatro</option>
-            <option value="6">Seis</option>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
         </select>
 
         <label for="cols">Columnas</label>
         <select class="form-select form-select-sm" aria-label="Small select example" id="cols">
             <option selected>Selecciona Cuantas columnas deseas</option>
-            <option value="4">Cuatro</option>
-            <option value="5">Cinco</option>
-            <option value="6">Seis</option>
-            <option value="7">Siete</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
         </select>
-
-        <button onclick="loadingGame()"><img src="..\img\play.png" alt="playGame"></button>
+        </div>
+    <div class="play">
+    <button onclick="loadingGame()"><img src="..\img\play.png" alt="playGame"></button>
+    </div>
 
     </div>
 
@@ -72,24 +75,28 @@ include('../../php_librarys/bdlaia.php');
     </div>
 
     <div id="endGame">
-        <section class="section2">
+            <div class="ajuste">
+                    <h2 class="stats" id="aciertosEnd"></h2>
+                    <h2 class="stats" id="timeEnd"></h2>
+                    <h2 class="stats" id="moveEnd"></h2>
+            </div>
+            
 
-            <h2 class="stats" id="aciertosEnd"></h2>
-            <h2 class="stats" id="timeEnd"></h2>
-            <h2 class="stats" id="moveEnd"></h2>
+            <div >
+
             <h2 class="stats" id="puntosEnd"></h2>
-            <h2 class="stats2" > Has Ganado la siguiente pieza <img src="..\img\solarPanel.png" alt=""> </h2>
 
         <form action="../../php_controllers/laiaController.php" METHOD="POST">
           <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
           <input type="hidden" name="puntuacion" value="">
 
+          <h2 class="stats2" > Has Ganado la siguiente pieza <img src="..\img\solarPanel.png" alt=""> 
 
-          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego"><img src="..\img\logo.png" alt="volverLanding"> </button>
+          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego">Continuar </button></h2>
         </form>
 
-        </section>
-
+            </div>
+            
     </div>
 
     <div id="loserGame">

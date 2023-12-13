@@ -59,7 +59,7 @@ let tamanoArray  = null;
 function primerNivel() {
     document.getElementById("loserGame").style.display = "none";
     document.getElementById("facil").style.display = "none";
-    document.getElementById("seleccion").style.display = "block";
+    document.getElementById("seleccion").style.display = "flex";
 }
 
 function loadingGame() {
@@ -126,7 +126,7 @@ minMoves = maxAciertos+5;
     } else if (tamanoArray >= 16 && tamanoArray <=23){
 
       minTime = 30;
-      minMoves = maxAciertos+5;
+      minMoves = maxAciertos+10;
       madTime = minTime+5;
       madMoves = minMoves+5;
 
@@ -142,7 +142,7 @@ minMoves = maxAciertos+5;
 
     } else {
         minTime = 45;
-        minMoves = maxAciertos+5;
+        minMoves = maxAciertos+15;
         madTime = minTime+5;
         madMoves = minMoves+5;
   
@@ -280,7 +280,7 @@ function mostrarImagen(id,resultado) {
 
 function finGame() {
     document.getElementById("game").style.display = "none";
-    document.getElementById("endGame").style.display = "block";
+    document.getElementById("endGame").style.display = "flex";
     clearInterval(timerRegre);
 
    
@@ -297,7 +297,7 @@ function finGame() {
         
         puntos=40; 
 
-    } else if (totalTime < maxTime || moves < madMoves) { 
+    } else if (totalTime < maxTime || moves < maxMoves) { 
 
         puntos=20; 
 
@@ -307,9 +307,9 @@ function finGame() {
     }
 
     showAciertosEnd.innerHTML = `Felicidades llegaste a los ${aciertos} aciertos`;
-    showTimeEnd.innerHTML = `Acabaste en : ${timeIni - timer} segundos`;
-    showMoveEnd.innerHTML = `Movimientos: ${moves} `;
-    showPointEnd.innerHTML = `El total de puntos ganados son: ${puntos} `;
+    showTimeEnd.innerHTML = `Acabaste en ${timeIni - timer} segundos`;
+    showMoveEnd.innerHTML = `Movimientos ${moves}`;
+    showPointEnd.innerHTML = `El total de puntos ganados son ${puntos} `;
 
     let  puntuacionInput = document.getElementsByName("puntuacion")[0];
     puntuacionInput.value = puntos;
@@ -325,7 +325,7 @@ function loserGame() {
     document.getElementById("game").style.display = "none";
     document.getElementById("loserGame").style.display = "block";
 
-    end.innerHTML = `Lo sentimos, no has ganado, ¿Deseas volver a Intentarlo?`;
+    end.innerHTML = `Lo sentimos, se a completado todas las parejas, ¿Deseas volver a Intentarlo?`;
 
 
 }
