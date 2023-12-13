@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 10;
+let durationInSeconds = 60;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -21,6 +21,9 @@ let dificultad1 = Math.floor(Math.random() * 1000) + 800;
 let dificultad2 = Math.floor(Math.random() * 600) + 400;
 let dificultad3 = Math.floor(Math.random() * 200) + 100;
 let botondificultad1 = document.getElementById("botondifi");
+let puntdorado =5;
+let puntnormal =1;
+let puntneg =1;
 
 
 function createGameBoard(rows, cols) {
@@ -60,7 +63,7 @@ function updateGameBoardUI(board) {
               audiosucc.play();
 
               // Clic correcto (imagen de diana)
-              correctClicks++;
+              correctClicks= correctClicks+puntnormal;
               aciertos.textContent = correctClicks;
               console.log(`Clics correctos: ${correctClicks}`);
               updateProgressBar(correctClicks);
@@ -69,14 +72,14 @@ function updateGameBoardUI(board) {
             } else if (imageElement.src.includes("diananeg.png")) {
               audiofail.play();
 
-              correctClicks--;
+              correctClicks=correctClicks-puntneg;
               aciertos.textContent = correctClicks;
               console.log(`Clics incorrectos: ${incorrectClicks}`);
               updateProgressBar(correctClicks);
             }
             else if (imageElement.src.includes("dianadoble.png")) {
               audio2p.play();
-              correctClicks=correctClicks+5;
+              correctClicks=correctClicks+puntdorado;
               // correctClicks++;
               // correctClicks++;
               aciertos.textContent = correctClicks;
@@ -414,6 +417,7 @@ function showEndScren(){
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
      
     if(puntuacion>=100){
+      // puntuacionInput.value=100;
       infofinal.textContent=infovictoria;
       botonfail.style.display="none";
       siguientejuego.style.display="block";
