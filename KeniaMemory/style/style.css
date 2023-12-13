@@ -36,6 +36,7 @@ button {
     box-shadow: 2px 0 0 0;
     position: relative; /* Asegúrate de que los botones tengan posición absoluta para moverse libremente */
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .section2 {
@@ -254,4 +255,12 @@ background-color: green;
 .play{
 
     padding-left: 20px;
+}
+
+.info{
+
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    position: fixed;
 }

@@ -12,7 +12,9 @@ include('../../php_librarys/bdlaia.php');
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../style/style.css">
-    <title>Kenia Memory</title>
+  
+        <title>Kenia Memory</title>
+
 </head>
 
 <body>
@@ -30,7 +32,7 @@ include('../../php_librarys/bdlaia.php');
     <div class="SeleccionInicio" id="seleccion">
         <div>
         <label for="rows">Filas</label>
-        <select class="form-select form-select-sm" aria-label="Small select example" id="rows">
+        <select  id="rows">
             <option selected>Selecciona Cuantas filas deseas</option>
             <option value="2">2</option>
             <option value="4">4</option>
@@ -38,7 +40,7 @@ include('../../php_librarys/bdlaia.php');
         </select>
 
         <label for="cols">Columnas</label>
-        <select class="form-select form-select-sm" aria-label="Small select example" id="cols">
+        <select id="cols">
             <option selected>Selecciona Cuantas columnas deseas</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -92,7 +94,7 @@ include('../../php_librarys/bdlaia.php');
 
           <h2 class="stats2" > Has Ganado la siguiente pieza <img src="..\img\solarPanel.png" alt=""> 
 
-          <button class="btn  custom-btnrejugar" type="submit" name="Keniadata" id="siguientejuego">Continuar </button></h2>
+          <button type="submit" name="Keniadata" id="siguientejuego">Continuar </button></h2>
         </form>
 
             </div>
@@ -112,7 +114,10 @@ include('../../php_librarys/bdlaia.php');
 
     </div>
 
+    <button class="info"><img src="..\img\info.png" alt=""></button>
+
     <script src="./apps/app.js"></script>
+  
 
 </body>
 
