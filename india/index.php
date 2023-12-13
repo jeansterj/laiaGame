@@ -114,63 +114,71 @@
                 <div class="modal-body">
                     <h1>Camí de la llum</h1>
                     <p>Construye una ciudad sostenible conectando las casas con un camino que comienza en el generador central!</p>
-                    <div class="col">    
-                        <h2>¿Como jugar?</h2>
-                        <ol>
-                            <li>Arrastra las piezas al tablero.</li>
-                            <li>Conecta las casas al generador.</li>
-                            <li>Alcanza la puntuación requerida para cada casa.</li>
-                            <li>¡Completa la ciudad antes de que se agote el tiempo!</li>
-                        </ol>
-                        <h2>Piezas:</h2>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="piece" id="wire" draggable="true">
-                                            <img src="img/wire/horizontal.png">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>1</p>
-                                    </td>
-                                    <td>
-                                        <div class="piece" id="connector" draggable="true">
-                                            <img src="img/connector/connector.png">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>2</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="piece" id="windTurbine" draggable="true">
-                                            <img src="img/windTurbine/windTurbine.png">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>5</p>
-                                    </td>
-                                    <td>
-                                        <div class="piece" id="solarPanel" draggable="true">
-                                            <img src="img/solarPanel/solarPanel.png">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p>10</p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="modal-cols">
+                        <div class="col4">    
+                            <h2>¿Como jugar?</h2>
+                            <ol>
+                                <li>Arrastra las piezas al tablero.</li>
+                                <li>Conecta las casas al generador.</li>
+                                <li>Alcanza la puntuación requerida para cada casa.</li>
+                                <li>¡Completa la ciudad antes de que se agote el tiempo!</li>
+                            </ol>
+                            <h2>Piezas:</h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="piece">
+                                                <img src="img/wire/horizontal.png">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>Valor</p>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <div class="piece">
+                                                <img src="img/connector/connector.png">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>Valor</p>
+                                            <p>2</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="piece">
+                                                <img src="img/windTurbine/windTurbine.png">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>Valor</p>
+                                            <p>5</p>
+                                        </td>
+                                        <td>
+                                            <div class="piece">
+                                                <img src="img/solarPanel/solarPanel.png">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p>Valor</p>
+                                            <p>10</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-                        <h2>Consejos:</h2>
-                        <p>
-                            - Verifica la puntuación y las condiciones especiales.<br>
-                            - Elimina la última pieza si es necesario.
-                        </p>
-                    </div>
-                    <div class="col">
+                            <h2>Consejos:</h2>
+                            <p>
+                                - Verifica la puntuación y las condiciones especiales.<br>
+                                - Elimina la última pieza si es necesario.
+                            </p>
+                        </div>
+                        <div class="col3">
+                            <img src="img/arrastrarIndia.gif" alt="">
+                            <button> CONTINUAR</button>
+                        </div>
                     </div>
                 </div>
             </div>
