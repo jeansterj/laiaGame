@@ -1,7 +1,7 @@
 body {
 
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
+    color: orangered;
     background-image: url(../img/fondo.png);
 }
 
@@ -65,7 +65,7 @@ display: none;
 
 }
 .SeleccionInicio{
-color:black;
+color:orangered;
 font-weight: bold;
 
 display: none;
@@ -104,7 +104,7 @@ border-radius: 8px;
 }
 
 .seleccionNivel{
-    color:black;
+    color:orangered;
     font-weight: bold;
     
     display: block;
@@ -133,7 +133,7 @@ border-radius: 8px;
 
 #endGame{
 
-    color:black;
+    color:orangered;
     font-weight: bold;
     
     display: none;
@@ -166,7 +166,7 @@ border-radius: 8px;
 
 #loserGame{
 
-    color:black;
+    color:orangered;
     font-weight: bold;
     
     display: none;
