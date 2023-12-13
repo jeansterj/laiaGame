@@ -238,15 +238,53 @@ p{
     font-size: 45px;
 }
 
-tr td:nth-child(2) {
+.tableGame tr td:nth-child(2) {
     padding-left: 100px;
 }
-th{
+
+.tableGame th{
     padding-left: 100px;
 }
+
 button#deleteLastElement{
     transform: scale(0.98);
-            /* Scaling button to 0.98 to its original size */
-            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-            /* Lowering the shadow */
-        }
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.modal-dialog{
+    margin-top: 0;
+}
+
+#modalHelp{
+    margin-top: 2%;
+}
+
+.modal#modalHelp {
+    --bs-modal-width: 1320px;
+}
+
+#modalHelp .modal-content {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    position: relative;
+    height: 800px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+
+h1 {
+    text-align: center;
+}
+
+.modal-content p {
+    font-size: 18px;
+
+}
+
+.modal-content h2 {
+    font-size: 25px;
+
+}
