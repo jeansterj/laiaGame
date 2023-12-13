@@ -30,10 +30,28 @@ include('../php_librarys/bdlaia.php');
 
 
       <!-- <div id="explicacionpr"> <img src="./img/start.png" alt=""></div> -->
+      <div>ELIGE LA DIFICULTAD</div>
+      <br>
+      <div class="btn-group" role="group">
+    <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="botondifi">
+      DIFICULTAD
+    </button>
+    <ul class="dropdown-menu dropdown-menu-light">
+      <li><a class="dropdown-item " href="#" onclick="DIF1()">DIFICULTAD 1</a></li>
+      <li><a class="dropdown-item" href="#" onclick="DIF2()">DIFICULTAD 2</a></li>
+      <li><a class="dropdown-item" href="#" onclick="DIF3()">DIFICULTAD 3</a></li>
+    </ul>
+  </div>
       
-      <button class="btn btn-light" onclick ="DIF1()">DIFICULTAD1</button>
-      <button class="btn btn-info"" onclick ="DIF2()"">DIFICULTAD2</button>
-      <button class="btn btn-dark"" onclick ="DIF3()"">DIFICULTAD3</button>
+      <br>
+      <div>Clicka lo mas rapido que puedas en las dianas</div>
+      <br>
+      <div><img src="./img/diananorm.png" alt=""> +1 P</div>
+      <br>
+      <div><img src="./img/dianadoble.png" alt=""> +2 P</div>
+      <br>
+      <div><img src="./img/diananeg.png" alt=""> -1 P</div>
+      <br>
 
      
 
@@ -42,26 +60,26 @@ include('../php_librarys/bdlaia.php');
 
 
 
-
+      <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
+        <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
+      </button>
 
 
     </div>
-    <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();">
-        <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
-      </button>
+   
 
   </div>
 
   <div id="end-screen" class="end-screen container text-center" style="width :350px ">
-    <div class="card border-dark mb-3 bg-info" style="max-width: 18rem;">
-      <div class="card-header bg-transparent ">Juego finalizado!</div>
-      <div class="card-body text-dark">
+    <div class="card border-light mb-3 bg-transparent" style="max-width: 18rem;">
+      <div class="card-header bg-transparent text-light ">Juego finalizado!</div>
+      <div class="card-body text-light">
         <h5 class="card-title">Puntuacion final: <a id="puntuacion">0</a>
         </h5>
         <p class="card-text" id="textoFinal"></p>
       </div>
-      <div class="card-footer bg-transparent ">
-        <a id="textovolver"></a>
+      <div class="card-footer bg-transparent text-light ">
+        <a id="textovolver" class="text-light"></a>
         <button class="btn  custom-btnrejugar " id="botonfail">
           <img src="./img/replay.png" onclick="rePlay('botonreplay');" alt="Imagen" class="img-fluid w-180 h-180 mr-2"
             id="rejugar" />
@@ -78,7 +96,7 @@ include('../php_librarys/bdlaia.php');
 
 
 
-          <button class="btn  custom-btnrejugar" type="submit" name="brasildata" id="siguientejuego">SIGUIENTE JUEGO
+          <button class="btn  custom-btnrejugar border-light" type="submit" name="brasildata" id="siguientejuego">SIGUIENTE JUEGO
 
           </button>
         </form>
@@ -120,9 +138,9 @@ include('../php_librarys/bdlaia.php');
 
 
 
-        <div class="col-md-2 custom-card   text-dark">
-          <div class="card p-0 d-flex bg-info text-dark" style="width: 18rem ">
-            <div class="container  bg-info text-dark " id="explicacion">
+        <div class="col-md-2 custom-card text-light bg-transparent">
+          <div class="card p-0 d-flex bg-transparent text-light" style="width: 18rem ">
+            <div class="container  bg-transparent text-light " id="explicacion">
               <div class="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 2 punto </div>
               <br>
               <div><img src="./img/diananorm.png" alt="diana1" /> + 1 punto</div>
@@ -134,47 +152,39 @@ include('../php_librarys/bdlaia.php');
             </div>
 
 
-            <ul class="list-group list-group-flush bg-info text-dark">
-              <li class="list-group-item bg-info">
+            <ul class="list-group list-group-flush bg-transparent text-light">
+              <li class="list-group-item bg-transparent text-light">
                 TIEMPO RESTANTE : <span id="timer"></span>
               </li>
-              <li class="list-group-item bg-info">
-                ACIERTOS <span id="aciertos"></span>
+              <li class="list-group-item bg-transparent text-light">
+                ACIERTOS : <span id="aciertos"></span>
               </li>
 
               <audio id="musica" src="./audio/musicabrazuka.mp3"></audio>
               <audio id="succsound" src="./audio/mario-coin.mp3"></audio>
               <audio id="failsound" src="./audio/mario-brosfail.wav"></audio>
               <audio id="2psound" src="./audio/mario-bros vida.mp3"></audio>
-              <li class="list-group-item bg-transparent">
-                Potencia actual: <span id="potencia"></span>
-                <div id="caja-generador">
-                  <div id="celda1"></div>
-                  <div id="celda2"></div>
-                  <div id="celda3"></div>
-                  <div id="celda4"></div>
-                  <div id="celda5"></div>
-                  <div id="celda6"></div>
-                  <div id="celda7"></div>
-                  <div id="celda8"></div>
-                  <div id="celda9"></div>
-                  <div id="celda10"></div>
-                  <div>
-
-
-                  </div>
-
-                </div>
-
-
-
-
-              </li>
+             
             </ul>
           </div>
         </div>
       </div>
     </div>
+    <div class="progressBar">
+                    <div class="milestone milestone-40">
+                        
+                    </div>
+                    <div class="milestone milestone-60">
+                      
+                    </div>
+                    <div class="milestone milestone-80">
+                       
+                    </div>
+                    <div class="milestone milestone-100">
+                      
+                    </div>
+                    <div class="progress" id="currentProgress"></div>
+                </div>
   </div>
 
   <script src="./script.js"></script>

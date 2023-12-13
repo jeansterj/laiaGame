@@ -216,7 +216,7 @@ transform: translate(-50%, -50%);
 
 
 #explicacionpr{
-  height: 200px;
+  height: 700px;
   width: 500px;
   position: relative;
   top: 1000px;
@@ -253,8 +253,8 @@ transform: translate(-50%, -50%);
  
     border: none;
     outline: none;
-    top : 670px;
-    left: 300px;
+    top : 20px;
+    left: 10px;
     
   
   
@@ -294,5 +294,20 @@ transform: translate(-50%, -50%);
   
 }
 
+.progressBar {
+  width: 50%;
+  height: 30px;
+  border: 5px solid #ffdf00;
+  position: relative;
+  background-color: rgb(252, 250, 170);
+  border-radius: 15px;
+}
+
+#currentProgress {
+width: 0; 
+height: 25px; 
+background-color: #ffdf00; 
+transition: width 1s ease;
+}
 
 

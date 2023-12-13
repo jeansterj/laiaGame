@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 60;
+let durationInSeconds = 10;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -18,8 +18,9 @@ let audiofail = document.getElementById("failsound");
 let audio2p = document.getElementById("2psound");
 let dificultad = 1000;
 let dificultad1 = Math.floor(Math.random() * 1000) + 800;
-let dificultad2 = Math.floor(Math.random() * 800) + 400;
+let dificultad2 = Math.floor(Math.random() * 600) + 400;
 let dificultad3 = Math.floor(Math.random() * 200) + 100;
+let botondificultad1 = document.getElementById("botondifi");
 
 
 function createGameBoard(rows, cols) {
@@ -62,7 +63,7 @@ function updateGameBoardUI(board) {
               correctClicks++;
               aciertos.textContent = correctClicks;
               console.log(`Clics correctos: ${correctClicks}`);
-              genControl(correctClicks);
+              updateProgressBar(correctClicks);
 
 
             } else if (imageElement.src.includes("diananeg.png")) {
@@ -71,18 +72,18 @@ function updateGameBoardUI(board) {
               correctClicks--;
               aciertos.textContent = correctClicks;
               console.log(`Clics incorrectos: ${incorrectClicks}`);
-              genControl(correctClicks);
+              updateProgressBar(correctClicks);
             }
             else if (imageElement.src.includes("dianadoble.png")) {
               audio2p.play();
-              correctClicks=correctClicks+10;
+              correctClicks=correctClicks+5;
               // correctClicks++;
               // correctClicks++;
               aciertos.textContent = correctClicks;
+              updateProgressBar(correctClicks);
 
 
               console.log(`Clics incorrectos: ${correctClicks}`);
-              genControl(correctClicks);
             }
             cell.innerHTML = '';
             board[i][j] = 0;
@@ -227,7 +228,7 @@ function rePlay(idButton) {
     case "replayingame":
       
       console.log("reinciando...");
-      clearGen();
+      updateProgressBar(0);
     
       clearInterval(timerInterval);
       incorrectClicks = 0;
@@ -238,6 +239,7 @@ function rePlay(idButton) {
     
       durationInSeconds = 60;
       updateTimer();
+      
     
     
       aciertos.textContent = 0;
@@ -267,7 +269,6 @@ function rePlay(idButton) {
 
 
       console.log("reinciando...");
-      clearGen();
     
       clearInterval(timerInterval);
       incorrectClicks = 0;
@@ -278,7 +279,7 @@ function rePlay(idButton) {
     
       durationInSeconds = 60;
       updateTimer();
-    
+    updateProgressBar(0);
     
       aciertos.textContent = 0;
       
@@ -363,163 +364,13 @@ function controlarAudio() {
 
 
 
-function genControl(correctClicks) {
-  let celda1 = document.getElementById("celda1");
-  let celda2 = document.getElementById("celda2");
-  let celda3 = document.getElementById("celda3");
-  let celda4 = document.getElementById("celda4");
-  let celda5 = document.getElementById("celda5");
-  let celda6 = document.getElementById("celda6");
-  let celda7 = document.getElementById("celda7");
-  let celda8 = document.getElementById("celda8");
-  let celda9 = document.getElementById("celda9");
-  let celda10 = document.getElementById("celda10");
-
-  if (correctClicks > 9 && correctClicks < 20) {
-    celda1.style.backgroundColor = "#139648";
-    
-  } else {
-    celda1.style.backgroundColor = ""; // Reset to default color
-  }
-
-  if (correctClicks > 19 && correctClicks < 30) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-  } else {
-    celda2.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 29 && correctClicks < 40) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-  } else {
-    celda3.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 39 && correctClicks < 50) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-  } else {
-    celda4.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 49 && correctClicks < 60) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-    celda5.style.backgroundColor = "#139648";
-  } else {
-    celda5.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 59 && correctClicks < 70) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-    celda5.style.backgroundColor = "#139648";
-    celda6.style.backgroundColor = "#139648";
-  } else {
-    celda6.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 69 && correctClicks < 80) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-    celda5.style.backgroundColor = "#139648";
-    celda6.style.backgroundColor = "#139648";
-    celda7.style.backgroundColor = "#139648";
-  } else {
-    celda7.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 79 && correctClicks < 90) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-    celda5.style.backgroundColor = "#139648";
-    celda6.style.backgroundColor = "#139648";
-    celda7.style.backgroundColor = "#139648";
-    celda8.style.backgroundColor = "#139648";
-  } else {
-    celda8.style.backgroundColor = "";
-  }
-
-  if (correctClicks > 89 && correctClicks < 100) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-    celda5.style.backgroundColor = "#139648";
-    celda6.style.backgroundColor = "#139648";
-    celda7.style.backgroundColor = "#139648";
-    celda8.style.backgroundColor = "#139648";
-    celda9.style.backgroundColor = "#139648";
-  } else {
-    celda9.style.backgroundColor = "";
-  }
-
-  if (correctClicks >= 100) {
-    celda1.style.backgroundColor = "#139648";
-    celda2.style.backgroundColor = "#139648";
-    celda3.style.backgroundColor = "#139648";
-    celda4.style.backgroundColor = "#139648";
-    celda5.style.backgroundColor = "#139648";
-    celda6.style.backgroundColor = "#139648";
-    celda7.style.backgroundColor = "#139648";
-    celda8.style.backgroundColor = "#139648";
-    celda9.style.backgroundColor = "#139648";
-    celda10.style.backgroundColor = "#139648";
-  } else {
-    celda10.style.backgroundColor = "";
-  }
-
-showEndScren();
 
 
 
 
 
-}
 
 
-
-
-
-function clearGen(){
-  let celda1 = document.getElementById("celda1");
-  let celda2 = document.getElementById("celda2");
-  let celda3 = document.getElementById("celda3");
-  let celda4 = document.getElementById("celda4");
-  let celda5 = document.getElementById("celda5");
-  let celda6 = document.getElementById("celda6");
-  let celda7 = document.getElementById("celda7");
-  let celda8 = document.getElementById("celda8");
-  let celda9 = document.getElementById("celda9");
-  let celda10 = document.getElementById("celda10");
-
-
-
-  celda1.style.backgroundColor = "";
-  celda2.style.backgroundColor = "";
-  celda3.style.backgroundColor = "";
-  celda4.style.backgroundColor = "";
-  celda5.style.backgroundColor = "";
-  celda6.style.backgroundColor = "";
-  celda7.style.backgroundColor = "";
-  celda8.style.backgroundColor = "";
-  celda9.style.backgroundColor = "";
-  celda10.style.backgroundColor = "";
-
-
-}
 
 function setCookie(name, value, days) {
   var expires = "";
@@ -566,12 +417,14 @@ function showEndScren(){
       infofinal.textContent=infovictoria;
       botonfail.style.display="none";
       siguientejuego.style.display="block";
+      
       textovolver.textContent="";
 
     }else{
       infofinal.textContent= infofail;
       siguientejuego.style.display="none";
       textovolver.textContent="Volver a intentarlo";
+      
 
 
     }
@@ -588,16 +441,31 @@ function showEndScren(){
 function DIF1(){
   dificultad = dificultad1;
   console.log("dificultad 1");
+  botondifi.textContent="DIFICULTAD 1";
   
 } 
 
 function DIF2(){
   dificultad = dificultad2;
   console.log("dificultad 2")
+  botondifi.textContent="DIFICULTAD 2";
   
 }
 
 function DIF3(){
   dificultad = dificultad3;
+  console.log("dificultad 3");
+  botondifi.textContent="DIFICULTAD 3";
   
+}
+
+function updateProgressBar(correctClicks) {
+
+  if (correctClicks <= 100) {
+    var progressBar = document.getElementById('currentProgress');
+        progressBar.style.width = correctClicks + '%';
+  }
+  if (correctClicks >= 100) {
+   showEndScren();
+  }
 }
