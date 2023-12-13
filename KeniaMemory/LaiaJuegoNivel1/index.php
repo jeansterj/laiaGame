@@ -96,8 +96,8 @@ include('../../php_librarys/bdlaia.php');
         <section class="section2 just">
 
             <h2 class="stats3" id="byeEnd"></h2>
-            <button type="button" onclick="window.location.href='./index.php'"><img src="..\img\replay.png" alt="reiniciarJuego" ></button>
-            <button type="button" onclick="window.location.href='../../tierra2.php'"><img src="..\img\logo.png" alt="volverLanding" class="ajusteImg"></button>
+            <button type="button" onclick="window.location.href='./index.php'"class="orangeButton">Reiniciar
+            <button type="button" onclick="window.location.href='../../tierra2.php'"class="greenButton">Inicio 
 
 
 

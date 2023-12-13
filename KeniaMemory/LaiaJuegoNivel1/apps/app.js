@@ -119,7 +119,7 @@ minMoves = maxAciertos+5;
  maxTime = madTime+5;
  maxMoves = madMoves+5;
 
- timer = 5;
+ timer = 30;
  timeIni = timer;
 
         
