@@ -264,10 +264,11 @@ button#deleteLastElement{
 }
 
 #modalHelp .modal-content {
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     backdrop-filter: blur(20px);
     border-radius: 20px;
+    color: white;
     position: relative;
     height: 800px;
     display: flex;
@@ -277,6 +278,7 @@ button#deleteLastElement{
 
 h1 {
     text-align: center;
+    padding-bottom: 40px 
 }
 
 .modal-content p {
@@ -287,4 +289,49 @@ h1 {
 .modal-content h2 {
     font-size: 25px;
 
+}
+
+td p{
+    text-align: center;
+}
+.modal-content td{
+    padding-right: 50px;
+}
+
+.modal-cols{
+    display: flex;
+    width: 100%;
+}
+
+.modal-content .col3 img{
+    width: 100%;
+    margin-top: 50px;
+}
+
+
+.modal-content button{
+background-color: green;
+width: 200px;
+height: 45px;
+border: 2px solid green;
+border-radius: 6px;
+font-size: 1.1em;
+color: white;
+font-weight: 700;
+letter-spacing: 0.25em;
+margin-top: 50px;
+}
+
+.modal{
+    --bs-modal-bg:none!important;
+}
+
+.modal-content {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+
+.modal-content .col3{
+    text-align: center;
 }
