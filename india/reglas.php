@@ -80,7 +80,7 @@
                         </div>
                         <div class="col3">
                             <img src="img/arrastrarIndia.gif" alt="">
-                            <button type="button">JUGAR</button>
+                            <button type="button" onclick="window.location.href='../india/index.php'">JUGAR</button>
                         </div>
                     </div>
     </div>
