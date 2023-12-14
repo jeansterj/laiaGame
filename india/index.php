@@ -191,6 +191,7 @@
             iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar desafíos electrizantes y
             rompecabezas inteligentes, llevando luz y esperanza a cada rincón que visita. Acompaña a Laia en esta saga
             inspiradora ¿Podrás ayudarla a cumplir su misión y alzarte con el triunfo?</p>
+            <button>VOLVER AL INICIO</button>
     </div>
     <script type="module" src="scripts/main.js"></script>
 </body>
