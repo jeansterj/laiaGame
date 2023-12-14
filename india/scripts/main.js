@@ -102,19 +102,24 @@ export function createBoard(startElements, piecesDropped) {
     square.addEventListener('drop', e => {
       console.log('Drop on square ' + i);
       
+      let direction = checkDirection(i);
+
       let elementCopy;
       if (dragElement === 'solarPanel' && checksquare(i, arraySquareDragged, score)) {
-        elementCopy = document.createElement('img');
-        elementCopy.src = 'img/solarPanel/solarpanel.png';
+
+          elementCopy = document.createElement('img');
+          elementCopy.src = 'img/solarPanel/' + direction + '.png';
+
+
       } else if (dragElement === 'wire' && checksquare(i, arraySquareDragged, score)) {
         elementCopy = document.createElement('img');
-        elementCopy.src = 'img/wire/horizontal.png';
+        elementCopy.src = 'img/wire/' + direction + '.png';
       } else if (dragElement === 'windTurbine' && checksquare(i, arraySquareDragged, score)) {
         elementCopy = document.createElement('img');
-        elementCopy.src = 'img/windTurbine/windturbine.png';
+        elementCopy.src = 'img/windTurbine/' + direction + '.png';
       } else if (dragElement === 'connector'  && checksquare(i, arraySquareDragged, score)) {
         elementCopy = document.createElement('img');
-        elementCopy.src = 'img/connector/connector.png';
+        elementCopy.src = 'img/connector/' + direction + '.png';
       }
 
       //Checks if penultimate piece and change the img
@@ -137,6 +142,31 @@ export function createBoard(startElements, piecesDropped) {
     });
   });
 }
+
+function checkDirection(i) {
+  
+  let penultimate = arraySquareDragged[arraySquareDragged.length -1];
+  let ultimate = i;
+  let direction;
+
+  // if (penultimate !== 0 && penultimate !== 6 && penultimate !== 42 && penultimate !== 48) {   
+    if (ultimate + 1 === penultimate) {
+      direction = "horizontal"
+    } else if(ultimate - 1 === penultimate){
+      direction = "horizontal"
+    } else if(ultimate + 7 === penultimate){
+      direction = "vertical"
+    } else if(ultimate - 7 === penultimate){
+      direction = "vertical"
+    }
+
+  return direction;
+}
+
+
+
+
+
 function checkhouses() {
   let firsthouseFirstTime = true
   let secondHouseFirstTime = true
