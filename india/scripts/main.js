@@ -490,5 +490,8 @@ function updateProgressBar(score) {
 function endScreen() {
   document.getElementById('hide').style.display = "none";
   document.getElementById('show').style.display = "block";
+
+  var finalScoreInput = document.getElementById("finalScore");
+  finalScoreInput.innerHTML = finalScore;
 }
 
