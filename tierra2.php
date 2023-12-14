@@ -38,11 +38,14 @@
 
         <nav class="navigation">
 
+            <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#modalini"
+                data-translate="sobreNosotros">?</button>
 
 
             <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa"
                 data-translate="sobreNosotros">Sobre
                 Nosotros</button>
+
 
             <?php if (isset($_SESSION['user'])): ?>
                 <!-- Si la sesión está iniciada, muestra el botón "Cerrar Sesión" -->
@@ -234,7 +237,7 @@
                             <?php
                             if (isset($_SESSION['user'])): ?>
                                 <button class="jugarButton"
-                                    onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.html'">JUGAR</button>
+                                    onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.php'">JUGAR</button>
                             <?php else:
 
                                 ?>
@@ -366,7 +369,7 @@
                             <?php
                             if (isset($_SESSION['user'])): ?>
                                 <button class="jugarButton"
-                                    onclick="window.location.href='./India/index.php'">JUGAR</button>
+                                    onclick="window.location.href='./India/reglas.php'">JUGAR</button>
                                 <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button>
                             <?php else:

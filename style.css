@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    
+    }
+    
+    body{
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-size:cover ;
+        background-position: center;
+        font-family: 'Montserrat', sans-serif;
+        color:white;
+    
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    }
+    
+    .logo img{
+        width: 50%;
+        height: 40%;
+    }
+
+    .navigation a {
+        position: relative;
+        font-size: 1.1em;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+    }
+    
+    .navigation a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: white;
+        border-radius: 5px;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.5s;
+    }
+    
+ 
+    .navigation a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .navigation .btnLogin-popup:hover {
+        background: black;
+    }
+      
+    .navigation .btnLogin-popup {
+        width: 180px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid white;
+        outline: none;
+        border-radius: 6px;
+        font-size: 1.1em;
+        color: white;
+        font-weight: 500;
+        margin-left: 40px;
+        transition: 0.5s;
+    }
+    
+/* Hace el fondo oscuro y popup blanco */
+.modal-backdrop.fade.show{
+    --bs-backdrop-zindex: 2;
+}
+
+/* Estilos model*/
+
+.form-box h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+.modal{
+        color: white;
+        --bs-modal-bg: transparent!important;
+        justify-content: center;
+        align-items: center;
+
+}
+.modalLogin .modal-content{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+
+    position: relative;
+    width: 400px;
+    height: 440px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+    transform: scale(0);
+}
+
+.modalLogin {
+    transform: scale(1);
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #ffffff;
+    margin: 30px 0;
+    color: white;
+}
+
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.form-box input {
+    color: white;
+}
+
+.icon-inner, .ionicon, svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.modalLogin .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.modalLogin .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.modal button{
+
+    color:white;
+}
+
+.input-box label,
+.input-box input::placeholder {
+    color: white;
+}
+
+.btn {
+    
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: white;
+    line-height: 57px;
+}
+
+.hydrated {
+    visibility: inherit;
+}
+
+.fecha_Naci{
+
+    padding-bottom: 50px ;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.modalLogin .modal-content.active-popup{
+    transform: scale(1);
+
+}
+
+.modalLogin .modal-content.active{
+
+     height: 720px; /* modificar en el completo a este valor */
+}
+
+.modalLogin .modal-content .form-box{
+
+width: 100%;
+padding: 40px;
+
+}
+
+.modalLogin .modal-content .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.modalLogin .modal-content.active .form-box.login{
+
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.modalLogin .modal-content .form-box.register{
+
+position: absolute;
+transition: none;
+transform: translateX(400px);
+}
+
+.modalLogin .modal-content.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+ 
+.modalLogin .modal-content .iconClose{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 2em;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px ;
+cursor: pointer;
+z-index: 1;
+
+}
+
+.input-box label{
+
+position: absolute;
+top: 50%;
+left: 5px;
+transform: translateY(-50%);
+font-size: 1em;
+color: white;
+font-weight: 500;
+pointer-events: none;
+transition: .5s;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+
+.loginRegister{
+
+    font-size: 0.9em;
+text-align: center;
+font-weight: 500;
+margin: 25px 0 10px;
+
+}
+
+.loginRegister p a{
+
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.loginRegister p a:hover{
+
+    text-decoration: underline;
+}
+
+.input-box label,
+.input-box input::placeholder {
+color: rgb(255, 255, 255);
+}
+
+.modalLogin .modal-content button{
+
+color:rgb(255, 255, 255);
+}
+
+.form-box a {
+color: rgb(255, 255, 255);
+
+}
+
+a.registerLink {
+    margin-left: 0;
+}
+
+
+a.loginLink {
+    margin-left: 0;
+}   
+
+.navigation .basicButton{
+
+    width: 180px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+
+}
+
+.infoButton
+{    
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white; 
+    outline: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;   
+    transition: 0.5s; 
+    left: 96%;
+    bottom: 1%;
+    position: fixed;
+}
+
+.navigation .basicButton:hover {
+    background: black;
+}
+
+.imagen-redonda {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+
+.modalDesa .modal-content {
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+
+    position: relative;
+    width: 500px;
+    height: 550px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+
+.contenido-modal {
+    display: flex;
+    align-items: center;
+}
+
+.textos-modal {
+    flex: 1;
+}
+.modal#loginForm {
+    --bs-modal-width: 400px;
+}
+
+.colModalIntroLore1{
+    width: 70%;
+}
+
+.colModalIntroLore2{
+    width: 30%;
+}
+
+.modal#modalbcn {
+    --bs-modal-width: 400px;
+}
+
+#modalbcn .modal-body {
+    display: flex;
+}
+
+.modalStory .modal-content{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+
+    position: relative;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+ 
+.modal#modalbcn {
+    --bs-modal-width: 800px;
+}
+.modal#modalini {
+    --bs-modal-width: 800px;
+}
+
+.liderbcn{
+    width: 132px;
+    margin: 32px;
+}
+
+.jugarButton{
+    background-color: green;
+    padding: 10px 30px;
+    width: 180px;
+    border: 2px solid green;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+.rankingButton{
+    background-color: orange;
+    padding: 10px 30px;
+    margin-left: 20px;
+    width: 180px;
+    border: 2px solid orange;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+#modalbcn h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalbcn p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+/* modal brazil */
+
+.modal#modalBrazil {
+    --bs-modal-width: 400px;
+}
+
+#modalBrazil .modal-body {
+    display: flex;
+}
+
+.modal#modalBrazil {
+    --bs-modal-width: 800px;
+}
+
+#modalBrazil h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalBrazil p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+/* modal kenia */
+
+.modal#modalKenia {
+    --bs-modal-width: 400px;
+}
+
+#modalKenia .modal-body {
+    display: flex;
+}
+
+.modal#modalKenia {
+    --bs-modal-width: 800px;
+}
+
+#modalKenia h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalKenia p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+/* modal India */
+
+.modal#modalIndia {
+    --bs-modal-width: 400px;
+}
+
+#modalIndia .modal-body {
+    display: flex;
+}
+
+.modal#modalIndia {
+    --bs-modal-width: 800px;
+}
+
+#modalIndia h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalIndia p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+
+/* modal intro */
+
+.modal#modalini {
+    --bs-modal-width: 400px;
+}
+
+#modalini .modal-body {
+    display: flex;
+}
+
+.modal#modalini {
+    --bs-modal-width: 800px;
+}
+
+#modalini h2{
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+}
+
+#modalini p{
+    margin: 0px 50px;
+    padding-bottom: 30px;
+}
+
+/* Modal Ranking */
+
+button.btnRankingBcn{
+    background-image: url('../Imagenes/flagEspanita.png');   
+}
+
+button.btnRankingBrasil{
+    background-image: url('../Imagenes/flagBrasil.png'); 
+}
+
+button.btnRankingKenia{
+    background-image: url('../Imagenes/flagKenia.png'); 
+}
+
+button.btnRankingIndia{
+    background-image: url('../Imagenes/flagIndia.png'); 
+}
+
+.rankingsFlags button{
+    background-size: 110px 73px;
+    background-position: center;
+    width: 100px;
+    height: 70px;
+    background-repeat: no-repeat;
+    /* background-color: transparent; */
+    border: 2px solid #000;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+
+.modalRankings .modal-content {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    position: relative;
+    width: 800px;
+    height: 700px;
+    display: flex;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+.modal#bcnranking {
+    --bs-modal-width: 800px;
+}
+
+form#rankingForm {
+    text-align: center;
+    margin-inline: 36px;
+    text-align-last: justify;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.rankingsFlags button:hover {
+    transform: scale(1.1); 
+}
+
+.table>:not(caption)>*>*{
+    background-color: transparent;
+    color: #ffffff;
+    
+}
+
+
+
