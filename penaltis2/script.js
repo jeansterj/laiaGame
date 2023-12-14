@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 60;
+let durationInSeconds = 1;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -490,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function abrirmodal() {
-  let tiempo = 10;
+  let tiempo = 1;
   let botonendendido = document.getElementById("botonendendido");
 
   let countdown = setInterval(function () {

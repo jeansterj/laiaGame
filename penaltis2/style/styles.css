@@ -285,6 +285,21 @@ transform: translate(-50%, -50%);
   background-color: rgb(112 112 112 / 12%);
 }
 
+.container.end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  padding: 25px;
+  flex-direction: column;
+  position: relative;
+  padding-top: 25px; 
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  backdrop-filter: blur(20px);
+  background-color: rgb(112 112 112 / 12%);
+
+}
 
 
 
@@ -295,7 +310,7 @@ transform: translate(-50%, -50%);
   position: relative;
   background-color: rgb(252, 250, 170);
   border-radius: 15px;
-  top : -329px;
+  top : -290px;
   left : 550px;
 }
 

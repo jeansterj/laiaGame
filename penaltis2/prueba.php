@@ -57,9 +57,9 @@ include('../php_librarys/bdlaia.php');
 
 
 
-      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"id="buttoninfo">
-  <img src="./img/info.png" alt="" id="informacioningame">
-</button>
+      <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="buttoninfo">
+        <img src="./img/info.png" alt="" id="informacioningame">
+      </button>
 
 
       <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -77,8 +77,8 @@ include('../php_librarys/bdlaia.php');
             </div>
             <div class="modal-footer">
 
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="botonendendido" onclick="habilitarboton();"
-                disabled>Entendido</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="botonendendido"
+                onclick="habilitarboton();" disabled>Entendido</button>
 
             </div>
           </div>
@@ -92,7 +92,7 @@ include('../php_librarys/bdlaia.php');
 
 
 
-      <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();"disabled id="botonstart">
+      <button class="start2 custom-btn2" onclick="startGame() ,reproducirAudio();" disabled id="botonstart">
         <img src="./img/play.png" alt="Imagen" class="img-fluid w-180 h-180 mr-2" />
       </button>
 
@@ -102,52 +102,35 @@ include('../php_librarys/bdlaia.php');
 
   </div>
 
-  <div id="end-screen" class="end-screen container text-center" style="width :350px ">
-    <div class="card border-light mb-3 bg-transparent" style="max-width: 18rem;">
-      <div class="card-header bg-transparent text-light ">Juego finalizado!</div>
-      <div class="card-body text-light">
-        <h5 class="card-title">Puntuacion final: <a id="puntuacion">0</a>
-        </h5>
-        <p class="card-text" id="textoFinal"></p>
-      </div>
-      <div class="card-footer bg-transparent text-light ">
-        <a id="textovolver" class="text-light"></a>
-        <button class="btn  custom-btnrejugar " id="botonfail">
-          <img src="./img/replay.png" onclick="rePlay('botonreplay');" alt="Imagen" class="img-fluid w-180 h-180 mr-2"
-            id="rejugar" />
-
-        </button>
-
-
-
-        <form action="../php_controllers/laiaController.php" METHOD="POST">
-          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
-          <input type="hidden" name="puntuacion" value="">
-
-
-
-
-
-          <button class="btn  custom-btnrejugar border-light text-light" type="submit" name="brasildata"
-            id="siguientejuego">SIGUIENTE JUEGO
-
-          </button>
-          <br>
-          <div id="lorefinal">Te has ganado esta pieza!
-
-            <div><img src="./img/windturbine.png" alt="" class="border-light"></div>
-          </div>
-
-
-
-        </form>
-
-
-
-      </div>
+  <div id="end-screen" class="end-screen container end" style="width: 400px;">
+    <div class="mb-3 bg-transparent" style="max-width: 18rem;">
+        <div class="bg-transparent text-light">Juego finalizado!</div>
+        <div class="text-light">
+            <h5>Puntuacion final: <a id="puntuacion">0</a></h5>
+            <p id="textoFinal"></p>
+           
+        </div>
+        <div class="bg-transparent text-light">
+            <a id="textovolver" class="text-light"></a>
+            <button class="btn custom-btnrejugar" id="botonfail">
+                <img src="./img/replay.png" onclick="rePlay('botonreplay');" alt="Imagen" class="img-fluid w-180 h-180 mr-2"
+                    id="rejugar" />
+            </button>
+            <form action="../php_controllers/laiaController.php" method="POST">
+                <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
+                <input type="hidden" name="puntuacion" value="">
+                <div id="lorefinal">LAIA HA CONSEGUIDO SUFICIENTE ELECTRICIDAD Y SE HA GANADO LA PIEZA ANCESTRAL PARA PODER USARLA EN LA INDIA
+          <br>          <div><img src="./img/windturbine.png" alt="" class="border-light"></div>
+                </div>
+                <br>
+                <button class="btn custom-btnrejugar border-light text-light" type="submit" name="brasildata"
+                    id="siguientejuego">SIGUIENTE JUEGO</button>
+                <br>
+                
+            </form>
+        </div>
     </div>
-
-  </div>
+</div>
 
 
 
@@ -209,9 +192,7 @@ include('../php_librarys/bdlaia.php');
           </div>
         </div>
       </div>
-      <button type="button" class="btn " id="botoninfo2" data-bs-toggle="modal" data-bs-target="#modal2">
-  <img src="./img/info.png" alt="">
-</button>
+
     </div>
 
     <div class="progressBar">
@@ -230,31 +211,13 @@ include('../php_librarys/bdlaia.php');
       </div>
       <div class="progress" id="currentProgress"></div>
     </div>
-    
-    
 
-<!-- Modal -->
-<div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-    <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">TUTORIAL BRASILIA, PRESTA ATENCION AL TUTORIAL</h1>
 
-            </div>
-            <div class="modal-body">
-              <img id="tutogif" src="./img/tutorial.gif" alt="">
 
-            </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
-       
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
 
-  <script src="./script.js"></script>
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
