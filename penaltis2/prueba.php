@@ -170,7 +170,9 @@ include('../php_librarys/bdlaia.php');
         </div>
       </div>
     </div>
+    
     <div class="progressBar">
+      
                     <div class="milestone milestone-40">
                         
                     </div>

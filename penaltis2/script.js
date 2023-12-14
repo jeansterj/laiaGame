@@ -21,7 +21,7 @@ let dificultad1 = Math.floor(Math.random() * 1000) + 800;
 let dificultad2 = Math.floor(Math.random() * 600) + 400;
 let dificultad3 = Math.floor(Math.random() * 200) + 100;
 let botondificultad1 = document.getElementById("botondifi");
-let puntdorado =5;
+let puntdorado =15;
 let puntnormal =1;
 let puntneg =1;
 
@@ -388,6 +388,7 @@ function setCookie(name, value, days) {
 
 function showEndScren(){
   if(correctClicks>=100||timerElement.textContent==="00:00"){
+    correctClicks =100;
     console.log("Dentro de replayEvent");
     let punt =document.getElementById("puntuacion");
     let infofinal = document.getElementById("textoFinal");
@@ -400,9 +401,10 @@ function showEndScren(){
     setCookie('brasilGameCompleted', 'true', 7);    
 
     let botonfail = document.getElementById("botonfail");
-   
+    
 
      punt.textContent = puntuacion;
+     
 
 
     document.getElementById("end-screen").style.display = "block";
@@ -417,7 +419,7 @@ function showEndScren(){
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
      
     if(puntuacion>=100){
-      // puntuacionInput.value=100;
+     
       infofinal.textContent=infovictoria;
       botonfail.style.display="none";
       siguientejuego.style.display="block";
