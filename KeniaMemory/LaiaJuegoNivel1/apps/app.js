@@ -63,6 +63,7 @@ function primerNivel() {
 }
 
 function loadingGame() {
+    document.getElementById("botonInfo").style.display = "block";
 
     let rowsSelect = document.getElementById("rows");
     let colsSelect = document.getElementById("cols");
@@ -280,6 +281,7 @@ function mostrarImagen(id,resultado) {
 
 function finGame() {
     document.getElementById("game").style.display = "none";
+    document.getElementById("botonInfo").style.display = "none";
     document.getElementById("endGame").style.display = "flex";
     clearInterval(timerRegre);
 
@@ -322,6 +324,8 @@ function finGame() {
 function loserGame() {
     
     document.getElementById("game").style.display = "none";
+    document.getElementById("botonInfo").style.display = "none";
+
     document.getElementById("loserGame").style.display = "block";
 
     end.innerHTML = `Lo sentimos, no se ha completado todas las parejas, ¿Deseas volver a Intentarlo?`;
@@ -337,4 +341,9 @@ function setCookie(name, value, days) {
       expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  }
+
+  function abrirModal() {
+    let myModal = new bootstrap.Modal(document.getElementById('instrucciones'));
+    myModal.show();
   }

@@ -152,7 +152,7 @@ border-radius: 8px;
     display: none;
     width: 690px;
     height: 510px;
-    margin: 200px auto;
+    margin: 180px auto;
     backdrop-filter: blur(50px);
     border: white bold;
     padding: 30px;
@@ -265,4 +265,54 @@ background-color: green;
     border: none;
     box-shadow: none;
     position: fixed;
+    display: none;
+}
+
+.modalModification{
+    padding: 60px;
+    color: black;
+    height: 1260px;
+    width: 1000px;
+    background-image: url(../img/pergamino.png)  ;
+    border: none;
+    background-color: transparent;
+    background-position: 45%;
+    background-repeat: no-repeat;
+    background-size: 1090px;
+    
+}
+
+.AjusteInstrucciones{
+
+    margin-top: 10px;
+    height: 40px !important;
+    width: 290px !important;
+    font-size: 20px;
+    text-align: center;
+    background-color: deepskyblue;
+
+}
+
+.spaceAjust{
+    padding-right: 480px;
+}
+
+p img{
+
+    width: 5%;
+}
+
+.modal-body button{
+    margin-top: 10px;
+    height: 50px;
+    width: 140px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -64px;
+    box-shadow: none;
+    position: none;
+}
+.col3 img{
+    width: 65%;
+
 }
