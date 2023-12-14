@@ -335,3 +335,70 @@ margin-top: 50px;
 .modal-content .col3{
     text-align: center;
 }
+
+
+
+/* Pagina de reglas */
+.explanation .col3{
+    text-align: center;
+}
+
+.explanation {
+    padding: 50px;
+}
+
+.explanation button{
+    background-color: green;
+    width: 200px;
+    height: 45px;
+    border: 2px solid green;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    margin-top: 50px;
+    }
+
+    .explanation {
+        margin-top: 0;
+    }
+    
+    .explanation {
+        width: 1320px;
+    }
+    
+    .explanation {
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: transform .5s ease, height .2s ease;
+        margin: 2% auto; /* Centrar horizontalmente */
+    }
+    
+    .explanation h1 {
+        text-align: center;
+        padding-bottom: 40px 
+    }
+    
+    .explanation p {
+        font-size: 18px;
+    
+    }
+    
+    .explanation h2 {
+        font-size: 25px;
+    
+    }
+    .explanation td{
+        padding-right: 50px;
+    }
+    
+    .explanation .col3 img{
+        width: 100%;
+        margin-top: 50px;
+    }

@@ -177,7 +177,7 @@
                         </div>
                         <div class="col3">
                             <img src="img/arrastrarIndia.gif" alt="">
-                            <button> CONTINUAR</button>
+                            <button type="button" data-bs-dismiss="modal"> CONTINUAR</button>
                         </div>
                     </div>
                 </div>

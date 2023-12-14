@@ -1,4 +1,4 @@
-// Definates
+// Definates houses and generator
 const generator = '<img src="img/generator.png">'
 const house1 = '<img src="img/house1.png">'
 const house2 = '<img src="img/house2.png">'

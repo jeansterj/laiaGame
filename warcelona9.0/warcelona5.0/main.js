@@ -1,9 +1,11 @@
 import { Character } from './character.js';
 import { Projectile } from './projectile.js';
+import { TripleShotProjectile } from './tripleProyectile.js';
 import { EnemySpawner } from './enemySpawner.js';
 import { ChargeEnemy } from './chargeEnemy.js';
 import { Enemy } from './enemy.js';
 import { GameManager } from '../../apps/gameManager.js';
+import { Orbital } from './orbital.js';
 
 const character = new Character(80, 80);
 const projectiles = [];
@@ -12,6 +14,8 @@ const enemySpawner = new EnemySpawner(1750);
 
 
 let keysPressed = {};
+
+const orbital = new Orbital(15,0.015,60);
 
 window.addEventListener('keydown', (event) => {
     keysPressed[event.code] = true;
@@ -124,6 +128,8 @@ function setCookie(name, value, days) {
 function gameLoop() {
     if(!character.isChoosing)
     {
+
+
         if (character.health <= 0) {  
                    
             setCookie('WarcelonaGameCompleted', 'true', 7);
@@ -136,6 +142,8 @@ function gameLoop() {
         difficulty();
 
         let toDestroy = { enemies: [], projectiles: [] };
+
+        orbital.update(character, enemySpawner.enemies);
 
         character.updateHealthDisplay();
     
@@ -209,7 +217,7 @@ function handleShooting(keysPressed) {
         if (keysPressed['KeyW']) {
             if(character.pairshoot == false)
             {
-            projectiles.push(new Projectile(middleX, middleY, 'up'));
+            projectiles.push(new TripleShotProjectile(middleX, middleY, 'up'));
             }
 
             if(character.pairshoot)
