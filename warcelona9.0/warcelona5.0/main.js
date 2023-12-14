@@ -128,14 +128,20 @@ function setCookie(name, value, days) {
 function gameLoop() {
     if(!character.isChoosing)
     {
+        
 
 
         if (character.health <= 0) {  
                    
-            setCookie('WarcelonaGameCompleted', 'true', 7);
+            setCookie('WarcelonaGameCompleted', 'true', 7);           
             location.reload();
         }
-    
+
+        let  puntuacionInput = document.getElementsByName("puntuacion")[0];        
+        puntuacionInput.value = 50;
+      
+
+
         character.handleArrowKeys(keysPressed);    
         handleShooting(keysPressed);    
         enemySpawner.update(character);
