@@ -18,6 +18,11 @@ const windTurbineValue = 5
 const connectorValue = 2
 const wireValue = 1
 
+const firstHouseSquare = 42
+const secondHouseSquare = 0
+const thirdHouseSquare = 48
+const foutrthHouseSquare = 6
+
 let dragElement
 
 //Map 
@@ -133,21 +138,92 @@ export function createBoard(startElements, piecesDropped) {
   });
 }
 function checkhouses() {
-  if (arraySquareDragged.includes(0)){
+  let firsthouseFirstTime = true
+  let secondHouseFirstTime = true
+  let thirdHouseFirstTime = true
+  let fourthHouseFirstTime = true
 
-  }else{
+
+  //Pone las casas con luz
+  if (arraySquareDragged.includes(firstHouseSquare) && firsthouseFirstTime){
+    let housesquare = document.querySelector('[squareid="' + firstHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img')
+    newImage.src = 'img/house1LightOn.png'
+    housesquare.appendChild(newImage)
+
+    firsthouseFirstTime = false
+
+  }  if (arraySquareDragged.includes(secondHouseSquare) && secondHouseFirstTime){
+    let housesquare = document.querySelector('[squareid="' + secondHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img')
+    newImage.src = 'img/house2LightOn.png'
+    housesquare.appendChild(newImage)
+
+    secondHouseFirstTime = true
     
   }
-  if (arraySquareDragged.includes(6)){
-    
+  if (arraySquareDragged.includes(thirdHouseSquare) && thirdHouseFirstTime){
+    let housesquare = document.querySelector('[squareid="' + thirdHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img');
+    newImage.src = 'img/house3LightOn.png';
+    housesquare.appendChild(newImage);
+
+    secondHouseFirstTime = true
   }
-  if (arraySquareDragged.includes(42)){
-    
-  }
-  if (arraySquareDragged.includes(48)){
-    
+  if (arraySquareDragged.includes(foutrthHouseSquare) && fourthHouseFirstTime){
+    let housesquare = document.querySelector('[squareid="' + foutrthHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img');
+    newImage.src = 'img/house4LightOn.png';
+    housesquare.appendChild(newImage);
+
+
+    secondHouseFirstTime = true
   }
 
+
+  //vuelve las casas a la version original
+  if (!arraySquareDragged.includes(firstHouseSquare)){
+    let housesquare = document.querySelector('[squareid="' + firstHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img')
+    newImage.src = 'img/house1.png'
+    housesquare.appendChild(newImage)
+
+    firsthouseFirstTime = false
+
+  }  if (!arraySquareDragged.includes(secondHouseSquare)){
+    let housesquare = document.querySelector('[squareid="' + secondHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img')
+    newImage.src = 'img/house2.png'
+    housesquare.appendChild(newImage)
+
+    secondHouseFirstTime = false
+    
+  }
+  if (!arraySquareDragged.includes(thirdHouseSquare) ){
+    let housesquare = document.querySelector('[squareid="' + thirdHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img');
+    newImage.src = 'img/house4.png';
+    housesquare.appendChild(newImage);
+
+    secondHouseFirstTime = false
+  }
+  if (!arraySquareDragged.includes(foutrthHouseSquare)){
+    let housesquare = document.querySelector('[squareid="' + foutrthHouseSquare + '"]')
+    housesquare.removeChild(housesquare.firstChild)
+    let newImage = document.createElement('img');
+    newImage.src = 'img/house3.png';
+    housesquare.appendChild(newImage);
+
+
+    secondHouseFirstTime = false
+  }
 
 }
 
@@ -458,6 +534,8 @@ function deletelastpiece(){
     arraySquareDragged.pop()
     piecesDropped.pop()
   }
+
+  checkhouses()
 }
 
 function deleteScore() {
