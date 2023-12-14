@@ -54,7 +54,7 @@ include('../../php_librarys/bdlaia.php');
             </select>
         </div>
         <div class="play">
-            <button onclick="loadingGame()"><img src="..\img\play.png" alt="playGame"></button>
+            <button onclick="loadingGame()" id="play"><img src="..\img\play.png" alt="playGame"></button>
         </div>
 
     </div>

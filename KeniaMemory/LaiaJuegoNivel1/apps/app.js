@@ -74,6 +74,16 @@ function loadingGame() {
      tamanoArray  = cols * rows;
      maxAciertos = tamanoArray/2;
 
+     console.log(rows);
+     console.log(cols);
+
+     if ( !isNaN(rows) && !isNaN(cols)) {
+        let miBoton = document.getElementById("play");
+        miBoton.disabled = false;
+    } else {
+        miBoton.disabled = true;
+    }
+
   iniciarArray();
 
         // Obtén la referencia a la tabla
