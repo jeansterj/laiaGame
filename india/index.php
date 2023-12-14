@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container text-center">
+    <div class="container text-center" id="hide">
         <div class="headrow">
             <div class="col1">
                 <p>Energía</p>
@@ -113,9 +113,10 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h1>Camí de la llum</h1>
-                    <p>Construye una ciudad sostenible conectando las casas con un camino que comienza en el generador central!</p>
+                    <p>Construye una ciudad sostenible conectando las casas con un camino que comienza en el generador
+                        central!</p>
                     <div class="modal-cols">
-                        <div class="col4">    
+                        <div class="col4">
                             <h2>¿Como jugar?</h2>
                             <ol>
                                 <li>Arrastra las piezas al tablero.</li>
@@ -183,6 +184,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container text-center" id="show">
+        <h2>TU PUNTUACIÓN HA SIDO DE <span id="finalScore"></span>! ¡JUEGO FINALIZADO!</h2>
+        <p>Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su misión es
+            iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar desafíos electrizantes y
+            rompecabezas inteligentes, llevando luz y esperanza a cada rincón que visita. Acompaña a Laia en esta saga
+            inspiradora ¿Podrás ayudarla a cumplir su misión y alzarte con el triunfo?</p>
     </div>
     <script type="module" src="scripts/main.js"></script>
 </body>
