@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 4;
+let durationInSeconds = 60;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -413,12 +413,15 @@ function showEndScren(){
     document.getElementById("end-screen").style.display = "block";
     document.getElementById("content").style.display = "none";
    
-    
+    // cambiar el value del input para enviar la puntuacion
      let  puntuacionInput = document.getElementsByName("puntuacion")[0];
- 
-     
-     
-     puntuacionInput.value = puntuacion;
+       puntuacionInput.value = puntuacion;
+
+
+
+
+
+
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
      
     if(puntuacion>=100){
@@ -480,4 +483,40 @@ function updateProgressBar(correctClicks) {
   if (correctClicks >= 100) {
    showEndScren();
   }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  abrirmodal();
+});
+
+function abrirmodal() {
+  let tiempo = 10;
+  let botonendendido = document.getElementById("botonendendido");
+
+  let countdown = setInterval(function () {
+    tiempo--;
+    console.log(tiempo);
+
+    if (tiempo <= 0) {
+      clearInterval(countdown);
+      
+
+
+      if (botonendendido) {
+        botonendendido.disabled = false;
+        
+      }
+     
+     
+    }
+
+  }, 1000);
+
+  let modal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
+  modal.show();
+}
+
+function habilitarboton(){
+  let botonendendido = document.getElementById("botonstart");
+  botonendendido.disabled = false;
 }
