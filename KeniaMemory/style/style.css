@@ -6,7 +6,7 @@ body {
 }
 
 main {
-    width: 930px;
+    width: 1060px;
     margin: 100px auto;
     display: flex;
     align-items: center;
@@ -50,9 +50,9 @@ button {
 
 .stats {
 
-    width: 230px;
+    width: 290px;
     border: 3px solid white;
-    height: 100px;
+    height: 130px;
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
@@ -72,7 +72,7 @@ display: none;
 font-weight: bold;
 
 display: none;
-width: 730px;
+width: 840px;
 margin: 300px auto;
 align-items: center;
 backdrop-filter: blur(50px);
@@ -99,7 +99,7 @@ margin-left: 20px;
 }
 
 .SeleccionInicio img{
-    padding-top: 10px;
+    padding-bottom: 10px;
     width: 40%;
 
     
@@ -115,7 +115,7 @@ border-radius: 8px;
     font-weight: bold;
     
     display: block;
-    width: 310px;
+    width: 340px;
     margin: 300px auto;
     align-items: center;
     backdrop-filter: blur(50px);
@@ -150,8 +150,8 @@ border-radius: 8px;
     font-weight: bold;
     
     display: none;
-    width: 510px;
-    height: 400px;
+    width: 690px;
+    height: 510px;
     margin: 200px auto;
     backdrop-filter: blur(50px);
     border: white bold;
@@ -180,7 +180,7 @@ border-radius: 8px;
 .stats2 {
 
     border: 3px solid white;
-    height: 250px;
+    height: 300px;
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
@@ -198,13 +198,13 @@ border-radius: 8px;
     font-weight: bold;
     
     display: none;
-    width: 400px;
-    height: 220px;
+    width: 520px;
+    height: 250px;
     margin: 300px auto;
     align-items: center;
     backdrop-filter: blur(50px);
     border: white bold;
-    padding: 12px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25) inset;
     text-align: center;
@@ -215,11 +215,13 @@ border-radius: 8px;
 
 .stats3{
     border: 3px solid white;
-    width: 370px;
-    height: 80px;
+    width: 450px;
+    height: 130px;
     border-radius: 8px;
     padding: 8px 20px;
     box-sizing: border-box;
+    font-size: 30px;
+    text-align: left;
 
 }
 
@@ -239,7 +241,7 @@ border-radius: 8px;
 }
 
 .section2.just{
-    width: 400px !important;
+    width: 500px !important;
 
 }
 
