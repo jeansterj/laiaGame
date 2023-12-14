@@ -1,8 +1,9 @@
 import { Enemy } from './enemy.js';
 import { ChargeEnemy } from './chargeEnemy.js';
-import { AreaDamageEnemy } from './bulky.js';
+import { AreaDamageEnemy } from './bulky.js'; // Asegúrate de que el nombre es correcto
 import { TankEnemy } from './tankEnemy.js';
-import { ExplosionEnemy } from './explosionEnemy.js'; 
+import { ExplosionEnemy } from './explosionEnemy.js';
+import { OrbitingEnemy } from './orbitalEnemy.js'; // Asegúrate de que la ruta sea correcta
 
 export class EnemySpawner {
     constructor(spawnRate) {
@@ -12,12 +13,14 @@ export class EnemySpawner {
         this.chargeEnemyRate = 0;
         this.areaDamageEnemyRate = 0;
         this.tankEnemyRate = 0;
-        this.explosionEnemyRate = 0;        
+        this.explosionEnemyRate = 0;
+        this.orbitingEnemyRate = 0.1; // Añadido
         this.normalH = 20;
         this.chargeEnemyH = 20;
         this.areaEnemyH = 60;
         this.tankEnemyH = 100;
         this.explosionEnemyH = 30;
+        this.orbitingEnemyH = 40; // Añadido
     }
 
     update(character) {
@@ -49,27 +52,26 @@ export class EnemySpawner {
             let enemy;
             const rand = Math.random();
 
+            // Lógica para determinar qué tipo de enemigo generar
             if (rand < this.chargeEnemyRate) {
-              
-                enemy = new ChargeEnemy(x, y,this.chargeEnemyH);                
+                enemy = new ChargeEnemy(x, y, this.chargeEnemyH);
             } else if (rand < this.chargeEnemyRate + this.areaDamageEnemyRate) {
-                
-                enemy = new AreaDamageEnemy(x, y, this.areaEnemyH);                
+                enemy = new AreaDamageEnemy(x, y, this.areaEnemyH);
             } else if (rand < this.chargeEnemyRate + this.areaDamageEnemyRate + this.tankEnemyRate) {
-                
-                enemy = new TankEnemy(x, y, this.chargeEnemyH);
+                enemy = new TankEnemy(x, y, this.tankEnemyH);
             } else if (rand < this.chargeEnemyRate + this.areaDamageEnemyRate + this.tankEnemyRate + this.explosionEnemyRate) {
-                
-                enemy = new ExplosionEnemy(x, y, this.explosionEnemyH); 
+                enemy = new ExplosionEnemy(x, y, this.explosionEnemyH);
+            } else if (rand < this.chargeEnemyRate + this.areaDamageEnemyRate + this.tankEnemyRate + this.explosionEnemyRate + this.orbitingEnemyRate) {
+                enemy = new OrbitingEnemy(x, y, this.orbitingEnemyH); // Añadido
             } else {
-                
-                enemy = new Enemy(x, y,this.normalH);
+                enemy = new Enemy(x, y, this.normalH);
             }
 
             this.enemies.push(enemy);
             this.lastSpawn = now;
         }
 
+        // Actualizar cada enemigo
         this.enemies.forEach(enemy => {
             enemy.update(character);
         });
