@@ -123,7 +123,7 @@ include('../../php_librarys/bdlaia.php');
         <div class="modal-dialog">
             <div class="modal-content modalModification">
                 <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarModal();"></button>
                     <b><p>Embárcate en un antiguo y místico ritual para emparejar todos los símbolos mágicos frágiles,
                         evitando movimientos innecesarios que puedan perturbar su energía. Encuentra todos los pares
                         antes de que

@@ -22,6 +22,8 @@ let PointEnd = document.getElementById('puntuacion');
 
 let end = document.getElementById('byeEnd');
 
+let myModal = new bootstrap.Modal(document.getElementById('instrucciones'));
+
 let tarjetaDestapada = 0;
 let puntos;
 let totalTime;
@@ -354,6 +356,12 @@ function setCookie(name, value, days) {
   }
 
   function abrirModal() {
-    let myModal = new bootstrap.Modal(document.getElementById('instrucciones'));
+    clearInterval(timerRegre);
     myModal.show();
   }
+
+  function cerrarModal() {
+    myModal.hide();
+    // Reanudar el temporizador cuando se cierra el modal
+    contarTiempo();
+}

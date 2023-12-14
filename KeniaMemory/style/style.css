@@ -6,7 +6,7 @@ body {
 }
 
 main {
-    width: 1060px;
+    width: 1090px;
     margin: 100px auto;
     display: flex;
     align-items: center;
@@ -37,6 +37,7 @@ button {
     position: relative; /* Asegúrate de que los botones tengan posición absoluta para moverse libremente */
     transition: all 0.3s ease;
     cursor: pointer;
+    margin-left: 5px;
 }
 
 .section2 {
@@ -173,7 +174,6 @@ border-radius: 8px;
     border-radius: 12px;
     box-shadow: none;
     position: none; 
-    transition: none;
 
 }
 
@@ -237,7 +237,6 @@ border-radius: 8px;
     color: white;
     box-shadow: none;
     position: none;
-    transition: none;
 }
 
 .section2.just{
@@ -315,4 +314,8 @@ p img{
 .col3 img{
     width: 65%;
 
+}
+
+button:hover {
+    transform: scale(1.1); 
 }
