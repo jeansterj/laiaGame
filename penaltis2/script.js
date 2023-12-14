@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 60;
+let durationInSeconds = 4;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -388,7 +388,7 @@ function setCookie(name, value, days) {
 
 function showEndScren(){
   if(correctClicks>=100||timerElement.textContent==="00:00"){
-    correctClicks =100;
+    
     console.log("Dentro de replayEvent");
     let punt =document.getElementById("puntuacion");
     let infofinal = document.getElementById("textoFinal");
@@ -397,11 +397,14 @@ function showEndScren(){
     let infofail ="No has conseguido suficiente energia , vuelve a intentarlo "
     let siguientejuego = document.getElementById("siguientejuego");
     let textovolver = document.getElementById("textovolver");
+    let imgpieza =document.getElementById("lorefinal");
 
     setCookie('brasilGameCompleted', 'true', 7);    
 
     let botonfail = document.getElementById("botonfail");
-    
+    if (puntuacion>100){
+      puntuacion=100;
+     }
 
      punt.textContent = puntuacion;
      
@@ -420,11 +423,14 @@ function showEndScren(){
      
     if(puntuacion>=100){
      
+      document.querySelector('input[name="puntuacion"]').value = puntuacion;
       infofinal.textContent=infovictoria;
       botonfail.style.display="none";
       siguientejuego.style.display="block";
+      imgpieza.style.display="block";
       
       textovolver.textContent="";
+      
 
     }else{
       infofinal.textContent= infofail;

@@ -599,3 +599,13 @@ LIMIT 10;";
     return $resultado;
 }
 
+function clearRanking() {
+    $conexion = openDB();
+    
+    $sentenciaText = "DELETE FROM puntuacion;";
+    
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->execute();
+    
+    $conexion = closeDB();
+}

@@ -96,11 +96,19 @@ include('../php_librarys/bdlaia.php');
 
 
 
-          <button class="btn  custom-btnrejugar border-light" type="submit" name="brasildata" id="siguientejuego">SIGUIENTE JUEGO
+          <button class="btn  custom-btnrejugar border-light text-light" type="submit" name="brasildata" id="siguientejuego">SIGUIENTE JUEGO
 
           </button>
-        </form>
+          <br>
+          <div id="lorefinal">Te has ganado esta pieza!
 
+          <div ><img src="./img/windturbine.png" alt="" class="border-light"></div>
+          </div>
+         
+          
+
+        </form>
+        
 
 
       </div>

@@ -63,6 +63,10 @@
                         NUEVO ADMIN
 
                     </button>
+                    <form action="./php_controllers/laiaController.php" method="POST">
+                    <button type="submit"name="limpiarpuntuacion" class="btn btn-danger">LIMPIAR RANKING</button>
+                    </form>
+                    
 
 
                     <div class="modal fade" id="modaladmin" tabindex="-1" aria-labelledby="modaladmin" aria-hidden="true">
