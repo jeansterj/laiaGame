@@ -28,8 +28,8 @@ include('../../php_librarys/bdlaia.php');
 
         <h2>Selecciona el nivel que desees jugar</h2>
 
-        <button type="button" onclick="primerNivel()"><img src="..\img\facil.png" alt="">
-            <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'"><img
+        <button type="button" onclick="primerNivel()" class="orangeButton"><img src="..\img\facil.png" alt="">
+            <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'" class="greenButton"><img
                     src="..\img\dificil.png" alt="">
 
     </div>
