@@ -474,6 +474,22 @@ a.loginLink {
     letter-spacing: 0.25em;
 }
 
+.rankingBackButton{
+    background-color: orange;
+    position: fixed;
+    padding: 10px 30px;
+    margin-left: 73%;
+    top: 90%;    
+    width: 180px;
+    border: 2px solid orange;
+    border-radius: 6px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+
 #modalbcn h2{
     text-align: center;
     padding: 30px 0px;
