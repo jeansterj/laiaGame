@@ -416,3 +416,11 @@ margin-top: 50px;
     #show p{
         font-size: 25px;
     }
+
+    .explanation button:hover{
+        transform: scale(1.1); 
+    }
+
+    button#deleteLastElement:hover{
+        transform: scale(1.1); 
+    }
