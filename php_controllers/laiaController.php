@@ -214,7 +214,7 @@ if (isset($_POST["brasildata"])) {
 
     try {
         insertBrasil($_POST['idUsuario'],$_POST['puntuacion'] );
-        header('Location: ../adminpage.php');
+        header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
         echo " no funciona";
@@ -228,7 +228,7 @@ if (isset($_POST["Keniadata"])) {
 
     try {
         insertKenia($_POST['idUsuario'],$_POST['puntuacion'] );
-        header('Location: ../adminpage.php');
+        header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
         echo " no funciona";
@@ -242,7 +242,7 @@ if (isset($_POST["indiadata"])) {
 
     try {
         insertIndia($_POST['idUsuario'],$_POST['puntuacion'] );
-        header('Location: ../adminpage.php');
+        header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
         echo " no funciona";
@@ -256,7 +256,7 @@ if (isset($_POST["Warcelonadata"])) {
 
     try {
         insertWarcelona($_POST['idUsuario'],$_POST['puntuacion'] );
-        header('Location: ../adminpage.php');
+        header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
         echo " no funciona";
