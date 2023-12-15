@@ -264,9 +264,9 @@
     <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-body rankingSpace">
                     <?php include_once('./rankingprueba.php') ?>
-                    <button class="rankingButton" data-bs-target="#modalbcn" data-bs-toggle="modal">VOLVER</button>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalbcn" data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -400,11 +400,15 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>Laia, ens il·lumines</h2>
-                        <p>Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su
-                            misión es iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar
-                            desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
-                            que visita. Acompaña a Laia en esta saga inspiradora ¿Podrás ayudarla a cumplir su misión y
-                            alzarte con el triunfo?</p>
+                        <p>
+                    
+                    Laia, una ingeniera amante de la energía buena, viaja por el mundo para iluminarlo. En 
+                    cada país, usa sus habilidades para resolver problemas y llevar luz a todos. Busca  
+                    piezas mágicas en cada lugar, y cuando termina en un país, recoge una pieza especial. 
+                    Después de pasar por Barcelona, Brasil y Kenia, llega a India y junta todas las piezas 
+                    para hacer una energía superpoderosa que ilumina el planeta. ¿Puedes ayudar a Laia a 
+                    cumplir su misión y ganar juntos? ¡Acompáñala en este viaje emocionante!
+                        </p>
                     </div>
                     <div class="colModalIntroLore2">
                         <img src=".\Imagenes\laia.png" alt="" class="liderbcn">

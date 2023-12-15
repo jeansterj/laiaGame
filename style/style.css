@@ -474,6 +474,15 @@ a.loginLink {
     letter-spacing: 0.25em;
 }
 
+#rankingButton{
+
+    margin-left: 75%;
+}
+
+.rankingSpace{
+    padding: 5% !important;
+}
+
 .rankingBackButton{
     background-color: orange;
     position: fixed;
