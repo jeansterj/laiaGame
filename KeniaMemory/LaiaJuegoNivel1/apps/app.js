@@ -212,7 +212,7 @@ function blockCard() {
     for (let i = 0; i < tamanoArray; i++) {
         let block = document.getElementById(i);
         if (block) {  // Verifica si el elemento existe antes de manipularlo
-            block.innerHTML = `<img src="./../img/${numeros[i]}.png" alt=""></img>`;
+            block.innerHTML = `<img  src="./../img/${numeros[i]}.png" draggable="false" user-select: none;  alt=""></img>`;
             block.disabled = true;
         }
     }
@@ -284,7 +284,7 @@ function mostrarImagen(id,resultado) {
 
     tarjeta = document.getElementById(id);
        
-    tarjeta.innerHTML = `<img src="./../img/${resultado}.png" alt=""></img>`;
+    tarjeta.innerHTML = `<img src="./../img/${resultado}.png" draggable="false" user-select: none;   alt=""></img>`;
 
     tarjeta.disabled = true;
 
