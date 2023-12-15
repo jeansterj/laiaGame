@@ -121,9 +121,9 @@
         "cat": "Kenia"
     },
     "jugar": {
-        "en": "Play",
-        "es": "jugar",
-        "cat": "jugar"
+        "en": "PLAY",
+        "es": "JUGAR",
+        "cat": "JUGAR"
     }
 
 }
