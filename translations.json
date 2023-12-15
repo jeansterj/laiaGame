@@ -79,12 +79,16 @@
         "en": "I accept the terms and conditions",
         "es": "Acepto los términos y condiciones",
         "cat": "Accepto els termes i condicions"
-    }
-    ,
+    },
     "registro": {
         "en": "Registration",
         "es": "Registro",
         "cat": "Registre"
+    },
+    "cuentaExistente": {
+        "en": "Already have an account?",
+        "es": "¿Ya tienes cuenta?",
+        "cat": "Ja tens compte?"
     }
 
 }

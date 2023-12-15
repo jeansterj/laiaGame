@@ -144,7 +144,7 @@
                                     </div>
                                     <button type="submit" class="btn" name="registro" data-translate="registro">Registro</button>
                                     <div class="loginRegister">
-                                        <p>¿Ya tienes cuenta?</p>
+                                        <p data-translate="cuentaExistente">¿Ya tienes cuenta?</p>
                                         <a href="#" class="loginLink" data-translate="iniciarSesion">Inicia Sesion</a>
                                     </div>
                             </form>
