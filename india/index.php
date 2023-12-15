@@ -48,7 +48,7 @@ include('../php_librarys/bdlaia.php');
             <div class="col3">
                 <div id="gameBoard"></div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#modalHelp"></button>
+                    data-bs-target="#modalHelp">AYUDA</button>
             </div>
             <div class="col4">
                 <table class="tableGame">

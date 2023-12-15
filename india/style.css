@@ -424,3 +424,28 @@ margin-top: 50px;
     button#deleteLastElement:hover{
         transform: scale(1.1); 
     }
+
+    button.btn.btn-primary {
+        margin-top: 20px;
+        background-color: orange;
+        border-color: orange;
+    }
+
+    
+    button.btn.btn-primary:hover{
+        transform: scale(1.1); 
+        background-color: orange;
+        border-color: orange;
+    }
+
+    button#siguientejuego:hover{
+        transform: scale(1.1); 
+        background-color: orange;
+        border-color: orange;
+    }
+
+    button#siguientejuego{
+        background-color: orange;
+        border-color: orange;
+        color: white;
+    }

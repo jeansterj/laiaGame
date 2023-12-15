@@ -764,3 +764,12 @@ button.btnRankingGlobal {
 #terminos{
     display: flex;
 }
+
+button.btn {
+    border: 2px solid white!important;
+}
+
+button.btn:hover {
+    border: 2px solid white!important;
+    transform: scale(1.1)!important;
+}
