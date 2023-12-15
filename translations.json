@@ -89,6 +89,36 @@
         "en": "Already have an account?",
         "es": "¿Ya tienes cuenta?",
         "cat": "Ja tens compte?"
+    },
+    "desaWarcelona": {
+        "en": "Creator and developer from Warcelona",
+        "es": "Creador y desarrollador de Warcelona",
+        "cat": "Creador i desenvolupador de Warcelona"
+    },
+    "desaBrasil": {
+        "en": "Creator and developer from Brazil",
+        "es": "Creador y desarrollador de Brasil",
+        "cat": "Creador i desenvolupador de Brasil"
+    },
+    "desaKenia": {
+        "en": "Creator and developer from Kenya",
+        "es": "Creador y desarrollador de Kenia",
+        "cat": "Creador i desenvolupador de Kenia"
+    },
+    "desaIndia": {
+        "en": "Creator and developer from India",
+        "es": "Creador y desarrollador de India",
+        "cat": "Creador i desenvolupador d'Índia"
+    },
+    "brasil": {
+        "en": "Brasil",
+        "es": "Brazil",
+        "cat": "Brasil"
+    },
+    "kenia": {
+        "en": "Kenia",
+        "es": "Kenya",
+        "cat": "Kenia"
     }
 
 }

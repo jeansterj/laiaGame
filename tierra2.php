@@ -171,7 +171,7 @@
                                 <img src="./Imagenes/pedro.png" alt="pedro_Imagen" class="imagen-redonda">
                                 <div class="textos-modal">
                                     <h2>Pedro</h2>
-                                    <p>Crador y desarrollador de Brazil</p>
+                                    <p>Creador y desarrollador de Brazil</p>
                                 </div>
                             </div>
 
@@ -183,7 +183,7 @@
                                 <img src="./Imagenes/jean.png" alt="aleix_Imagen" class="imagen-redonda">
                                 <div class="textos-modal">
                                     <h2>Aleix</h2>
-                                    <p>Crador y desarrollador de India</p>
+                                    <p>Creador y desarrollador de India</p>
                                 </div>
                             </div>
                             <!-- Contenido del modal -->
@@ -198,7 +198,7 @@
                                 <img src="./Imagenes/jean.png" alt="jean_Imagen" class="imagen-redonda">
                                 <div class="textos-modal">
                                     <h2>Jean</h2>
-                                    <p>Crador y desarrollador de Kenia Memory</p>
+                                    <p>Creador y desarrollador de Kenia Memory</p>
                                 </div>
 
                             </div>
@@ -209,7 +209,7 @@
                                     <img src="./Imagenes/jean.png" alt="alex_Imagen" class="imagen-redonda">
                                     <div class="textos-modal">
                                         <h2>Alex</h2>
-                                        <p>Crador y desarrollador de Warcelona</p>
+                                        <p>Creador y desarrollador de Warcelona</p>
                                     </div>
 
                                 </div>
