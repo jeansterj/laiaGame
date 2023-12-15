@@ -755,3 +755,12 @@ button.btnRankingGlobal {
     padding-left: 50px;
     padding-right: 50px;
 }
+
+.terminos{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#terminos{
+    display: flex;
+}

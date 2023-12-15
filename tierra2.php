@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div class="form-box register">
-                            <h2>Registro</h2>
+                            <h2 data-translate="registro">Registro</h2>
                             <form action="./php_controllers/laiaController.php" method="POST">
                                 <div class="input-box">
                                     <span class="icon">
@@ -141,8 +141,8 @@
                                 </div>
                                 <div>
                                     <div>
-                                        <label> <input type="checkbox" require>
-                                            <p data-translate="terminos">Acepto los términos y condiciones</p>
+                                        <label id="terminos"> <input type="checkbox" require>
+                                            <p data-translate="terminos" class="terminos">Acepto los términos y condiciones</p>
                                         </label>
 
                                     </div>
