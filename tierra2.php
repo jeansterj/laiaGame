@@ -171,7 +171,7 @@
                                 <img src="./Imagenes/pedro.png" alt="pedro_Imagen" class="imagen-redonda">
                                 <div class="textos-modal">
                                     <h2>Pedro</h2>
-                                    <p>Creador y desarrollador de Brazil</p>
+                                    <p data-translate="desaBrasil">Creador y desarrollador de Brazil</p>
                                 </div>
                             </div>
 
@@ -180,10 +180,10 @@
 
                         <div class="modal-body">
                             <div class="contenido-modal">
-                                <img src="./Imagenes/jean.png" alt="aleix_Imagen" class="imagen-redonda">
+                                <img src="./Imagenes/aleix.png" alt="aleix_Imagen" class="imagen-redonda">
                                 <div class="textos-modal">
                                     <h2>Aleix</h2>
-                                    <p>Creador y desarrollador de India</p>
+                                    <p data-translate="desaIndia">Creador y desarrollador de India</p>
                                 </div>
                             </div>
                             <!-- Contenido del modal -->
@@ -198,7 +198,7 @@
                                 <img src="./Imagenes/jean.png" alt="jean_Imagen" class="imagen-redonda">
                                 <div class="textos-modal">
                                     <h2>Jean</h2>
-                                    <p>Creador y desarrollador de Kenia Memory</p>
+                                    <p data-translate="desaKenia">Creador y desarrollador de Kenia Memory</p>
                                 </div>
 
                             </div>
@@ -209,7 +209,7 @@
                                     <img src="./Imagenes/jean.png" alt="alex_Imagen" class="imagen-redonda">
                                     <div class="textos-modal">
                                         <h2>Alex</h2>
-                                        <p>Creador y desarrollador de Warcelona</p>
+                                        <p data-translate="desaWarcelona">Creador y desarrollador de Warcelona</p>
                                     </div>
 
                                 </div>
@@ -277,7 +277,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
-                        <h2>BRASIL</h2>
+                        <h2 data-translate="brasil">BRASIL</h2>
                         <p data-translate="loreBrasil">Tras dejar Barcelona, Laia llega a Brasil enfrentándose a un apagón masivo. Para restaurar la electricidad, 
                             debe golpear estratégicamente dianas, generando energía para iluminar el país. Cada diana es un desafío único y solo la precisión y 
                             rapidez de Laia pueden salvar el día. En su viaje, Laia también busca conseguir una pieza esencial. ¿Estás listo para
@@ -324,7 +324,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
-                        <h2>KENIA</h2>
+                        <h2 data-translate="kenia">KENIA</h2>
                         <p data-translate="loreKenia">Después de su éxito en Brasil, Laia se aventura en Kenia con el propósito de generar electricidad a través de un ancestral ritual
                              africano. En un juego de parejas mágicas, cada acierto desata energía vital. Laia, rápida y precisa, debe iluminar aldeas canalizando esta energía. Además,
                             para avanzar en su búsqueda global, debe conseguir una pieza esencial de Kenia. ¿Podrás ayudar a Laia a iluminar Kenia y asegurar la pieza necesaria 
