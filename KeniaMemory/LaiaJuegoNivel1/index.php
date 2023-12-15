@@ -27,9 +27,9 @@ include('../../php_librarys/bdlaia.php');
 
         <h2>Selecciona el nivel que desees jugar</h2>
 
-        <button type="button" onclick="primerNivel();" class="orangeButton"><img src="..\img\facil.png" alt="">
+        <button type="button" onclick="primerNivel();" class="orangeButton"><img src="..\img\facil.png" draggable="false" alt="">
 
-        <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'" class="greenButton"><img src="..\img\dificil.png" alt="">
+        <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'" class="greenButton"><img src="..\img\dificil.png" draggable="false" alt="">
 
         <button type="button" data-bs-toggle="modal" data-bs-target="#instrucciones" class="AjusteInstrucciones">Instrucciones
 
@@ -54,7 +54,7 @@ include('../../php_librarys/bdlaia.php');
             </select>
         </div>
         <div class="play">
-            <button onclick="loadingGame()" id="play"><img src="..\img\play.png" alt="playGame"></button>
+            <button onclick="loadingGame()" id="play"><img src="..\img\play.png" alt="playGame" draggable="false"></button>
         </div>
 
     </div>
@@ -97,7 +97,7 @@ include('../../php_librarys/bdlaia.php');
                     <?php echo $_SESSION['idUser'] ?>>
                 <input type="hidden" name="puntuacion" value="">
 
-                <h2 class="stats2"> Has Ganado la siguiente pieza <img src="..\img\solarPanel.png" alt="">
+                <h2 class="stats2"> Has Ganado la siguiente pieza <img src="..\img\solarPanel.png" alt="" draggable="false">
 
                     <button type="submit" name="Keniadata" id="siguientejuego">Continuar </button></h2>
             </form>
@@ -117,13 +117,12 @@ include('../../php_librarys/bdlaia.php');
 
     </div>
 
-    <button class="info" data-bs-toggle="modal"  aria-labelledby="instrucciones" onclick="abrirModal();" id="botonInfo"><img src="..\img\info.png" alt="" ></button>
+    <button class="info" data-bs-toggle="modal"  aria-labelledby="instrucciones" onclick="abrirModal();" id="botonInfo"><img src="..\img\info.png" alt="" draggable="false"></button>
 
     <div class="modal spaceAjust" tabindex="-1" id="instrucciones">
         <div class="modal-dialog">
             <div class="modal-content modalModification">
                 <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarModal();"></button>
                     <b><p>Embárcate en un antiguo y místico ritual para emparejar todos los símbolos mágicos frágiles,
                         evitando movimientos innecesarios que puedan perturbar su energía. Encuentra todos los pares
                         antes de que
@@ -193,10 +192,10 @@ include('../../php_librarys/bdlaia.php');
                         </ol>
                         <p>¡Que los símbolos mágicos te guíen en tu búsqueda de la pieza oculta y que la energía mística te acompañe en tu viaje!</p>
 
-                    <p>Siempre puedes hacer click en <img src="..\img\infoBlack.png" alt="" > si quieres volver a ver las instrucciones</p>
+                    <p>Siempre puedes hacer click en <img src="..\img\infoBlack.png" alt="" draggable="false"> si quieres volver a ver las instrucciones</p>
                     </div>
                     <div class="col3 ">
-                            <img src="../img/muestraGame.gif" alt="">
+                            <img src="../img/muestraGame.gif" alt="" draggable="false">
                             <br>
                         </div>
 

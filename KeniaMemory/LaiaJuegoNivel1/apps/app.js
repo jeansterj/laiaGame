@@ -33,6 +33,7 @@ let startTarjeta = 0;
 let numeros = [];
 let maxAciertos;
 
+let controlTiempo = true;
 
 //Medidor de puntos, movimientos, Aciertos
 
@@ -56,6 +57,7 @@ showAciertos.innerHTML = `Aciertos: ${aciertos}`;
 showMove.innerHTML = `Movimientos: ${moves}`;
 
 let tamanoArray  = null;
+
 
 
 function primerNivel() {
@@ -196,10 +198,8 @@ function contarTiempo() {
             clearInterval(timerRegre);
 
             blockCard();
-            console.log("entrooooo");
 
             loserGame();
-            console.log("entrooooo");
 
 
         }
@@ -222,8 +222,11 @@ function voltear(id) {
 
     if (temp == false) {
 
+
         contarTiempo();
         temp = true;
+        controlTiempo = false;
+
     }
 
 
@@ -357,11 +360,20 @@ function setCookie(name, value, days) {
 
   function abrirModal() {
     clearInterval(timerRegre);
-    myModal.show();
+    myModal.toggle();
   }
 
-  function cerrarModal() {
-    myModal.hide();
-    // Reanudar el temporizador cuando se cierra el modal
-    contarTiempo();
-}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    myModal._element.addEventListener('hidden.bs.modal', function () {
+    if (!controlTiempo) {
+        
+            contarTiempo();
+        }
+        });
+    
+   
+});
+
