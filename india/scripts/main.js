@@ -258,8 +258,8 @@ function checkhouses() {
 }
 
 function checkFinal() {
-  if (arraySquareDragged.includes(0) && arraySquareDragged.includes(6) && arraySquareDragged.includes(42) && arraySquareDragged.includes(48)) {
-    console.log("Has ganado");    
+  if (arraySquareDragged.includes(0) && arraySquareDragged.includes(6) && arraySquareDragged.includes(42) && arraySquareDragged.includes(48)) {  
+    clearTimeout(seconds)
     setCookie('IndiaGameCompleted', 'true', 7);
     //Victoria
     endScreen()
@@ -596,10 +596,26 @@ function updateProgressBar(score) {
 
 
 function endScreen() {
+  console.log(seconds);
   document.getElementById('hide').style.display = "none";
   document.getElementById('show').style.display = "block";
 
+  let finalScore = calculateFinalScore(seconds)
+
   var finalScoreInput = document.getElementById("finalScore");
   finalScoreInput.innerHTML = finalScore;
+
+
+  let  puntuacionInput = document.getElementsByName("puntuacion")[0];
+    puntuacionInput.value = finalScore;
 }
 
+function calculateFinalScore(seconds) {
+  
+  let finalScore = 600 - seconds
+  finalScore = finalScore / 600
+  finalScore = finalScore * 100
+  finalScore = Math.trunc(finalScore)
+  console.log(finalScore)
+  return finalScore
+}

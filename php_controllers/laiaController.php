@@ -238,7 +238,7 @@ if (isset($_POST["Keniadata"])) {
 
 }
 
-if (isset($_POST["Indiadata"])) {
+if (isset($_POST["indiadata"])) {
 
     try {
         insertIndia($_POST['idUsuario'],$_POST['puntuacion'] );
