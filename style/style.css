@@ -714,10 +714,20 @@ button.jugarButton:hover{
 button.rankingButton:hover{
     transform:  scale(1.1);
 }
+#conector{
+    display :none;
 
+}
 
 button.basicButton:hover{
     transform:  scale(1.1);
+}
+#panelsolar{
+    display :none;
+}
+
+#turbina{
+    display :none;
 }
 
 button.btnLogin-popup:hover{

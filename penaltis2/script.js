@@ -17,9 +17,9 @@ let audiosucc = document.getElementById("succsound");
 let audiofail = document.getElementById("failsound");
 let audio2p = document.getElementById("2psound");
 let dificultad = 1000;
-let dificultad1 = Math.floor(Math.random() * 1000) + 800;
-let dificultad2 = Math.floor(Math.random() * 600) + 400;
-let dificultad3 = Math.floor(Math.random() * 200) + 100;
+let dificultad1 = 1000;
+let dificultad2 = 700;
+let dificultad3 = 500;
 let botondificultad1 = document.getElementById("botondifi");
 let puntdorado =15;
 let puntnormal =1;
@@ -402,8 +402,12 @@ function showEndScren(){
     setCookie('brasilGameCompleted', 'true', 7);    
 
     let botonfail = document.getElementById("botonfail");
-    if (puntuacion>100){
+    if (puntuacion>100&&dificultad===dificultad3){
       puntuacion=100;
+     }else if(puntuacion>100&&dificultad===dificultad2){
+      puntuacion=80;
+     }else if(puntuacion>100&&dificultad===dificultad1){
+      puntuacion=70;
      }
 
      punt.textContent = puntuacion;
@@ -423,8 +427,72 @@ function showEndScren(){
 
 
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
+
+
+
+
+
+
+     switch (dificultad) {
+
+
+
+      case dificultad1:
+        if(puntuacion>=70&&dificultad===dificultad1){
      
-    if(puntuacion>=100){
+          document.querySelector('input[name="puntuacion"]').value = puntuacion;
+          infofinal.textContent=infovictoria;
+          botonfail.style.display="none";
+          siguientejuego.style.display="block";
+          imgpieza.style.display="block";
+          
+          textovolver.textContent="";
+          
+    
+        }else{
+          infofinal.textContent= infofail;
+          siguientejuego.style.display="none";
+          textovolver.textContent="Volver a intentarlo";
+          
+    
+    
+        }
+
+
+
+        break;
+
+
+
+      case dificultad2:
+        if(puntuacion>=80&&dificultad===dificultad2){
+     
+          document.querySelector('input[name="puntuacion"]').value = puntuacion;
+          infofinal.textContent=infovictoria;
+          botonfail.style.display="none";
+          siguientejuego.style.display="block";
+          imgpieza.style.display="block";
+          
+          textovolver.textContent="";
+          
+    
+        }else{
+          infofinal.textContent= infofail;
+          siguientejuego.style.display="none";
+          textovolver.textContent="Volver a intentarlo";
+          
+    
+    
+        }
+
+
+
+        break;
+
+
+        case dificultad3:
+
+ if(puntuacion>=100&&dificultad===dificultad3){
      
       document.querySelector('input[name="puntuacion"]').value = puntuacion;
       infofinal.textContent=infovictoria;
@@ -443,6 +511,50 @@ function showEndScren(){
 
 
     }
+
+
+
+
+
+          break;
+
+
+     }
+
+     
+    // if(puntuacion>=100&&dificultad===dificultad3){
+     
+    //   document.querySelector('input[name="puntuacion"]').value = puntuacion;
+    //   infofinal.textContent=infovictoria;
+    //   botonfail.style.display="none";
+    //   siguientejuego.style.display="block";
+    //   imgpieza.style.display="block";
+      
+    //   textovolver.textContent="";
+      
+
+    // }else{
+    //   infofinal.textContent= infofail;
+    //   siguientejuego.style.display="none";
+    //   textovolver.textContent="Volver a intentarlo";
+      
+
+
+    // }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
    
@@ -490,15 +602,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function abrirmodal() {
-  let tiempo = 1;
+  let tiempo = 10;
   let botonendendido = document.getElementById("botonendendido");
-
+let timermodal = document.getElementById("timermodal");
+let tiemporestante = document.getElementById("tiemporestante");
   let countdown = setInterval(function () {
     tiempo--;
     console.log(tiempo);
+    timermodal.textContent = tiempo;
 
     if (tiempo <= 0) {
+      timermodal.textContent = "";
+      tiemporestante.textContent = "";
       clearInterval(countdown);
+      
       
 
 
