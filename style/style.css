@@ -650,7 +650,7 @@ button.btnRankingIndia{
     height: 70px;
     background-repeat: no-repeat;
     /* background-color: transparent; */
-    border: 2px solid #000;
+    border: 2px solid #ffffff;
     border-radius: 15px;
     transition: transform 0.3s ease;
 }
@@ -736,4 +736,10 @@ button.btnLogin-popup:hover{
 
 button.infoButton:hover{
     transform:  scale(1.1)
+}
+
+button.btnRankingGlobal {
+    background-image: url(../Imagenes/global.png);
+    background-size: 78px 73px;
+    background-color: rgb(13, 13, 46);
 }
