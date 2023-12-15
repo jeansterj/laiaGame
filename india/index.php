@@ -193,10 +193,10 @@ include('../php_librarys/bdlaia.php');
     </div>
     <div class="container text-center" id="show">
         <h2>TU PUNTUACIÓN HA SIDO DE <span id="finalScore"></span>! ¡JUEGO FINALIZADO!</h2>
-        <p>Has navegado por desafíos peligrosos, resuelto rompecabezas complejos y llevado luz a
-            comunidades alrededor del mundo. Tu aventura es un recordatorio poderoso de cómo la innovación y la
-            determinación pueden cambiar el mundo. Gracias por acompañar a Laia en este viaje inspirador, donde cada
-            victoria es un paso hacia un futuro más brillante y sostenible.
+        <p>Has navegado por desafíos peligrosos, resuelto rompecabezas complejos y llevado luz a comunidades de todo el mundo. 
+            Tu aventura es un recordatorio poderoso de cómo la innovación y la determinación pueden cambiar el mundo. Gracias por acompañar a Laia en este viaje inspirador,
+             donde cada victoria es un paso hacia un futuro más brillante y sostenible. Además, la recopilación de piezas en tu travesía ha sido fundamental para construir un camino 
+             hacia la sostenibilidad y el progreso.
         </p>
         <form action="../php_controllers/laiaController.php" METHOD="POST">
             <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>

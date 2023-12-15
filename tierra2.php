@@ -226,12 +226,11 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>WARCELONA</h2>
-                        <p>En las vibrantes calles de Barcelona, Laia, una ingeniera audaz y talentosa, enfrenta un
-                            desafío único. Su misión es navegar a través de las peligrosas calles de la ciudad,
-                            evadiendo atracadores con astucia y utilizando sus habilidades en electricidad. En este
-                            juego de supervivencia, Laia debe recolectar la mayor cantidad de dinero posible mientras
-                            utiliza sus poderes eléctricos para zafarse de los peligros. ¿Podrás ayudar a Laia a salir
-                            ilesa y con el botín en mano?</p>
+                        <p data-translate="loreWarcelona">En las bulliciosas calles de Barcelona, Laia, ingeniera audaz, se enfrenta a un desafío único. 
+                            Más allá de sus habilidades eléctricas, su misión implica navegar las intrincadas callejuelas, evitando atracadores, 
+                            en busca de una pieza crucial para su viaje global. En este juego de supervivencia, Laia no solo busca recolectar fondos, 
+                            sino también perseguir una misteriosa pieza. ¿Podrás ayudar a Laia a salir ilesa, con el codiciado botín y asegurar la pieza 
+                            indispensable para su travesía?</p>
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
@@ -278,12 +277,9 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>BRASIL</h2>
-                        <p>Tras su partida de Barcelona, Laia llega a Brasil, solo para encontrarse
-                            con un apagón masivo. En este juego, Laia debe usar su ingenio y habilidades
-                            en ingeniería para restaurar la electricidad. Golpeando dianas estratégicamente colocadas,
-                            generará la energía necesaria para iluminar Brasil de nuevo. Cada diana es un reto en sí
-                            mismo,
-                            y solo la precisión y la rapidez de Laia pueden salvar el día. </br>¿Estás listo para
+                        <p data-translate="loreBrasil">Tras dejar Barcelona, Laia llega a Brasil enfrentándose a un apagón masivo. Para restaurar la electricidad, 
+                            debe golpear estratégicamente dianas, generando energía para iluminar el país. Cada diana es un desafío único y solo la precisión y 
+                            rapidez de Laia pueden salvar el día. En su viaje, Laia también busca conseguir una pieza esencial. ¿Estás listo para
                             electrificar Brasil con Laia?</p>
                         <div class="buttons">
                             <?php
@@ -318,12 +314,10 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>KENIA</h2>
-                        <p>Después de su éxito en Brasil, Laia se embarca en una nueva aventura en Kenya.
-                            Aquí, su objetivo es generar electricidad para los lugareños mediante un antiguo
-                            y místico ritual africano. En este juego de parejas, cada acierto en el emparejamiento
-                            de símbolos mágicos desencadena un flujo de energía. Laia debe ser rápida y precisa en
-                            sus elecciones para canalizar la energía necesaria a las aldeas. ¿Podrás ayudar a Laia a
-                            iluminar Kenya con la sabiduría de sus ancestros?</p>
+                        <p data-translate="loreKenia">Después de su éxito en Brasil, Laia se aventura en Kenia con el propósito de generar electricidad a través de un ancestral ritual
+                             africano. En un juego de parejas mágicas, cada acierto desata energía vital. Laia, rápida y precisa, debe iluminar aldeas canalizando esta energía. Además,
+                            para avanzar en su búsqueda global, debe conseguir una pieza esencial de Kenia. ¿Podrás ayudar a Laia a iluminar Kenia y asegurar la pieza necesaria 
+                            en esta nueva y fascinante misión?</p>
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
@@ -357,13 +351,10 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>INDIA</h2>
-                        <p>En su última aventura, Laia, la ingeniera apasionada por la energía sostenible,
-                            se dirige a la bulliciosa India, específicamente al corazón de Bangalore.
-                            Aquí, se enfrenta al desafío de llevar luz a las casas del pueblo, cada una marcada
-                            con la cantidad de electricidad que necesita diariamente. Este rompecabezas requiere
-                            una meticulosa gestión de recursos y una estrategia inteligente. ¿Estás listo para
-                            ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en la gestión de energías
-                            renovables?</p>
+                        <p data-translate="loreIndia">En su última aventura, Laia, la ingeniera apasionada por la energía sostenible, llega a Bangalore, India, 
+                            enfrentándose al desafío de llevar luz a casas con necesidades eléctricas diarias. Este rompecabezas requiere una gestión cuidadosa de recursos y 
+                            estrategia. ¿Estás listo para ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en energías renovables? Además, descubre que las piezas 
+                            obtenidas durante su viaje son esenciales para proporcionar energía a la India.</p>
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
@@ -399,14 +390,13 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>Laia, ens il·lumines</h2>
-                        <p>
+                        <p data-translate="loreInicial">
                     
-                    Laia, una ingeniera amante de la energía buena, viaja por el mundo para iluminarlo. En 
-                    cada país, usa sus habilidades para resolver problemas y llevar luz a todos. Busca  
-                    piezas mágicas en cada lugar, y cuando termina en un país, recoge una pieza especial. 
-                    Después de pasar por Barcelona, Brasil y Kenia, llega a India y junta todas las piezas 
-                    para hacer una energía superpoderosa que ilumina el planeta. ¿Puedes ayudar a Laia a 
-                    cumplir su misión y ganar juntos? ¡Acompáñala en este viaje emocionante!
+                        Laia, una ingeniera amante de la buena energía, viaja por el mundo para iluminarlo. En cada país, usa sus habilidades para resolver problemas y 
+                        llevar luz a todos. Busca piezas mágicas en cada lugar, y cuando termina en un país, recoge una pieza especial. Después de pasar por Barcelona, 
+                        Brasil y Kenia, llega a India y junta todas las piezas para hacer una energía super poderosa que ilumina el planeta. ¿Puedes ayudar a Laia a cumplir 
+                        su misión y ganar juntos? ¡Acompáñala en este viaje emocionante!
+
                         </p>
                     </div>
                     <div class="colModalIntroLore2">
