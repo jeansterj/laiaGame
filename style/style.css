@@ -680,6 +680,16 @@ form#rankingForm {
     color: #ffffff;
     
 }
+#conector{
+    display :none;
 
+}
 
+#panelsolar{
+    display :none;
+}
+
+#turbina{
+    display :none;
+}
 

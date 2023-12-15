@@ -405,10 +405,15 @@
                             desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
                             que visita. Acompaña a Laia en esta saga inspiradora ¿Podrás ayudarla a cumplir su misión y
                             alzarte con el triunfo?</p>
+                            <div id ="imageneslore">
+                                <div id="connector"><img src="./Imagenes/connector.png" alt=""> </div>
+                             <div id="panelsolar"><img src="./Imagenes/solarPanel.png" alt="">
+                             <div id="turbina"><img src="./Imagenes/windTurbine.png" alt=""></div>
+                        </div>
+                            
+                        </div>
                     </div>
-                    <div class="colModalIntroLore2">
-                        <img src=".\Imagenes\laia.png" alt="" class="liderbcn">
-                    </div>
+                   
                 </div>
             </div>
         </div>

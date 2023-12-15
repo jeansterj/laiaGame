@@ -20,4 +20,57 @@ function onMouseClick() {
     myModal.hide();
   }
 
+
+
+
+
+
+
+function checkCompletion() {
+    
+   let panelsolar =document.getElementById('panelsolar');
+   let connector= document.getElementById('connector');
+   let turbina = document.getElementById('turbina');
+    if (getCookie('WarcelonaGameCompleted') === 'true') {
+        connector.style.display = "block";
+    
+                
+    }  
+    else {       
+        imageSprite2.visible = false;
+    }       
+    
+    
+    if (getCookie('brasilGameCompleted') === 'true') {
+       turbina.style.display = "block";
+        
+              
+    }  
+    else {       
+        imageSprite3.visible = false;
+    }
+    
+    if (getCookie('KenyaGameCompleted') === 'true') {
+        panelsolar.style.display = "block";
+
+                 
+    }  
+    else {       
+        imageSprite4.visible = false;
+    }     
+
+    if (getCookie('IndiaGameCompleted') === 'true') {
+        
+                  
+    }     
+}
+
+
+
+
+
+
+
+  
+
   
