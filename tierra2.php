@@ -421,11 +421,14 @@
                     <div class="colModalIntroLore1">
                         <h2>Laia, ens il·lumines</h2>
                         
-                        <p>Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su
+                        <p data-translate="loreInicial">Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su
                             misión es iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar
                             desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
                             que visita. Acompaña a Laia en esta saga inspiradora ¿Podrás ayudarla a cumplir su misión y
                             alzarte con el triunfo?</p>
+                            <div class="colModalIntroLore2">
+                        <img src=".\Imagenes\laia.png" alt="" class="liderbcn">
+                    </div>
                             <div id ="imageneslore">
                                 <div id="connector"><img src="./Imagenes/connector.png" alt=""> </div>
                              <div id="panelsolar"><img src="./Imagenes/solarPanel.png" alt="">
