@@ -28,7 +28,9 @@ include('../php_librarys/bdlaia.php');
 
 
 
-      <div>ELIGE LA DIFICULTAD</div>
+      <div>ELIGE LA DIFICULTAD </div>
+      <div>MAXIMA PUNTUACION EN LA DIFICULTAD 3</div>
+      
       <br>
       <div class="btn-group" role="group">
         <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
@@ -62,20 +64,23 @@ include('../php_librarys/bdlaia.php');
       </button>
 
 
-      <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      <div class="modal fade  bg-transparent" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content text-dark">
+          <div class="modal-content text-white border-light">
 
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">TUTORIAL BRASILIA, PRESTA ATENCION AL TUTORIAL</h1>
-
-            </div>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">TUTORIAL BRASILIA, PRESTA ATENCION AL GIF PARA APRENDER A JUGAR
+                
+              </h1>
+                  
+              </div>
             <div class="modal-body">
               <img id="tutogif" src="./img/tutorial.gif" alt="">
 
             </div>
             <div class="modal-footer">
+            <div id="tiemporestante">Tiempo restante: <span id="timermodal">10</span></div>
 
               <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="botonendendido"
                 onclick="habilitarboton();" disabled>Entendido</button>
