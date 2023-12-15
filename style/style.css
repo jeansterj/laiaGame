@@ -694,3 +694,36 @@ form#rankingForm {
     height: 40px;
 }
 
+img.liderIndia {
+    width: 265px;
+    margin-left: -35px;
+}
+
+img.liderKenia {
+    width: 145px;
+}
+
+img.liderBrasil {
+    width: 150px;
+}
+
+button.jugarButton:hover{
+    transform: scale(1.1);
+}
+
+button.rankingButton:hover{
+    transform:  scale(1.1);
+}
+
+
+button.basicButton:hover{
+    transform:  scale(1.1);
+}
+
+button.btnLogin-popup:hover{
+    transform:  scale(1.1);
+}
+
+button.infoButton:hover{
+    transform:  scale(1.1)
+}
