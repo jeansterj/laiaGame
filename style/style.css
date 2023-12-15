@@ -714,21 +714,12 @@ button.jugarButton:hover{
 button.rankingButton:hover{
     transform:  scale(1.1);
 }
-#conector{
-    display :none;
 
-}
 
 button.basicButton:hover{
     transform:  scale(1.1);
 }
-#panelsolar{
-    display :none;
-}
 
-#turbina{
-    display :none;
-}
 
 button.btnLogin-popup:hover{
     transform:  scale(1.1);
@@ -742,4 +733,16 @@ button.btnRankingGlobal {
     background-image: url(../Imagenes/global.png);
     background-size: 78px 73px;
     background-color: rgb(13, 13, 46);
+}
+#panelsolar{
+    display :none;
+}
+
+#turbina{
+    display :none;
+}
+
+#connector{
+    display :none;
+
 }
