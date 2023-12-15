@@ -38,7 +38,8 @@
 
         <nav class="navigation">
 
-            <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#modalini"><img class="book" src="./Imagenes/open-book.png" alt=""></button>
+            <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#modalini"><img class="book"
+                    src="./Imagenes/open-book.png" alt=""></button>
 
 
             <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa"
@@ -127,7 +128,8 @@
                                     <label data-translate="apellido">Apellido/s</label>
                                 </div>
                                 <div class="input-box">
-                                    <label for="fecha_Nacimiento" class="fecha_Naci" name="fecha_Nacimiento" data-translate="fechaNacimiento"> Fecha de
+                                    <label for="fecha_Nacimiento" class="fecha_Naci" name="fecha_Nacimiento"
+                                        data-translate="fechaNacimiento"> Fecha de
                                         Nacimiento</label>
                                     <span class="icon">
                                         <ion-icon name="calendar-outline"></ion-icon>
@@ -139,10 +141,13 @@
                                 </div>
                                 <div>
                                     <div>
-                                        <label > <input type="checkbox" require> <p data-translate="terminos">Acepto los términos y condiciones</p></label>
-                                            
+                                        <label> <input type="checkbox" require>
+                                            <p data-translate="terminos">Acepto los términos y condiciones</p>
+                                        </label>
+
                                     </div>
-                                    <button type="submit" class="btn" name="registro" data-translate="registro">Registro</button>
+                                    <button type="submit" class="btn" name="registro"
+                                        data-translate="registro">Registro</button>
                                     <div class="loginRegister">
                                         <p data-translate="cuentaExistente">¿Ya tienes cuenta?</p>
                                         <a href="#" class="loginLink" data-translate="iniciarSesion">Inicia Sesion</a>
@@ -227,22 +232,26 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>WARCELONA</h2>
-                        <p data-translate="loreWarcelona">En las bulliciosas calles de Barcelona, Laia, ingeniera audaz, se enfrenta a un desafío único. 
-                            Más allá de sus habilidades eléctricas, su misión implica navegar las intrincadas callejuelas, evitando atracadores, 
-                            en busca de una pieza crucial para su viaje global. En este juego de supervivencia, Laia no solo busca recolectar fondos, 
-                            sino también perseguir una misteriosa pieza. ¿Podrás ayudar a Laia a salir ilesa, con el codiciado botín y asegurar la pieza 
+                        <p data-translate="loreWarcelona">En las bulliciosas calles de Barcelona, Laia, ingeniera audaz,
+                            se enfrenta a un desafío único.
+                            Más allá de sus habilidades eléctricas, su misión implica navegar las intrincadas
+                            callejuelas, evitando atracadores,
+                            en busca de una pieza crucial para su viaje global. En este juego de supervivencia, Laia no
+                            solo busca recolectar fondos,
+                            sino también perseguir una misteriosa pieza. ¿Podrás ayudar a Laia a salir ilesa, con el
+                            codiciado botín y asegurar la pieza
                             indispensable para su travesía?</p>
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
-                                <button class="jugarButton" data-translate="jugar" 
+                                <button class="jugarButton" data-translate="jugar"
                                     onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.php'">JUGAR</button>
                             <?php else:
 
                                 ?>
 
-                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
-                                    disabled>JUGAR</button>
+                                <button class="jugarButton" data-translate="jugar"
+                                    onclick="window.location.href='./penaltis2/prueba.php'" disabled>JUGAR</button>
                                 <!-- <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button> -->
 
@@ -260,12 +269,14 @@
             </div>
         </div>
     </div>
-    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body rankingSpace">
                     <?php include_once('./rankingprueba.php') ?>
-                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalbcn" data-bs-toggle="modal">VOLVER</button>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalbcn"
+                        data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -278,9 +289,12 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2 data-translate="brasil">BRASIL</h2>
-                        <p data-translate="loreBrasil">Tras dejar Barcelona, Laia llega a Brasil enfrentándose a un apagón masivo. Para restaurar la electricidad, 
-                            debe golpear estratégicamente dianas, generando energía para iluminar el país. Cada diana es un desafío único y solo la precisión y 
-                            rapidez de Laia pueden salvar el día. En su viaje, Laia también busca conseguir una pieza esencial. ¿Estás listo para
+                        <p data-translate="loreBrasil">Tras dejar Barcelona, Laia llega a Brasil enfrentándose a un
+                            apagón masivo. Para restaurar la electricidad,
+                            debe golpear estratégicamente dianas, generando energía para iluminar el país. Cada diana es
+                            un desafío único y solo la precisión y
+                            rapidez de Laia pueden salvar el día. En su viaje, Laia también busca conseguir una pieza
+                            esencial. ¿Estás listo para
                             electrificar Brasil con Laia?</p>
                         <div class="buttons">
                             <?php
@@ -293,10 +307,10 @@
 
                                 ?>
 
-                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
-                                    disabled>JUGAR</button>
-                                    <button class="rankingButton" data-bs-target="#bcnranking"
-                                data-bs-toggle="modal">RANKING</button>
+                                <button class="jugarButton" data-translate="jugar"
+                                    onclick="window.location.href='./penaltis2/prueba.php'" disabled>JUGAR</button>
+                                <button class="rankingButton" data-bs-target="#bcnranking"
+                                    data-bs-toggle="modal">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -307,12 +321,14 @@
             </div>
         </div>
     </div>
-    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body rankingSpace">
                     <?php include_once('./rankingprueba.php') ?>
-                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalBrazil" data-bs-toggle="modal">VOLVER</button>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalBrazil"
+                        data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -325,9 +341,12 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2 data-translate="kenia">KENIA</h2>
-                        <p data-translate="loreKenia">Después de su éxito en Brasil, Laia se aventura en Kenia con el propósito de generar electricidad a través de un ancestral ritual
-                             africano. En un juego de parejas mágicas, cada acierto desata energía vital. Laia, rápida y precisa, debe iluminar aldeas canalizando esta energía. Además,
-                            para avanzar en su búsqueda global, debe conseguir una pieza esencial de Kenia. ¿Podrás ayudar a Laia a iluminar Kenia y asegurar la pieza necesaria 
+                        <p data-translate="loreKenia">Después de su éxito en Brasil, Laia se aventura en Kenia con el
+                            propósito de generar electricidad a través de un ancestral ritual
+                            africano. En un juego de parejas mágicas, cada acierto desata energía vital. Laia, rápida y
+                            precisa, debe iluminar aldeas canalizando esta energía. Además,
+                            para avanzar en su búsqueda global, debe conseguir una pieza esencial de Kenia. ¿Podrás
+                            ayudar a Laia a iluminar Kenia y asegurar la pieza necesaria
                             en esta nueva y fascinante misión?</p>
                         <div class="buttons">
                             <?php
@@ -340,10 +359,10 @@
 
                                 ?>
 
-                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
-                                    disabled>JUGAR</button>
-                                    <button class="rankingButton" data-bs-target="#bcnranking"
-                                data-bs-toggle="modal">RANKING</button>
+                                <button class="jugarButton" data-translate="jugar"
+                                    onclick="window.location.href='./penaltis2/prueba.php'" disabled>JUGAR</button>
+                                <button class="rankingButton" data-bs-target="#bcnranking"
+                                    data-bs-toggle="modal">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -354,12 +373,14 @@
             </div>
         </div>
     </div>
-    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body rankingSpace">
                     <?php include_once('./rankingprueba.php') ?>
-                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalKenia" data-bs-toggle="modal">VOLVER</button>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalKenia"
+                        data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -372,9 +393,12 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>INDIA</h2>
-                        <p data-translate="loreIndia">En su última aventura, Laia, la ingeniera apasionada por la energía sostenible, llega a Bangalore, India, 
-                            enfrentándose al desafío de llevar luz a casas con necesidades eléctricas diarias. Este rompecabezas requiere una gestión cuidadosa de recursos y 
-                            estrategia. ¿Estás listo para ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en energías renovables? Además, descubre que las piezas 
+                        <p data-translate="loreIndia">En su última aventura, Laia, la ingeniera apasionada por la
+                            energía sostenible, llega a Bangalore, India,
+                            enfrentándose al desafío de llevar luz a casas con necesidades eléctricas diarias. Este
+                            rompecabezas requiere una gestión cuidadosa de recursos y
+                            estrategia. ¿Estás listo para ayudar a Laia a iluminar Bangalore y demostrar tus habilidades
+                            en energías renovables? Además, descubre que las piezas
                             obtenidas durante su viaje son esenciales para proporcionar energía a la India.</p>
                         <div class="buttons">
                             <?php
@@ -387,10 +411,10 @@
 
                                 ?>
 
-                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
-                                    disabled>JUGAR</button>
-                                    <button class="rankingButton" data-bs-target="#bcnranking"
-                                data-bs-toggle="modal">RANKING</button>
+                                <button class="jugarButton" data-translate="jugar"
+                                    onclick="window.location.href='./penaltis2/prueba.php'" disabled>JUGAR</button>
+                                <button class="rankingButton" data-bs-target="#bcnranking"
+                                    data-bs-toggle="modal">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -401,12 +425,14 @@
             </div>
         </div>
     </div>
-    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body rankingSpace">
                     <?php include_once('./rankingprueba.php') ?>
-                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalIndia" data-bs-toggle="modal">VOLVER</button>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalIndia"
+                        data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -420,24 +446,21 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>Laia, ens il·lumines</h2>
-                        
-                        <p data-translate="loreInicial">Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su
-                            misión es iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar
-                            desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
-                            que visita. Acompaña a Laia en esta saga inspiradora ¿Podrás ayudarla a cumplir su misión y
-                            alzarte con el triunfo?</p>
-                            <div class="colModalIntroLore2">
+                            <p data-translate="loreInicial">Laia, una ingeniera apasionada por la energía sostenible, se
+                                lanza a una aventura global. Su
+                                misión es iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar
+                                desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
+                                que visita. Acompaña a Laia en esta saga inspiradora ¿Podrás ayudarla a cumplir su misión y
+                                alzarte con el triunfo?</p>
+                                <div id="imageneslore">
+                                    <div id="connector"><img src="./Imagenes/connector.png" alt=""> </div>
+                                    <div id="panelsolar"><img src="./Imagenes/solarPanel.png" alt=""></div>
+                                    <div id="turbina"><img src="./Imagenes/windTurbine.png" alt=""></div>
+                                </div>
+                    </div>
+                    <div class="colModalIntroLore2">
                         <img src=".\Imagenes\laia.png" alt="" class="liderbcn">
                     </div>
-                            <div id ="imageneslore">
-                                <div id="connector"><img src="./Imagenes/connector.png" alt=""> </div>
-                             <div id="panelsolar"><img src="./Imagenes/solarPanel.png" alt="">
-                             <div id="turbina"><img src="./Imagenes/windTurbine.png" alt=""></div>
-                        </div>
-                            
-                        </div>
-                    </div>
-                   
                 </div>
             </div>
         </div>

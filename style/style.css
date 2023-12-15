@@ -746,3 +746,12 @@ button.btnRankingGlobal {
     display :none;
 
 }
+
+#imageneslore{
+    display: flex;
+}
+
+#panelsolar{
+    padding-left: 50px;
+    padding-right: 50px;
+}
