@@ -294,14 +294,24 @@
 
                                 <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
-                                <button class="rankingButton"
-                                    onclick="window.location.href='./ranking.php'">RANKING</button>
+                                    <button class="rankingButton" data-bs-target="#bcnranking"
+                                data-bs-toggle="modal">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
                         <img src=".\Imagenes\Brasil.png" alt="" class="liderBrasil">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body rankingSpace">
+                    <?php include_once('./rankingprueba.php') ?>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalBrazil" data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -331,14 +341,24 @@
 
                                 <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
-                                <button class="rankingButton"
-                                    onclick="window.location.href='./ranking.php'">RANKING</button>
+                                    <button class="rankingButton" data-bs-target="#bcnranking"
+                                data-bs-toggle="modal">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
                         <img src=".\Imagenes\Kenya.png" alt="" class="liderKenia">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body rankingSpace">
+                    <?php include_once('./rankingprueba.php') ?>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalKenia" data-bs-toggle="modal">VOLVER</button>
                 </div>
             </div>
         </div>
@@ -368,8 +388,8 @@
 
                                 <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
-                                <button class="rankingButton"
-                                    onclick="window.location.href='./ranking.php'">RANKING</button>
+                                    <button class="rankingButton" data-bs-target="#bcnranking"
+                                data-bs-toggle="modal">RANKING</button>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -380,7 +400,16 @@
             </div>
         </div>
     </div>
-
+    <div class="modal fade modalRankings" id="bcnranking" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body rankingSpace">
+                    <?php include_once('./rankingprueba.php') ?>
+                    <button class="rankingButton" id="rankingButton" data-bs-target="#modalIndia" data-bs-toggle="modal">VOLVER</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="modal modalStory fade" id="modalini" tabindex="-1" role="dialog" aria-labelledby="miModalLabel"
