@@ -420,14 +420,7 @@
                 <div class="modal-body">
                     <div class="colModalIntroLore1">
                         <h2>Laia, ens il·lumines</h2>
-                        <p data-translate="loreInicial">
-                    
-                        Laia, una ingeniera amante de la buena energía, viaja por el mundo para iluminarlo. En cada país, usa sus habilidades para resolver problemas y 
-                        llevar luz a todos. Busca piezas mágicas en cada lugar, y cuando termina en un país, recoge una pieza especial. Después de pasar por Barcelona, 
-                        Brasil y Kenia, llega a India y junta todas las piezas para hacer una energía super poderosa que ilumina el planeta. ¿Puedes ayudar a Laia a cumplir 
-                        su misión y ganar juntos? ¡Acompáñala en este viaje emocionante!
-
-                        </p>
+                        
                         <p>Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su
                             misión es iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar
                             desafíos electrizantes y rompecabezas inteligentes, llevando luz y esperanza a cada rincón
