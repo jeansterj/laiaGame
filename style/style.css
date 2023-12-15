@@ -689,6 +689,8 @@ form#rankingForm {
     color: #ffffff;
     
 }
-
-
+.infoButton img{
+    width: 40px;
+    height: 40px;
+}
 

@@ -38,8 +38,7 @@
 
         <nav class="navigation">
 
-            <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#modalini"
-                data-translate="sobreNosotros">?</button>
+            <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#modalini"><img class="book" src="./Imagenes/open-book.png" alt=""></button>
 
 
             <button type="button" class="basicButton" data-bs-toggle="modal" data-bs-target="#modalDesa"

@@ -193,22 +193,23 @@ include('../php_librarys/bdlaia.php');
     </div>
     <div class="container text-center" id="show">
         <h2>TU PUNTUACIÓN HA SIDO DE <span id="finalScore"></span>! ¡JUEGO FINALIZADO!</h2>
-        <p>Laia, una ingeniera apasionada por la energía sostenible, se lanza a una aventura global. Su misión es
-            iluminar el mundo. En cada etapa, Laia utiliza sus habilidades únicas para superar desafíos electrizantes y
-            rompecabezas inteligentes, llevando luz y esperanza a cada rincón que visita. Acompaña a Laia en esta saga
-            inspiradora ¿Podrás ayudarla a cumplir su misión y alzarte con el triunfo?</p>
-            <button>VOLVER AL INICIO</button>
-            <form action="../php_controllers/laiaController.php" METHOD="POST">
-          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
-          <input type="hidden" name="puntuacion" value="">
+        <p>Has navegado por desafíos peligrosos, resuelto rompecabezas complejos y llevado luz a
+            comunidades alrededor del mundo. Tu aventura es un recordatorio poderoso de cómo la innovación y la
+            determinación pueden cambiar el mundo. Gracias por acompañar a Laia en este viaje inspirador, donde cada
+            victoria es un paso hacia un futuro más brillante y sostenible.
+        </p>
+        <form action="../php_controllers/laiaController.php" METHOD="POST">
+            <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
+            <input type="hidden" name="puntuacion" value="">
 
 
 
 
 
-          <button class="btn  custom-btnrejugar border-light" type="submit" name="indiadata" id="siguientejuego">SIGUIENTE JUEGO
+            <button class="btn  custom-btnrejugar border-light" type="submit" name="indiadata"
+                id="siguientejuego">VOLVER
 
-          </button>
+            </button>
         </form>
     </div>
     <script type="module" src="scripts/main.js"></script>
