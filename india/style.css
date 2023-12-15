@@ -278,7 +278,8 @@ button#deleteLastElement{
 
 h1 {
     text-align: center;
-    padding-bottom: 40px 
+    padding-bottom: 40px;
+    padding-top: 35px;
 }
 
 .modal-content p {
@@ -382,7 +383,8 @@ margin-top: 50px;
     
     .explanation h1 {
         text-align: center;
-        padding-bottom: 40px 
+        padding-bottom: 40px;
+    
     }
     
     .explanation p {
@@ -403,9 +405,9 @@ margin-top: 50px;
         margin-top: 50px;
     }
 
-    /* div#show {
+    div#show {
         display: none;
-    } */
+    }
 
     #show{
         color: #fff;
