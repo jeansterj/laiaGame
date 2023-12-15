@@ -1,3 +1,9 @@
+<?php
+
+
+include('../php_librarys/bdlaia.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -192,6 +198,18 @@
             rompecabezas inteligentes, llevando luz y esperanza a cada rincón que visita. Acompaña a Laia en esta saga
             inspiradora ¿Podrás ayudarla a cumplir su misión y alzarte con el triunfo?</p>
             <button>VOLVER AL INICIO</button>
+            <form action="../php_controllers/laiaController.php" METHOD="POST">
+          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
+          <input type="hidden" name="puntuacion" value="">
+
+
+
+
+
+          <button class="btn  custom-btnrejugar border-light" type="submit" name="indiadata" id="siguientejuego">SIGUIENTE JUEGO
+
+          </button>
+        </form>
     </div>
     <script type="module" src="scripts/main.js"></script>
 </body>

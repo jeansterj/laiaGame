@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 10;
+let durationInSeconds = 1;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
@@ -21,6 +21,9 @@ let dificultad1 = Math.floor(Math.random() * 1000) + 800;
 let dificultad2 = Math.floor(Math.random() * 600) + 400;
 let dificultad3 = Math.floor(Math.random() * 200) + 100;
 let botondificultad1 = document.getElementById("botondifi");
+let puntdorado =15;
+let puntnormal =1;
+let puntneg =1;
 
 
 function createGameBoard(rows, cols) {
@@ -60,7 +63,7 @@ function updateGameBoardUI(board) {
               audiosucc.play();
 
               // Clic correcto (imagen de diana)
-              correctClicks++;
+              correctClicks= correctClicks+puntnormal;
               aciertos.textContent = correctClicks;
               console.log(`Clics correctos: ${correctClicks}`);
               updateProgressBar(correctClicks);
@@ -69,14 +72,14 @@ function updateGameBoardUI(board) {
             } else if (imageElement.src.includes("diananeg.png")) {
               audiofail.play();
 
-              correctClicks--;
+              correctClicks=correctClicks-puntneg;
               aciertos.textContent = correctClicks;
               console.log(`Clics incorrectos: ${incorrectClicks}`);
               updateProgressBar(correctClicks);
             }
             else if (imageElement.src.includes("dianadoble.png")) {
               audio2p.play();
-              correctClicks=correctClicks+5;
+              correctClicks=correctClicks+puntdorado;
               // correctClicks++;
               // correctClicks++;
               aciertos.textContent = correctClicks;
@@ -385,6 +388,7 @@ function setCookie(name, value, days) {
 
 function showEndScren(){
   if(correctClicks>=100||timerElement.textContent==="00:00"){
+    
     console.log("Dentro de replayEvent");
     let punt =document.getElementById("puntuacion");
     let infofinal = document.getElementById("textoFinal");
@@ -393,32 +397,43 @@ function showEndScren(){
     let infofail ="No has conseguido suficiente energia , vuelve a intentarlo "
     let siguientejuego = document.getElementById("siguientejuego");
     let textovolver = document.getElementById("textovolver");
+    let imgpieza =document.getElementById("lorefinal");
 
     setCookie('brasilGameCompleted', 'true', 7);    
 
     let botonfail = document.getElementById("botonfail");
-   
+    if (puntuacion>100){
+      puntuacion=100;
+     }
 
      punt.textContent = puntuacion;
+     
 
 
     document.getElementById("end-screen").style.display = "block";
     document.getElementById("content").style.display = "none";
    
-    
+    // cambiar el value del input para enviar la puntuacion
      let  puntuacionInput = document.getElementsByName("puntuacion")[0];
- 
-     
-     
-     puntuacionInput.value = puntuacion;
+       puntuacionInput.value = puntuacion;
+
+
+
+
+
+
      document.querySelector('input[name="puntuacion"]').value = puntuacion;
      
     if(puntuacion>=100){
+     
+      document.querySelector('input[name="puntuacion"]').value = puntuacion;
       infofinal.textContent=infovictoria;
       botonfail.style.display="none";
       siguientejuego.style.display="block";
+      imgpieza.style.display="block";
       
       textovolver.textContent="";
+      
 
     }else{
       infofinal.textContent= infofail;
@@ -468,4 +483,40 @@ function updateProgressBar(correctClicks) {
   if (correctClicks >= 100) {
    showEndScren();
   }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  abrirmodal();
+});
+
+function abrirmodal() {
+  let tiempo = 1;
+  let botonendendido = document.getElementById("botonendendido");
+
+  let countdown = setInterval(function () {
+    tiempo--;
+    console.log(tiempo);
+
+    if (tiempo <= 0) {
+      clearInterval(countdown);
+      
+
+
+      if (botonendendido) {
+        botonendendido.disabled = false;
+        
+      }
+     
+     
+    }
+
+  }, 1000);
+
+  let modal = new bootstrap.Modal(document.getElementById("staticBackdrop"));
+  modal.show();
+}
+
+function habilitarboton(){
+  let botonendendido = document.getElementById("botonstart");
+  botonendendido.disabled = false;
 }

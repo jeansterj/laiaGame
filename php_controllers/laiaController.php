@@ -238,7 +238,7 @@ if (isset($_POST["Keniadata"])) {
 
 }
 
-if (isset($_POST["Indiadata"])) {
+if (isset($_POST["indiadata"])) {
 
     try {
         insertIndia($_POST['idUsuario'],$_POST['puntuacion'] );
@@ -287,8 +287,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pais'])) {
     exit;
 }
 
-
-
+ if (isset($_POST["limpiarpuntuacion"])) {
+    
+        try {
+            clearRanking();
+            header('Location: ../adminpage.php');
+            exit();
+        } catch (Exception $e) {
+            echo " no funciona";
+            echo "Error: " . $e->getMessage();
+        }
+    
+    }
 
 
 
