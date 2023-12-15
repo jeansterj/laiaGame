@@ -304,7 +304,7 @@
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
-                        <img src=".\Imagenes\Brasil.png" alt="" class="liderbcn">
+                        <img src=".\Imagenes\Brasil.png" alt="" class="liderBrasil">
                     </div>
                 </div>
             </div>
@@ -343,7 +343,7 @@
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
-                        <img src=".\Imagenes\Kenya.png" alt="" class="liderbcn">
+                        <img src=".\Imagenes\Kenya.png" alt="" class="liderKenia">
                     </div>
                 </div>
             </div>
@@ -383,7 +383,7 @@
                         </div>
                     </div>
                     <div class="colModalIntroLore2">
-                        <img src=".\Imagenes\India.png" alt="" class="liderbcn">
+                        <img src=".\Imagenes\India.png" alt="" class="liderIndia">
                     </div>
                 </div>
             </div>
