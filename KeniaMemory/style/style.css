@@ -3,6 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: white;
     background-image: url(../img/fondo.png);
+    user-select: none;
 }
 
 main {
@@ -62,6 +63,8 @@ button {
 img{
 
 width: 80%;
+user-select: none;
+
 
 }
 
