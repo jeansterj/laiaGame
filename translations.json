@@ -34,5 +34,10 @@
         "en": "Logout",
         "es": "Cerrar Sesión",
         "cat": "Tancar Sesió"
+    },
+    "loreInicial": {
+        "en": "Laia, an engineer passionate about clean energy, travels the world to illuminate it. In each country, she uses her skills to solve problems and bring light to everyone. She searches for magical pieces in each place, and when she finishes in a country, she collects a special piece. After visiting Barcelona, Brazil, and Kenya, she reaches India and combines all the pieces to create a superpowerful energy that lights up the entire planet. Can you help Laia fulfill her mission and win together? Join her on this exciting journey!",
+        "es": "Laia, una ingeniera amante de la energía buena, viaja por el mundo para iluminarlo. En cada país, usa sus habilidades para resolver problemas y llevar luz a todos. Busca piezas mágicas en cada lugar, y cuando termina en un país, recoge una pieza especial. Después de pasar por Barcelona, Brasil y Kenia, llega a India y junta todas las piezas para hacer una energía superpoderosa que ilumina el planeta. ¿Puedes ayudar a Laia a cumplir su misión y ganar juntos? ¡Acompáñala en este viaje emocionante!",
+        "cat": "Laia, una enginyera amant de l'energia sostenible, viatja pel món per il·luminar-lo. A cada país, utilitza les seves habilitats per resoldre problemes i portar llum a tothom. Busca peces màgiques a cada lloc, i quan acaba en un país, recull una peça especial. Després de passar per Barcelona, Brasil i Kenia, arriba a l'Índia i junta totes les peces per fer una energia superpoderosa que il·lumina tot el planeta. Pots ajudar Laia a complir la seva missió i guanyar junts? Acompanya-la en aquest viatge emocionant!"
     }
 }
