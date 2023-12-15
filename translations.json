@@ -11,9 +11,9 @@
         "cat": "Nom d'Usuari"
     },
     "noTienesCuenta": {
-        "en": "Username",
-        "es": "Nombre de Usuario",
-        "cat": "Nom d'Usuari"
+        "en": "Don't you have an account?",
+        "es": "¿No Tienes Cuenta?",
+        "cat": "No tens compte?"
     },
     "password": {
         "en": "Password",
@@ -59,5 +59,32 @@
         "en": "In her latest adventure, Laia, the engineer passionate about sustainable energy, heads to bustling Bangalore, India, facing the challenge of bringing light to homes with daily electricity needs. This puzzle requires meticulous resource management and clever strategy. Are you ready to help Laia illuminate Bangalore and showcase your skills in renewable energy? Additionally, she discovers that the pieces obtained during her journey are crucial to providing energy to India.",
         "es": "En su última aventura, Laia, la ingeniera apasionada por la energía sostenible, llega a Bangalore, India, enfrentándose al desafío de llevar luz a casas con necesidades eléctricas diarias. Este rompecabezas requiere una gestión cuidadosa de recursos y estrategia. ¿Estás listo para ayudar a Laia a iluminar Bangalore y demostrar tus habilidades en energías renovables? Además, descubre que las piezas obtenidas durante su viaje son esenciales para proporcionar energía a la India.",
         "cat": "En la seva darrera aventura, Laia, l'enginyera apassionada per l'energia sostenible, arriba a Bangalore, Índia, enfrontant-se al desafiament d'aportar llum a cases amb necessitats elèctriques diàries. Aquest trencaclosques requereix una gestió meticulosa de recursos i estratègia. Estàs llest per ajudar Laia a il·luminar Bangalore i demostrar les teves habilitats en energies renovables? A més, descobreix que les peces obtingudes durant el seu viatge són essencials per proporcionar energia a Índia." 
+    },
+    "nombre": {
+        "en": "Name",
+        "es": "Nombre",
+        "cat": "Nom"
+    },
+    "apellido": {
+        "en": "Last name/s",
+        "es": "Apellido/s",
+        "cat": "Cognom/s"
+    },
+    "fechaNacimiento": {
+        "en": "Date of birth",
+        "es": "Fecha de nacimiento",
+        "cat": "Data de naixement"
+    },
+    "terminos": {
+        "en": "I accept the terms and conditions",
+        "es": "Acepto los términos y condiciones",
+        "cat": "Accepto els termes i condicions"
     }
+    ,
+    "registro": {
+        "en": "Registration",
+        "es": "Registro",
+        "cat": "Registre"
+    }
+
 }

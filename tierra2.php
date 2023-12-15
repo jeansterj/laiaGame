@@ -103,31 +103,31 @@
                                         <ion-icon name="person-circle-outline"></ion-icon>
                                     </span>
                                     <input type="text" name="userName" required>
-                                    <label>Nombre de Usuario</label>
+                                    <label data-translate="nombreUsuario">Nombre de Usuario</label>
                                 </div>
                                 <div class="input-box">
                                     <span class="icon">
                                         <ion-icon name="lock-closed-outline"></ion-icon>
                                     </span>
                                     <input type="password" name="password" required>
-                                    <label>Password</label>
+                                    <label data-translate="password">Password</label>
                                 </div>
                                 <div class="input-box">
                                     <span class="icon">
                                         <ion-icon name="person-outline"></ion-icon>
                                     </span>
                                     <input type="text" name="nombre" required>
-                                    <label>Nombre</label>
+                                    <label data-translate="nombre">Nombre</label>
                                 </div>
                                 <div class="input-box">
                                     <span class="icon">
                                         <ion-icon name="people-outline"></ion-icon>
                                     </span>
                                     <input type="text" name="primer_Apellido" required>
-                                    <label>Apellido/s</label>
+                                    <label data-translate="apellido">Apellido/s</label>
                                 </div>
                                 <div class="input-box">
-                                    <label for="fecha_Nacimiento" class="fecha_Naci" name="fecha_Nacimiento"> Fecha de
+                                    <label for="fecha_Nacimiento" class="fecha_Naci" name="fecha_Nacimiento" data-translate="fechaNacimiento"> Fecha de
                                         Nacimiento</label>
                                     <span class="icon">
                                         <ion-icon name="calendar-outline"></ion-icon>
@@ -139,12 +139,13 @@
                                 </div>
                                 <div>
                                     <div>
-                                        <label><input type="checkbox"> Acepto los términos y condiciones</label>
+                                        <label > <input type="checkbox" require> <p data-translate="terminos">Acepto los términos y condiciones</p></label>
+                                            
                                     </div>
-                                    <button type="submit" class="btn" name="registro">Registro</button>
+                                    <button type="submit" class="btn" name="registro" data-translate="registro">Registro</button>
                                     <div class="loginRegister">
                                         <p>¿Ya tienes cuenta?</p>
-                                        <a href="#" class="loginLink">Inicia Sesion</a>
+                                        <a href="#" class="loginLink" data-translate="iniciarSesion">Inicia Sesion</a>
                                     </div>
                             </form>
                         </div>
