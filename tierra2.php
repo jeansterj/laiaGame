@@ -235,13 +235,13 @@
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
-                                <button class="jugarButton"
+                                <button class="jugarButton" data-translate="jugar" 
                                     onclick="window.location.href='./warcelona9.0/warcelona5.0/warcelona.php'">JUGAR</button>
                             <?php else:
 
                                 ?>
 
-                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
                                 <!-- <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button> -->
@@ -285,7 +285,7 @@
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
-                                <button class="jugarButton"
+                                <button class="jugarButton" data-translate="jugar"
                                     onclick="window.location.href='./penaltis2/prueba.php'">JUGAR</button>
                                 <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button>
@@ -293,7 +293,7 @@
 
                                 ?>
 
-                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
                                     <button class="rankingButton" data-bs-target="#bcnranking"
                                 data-bs-toggle="modal">RANKING</button>
@@ -332,7 +332,7 @@
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
-                                <button class="jugarButton"
+                                <button class="jugarButton" data-translate="jugar"
                                     onclick="window.location.href='./KeniaMemory/LaiaJuegoNivel1/index.php'">JUGAR</button>
                                 <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button>
@@ -340,7 +340,7 @@
 
                                 ?>
 
-                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
                                     <button class="rankingButton" data-bs-target="#bcnranking"
                                 data-bs-toggle="modal">RANKING</button>
@@ -379,7 +379,7 @@
                         <div class="buttons">
                             <?php
                             if (isset($_SESSION['user'])): ?>
-                                <button class="jugarButton"
+                                <button class="jugarButton" data-translate="jugar"
                                     onclick="window.location.href='./India/reglas.php'">JUGAR</button>
                                 <button class="rankingButton"
                                     onclick="window.location.href='./ranking.php'">RANKING</button>
@@ -387,7 +387,7 @@
 
                                 ?>
 
-                                <button class="jugarButton" onclick="window.location.href='./penaltis2/prueba.php'"
+                                <button class="jugarButton" data-translate="jugar" onclick="window.location.href='./penaltis2/prueba.php'"
                                     disabled>JUGAR</button>
                                     <button class="rankingButton" data-bs-target="#bcnranking"
                                 data-bs-toggle="modal">RANKING</button>
