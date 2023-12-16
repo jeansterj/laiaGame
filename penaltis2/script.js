@@ -7,7 +7,7 @@ let incorrectClicks = 0;
 let aciertos = document.getElementById("aciertos");
 let fallos = document.getElementById("fallos");
 let timerElement = document.getElementById("timer");
-let durationInSeconds = 1;
+let durationInSeconds = 60;
 let imageIsShowing = false;
 let gameIsOver = false;
 let timerInterval;
