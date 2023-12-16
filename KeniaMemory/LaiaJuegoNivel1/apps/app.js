@@ -58,6 +58,10 @@ showMove.innerHTML = `Movimientos: ${moves}`;
 
 let tamanoArray  = null;
 
+//Sonidos
+
+let coincidencia = new Audio ('./../sounds/coincidencia.wav');
+
 
 
 function primerNivel() {
@@ -251,6 +255,7 @@ function voltear(id) {
         showMove.innerHTML = `Movimientos: ${moves}`;
 
         if (primerResultado == segundoResultado) {
+            coincidencia.play();
 
             tarjetaDestapada = 0;
 
