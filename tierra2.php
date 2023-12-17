@@ -49,7 +49,9 @@
 
             <?php if (isset($_SESSION['user'])): ?>
                 <!-- Si la sesión está iniciada, muestra el botón "Cerrar Sesión" -->
-                <button class="btn btnLogin-popup" onclick="window.location.href='./php_partials/logout.php'"
+                <button class="btn btnLogin-popup" onclick="logout();"
+
+
                     name="logoutLink" data-translate="cerrarSesion">CERRAR
                     SESION</button>
 
