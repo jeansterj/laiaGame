@@ -66,9 +66,21 @@ function checkCompletion() {
 }
 
 
+function borrarCookie(cookie) {
+    document.cookie = cookie + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
 
 
+function logout() {
+    borrarCookie("WarcelonaGameCompleted");
+    borrarCookie("brasilGameCompleted");
+    borrarCookie("KenyaGameCompleted");
+    borrarCookie("IndiaGameCompleted");
+    borrarCookie("yaVisitado");
 
+    window.location.href = '../laiaGame/php_partials/logout.php';
+    
+}
 
 
   

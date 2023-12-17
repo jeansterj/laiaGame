@@ -17,6 +17,55 @@ if (isset($_POST['login'])) {
             $_SESSION["user"] = $userData['nombreUsuario'];
             $_SESSION["idUser"] = $userData['idUsuario'];
             $_SESSION["rol"] = $userData['id_Rol'];
+            $war = $userData['warcelonaDone'];
+            $bra = $userData['brasilDone'];
+            $ken = $userData['kenyaDone'];
+            $ind = $userData['indiaDone'];
+             $tiempoExpiracion = time() + 7 * 24 * 60 * 60; 
+             $rutaCookie = "/";
+             $dominioCookie = "";
+             if($war == 1){
+                $war='true';
+              }else if($war == 0){ 
+                    $war= 'false';
+                }
+
+         
+            
+            if($bra == 1){
+                $bra='true';
+              }else if($bra == 0){
+                $bra= 'false';
+              }
+
+              if($ken == 1){
+                $ken='true';
+              }else if($ken == 0){
+                $ken= 'false';
+                }
+
+                if($ind == 1){
+                    $ind='true';
+                  }else if($ind == 0){
+                    $ind= 'false';
+                  }
+
+             
+
+            
+           
+
+            
+            
+            
+            
+            setcookie('brasilGameCompleted', $bra, $tiempoExpiracion, $rutaCookie, $dominioCookie);
+
+             setcookie('WarcelonaGameCompleted', $war,$tiempoExpiracion, $rutaCookie, $dominioCookie);
+             
+             setcookie('KenyaGameCompleted', $ken,$tiempoExpiracion, $rutaCookie, $dominioCookie);
+             setcookie('IndiaGameCompleted', $ind,$tiempoExpiracion, $rutaCookie, $dominioCookie);
+            
 
             // Redirect based on the user's role
             if ($_SESSION['rol'] == 3) {
@@ -214,6 +263,7 @@ if (isset($_POST["brasildata"])) {
 
     try {
         insertBrasil($_POST['idUsuario'],$_POST['puntuacion'] );
+        insertProgresoBrasil($_POST['idUsuario']);
         header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
@@ -228,6 +278,7 @@ if (isset($_POST["Keniadata"])) {
 
     try {
         insertKenia($_POST['idUsuario'],$_POST['puntuacion'] );
+        insertProgresoKenya($_POST['idUsuario']);
         header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
@@ -242,6 +293,7 @@ if (isset($_POST["indiadata"])) {
 
     try {
         insertIndia($_POST['idUsuario'],$_POST['puntuacion'] );
+        insertProgresoIndia($_POST['idUsuario']);
         header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {
@@ -256,6 +308,7 @@ if (isset($_POST["Warcelonadata"])) {
 
     try {
         insertWarcelona($_POST['idUsuario'],$_POST['puntuacion'] );
+        insertProgresoWarcelona($_POST['idUsuario']);
         header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {

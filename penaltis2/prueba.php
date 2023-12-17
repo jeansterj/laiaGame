@@ -158,7 +158,7 @@ include('../php_librarys/bdlaia.php');
 
             <button class="btn btn-light custom-btn mb-3" id="replayingame">
               <img src="./img/replay.png" onclick="rePlay('replayingame');" alt="Imagen"
-                class="img-fluid w-180 h-180 mr-2" id="imagensonido" />
+                class="img-fluid w-180 h-180 mr-2" id="" />
             </button>
           </div>
         </div>

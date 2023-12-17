@@ -21,7 +21,7 @@ let dificultad1 = 1000;
 let dificultad2 = 700;
 let dificultad3 = 500;
 let botondificultad1 = document.getElementById("botondifi");
-let puntdorado =15;
+let puntdorado =5;
 let puntnormal =1;
 let puntneg =1;
 
@@ -78,6 +78,7 @@ function updateGameBoardUI(board) {
               updateProgressBar(correctClicks);
             }
             else if (imageElement.src.includes("dianadoble.png")) {
+              audio2p.volume = 0.1;
               audio2p.play();
               correctClicks=correctClicks+puntdorado;
               // correctClicks++;
@@ -343,23 +344,26 @@ function controlarAudio() {
   let musica = document.getElementById("musica");
   let imagencontrol = document.getElementById("imagensonido");
   console.log("Ruta de la imagen:", imagencontrol.src);
+  let musicaestado = musica.paused ? "pause" : "play";
 
 
-
-  if (imagencontrol.src ===  "http://localhost:8080/penaltis2/img/volumemute.png") {
+  if(musicaestado==="play"){
     musica.pause();
-    console.log("musicapausada");
-    imagencontrol.src = "http://localhost:8080/penaltis2/img/volumenplay.png";
-
-  } else {
-    musica.play();
-    console.log("musicaactiva");
-    imagencontrol.src = "http://localhost:8080/penaltis2/img/volumemute.png";
+      imagencontrol.src = "./img/volumenplay.png";
+      musicaestado="pause";
+      console.log(musicaestado);
 
 
+}else if( musicaestado==="pause"){
 
+  musica.play();
+  imagencontrol.src = "./img/volumemute.png";
+  musicaestado="play";
+  console.log("musica activa");
 
-  }
+  
+}
+
 }
 
 
@@ -398,6 +402,9 @@ function showEndScren(){
     let siguientejuego = document.getElementById("siguientejuego");
     let textovolver = document.getElementById("textovolver");
     let imgpieza =document.getElementById("lorefinal");
+
+
+
 
     setCookie('brasilGameCompleted', 'true', 7);    
 

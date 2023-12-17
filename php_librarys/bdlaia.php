@@ -85,7 +85,7 @@ try{
     $conexion = openDB();
 
 
-    $sentenciatext = "select nombreUsuario ,contrasena,id_Rol,idUsuario from usuarios where nombreUsuario='$nombreusuario' AND contrasena ='$contrasena';";
+    $sentenciatext = "select nombreUsuario ,contrasena,id_Rol,idUsuario,warcelonaDone,brasilDone,kenyaDone,indiaDone from usuarios where nombreUsuario='$nombreusuario' AND contrasena ='$contrasena';";
 
 
 
@@ -237,8 +237,8 @@ function registrarUsuario($nombre, $nombreUsuario, $contrasena, $apellido1, $fec
 {
     $conexion = openDB();
 
-    $sentenciaText = "INSERT INTO USUARIOS (nombre, nombreUsuario, contrasena, apellido1, fechaNacimiento, id_Rol) 
-    VALUES (:nombre, :nombreUsuario, :contrasena, :apellido1, :fechaNacimiento, :id_Rol)";
+    $sentenciaText = "INSERT INTO USUARIOS (nombre, nombreUsuario, contrasena, apellido1, fechaNacimiento, id_Rol,warcelonaDone,brasilDone,kenyaDone,indiaDone) 
+    VALUES (:nombre, :nombreUsuario, :contrasena, :apellido1, :fechaNacimiento, :id_Rol,0,0,0,0)";
 
 
     $sentencia = $conexion->prepare($sentenciaText);
@@ -608,4 +608,114 @@ function clearRanking() {
     $sentencia->execute();
     
     $conexion = closeDB();
+}
+
+
+
+
+
+
+function insertProgresoBrasil($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    brasilDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
+}
+
+
+
+function insertProgresoWarcelona($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    warcelonaDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
+}
+
+
+
+function insertProgresoKenya($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    kenyaDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
+}
+
+
+function insertProgresoIndia($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    indiaDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
 }
