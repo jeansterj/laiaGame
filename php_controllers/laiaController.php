@@ -17,6 +17,11 @@ if (isset($_POST['login'])) {
             $_SESSION["user"] = $userData['nombreUsuario'];
             $_SESSION["idUser"] = $userData['idUsuario'];
             $_SESSION["rol"] = $userData['id_Rol'];
+            $_SESSION['warcelona'] = $userData['warcelonaDone'];
+            $_SESSION['brasil'] = $userData['brasilDone'];
+            $_SESSION['kenia'] = $userData['keniaDone'];
+            $_SESSION['india'] = $userData['indiaDone'];
+            
 
             // Redirect based on the user's role
             if ($_SESSION['rol'] == 3) {
@@ -214,6 +219,7 @@ if (isset($_POST["brasildata"])) {
 
     try {
         insertBrasil($_POST['idUsuario'],$_POST['puntuacion'] );
+        insertProgresoBrasil($_POST['idUsuario']);
         header('Location: ../tierra2.php');
         exit();
     } catch (Exception $e) {

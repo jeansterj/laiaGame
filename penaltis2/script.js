@@ -403,6 +403,9 @@ function showEndScren(){
     let textovolver = document.getElementById("textovolver");
     let imgpieza =document.getElementById("lorefinal");
 
+
+
+
     setCookie('brasilGameCompleted', 'true', 7);    
 
     let botonfail = document.getElementById("botonfail");
