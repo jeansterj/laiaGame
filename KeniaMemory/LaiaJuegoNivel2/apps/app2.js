@@ -136,35 +136,35 @@ function iniciarControlPuntaje() {
 
   if (tamanoArray >= 16 && tamanoArray <=23){
 
-      minTime = 30;
-      minMoves = maxAciertos+10;
-      madTime = minTime+5;
-      madMoves = minMoves+5;
+      minTime = 60;
+      minMoves = maxAciertos*2;
+      madTime = minTime+10;
+      madMoves = minMoves+15;
 
-      medTime = madTime+5;
-      medMoves = madMoves+5;
+      medTime = madTime+10;
+      medMoves = madMoves+15;
 
-      maxTime = madTime+5;
-      maxMoves = madMoves+5;
+      maxTime = madTime+10;
+      maxMoves = madMoves+15;
 
-      timer = 60;
+      timer = 95;
       timeIni = timer;
 
 
 
     } else {
-        minTime = 45;
-        minMoves = maxAciertos+15;
-        madTime = minTime+5;
-        madMoves = minMoves+5;
+        minTime = 130;
+        minMoves = maxAciertos*2;
+        madTime = minTime+15;
+        madMoves = minMoves+15;
   
-        medTime = madTime+5;
-        medMoves = madMoves+5;
+        medTime = madTime+15;
+        medMoves = madMoves+15;
   
-        maxTime = madTime+5;
-        maxMoves = madMoves+5;
+        maxTime = madTime+15;
+        maxMoves = madMoves+15;
 
-        timer = 90;
+        timer = 180;
         timeIni = timer;
 
 
@@ -264,6 +264,7 @@ function voltear(id) {
                 
                 rayo.play();
                 abrirRelampago(); 
+                console.log("entro");
 
                 cambiarCartasDeLugar();
                 }
@@ -383,7 +384,8 @@ function setCookie(name, value, days) {
 
   function abrirRelampago() {
     clearInterval(timerRegre);
-    mezcla.toggle();
+    console.log("entro");
+    mezcla.show();
   }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -394,6 +396,13 @@ document.addEventListener('DOMContentLoaded', function () {
             contarTiempo();
         }
         });
+
+    mezcla._element.addEventListener('hidden.bs.modal', function () {
+     if (!controlTiempo) {
+                
+           contarTiempo();
+      }
+    });    
     
    
 });

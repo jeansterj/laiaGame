@@ -140,7 +140,7 @@ function iniciarControlPuntaje() {
 
 
 minTime = 20;
-minMoves = maxAciertos+5;
+minMoves = maxAciertos+2;
 
  madTime = minTime+5;
  madMoves = minMoves+5;
@@ -155,41 +155,41 @@ minMoves = maxAciertos+5;
  timeIni = timer;
 
         
-    } else if (tamanoArray >= 16 && tamanoArray <=23){
+    } else   if (tamanoArray >= 16 && tamanoArray <=23){
 
-      minTime = 30;
-      minMoves = maxAciertos+10;
-      madTime = minTime+5;
-      madMoves = minMoves+5;
-
-      medTime = madTime+5;
-      medMoves = madMoves+5;
-
-      maxTime = madTime+5;
-      maxMoves = madMoves+5;
-
-      timer = 45;
-      timeIni = timer;
-
-
-    } else {
-        minTime = 45;
-        minMoves = maxAciertos+15;
-        madTime = minTime+5;
-        madMoves = minMoves+5;
+        minTime = 60;
+        minMoves = maxAciertos*2;
+        madTime = minTime+10;
+        madMoves = minMoves+10;
   
-        medTime = madTime+5;
-        medMoves = madMoves+5;
+        medTime = madTime+10;
+        medMoves = madMoves+10;
   
-        maxTime = madTime+5;
-        maxMoves = madMoves+5;
-
-        timer = 60;
+        maxTime = madTime+10;
+        maxMoves = madMoves+10;
+  
+        timer = 95;
         timeIni = timer;
-
-
-    }
+  
+  
+  
+      } else {
+          minTime = 130;
+          minMoves = maxAciertos*2;
+          madTime = minTime+15;
+          madMoves = minMoves+15;
     
+          medTime = madTime+15;
+          medMoves = madMoves+15;
+    
+          maxTime = madTime+15;
+          maxMoves = madMoves+15;
+  
+          timer = 180;
+          timeIni = timer;
+  
+  
+      }
 }
 
 function iniciarArray() {
@@ -397,4 +397,19 @@ document.addEventListener('DOMContentLoaded', function () {
     
    
 });
+
+function updateProgressBar(puntos) {
+
+    if (puntos <= 100) {
+      let progressBar = document.getElementById('currentProgress');
+          progressBar.style.width = puntos + '%';
+    }
+  }
+
+  function updateScore() {
+  
+    let scoreHTML = document.getElementById("scoreHTML")
+    scoreHTML.innerHTML = puntos
+    updateProgressBar(puntos)
+  }
 

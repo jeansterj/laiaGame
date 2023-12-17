@@ -59,14 +59,47 @@ include('../../php_librarys/bdlaia.php');
         </div>
 
     </div>
+    <!--  
+    <div class="container text-center" id="hide">
+        <div class="headrow">
+            <div class="col1">
+                <p>Energía</p>
+                <p id="scoreHTML">0</p>
+            </div>
+            <div class="col2">
+                <div class="progressBar">
+                    <div class="milestone milestone-40">
+                        <span class="milestone-label">40</span>
+                    </div>
+                    <div class="milestone milestone-60">
+                        <span class="milestone-label">60</span>
+                    </div>
+                    <div class="milestone milestone-80">
+                        <span class="milestone-label">80</span>
+                    </div>
+                    <div class="milestone milestone-100">
+                        <span class="milestone-label">100</span>
+                    </div>
+                    <div class="progress" id="currentProgress"></div>
+                </div>
+            </div>
+        </div>
+        -->
 
     <div id="game">
+        
 
         <main>
 
+   
+
             <section class="section1">
 
+
+
                 <h1>Kenia Memory</h1>
+
+
                 <table id="memoryTable"></table>
 
             </section>
