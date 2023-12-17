@@ -54,7 +54,7 @@ VALUES ( 'WarcelonaWatcher', 'SuperAdminUser', 'superadmin123', 'Apellido1Super'
 INSERT INTO JUEGOS ( idjuegos,descripcion)
 VALUES (1,'Warcelona'),(2,'Brasil'),(3,'Kenia'),(4,'India');
 
-tipopokemontipopokemonINSERT INTO PUNTUACION (idUsuario, idjuegos, puntuacion)
+INSERT INTO PUNTUACION (idUsuario, idjuegos, puntuacion)
 VALUES (14, 1, 100),
        (14, 2, 150);
 
