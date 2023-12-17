@@ -19,6 +19,11 @@ html, body {
     background-image: url("images/warcelona2.png");
 }
 
+#siguientejuego {
+    display: none;
+    /* otros estilos que necesites */
+}
+
 #timer {
     position: absolute; 
     top: 5%;
@@ -57,30 +62,35 @@ html, body {
 }
 
 .character {    
-    background-image: url("images/LaiaPlayer.png");
+    background-image: url("images/LaiaPixel.png");
     background-size: cover;    
     width: 70px;
     height: 70px;
 }
 
-.enemy {
-    background-color: red;
+.enemy {   
+    background-image: url("images/Delincuente1.png");
+    background-size: cover;   
+    width: 35px;
+    height: 40px; 
 }
 
-.charge-enemy {   
-    background-color: purple;     
+.charge-enemy {       
+    background-image: url("images/charge-enemy.png");
+    width: 35px;
+    height: 35px; 
 }
 
 .bulky{
-    width: 30px;
-    height: 30px;
-    background-color: brown;
+    width: 45px;
+    height: 50px;
+    background-image: url("images/Bulky.png");  
 }
 
 .tank{
     width: 60px;
     height: 60px;
-    background-color: darkblue;
+    background-image: url("images/Tanque.png");  
 }
 
 .explosion{
@@ -89,8 +99,11 @@ html, body {
     background-color: yellowgreen;
 }
 
-
-
+.chasing-enemy {
+    width: 15px;
+    height: 15px;
+    background-color: yellow;  
+}
 
 .projectile {
     position: absolute;
@@ -119,22 +132,27 @@ html, body {
     z-index: 10;
 }
 
-.healthCircle {
-    
-    width: 40px; 
-    height: 40px;   
-    background-image: url("images/MonedaVidas.png"); 
-    background-size: cover;
-    border-radius: 50%; 
-    display: inline-block; 
-    margin-right: 5px;
-    animation: pulse 2s ease-in-out infinite;
+.health-bar-container {
+    position: absolute; /* Posición absoluta para seguir al jugador */
+    bottom: 0px; /* Posición debajo del jugador */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
 }
 
-#healthContainer
-{
-    position: absolute; 
-    top: 40px; left: 150px;
+.max-health-bar {
+    background-color: darkred; /* Fondo para la vida máxima */
+    height: 10px; /* Altura de la barra */
+    opacity: 0.6; /* Opacidad para diferenciar de la salud actual */
+}
+
+.current-health-bar {
+    background-color: red; /* Fondo para la salud actual */
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #expContainer {
@@ -171,36 +189,94 @@ html, body {
   }
 
   #upgrade-menu {
+    display: flex;
+    flex-direction: row; /* Disposición horizontal */
+    flex-wrap: wrap; /* Permite múltiples filas */
+    align-items: flex-start;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 30px; /* Espacio entre las columnas y filas */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    border-radius: 10px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 900px; /* Ajuste el ancho máximo según sea necesario */
+    box-sizing: border-box;
+}
+
+.upgrade-option {
+    background-color: rgba(255, 255, 255, 0.2); /* Rectángulo vertical transparente */
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33% - 30px); /* Ancho para 3 columnas, ajustar el 30px según el gap */
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Texto en columna vertical */
+}
+
+.upgrade-option:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Efecto al pasar el ratón */
+}
+
+.upgrade-description {
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.upgrade-title {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    padding: 10px; /* Espacio alrededor del texto */
+    border: 2px solid yellow; /* Borde amarillo */
+    border-radius: 5px; /* Bordes redondeados para el aspecto de botón */
+    position: relative; /* Posición relativa para mover el título */
+    top: -20px; /* Mover el título hacia arriba fuera del rectángulo */
+    background-color: black;
+    width: calc(100% - 20px); /* Ajustar el ancho para considerar el padding */
+    box-sizing: border-box; /* Asegurar que el padding no afecte el ancho total */
+    left: 50%; /* Posicionamiento horizontal */
+    transform: translateX(-50%); /* Centrar el título horizontalmente */
+    z-index: 1; /* Asegurar que el título esté sobre el fondo */
+}
+
+
+/* Ocultar los botones, ya que el clic se maneja en el div */
+#upgrade-menu button {
+    display: none;
+}
+
+.upgrade-panel {
+    background-color: #4CAF50; /* Cambia el color de fondo de cada panel aquí */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera para profundidad */
+    width: 200px; /* Ancho del panel */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-}
+    gap: 10px; /* Espacio entre elementos dentro del panel */
+  }  
 
-#upgrade-menu button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-#upgrade-menu button:hover {
-    background-color: #367c39;
-}
-
+  .fade-in {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s ease-in;
+  }
+  
+  .fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s ease-out;
+  }
 #portraitContainer {
     position: absolute;
     top: 9%;

@@ -1,10 +1,13 @@
+import { ChasingEnemy } from './chispas.js';
+
 
 export class Character {
     constructor(x, y) {
         this.x = x;
-        this.y = y;
-        this.health = 5; 
-        this.speed = 3.5;
+        this.y = y;        
+        this.maxLife = 5;
+        this.health = this.maxLife;
+        this.speed = 4;
         this.width = 70; 
         this.height = 70; 
         this.attackPower = 10;
@@ -16,12 +19,15 @@ export class Character {
         this.invulnerableDuration = 1000; 
         this.experience = 0;
         this.level = 1;
-        this.expNextLevel = 100; 
+        this.expNextLevel = 25; 
         this.element = document.createElement('div');
         this.element.classList.add('character');
         document.getElementById('gameContainer').appendChild(this.element);       
         this.updatePosition();
         this.updateHealthDisplay();
+        this.healthContainer = document.createElement('div');
+        this.healthContainer.id = 'healthContainer';
+        this.element.appendChild(this.healthContainer);
         this.createExpBar();
         this.updateExpBar();
         this.upgrades = 3;
@@ -32,18 +38,45 @@ export class Character {
         this.omnishoot = false;
         this.isChoosing = false;
         this.lifeSteal = false;
+        this.hasShield = false;
+        this.shieldRegenerationTime = 30000;   
+        this.orbital1 = false;
+        this.chispas = false; 
     }
     
     takeDamage(damage) {
-        if (Date.now() > this.invulnerableUntil) {
+
+        if (this.hasShield) {
+            this.hasShield = false;
+            this.resetShieldTimer();             
+        }
+        else{
+         if(Date.now() > this.invulnerableUntil) {
             this.health -= damage;
             this.invulnerableUntil = Date.now() + this.invulnerableDuration;         
-            this.blinkCharacter();       
-                        
+            this.blinkCharacter();                
         }
-    }   
-
+    }
+    }    
     
+    resetShieldTimer() {
+        setTimeout(() => {
+            this.hasShield = true; 
+        }, this.shieldRegenerationTime);
+    }
+    
+    checkHealth() {
+        if (this.health > this.maxLife) {
+            this.health = this.maxLife;
+        }
+    }
+   
+    incrementHealth(amount) {
+        this.health += amount;
+        this.checkHealth(); 
+        this.updateHealthDisplay(); 
+    }
+
     
     blinkCharacter() {
         const blinkTimes = 5; 
@@ -83,12 +116,13 @@ export class Character {
         const screenWidth = rect.width;
         const screenHeight = rect.height;
         
-        if (keysPressed.ArrowUp && this.y > 0) this.y -= this.speed;
-        if (keysPressed.ArrowDown && this.y < screenHeight-70) this.y += this.speed;
-        if (keysPressed.ArrowLeft && this.x > 0) this.x -= this.speed;
-        if (keysPressed.ArrowRight && this.x < screenWidth-70) this.x += this.speed;        
-     
+        if (keysPressed.KeyW && this.y > 0) this.y -= this.speed;
+        if (keysPressed.KeyS && this.y < screenHeight - 70) this.y += this.speed;
+        if (keysPressed.KeyA && this.x > 0) this.x -= this.speed;
+        if (keysPressed.KeyD && this.x < screenWidth - 70) this.x += this.speed;
+
         this.updatePosition();
+        this.updateHealthBarPosition();
     }
 
     updatePosition() {
@@ -107,12 +141,37 @@ export class Character {
 
     updateHealthDisplay() {
         const healthContainer = document.getElementById('healthContainer');
-        healthContainer.innerHTML = ''; 
-        for (let i = 0; i < this.health; i++) {
-            const healthCircle = document.createElement('div');
-            healthCircle.classList.add('healthCircle');
-            healthContainer.appendChild(healthCircle);
-        }
+        healthContainer.innerHTML = '';
+    
+        // Crear contenedor de la barra de salud
+        const healthBarContainer = document.createElement('div');
+        healthBarContainer.classList.add('health-bar-container');
+    
+        // Crear barra de salud máxima
+        const maxHealthBar = document.createElement('div');
+        maxHealthBar.classList.add('max-health-bar');
+        maxHealthBar.style.width = `${this.maxLife * 10}px`; // Ajusta el ancho según la vida máxima
+    
+        // Crear barra de salud actual
+        const currentHealthBar = document.createElement('div');
+        currentHealthBar.classList.add('current-health-bar');
+        currentHealthBar.style.width = `${this.health * 10}px`; // Ajusta el ancho según la salud actual
+    
+        // Añadir barras al contenedor
+        healthBarContainer.appendChild(maxHealthBar);
+        healthBarContainer.appendChild(currentHealthBar);
+    
+        // Añadir el contenedor de la barra de salud al contenedor de la salud
+        healthContainer.appendChild(healthBarContainer);
+    
+        // Actualizar la posición de la barra de salud para que siga al jugador
+        this.updateHealthBarPosition();
+    }
+
+    updateHealthBarPosition() {
+        const healthContainer = document.getElementById('healthContainer');
+        healthContainer.style.top = `${this.y - 10}px`; // 20px por encima del jugador
+        healthContainer.style.left = `${this.x}px`; // Alineado horizontalmente con el jugador
     }
 
     gainExperience(amount) {
@@ -132,69 +191,291 @@ export class Character {
         this.showUpgradeOptions();
     }
 
-    showUpgradeOptions() {
-        const upgradeOptions = [
-            { name: 'Ataque+', effect: () => this.attackPower += 1 },
-            { name: 'Ataque++', effect: () => this.attackPower += 2.5 },
-            { name: 'Ataque+++', effect: () => this.attackPower *= 1.75},
-            { name: 'Salud+', effect: () => this.health += 1 },
-            { name: 'Salud+++', effect: () => this.health += 5 },
-            { name: 'Velocidad+', effect: () => this.speed += 0.75 },
-            { name: 'Velocidad++', effect: () => this.speed += 2 },
-            { name: 'Velocidad-- Ataque++', effect: () => {this.speed *= 0.3; this.attackPower += 5}},           
-            { name: 'Velocidad de ataque+', effect: () => this.shotCooldown *= 0.9 },
-            { name: 'Velocidad de ataque++', effect: () => this.shotCooldown *= 0.8 }, 
-            { name: 'Velocidad de ataque+++  Ataque ---', effect: () => {this.shotCooldown *= 0.3; this.attackPower *=0.2}}, 
-            { name: 'Triple Disparo', effect: () => this.doubleshoot = true },
-            { name: 'Proyectil mas grande  Ataque+++', effect: () => {this.shotCooldown /= 0.6; this.attackPower += 10;this.projectileSize += 40,this.changeProjectileSize(this.projectileSize,this.projectileSize)}}, 
-            { name: 'Proyectil mas grande', effect: () =>{this.projectileSize += 10, this.changeProjectileSize(this.projectileSize,this.projectileSize)}}, 
-            { name: 'Hazte mas pequeño', effect: () =>{this.width -= 20, this.height -= 20, this.changeCaracterSize(this.width,this.height)}}, 
-            { name: 'Disparo perforante', effect: () => this.piercingShoot = true },       
-            { name: 'Salud++', effect: () => this.health += 2 },  
-            { name: 'Velocidad+++ Velocidad de ataque++', effect: () => {this.speed *= 2; this.shotCooldown * 0.8}}, 
-            { name: 'Salud+ Ataque+', effect: () => {this.health += 1; this.attackPower += 0.5}},  
-            { name: 'Salud--- Ataque+++', effect: () => {this.health = 1; this.attackPower *= 3}},   
-            { name: 'Salud--- Velocidad de ataque +++', effect: () => {this.health = 1; this.shotCooldown *= 0.3}}, 
-            { name: 'Doble disparo', effect: () => this.pairshoot = true},     
-            { name: 'Hazte mas grande', effect: () =>{this.width += 10, this.height +=10, this.changeCaracterSize(this.width,this.width)}},
-            { name: 'Hazte mas grande Ataque+', effect: () =>{this.width += 5, this.height +=5, this.changeCaracterSize(this.width,this.width),this.attackPower += 1}},    
-            { name: 'Daño de contacto', effect: () => this.contactDamage = true},
-            { name: 'Aumenta el tiempo de invulnerabilidad', effect: () => this.invulnerableDuration = 2000},
-            { name: 'Aumenta el tiempo de invulnerabilidad ++', effect: () => this.invulnerableDuration = 3500}, 
-            { name: 'Aumenta el tiempo de invulnerabilidad +++', effect: () => this.invulnerableDuration = 5000},    
-            { name: 'Dispara en todas las direcciones Velocidad de Ataque ---', effect: () => {this.omnishoot = true, this.shotCooldown *= 4}},
-            { name: 'Todo - opciones++', effect: () => {this.shotCooldown/= 0.8, this.attackPower *= 0.8, this.speed *= 0.8, this.upgrades += 2}},
-            { name: 'Todo ++ opciones--', effect: () => {this.shotCooldown*= 0.6, this.attackPower *= 1.5, this.speed *= 1.3, this.upgrades -= 2}},
-            { name: 'Todo +', effect: () => {this.shotCooldown*= 0.7, this.attackPower *= 1.2, this.speed *= 1.1}},
-            { name: 'Retroceso ++', effect: () => this.knockBackForce += 10},
-            { name: 'Retroceso+ Ataque+', effect: () => {this.knockBackForce += 5, this.attackPower += 0.7}},
-            { name: 'Retroceso+ Velocidad de ataque++', effect: () => {this.knockBackForce += 5, this.shotCooldown *= 0.8}},
-            { name: 'Ataque ++ Velocidad de ataque-', effect: () => {this.attackPower *= 1.25, this.shotCooldown /= 0.9}},
-            { name: 'Hazte mas grande Retroceso+++', effect: () =>{this.width += 10, this.height +=10, this.changeCaracterSize(this.width,this.width),this.knockBackForce += 15}},
-            { name: 'Hazte mas pequeño Velocidad++', effect: () =>{this.width -= 20, this.height -= 20, this.changeCaracterSize(this.width,this.height), this.speed *= 1.5}},
-            { name: 'Robo de vida', effect: () => this.lifeSteal = true},
-            { name: 'Robo de vida Velocidad de ataque+++', effect: () =>{ this.shotCooldown *= 0.5,this.lifeSteal = true}},
-            { name: 'Salud--- Opciones+++', effect: () => {this.health = 1; this.upgrades += 5}},                                 
-                                  
+    fadeInMenu() {
+        const upgradeMenu = document.getElementById('upgrade-menu');
+        upgradeMenu.classList.add('fade-in');
+        upgradeMenu.classList.remove('fade-out');
+      }
+      
+     
+      fadeOutMenu() {
+        const upgradeMenu = document.getElementById('upgrade-menu');
+        upgradeMenu.classList.add('fade-out');
+        upgradeMenu.classList.remove('fade-in');
+      }
+
+    showUpgradeOptions() {        
+            const upgradeOptions = [
+                {
+                    name: 'Gym',
+                    effect: () => this.attackPower += 1,
+                    description: 'Aumenta levemente el ataque de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Press de banca',
+                    effect: () => this.attackPower += 2.5,
+                    description: 'Aumenta moderadamente el ataque de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Dominadas',
+                    effect: () => this.attackPower *= 1.75,
+                    description: 'Aumenta ampliamente el ataque de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Vendas',
+                    effect: () => this.incrementHealth(1),
+                    description: 'Cura levemente a Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Botiquin',
+                    effect: () => this.incrementHealth(this.maxLife),
+                    description: 'Cura a Laia toda su salud' // Descripción pendiente
+                },
+                {
+                    name: 'Cardio',
+                    effect: () => this.speed += 0.75,
+                    description: 'Aumenta ligeramente la velocidad de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Maraton de TV3',
+                    effect: () => this.speed += 2,
+                    description: 'Aumenta ampliamente la velocidad de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Paquete de tabaco',
+                    effect: () => { this.speed *= 0.3; this.attackPower += 5 },
+                    description: 'Reduce drasticamente la velocidad de Laia pero aumenta su ataque de forma moderada(no fumeis niños)' // Descripción pendiente
+                },
+                {
+                    name: 'Juego de manos',
+                    effect: () => this.shotCooldown *= 0.9,
+                    description: 'Aumenta ligeramente la velocidad de ataque de Laia ' // Descripción pendiente
+                },
+                {
+                    name: 'Alto voltaje',
+                    effect: () => this.shotCooldown *= 0.8,
+                    description: 'Aumenta moderadamene la velocidad de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Leche de soja',
+                    effect: () => { this.shotCooldown *= 0.4; this.attackPower *= 0.3 },
+                    description: 'Aumenta al maximo la velocidad de Laia pero reduce su ataque al maximo' // Descripción pendiente
+                },
+                {
+                    name: 'Triple Disparo',
+                    effect: () => this.doubleshoot = true,
+                    description: 'Laia dispara el triple de proyectiles' // Descripción pendiente
+                },
+                {
+                    name: 'Creatina',
+                    effect: () => { this.shotCooldown /= 0.6; this.attackPower += 10; this.projectileSize += 40; this.changeProjectileSize(this.projectileSize, this.projectileSize) },
+                    description: 'El tamaño de los proyectiles de Laia aumenta considerablemente junto a su Ataque, reduciendo la velocidad de disparo' // Descripción pendiente
+                },
+                {
+                    name: 'Prozis',
+                    effect: () => { this.projectileSize += 10; this.changeProjectileSize(this.projectileSize, this.projectileSize) },
+                    description: 'El tamaño de los proyectiles de Laia aumenta ligeramente' // Descripción pendiente
+                },
+                {
+                    name: 'Hazte más pequeño',
+                    effect: () => { this.width -= 20; this.height -= 20; this.changeCaracterSize(this.width, this.height) },
+                    description: 'ljklkjlkj' // Descripción pendiente
+                },
+                {
+                    name: 'Disparo perforante',
+                    effect: () => this.piercingShoot = true,
+                    description: 'Los disparos de Laia atraviesan ligeramente a los enemigos' // Descripción pendiente
+                },
+                {
+                    name: 'Cura media',
+                    effect: () => this.incrementHealth(2),
+                    description: 'jlklkj' // Descripción pendiente
+                },
+                {
+                    name: 'Adrenalina',
+                    effect: () => { this.speed *= 2; this.shotCooldown *= 0.8 },
+                    description: 'Aumenta drasticamente la velocidad de Laia y moderadamente su velocidad de disparo' // Descripción pendiente
+                },
+                {
+                    name: 'Entrecot',
+                    effect: () => { this.vidaMaxima += 1; this.attackPower += 0.5 },
+                    description: 'Laia aumenta su salud maxima en uno y aumenta levemente su ataque' // Descripción pendiente
+                },
+                {
+                    name: 'Vacuna del COVID(pfizer)',
+                    effect: () => { this.health = 1; this.attackPower *= 3 },
+                    description: 'Aumenta Drasticamente el ataque de Laia pero reduce su salud a 1' // Descripción pendiente
+                },
+                {
+                    name: 'Vacuna del COVID(moderna)',
+                    effect: () => { this.health = 1; this.shotCooldown *= 0.4 },
+                    description: 'Aumenta al maximo la velocidad de ataque de Laia pero reduce su salud a 1' // Descripción pendiente
+                },
+                {
+                    name: 'Doble disparo',
+                    effect: () => this.pairshoot = true,
+                    description: 'Laia dispara el doble de disparos' // Descripción pendiente
+                },
+                {
+                    name: 'Tiroides',
+                    effect: () => { this.width += 10; this.height += 10; this.changeCaracterSize(this.width, this.height) },
+                    description: 'Aumenta el tamaño de Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Virus',
+                    effect: () => { this.width += 5; this.height += 5; this.changeCaracterSize(this.width, this.height); this.attackPower += 1 },
+                    description: 'Aumenta el tamaño de Laia y levemente su ataque' // Descripción pendiente
+                },
+                {
+                    name: 'Alambre eletrico',
+                    effect: () => this.contactDamage = true,
+                    description: 'Los enemigos reciben daño cuando tocan a Laia' // Descripción pendiente
+                },
+                {
+                    name: 'Camara de fotos',
+                    effect: () => this.invulnerableDuration = 2000,
+                    description: 'Aumenta levemente el tiempo que Laia es invulnerable despues de recibir daño' // Descripción pendiente
+                },
+                {
+                    name: 'Camara de video',
+                    effect: () => this.invulnerableDuration = 3500,
+                    description: 'Aumenta moderadamente el tiempo que Laia es invulnerablo despues de recibir daño' // Descripción pendiente
+                },
+                {
+                    name: 'Sangre de cristo',
+                    effect: () => this.invulnerableDuration = 5000,
+                    description: 'Aumenta drasticamente el tiempo que Laia es invulnerbale despues de recibir daño' // Descripción pendiente
+                },
+                {
+                    name: 'Sobrecarga',
+                    effect: () => { this.omnishoot = true},
+                    description: 'De vez en cuando Laia se sobrecarga liberando una andanada de proyectiles en todas las direcciones' // Descripción pendiente
+                },
+                {
+                    name: 'Black Friday',
+                    effect: () => { this.shotCooldown /= 0.8; this.attackPower *= 0.8; this.speed *= 0.8; this.upgrades == 5 },
+                    description: 'Laia se vuelve mas debil pero tiene mas poderes que elegir cuando sube de nivel' // Descripción pendiente
+                },
+                {
+                    name: 'Loba solitaria',
+                    effect: () => { this.shotCooldown *= 0.6; this.attackPower *= 1.5; this.speed *= 1.3; this.upgrades == 1 },
+                    description: 'Laia se vuelve mas poderosa pero tiene menos poderes que elegir cuando sube de nivel' // Descripción pendiente
+                },
+                {
+                    name: 'Prime',
+                    effect: () => { this.shotCooldown *= 0.7; this.attackPower *= 1.2; this.speed *= 1.1 },
+                    description: 'Laia se vuelve levemente mas poderosa' // Descripción pendiente
+                },
+                {
+                    name: 'Empujon',
+                    effect: () => this.knockBackForce += 10,
+                    description: 'Laia aumenta moderadamente su fuerza de empuje a los enemigos cuando los impacta' // Descripción pendiente
+                },
+                {
+                    name: 'Barricada',
+                    effect: () => { this.knockBackForce += 5; this.attackPower += 0.7 },
+                    description: 'Aumenta ligeramente tanto el ataque como la fuerza de empuje a los enmigos' // Descripción pendiente
+                },
+                {
+                    name: 'NO PUEDES PASAR',
+                    effect: () => { this.knockBackForce += 5; this.shotCooldown *= 0.8 },
+                    description: 'aumenta moderadamente la velocidad de ataque de laia y ligeramente su fuerza de empuje a los enemigos' // Descripción pendiente
+                },
+                {
+                    name: 'Ataque ++ Velocidad de ataque-',
+                    effect: () => { this.attackPower *= 1.25; this.shotCooldown /= 0.9 },
+                    description: '' // Descripción pendiente
+                },
+                {
+                    name: 'Hazte más grande Retroceso+++',
+                    effect: () => { this.width += 10; this.height += 10; this.changeCaracterSize(this.width, this.width); this.knockBackForce += 15 },
+                    description: '' // Descripción pendiente
+                },
+                {
+                    name: 'Hazte más pequeño Velocidad++',
+                    effect: () => { this.width -= 20; this.height -= 20; this.changeCaracterSize(this.width, this.height); this.speed *= 1.5 },
+                    description: '' // Descripción pendiente
+                },
+                {
+                    name: 'Adrenocromo',
+                    effect: () => this.lifeSteal = true,
+                    description: 'Cuando matas un enemigo tienes una leve probabilidad de recuperar vida'// Descripción pendiente
+                },
+                {
+                    name: 'Vampirismo',
+                    effect: () => { this.shotCooldown *= 0.5; this.lifeSteal = true },
+                    description: 'Aumenta drasticamente la velocidad de ataque de Laia y probabilidad de curarte al mayar a un enemigo' // Descripción pendiente
+                },
+                {
+                    name: 'Salud--- Opciones+++',
+                    effect: () => { this.health = 1; this.upgrades += 5 },
+                    description: '' // Descripción pendiente
+                },
+                {
+                    name: 'Psicologo',
+                    effect: () => { this.maxLife += 1; this.incrementHealth(1) },
+                    description: 'Laia aumenta levemente su salud maxima' // Descripción pendiente
+                },
+                {
+                    name: 'Seguro dental',
+                    effect: () => { this.maxLife += 2; this.incrementHealth(2) },
+                    description: 'Laia aumente moderadamente su salud maxima' // Descripción pendiente
+                },
+                {
+                    name: 'Mutua',
+                    effect: () => { this.maxLife += 3; this.incrementHealth(3) },
+                    description: 'Laia aumenta drasticamente su salud maxima' // Descripción pendiente
+                },
+                {
+                    name: 'Chaleco anti-balas',
+                    effect: () => this.hasShield = true,
+                    description: 'Cada 30 segundos Laia obtiene un escudo que la protege del siguiente golpe que reciba ' // Descripción pendiente
+                },
+                {
+                    name: 'Chispas!',
+                    effect: () => this.chispas = true,
+                    description: 'Chispas, el perro de Laia acude en su ayuda' // Descripción pendiente
+                },
+                {
+                    name: 'Mosquito',
+                    effect: () => this.orbital1 = true,
+                    description: 'A Laia la acosan los mosquitos que dañan a los enemigos alrededor' // Descripción pendiente
+                }
         ];
 
-        const selectedUpgrades = this.selectRandomUpgrades(upgradeOptions, this.upgrades);    
+        const selectedUpgrades = this.selectRandomUpgrades(upgradeOptions, this.upgrades);
         const upgradeMenu = document.createElement('div');
         upgradeMenu.id = 'upgrade-menu';
         document.body.appendChild(upgradeMenu);
-    
+
         selectedUpgrades.forEach(option => {
-            const button = document.createElement('button');
-            button.innerText = option.name;
-            button.onclick = () => {
+            const upgradeElement = document.createElement('div');
+            upgradeElement.className = 'upgrade-option';
+        
+            const title = document.createElement('p'); // Usar párrafo para el título
+            title.innerText = option.name;
+            title.className = 'upgrade-title';
+        
+            const description = document.createElement('p');
+            description.innerText = option.description;
+            description.className = 'upgrade-description';
+        
+            upgradeElement.onclick = () => { // El evento onclick ahora está en upgradeElement
                 option.effect();
-                document.body.removeChild(upgradeMenu);
-                this.isChoosing = false;
+                this.fadeOutMenu();
+                setTimeout(() => {
+                    document.body.removeChild(upgradeMenu);
+                    this.isChoosing = false;
+                }, 500); 
             };
-            upgradeMenu.appendChild(button);
-        });
-    
-        this.isChoosing = true;
+        
+            upgradeElement.appendChild(title);
+            upgradeElement.appendChild(description);
+            upgradeMenu.appendChild(upgradeElement);
+    });
+
+    this.isChoosing = true;
+    this.fadeInMenu(); // Asegúrate de que el fade in se inicie aquí si es necesario
     }
 
     selectRandomUpgrades(upgrades, count) {
@@ -252,7 +533,7 @@ export class Character {
         const expBar = document.getElementById('expBar');
         const expPercentage = (this.experience / this.expNextLevel) * 100;
         expBar.style.width = `${expPercentage}%`;
-    }
+    } 
 
 
 }

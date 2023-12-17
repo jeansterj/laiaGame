@@ -6,16 +6,26 @@ import { ChargeEnemy } from './chargeEnemy.js';
 import { Enemy } from './enemy.js';
 import { GameManager } from '../../apps/gameManager.js';
 import { Orbital } from './orbital.js';
+import { ChasingEnemy } from './chispas.js';
 
-const character = new Character(80, 80);
+
+const gameContainer = document.getElementById('gameContainer');
+const rect = gameContainer.getBoundingClientRect();
+
+const screenWidth = rect.width;
+const screenHeight = rect.height;
+
+const character = new Character(screenWidth/2, screenHeight/2);
 const projectiles = [];
 const enemySpawner = new EnemySpawner(1750);
 
-
-
 let keysPressed = {};
 
+let omnishootInterval;
+
 const orbital = new Orbital(15,0.015,60);
+
+const chispas = new ChasingEnemy(50,50);
 
 window.addEventListener('keydown', (event) => {
     keysPressed[event.code] = true;
@@ -156,7 +166,7 @@ function showDialogueScreen() {
     dialogueText.style.padding = '20px';
 
     // Array de diálogos
-    const dialogues = ["Bienvenido al juego", "Prepárate para la aventura", "¡Comencemos!"];
+    const dialogues = ["Bienvenido a Warcelona", "Tendras que defender a Laia", "Usaras las teclas W,A,S,D para moverte","Las teclas de dirección del teclado para disparar","Listo?"];
     let currentDialogue = 0;
     dialogueText.textContent = dialogues[currentDialogue];
 
@@ -200,7 +210,12 @@ function showGameOverScreen() {
     gameOverText.style.padding = '20px';
     gameOverText.textContent = 'Game Over. Click to restart.';
 
+    const nextGameButton = document.getElementById('siguientejuego');
+    nextGameButton.style.display = 'block'; // Hacer visible el botón
+
+
     gameOverScreen.appendChild(gameOverText);
+    gameOverScreen.appendChild(nextGameButton);
 
     gameOverScreen.addEventListener('click', () => {
         document.body.removeChild(gameOverScreen);
@@ -219,7 +234,8 @@ function restartGame() {
 function gameLoop() {
     
     if(!character.isChoosing)
-    {      
+    {   
+
         if (character.health <= 0) {  
                    
             setCookie('WarcelonaGameCompleted', 'true', 7);           
@@ -228,16 +244,30 @@ function gameLoop() {
         }
 
         let  puntuacionInput = document.getElementsByName("puntuacion")[0];        
-        puntuacionInput.value = 50;   
+        puntuacionInput.value = character.level;   
 
-        character.handleArrowKeys(keysPressed);    
+        character.handleArrowKeys(keysPressed); 
+        character.checkHealth();   
         handleShooting(keysPressed);    
         enemySpawner.update(character);
         difficulty();
 
         let toDestroy = { enemies: [], projectiles: [] };
 
+        if(character.orbital1 == true)
+        {
         orbital.update(character, enemySpawner.enemies);
+        }
+
+        if(character.chispas == true)
+        {
+        chispas.update(enemySpawner.enemies);
+        }
+
+        if (!omnishootInterval && character.omnishoot) {
+            omnishootInterval = setInterval(handleOmnishoot, 2500);
+        }
+       
 
         character.updateHealthDisplay();
     
@@ -254,7 +284,7 @@ function gameLoop() {
                 if(character.lifeSteal)
                 {
                     const life = Math.floor(Math.random() * 100);
-                    if(life <= 5)
+                    if(life <= 2)
                     {
                         character.health += 1 
                     }
@@ -303,173 +333,55 @@ function gameLoop() {
 
 function handleShooting(keysPressed) {
     if (character.canShoot()) {
-        const middleX = character.x + (character.width / 2-10);
-        const middleY = character.y + (character.height / 2-10);
+        const middleX = character.x + (character.width / 2 - 10);
+        const middleY = character.y + (character.height / 2 - 10);
 
-        let shotFired = false;
+        let shotDirection = null;       
 
-        if (keysPressed['KeyW']) {
-            if(character.pairshoot == false)
-            {
-            projectiles.push(new TripleShotProjectile(middleX, middleY, 'up'));
-            }
-
-            if(character.pairshoot)
-            {
-                const middleX = character.x + (character.width / 2-15);
-                const middleY = character.y + (character.height / 2-20);
-                projectiles.push(new Projectile(middleX, middleY, 'up'));
-                projectiles.push(new Projectile(middleX+10, middleY, 'up'));
-
-            }
-
-            if(character.doubleshoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'up-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-left'));
-            }
-
-            if(character.doubleshoot && character.pairshoot)  
-            {              
-                projectiles.push(new Projectile(middleX+10, middleY, 'up-right'));
-                projectiles.push(new Projectile(middleX-10, middleY, 'up-left'));                
-            }     
-            
-            if(character.omnishoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'up'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'right'));
-            }
-            shotFired = true;
-        } 
-        if (keysPressed['KeyA']) {
-            if(character.pairshoot == false)
-            {
-            projectiles.push(new Projectile(middleX, middleY, 'left'));
-            }
-            if(character.pairshoot)
-            {
-                const middleX = character.x + (character.width / 2-15);
-                const middleY = character.y + (character.height / 2-20);
-                projectiles.push(new Projectile(middleX, middleY, 'left'));
-                projectiles.push(new Projectile(middleX, middleY+10, 'left'));
-
-            }
-            if(character.doubleshoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'up-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-left'));
-            } 
-
-            if(character.doubleshoot && character.pairshoot)  
-            {                
-                projectiles.push(new Projectile(middleX-10, middleY, 'up-left'));
-                projectiles.push(new Projectile(middleX-10, middleY, 'down-left'));                
-            }      
-            
-            if(character.omnishoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'up'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'right'));
-            }
-            shotFired = true;
-        } 
-        if (keysPressed['KeyS']) {
-            if(character.pairshoot == false)
-            {
-            projectiles.push(new Projectile(middleX, middleY, 'down'));
-            }
-            if(character.pairshoot)
-            {
-                const middleX = character.x + (character.width / 2-15);
-                const middleY = character.y + (character.height / 2-20);
-                projectiles.push(new Projectile(middleX, middleY, 'down'));
-                projectiles.push(new Projectile(middleX+10, middleY, 'down'));
-
-            }
-
-            if(character.doubleshoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-left'));
-            } 
-            
-            if(character.doubleshoot && character.pairshoot)  
-            {                
-                projectiles.push(new Projectile(middleX+10, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX-10, middleY, 'down-left'));                
-            }  
-            
-            if(character.omnishoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'up'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'right'));
-                
-            }
-            shotFired = true;
-        } 
-        if (keysPressed['KeyD']) {
-            if(character.pairshoot == false)
-            {
-            projectiles.push(new Projectile(middleX, middleY, 'right'));
-            }
-            if(character.pairshoot)
-            {
-                const middleX = character.x + (character.width / 2-15);
-                const middleY = character.y + (character.height / 2-20);
-                projectiles.push(new Projectile(middleX, middleY, 'right'));
-                projectiles.push(new Projectile(middleX, middleY+10, 'right'));
-
-            }
-            if(character.doubleshoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-right'));
-            }
-
-            if(character.doubleshoot && character.pairshoot)  
-            {               
-                projectiles.push(new Projectile(middleX+10, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX+10, middleY, 'up-right'));                
-            }     
-            if(character.omnishoot)
-            {
-                projectiles.push(new Projectile(middleX, middleY, 'up'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'up-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-left'));
-                projectiles.push(new Projectile(middleX, middleY, 'down'));
-                projectiles.push(new Projectile(middleX, middleY, 'down-right'));
-                projectiles.push(new Projectile(middleX, middleY, 'right'));
-            }
-
-            shotFired = true;
+        if (keysPressed['ArrowUp']) {
+            shotDirection = 'up';
+        } else if (keysPressed['ArrowLeft']) {
+            shotDirection = 'left';
+        } else if (keysPressed['ArrowDown']) {
+            shotDirection = 'down';
+        } else if (keysPressed['ArrowRight']) {
+            shotDirection = 'right';
         }
 
-        if (shotFired) {
+        if (shotDirection) {
+            handleProjectileCreation(shotDirection, middleX, middleY);
             character.lastShot = Date.now();
         }
     }
 }
+
+function handleProjectileCreation(direction, middleX, middleY) {
+    if (character.pairshoot) {
+        const offsetX = character.width / 2 - 15;
+        const offsetY = character.height / 2 - 20;
+        projectiles.push(new Projectile(middleX - offsetX-10, middleY - offsetY, direction));
+        projectiles.push(new Projectile(middleX - offsetX + 10, middleY - offsetY, direction));
+    }
+    else {
+        projectiles.push(new Projectile(middleX, middleY, direction));
+    }
+
+    if (character.doubleshoot) {
+        const diagonalDirection1 = direction + '-right';
+        const diagonalDirection2 = direction + '-left';  98      
+        projectiles.push(new Projectile(middleX, middleY, diagonalDirection1));
+        projectiles.push(new Projectile(middleX, middleY, diagonalDirection2));    
+    }  
+}
+
+function handleOmnishoot() {
+    const middleX = character.x + (character.width / 2 - 10);
+    const middleY = character.y + (character.height / 2 - 10);
+    ['up', 'up-right', 'right', 'down-right', 'down', 'down-left', 'left', 'up-left'].forEach(dir => {
+        projectiles.push(new Projectile(middleX, middleY, dir));
+    });
+}
+
 
 createStartScreen();
 
