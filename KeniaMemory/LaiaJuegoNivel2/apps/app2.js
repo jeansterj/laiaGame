@@ -23,6 +23,8 @@ let PointEnd = document.getElementById('puntuacion');
 let end = document.getElementById('byeEnd');
 
 let myModal = new bootstrap.Modal(document.getElementById('instrucciones'));
+let mezcla = new bootstrap.Modal(document.getElementById('relampago'));
+
 
 let tarjetaDestapada = 0;
 let puntos;
@@ -36,7 +38,7 @@ let maxAciertos;
 
 let controlTiempo = true;
 
-let cartaEspecial = 9;
+let cartaEspecial = 8;
 
 //Medidor de puntos, movimientos, Aciertos
 
@@ -261,6 +263,8 @@ function voltear(id) {
             if (primerResultado == cartaEspecial || segundoResultado == cartaEspecial) {
                 
                 rayo.play();
+                abrirRelampago(); 
+
                 cambiarCartasDeLugar();
                 }
 
@@ -317,19 +321,19 @@ function finGame() {
 
     if (totalTime < minTime || moves < minMoves) { 
 
-        puntos=80;
+        puntos=100;
 
      } else if (totalTime < madTime || moves < madMoves) {
         
-        puntos=60; 
+        puntos=80; 
 
     } else if  (totalTime < medTime || moves < medMoves) { 
         
-        puntos=40; 
+        puntos=60; 
 
     } else if (totalTime < maxTime || moves < maxMoves) { 
 
-        puntos=20; 
+        puntos=40; 
 
     } else {
 
@@ -375,6 +379,11 @@ function setCookie(name, value, days) {
   function abrirModal() {
     clearInterval(timerRegre);
     myModal.toggle();
+  }
+
+  function abrirRelampago() {
+    clearInterval(timerRegre);
+    mezcla.toggle();
   }
 
 document.addEventListener('DOMContentLoaded', function () {

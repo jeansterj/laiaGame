@@ -187,12 +187,26 @@ include('../../php_librarys/bdlaia.php');
                             <br>
                         </div>
 
-                
-
 
                 </div>
             </div>
         </div>
+
+        <div class="modal spaceAjust" tabindex="-1" id="relampago">
+        <div class="modal-dialog">
+            <div class="modal-content modalModification">
+                <div class="modal-body">
+                  
+                    <div class="col4">
+                        <h1>Se ha pertubado la energia de la tierra, la electricidad contenida se ha escapado, ha cambiado de lugar todos los simbolos magicos 
+                            <br> ¿Podras encontrarlos nuevamente?
+                        </h1>
+
+                </div>
+            </div>
+        </div>
+
+
         <script src="./apps/app2.js"></script>
 </html>
 

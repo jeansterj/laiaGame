@@ -35,7 +35,7 @@ descripcion varchar(255) NOT NULL
 
 CREATE TABLE PUNTUACION(
 
-idUsuario int,
+idUsuario int auto_increment,
 idjuegos int,
 puntuacion int,
 
@@ -51,7 +51,10 @@ VALUES ('SUPERADMIN'),('ADMIN'),('JUGADOR');
 -- Insertar un superadmin en la tabla USUARIOS
 INSERT INTO USUARIOS (nombre, nombreUsuario, contrasena, apellido1, fechaNacimiento,id_Rol)
 VALUES ( 'WarcelonaWatcher', 'SuperAdminUser', 'superadmin123', 'Apellido1Super', '1990-01-01',1),
-( 'Admin', 'AdminUser', 'admin123', 'Apellido1Admin',  '1990-01-01',2)
+( 'Admin', 'AdminUser', 'admin123', 'Apellido1Admin',  '1990-01-01',2),
+( 'Maria', 'Maria', '123', 'Rodriguez',  '1990-01-01',3),
+( 'Juan', 'Juan', '123', 'Rodriguez',  '1990-01-01',3),
+( 'Jose', 'Jose', '123', 'Rodriguez',  '1990-01-01',3)
 
 ;
 
@@ -59,18 +62,18 @@ INSERT INTO JUEGOS ( idjuegos,descripcion)
 VALUES (1,'Warcelona'),(2,'Brasil'),(3,'Kenia'),(4,'India');
 
 INSERT INTO PUNTUACION (idUsuario, idjuegos, puntuacion)
-VALUES (14, 1, 100),
-       (14, 2, 150);
+VALUES (3, 1, 100),
+       (3, 2, 150);
 
 -- Inserting two records for 'AdminUser' (idUsuario = 2)
 INSERT INTO PUNTUACION (idUsuario, idjuegos, puntuacion)
-VALUES (15, 3, 120),
-       (15, 4, 90);
+VALUES (4, 3, 120),
+       (4, 4, 90);
 
 
 INSERT INTO PUNTUACION (idUsuario, idjuegos, puntuacion)
-VALUES (11, 3, 250),
-       (11, 4, 220);
+VALUES (5, 3, 250),
+       (5, 4, 220);
 
 
 
