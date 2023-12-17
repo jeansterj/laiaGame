@@ -61,10 +61,18 @@ let tamanoArray  = null;
 //Sonidos
 
 let coincidencia = new Audio ('./../sounds/coincidencia.wav');
+let error = new Audio ('./../sounds/error.wav');
+let victory = new Audio ('./../sounds/finGame.mp3');
+let loser = new Audio ('./../sounds/gameOver.mp3');
+let change = new Audio ('./../sounds/voltear.wav');
+let music = new Audio ('./../sounds/keniaMusic.mp3');
+music.volume = 0.2;
+
 
 
 
 function primerNivel() {
+    music.play();
     document.getElementById("loserGame").style.display = "none";
     document.getElementById("facil").style.display = "none";
     document.getElementById("seleccion").style.display = "flex";
@@ -242,6 +250,8 @@ function voltear(id) {
 
         tarjeta1 = mostrarImagen(id,primerResultado);
 
+        change.play();
+
       
     } else if (tarjetaDestapada == 2) {
         segundoResultado = numeros[id];
@@ -280,6 +290,8 @@ function voltear(id) {
                 tarjeta2.disabled = false;
                 tarjetaDestapada = 0;
 
+                error.play();
+
 
             }, tiempoVolteo);
         }
@@ -304,8 +316,8 @@ function finGame() {
     document.getElementById("botonInfo").style.display = "none";
     document.getElementById("endGame").style.display = "flex";
     clearInterval(timerRegre);
-
-   
+    music.pause();
+   victory.play();
 
     if (totalTime < minTime || moves < minMoves) { 
 
@@ -349,7 +361,8 @@ function loserGame() {
     document.getElementById("loserGame").style.display = "block";
 
     end.innerHTML = `Lo sentimos, no se ha completado todas las parejas, ¿Deseas volver a Intentarlo?`;
-
+    music.pause();
+    loser.play();
 
 }
 
@@ -367,8 +380,6 @@ function setCookie(name, value, days) {
     clearInterval(timerRegre);
     myModal.toggle();
   }
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
 

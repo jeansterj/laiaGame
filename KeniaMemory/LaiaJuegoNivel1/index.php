@@ -23,6 +23,7 @@ include('../../php_librarys/bdlaia.php');
 
 <body>
 
+
     <div class="seleccionNivel" id="facil">
 
         <h2>Selecciona el nivel que desees jugar</h2>
