@@ -211,22 +211,26 @@ function showGameOverScreen() {
     gameOverText.textContent = 'Game Over. Click to restart.';
 
     const nextGameButton = document.getElementById('siguientejuego');
+    const restartButton = document.getElementById('restartGameButton');
+    restartButton.style.display = 'block'; // Hacer visible el botón de reinicio
     nextGameButton.style.display = 'block'; // Hacer visible el botón
 
 
     gameOverScreen.appendChild(gameOverText);
     gameOverScreen.appendChild(nextGameButton);
+    gameOverScreen.appendChild(restartButton);
 
-    gameOverScreen.addEventListener('click', () => {
+    restartButton.addEventListener('click', () => {
         document.body.removeChild(gameOverScreen);
-        restartGame(); // Función para reiniciar el juego
+        restartGame(); // Llama a la función para reiniciar el juego
     });
+
 
     document.body.appendChild(gameOverScreen);
 }
 
-function restartGame() {
-    
+function restartGame() {    
+  
     location.reload();
 }
 
