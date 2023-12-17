@@ -8,7 +8,7 @@ let aciertos = 0;
 let temp = false;
 let timer = 0;
 let timerRegre = null;
-let timeIni; 
+let timeIni = timer;
 
 let showMove = document.getElementById('move');
 let showAciertos = document.getElementById('aciertos');
@@ -66,7 +66,7 @@ let victory = new Audio ('./../sounds/finGame.mp3');
 let loser = new Audio ('./../sounds/gameOver.mp3');
 let change = new Audio ('./../sounds/voltear.wav');
 let music = new Audio ('./../sounds/keniaMusic.mp3');
-music.volume = 0.2;
+music.volume = 0.3;
 
 
 
@@ -76,6 +76,11 @@ function primerNivel() {
     document.getElementById("loserGame").style.display = "none";
     document.getElementById("facil").style.display = "none";
     document.getElementById("seleccion").style.display = "flex";
+}
+function segundoNivel() {
+ 
+    window.location.href='./../LaiaJuegoNivel2/index.php';
+
 }
 
 function loadingGame() {

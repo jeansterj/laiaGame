@@ -30,7 +30,7 @@ include('../../php_librarys/bdlaia.php');
 
         <button type="button" onclick="primerNivel();" class="orangeButton"><img src="..\img\facil.png" draggable="false" alt="">
 
-        <button type="button" onclick="window.location.href='../LaiaJuegoNivel2/index.php'" class="greenButton"><img src="..\img\dificil.png" draggable="false" alt="">
+        <button type="button" onclick="segundoNivel()" class="greenButton"><img src="..\img\dificil.png" draggable="false" alt="">
 
         <button type="button" data-bs-toggle="modal" data-bs-target="#instrucciones" class="AjusteInstrucciones">Instrucciones
 
