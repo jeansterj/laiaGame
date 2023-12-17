@@ -639,3 +639,83 @@ function insertProgresoBrasil($idUsuario){
 
 
 }
+
+
+
+function insertProgresoWarcelona($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    warcelonaDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
+}
+
+
+
+function insertProgresoKenya($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    kenyaDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
+}
+
+
+function insertProgresoIndia($idUsuario){
+    $conexion = openDB();
+    $sentenciaText = "UPDATE usuarios
+    SET 
+    indiaDone = 1
+        
+    WHERE idUsuario = :idUsuario";
+ 
+    $sentencia = $conexion->prepare($sentenciaText);
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+  
+
+
+    
+
+    $sentencia->execute();
+    $conexion = closeDB();
+
+
+
+
+
+
+}
