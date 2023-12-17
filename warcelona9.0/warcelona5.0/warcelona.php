@@ -20,10 +20,10 @@ include('../../php_librarys/bdlaia.php');
     <form action="../../php_controllers/laiaController.php" METHOD="POST">
           <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
           <input type="hidden" name="puntuacion" value="">
-          <button type="submit" onclick="window.location.href='../../tierra2.php'" name="Warcelonadata" id="siguientejuego">SIGUIENTE JUEGO
+          <button type="submit" name="Warcelonadata" id="siguientejuego">Envia los Datos
           </button>
         </form>  
-        <button id="restartGameButton" style="display: none;">Restart Game</button>
+        <button id="restartGameButton" onclick="window.location.href='../../tierra2.php'" style="display: none;">Vuelve al Menu</button>
     </div>
     <div id="healthContainer">     
     </div>

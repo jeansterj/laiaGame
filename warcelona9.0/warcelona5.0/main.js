@@ -212,18 +212,15 @@ function showGameOverScreen() {
 
     const nextGameButton = document.getElementById('siguientejuego');
     const restartButton = document.getElementById('restartGameButton');
-    restartButton.style.display = 'block'; // Hacer visible el botón de reinicio
-    nextGameButton.style.display = 'block'; // Hacer visible el botón
-
+    restartButton.style.display = 'block'; 
+    nextGameButton.style.display = 'block'; 
 
     gameOverScreen.appendChild(gameOverText);
     gameOverScreen.appendChild(nextGameButton);
     gameOverScreen.appendChild(restartButton);
 
-    restartButton.addEventListener('click', () => {
-        document.body.removeChild(gameOverScreen);
-        restartGame(); // Llama a la función para reiniciar el juego
-    });
+    
+    
 
 
     document.body.appendChild(gameOverScreen);
@@ -248,7 +245,9 @@ function gameLoop() {
         }
 
         let  puntuacionInput = document.getElementsByName("puntuacion")[0];        
-        puntuacionInput.value = character.level;   
+        puntuacionInput.value = character.level; 
+       
+        console.log(puntuacionInput); 
 
         character.handleArrowKeys(keysPressed); 
         character.checkHealth();   
