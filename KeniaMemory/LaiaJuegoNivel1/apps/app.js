@@ -139,8 +139,8 @@ function iniciarControlPuntaje() {
     if (tamanoArray >= 8 && tamanoArray <=15) {
 
 
-minTime = 20;
-minMoves = maxAciertos+2;
+minTime = 45;
+minMoves = maxAciertos*2;
 
  madTime = minTime+5;
  madMoves = minMoves+5;
@@ -151,13 +151,13 @@ minMoves = maxAciertos+2;
  maxTime = madTime+5;
  maxMoves = madMoves+5;
 
- timer = 30;
+ timer = 60;
  timeIni = timer;
 
         
     } else   if (tamanoArray >= 16 && tamanoArray <=23){
 
-        minTime = 60;
+        minTime = 100;
         minMoves = maxAciertos*2;
         madTime = minTime+10;
         madMoves = minMoves+10;
@@ -168,7 +168,7 @@ minMoves = maxAciertos+2;
         maxTime = madTime+10;
         maxMoves = madMoves+10;
   
-        timer = 95;
+        timer = 120;
         timeIni = timer;
   
   
