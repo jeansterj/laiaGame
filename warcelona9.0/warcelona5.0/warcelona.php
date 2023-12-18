@@ -17,11 +17,12 @@ include('../../php_librarys/bdlaia.php');
    
     <div id="gameContainer">     
     <div class ="alfinal" id="alfinal">
-    <form action="../../php_controllers/laiaController.php" METHOD="POST">
-            <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>
-            <input type="hidden" name="puntuacion" value="">
-            <button  type="submit" name="Warcelonadata" id="siguientejuego">siguientejuego</button>
-        </form>
+    <form action="../../php_controllers/laiaController.php" method="POST">
+    <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" />
+    <input type="hidden" name="puntuacion" value="" id="puntuacion" />
+    <button type="submit" name="Warcelonadata" id="siguientejuego">siguientejuego</button>
+</form>
+
     </div> 
     </div>
     <button id="restartGameButton" style="display: none;">Vuelve a empezar</button>
