@@ -55,6 +55,23 @@ export class Projectile {
                 this.y += this.speed / Math.sqrt(2);
                 this.x -= this.speed / Math.sqrt(2);
                 break;
+            case 'right-up':
+                this.x += this.speed / Math.sqrt(2);
+                this.y -= this.speed / Math.sqrt(2);
+                break;
+            case 'right-down':
+                this.x += this.speed / Math.sqrt(2);
+                this.y += this.speed / Math.sqrt(2);
+                break;
+            case 'left-up':
+                this.x -= this.speed / Math.sqrt(2);
+                this.y -= this.speed / Math.sqrt(2);
+                break;
+            case 'left-down':
+                this.x -= this.speed / Math.sqrt(2);
+                this.y += this.speed / Math.sqrt(2);
+                break;      
+               
         }
         
         this.updatePosition();
