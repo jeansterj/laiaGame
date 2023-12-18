@@ -213,7 +213,7 @@
                             <div class="modal-body">
                                 <!-- Contenido del modal -->
                                 <div class="contenido-modal">
-                                    <img src="./Imagenes/jean.png" alt="alex_Imagen" class="imagen-redonda">
+                                    <img src="./Imagenes/alex.png" alt="alex_Imagen" class="imagen-redonda">
                                     <div class="textos-modal">
                                         <h2>Alex</h2>
                                         <p data-translate="desaWarcelona">Creador y desarrollador de Warcelona</p>

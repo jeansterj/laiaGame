@@ -671,6 +671,15 @@ button.btnRankingIndia{
 .modal#bcnranking {
     --bs-modal-width: 800px;
 }
+.modal#brasilranking {
+    --bs-modal-width: 800px;
+}
+.modal#keniaranking {
+    --bs-modal-width: 800px;
+}
+.modal#indiaranking {
+    --bs-modal-width: 800px;
+}
 
 form#rankingForm {
     text-align: center;
