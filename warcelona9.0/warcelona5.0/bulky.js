@@ -3,6 +3,8 @@ import { Enemy } from './enemy.js';
 export class AreaDamageEnemy extends Enemy {
     constructor(x = 30, y = 30, health) {
       super(x, y, health);
+      this.width = 45;
+      this.height = 50;
       this.speed = 1.25;
       this.waitTime = 1000;
       this.areaDamageDuration = 250; 

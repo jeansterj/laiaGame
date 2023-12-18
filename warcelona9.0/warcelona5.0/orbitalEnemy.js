@@ -7,7 +7,7 @@ export class OrbitingEnemy extends Enemy {
         this.orbitalSpeed = 0.05; 
         this.orbitalAngle = 0; 
 
-        // Crear el objeto orbital
+       
         this.orbital = document.createElement('div');
         this.orbital.classList.add('orbital');
         this.orbital.style.width = '10px'; 
@@ -16,8 +16,7 @@ export class OrbitingEnemy extends Enemy {
         this.orbital.style.position = 'absolute';
         this.orbital.style.borderRadius = '50%';
         document.getElementById('gameContainer').appendChild(this.orbital);
-
-        // Actualizar la posición inicial del objeto orbital
+      
         this.updateOrbitalPosition();
     }
 

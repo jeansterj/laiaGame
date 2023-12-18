@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html, body {
     height: 100%;
     width: 100%;
@@ -19,9 +21,28 @@ html, body {
     background-image: url("images/warcelona2.png");
 }
 
-#siguientejuego {
+#siguientejuego, #restartGameButton {
+    font-family: 'Press Start 2P', cursive; 
+    background-color: black;
+    color: yellow; 
+    border: 2px solid yellow; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    margin: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.alfinal
+{
     display: none;
-    /* otros estilos que necesites */
+}
+
+#siguientejuego:hover, #restartGameButton:hover {
+    background-color: yellow; 
+    color: black;
 }
 
 #timer {
@@ -35,17 +56,37 @@ html, body {
 
 
 .start-button {
-    width: 1200px; 
-    height: 700px;
-    background: url("images/warcelonaButton.png") no-repeat center center;
-    background-size: cover; 
+    top: 70%;   
+    position: fixed;
     border: none;
     cursor: pointer;
     padding: 0;
     overflow: hidden;
-    text-indent: 100%;
-    white-space: nowrap;
+    font-family: 'Press Start 2P', cursive; 
+    font-size: 60px; 
+    color: #fff; 
+    background: none;   
+    text-align: center; 
+    line-height: 200px; 
+    animation: blinkingText 1.2s infinite;
 }
+
+#title {
+
+    width: 50%; 
+    background-image: url("images/warcelonaButton.png");
+    height: auto;
+    transition: opacity 2s ease-in-out; /* Transición suave de la opacidad */
+}
+
+
+@keyframes blinkingText {
+    0% { color: #fff; }
+    50% { color: transparent; }
+    100% { color: #fff; }
+}
+
+
 #gameContainer {
     position: relative;
     width: 99%;
@@ -100,9 +141,9 @@ html, body {
 }
 
 .chasing-enemy {
-    width: 15px;
-    height: 15px;
-    background-color: yellow;  
+    width: 35px;
+    height: 40px;
+    background-image: url("images/chispas.png"); 
 }
 
 .projectile {

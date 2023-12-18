@@ -1,7 +1,7 @@
 <?php
 
 
-include('../../php_librarys/bdlaia.php');
+include('../php_librarys/bdlaia.php');
 
 ?>
 
@@ -16,19 +16,17 @@ include('../../php_librarys/bdlaia.php');
 <body>
    
     <div id="gameContainer">     
-        
+    <div class ="alfinal" id="alfinal">
     <form action="../../php_controllers/laiaController.php" METHOD="POST">
-          <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>>
-          <input type="hidden" name="puntuacion" value="">
-          <button type="submit" name="Warcelonadata" id="siguientejuego">Envia los Datos
-          </button>
-        </form>  
-        <button id="restartGameButton" onclick="window.location.href='../../tierra2.php'" style="display: none;">Vuelve al Menu</button>
+            <input type="hidden" name="idUsuario" value="<?php echo $_SESSION['idUser']; ?>" <?php echo $_SESSION['idUser'] ?>
+            <input type="hidden" name="puntuacion" value="">
+            <button  type="submit" name="Warcelonadata" id="siguientejuego">siguientejuego</button>
+        </form>
+    </div> 
     </div>
+    <button id="restartGameButton" style="display: none;">Vuelve a empezar</button>
     <div id="healthContainer">     
-    </div>
-    <div id="timer">00:00</div>
-    <div id="portraitContainer"></div>
+    </div>   
     <script type="module" src="main.js"></script> 
 
     

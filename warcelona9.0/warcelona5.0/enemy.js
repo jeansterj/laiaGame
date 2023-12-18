@@ -4,8 +4,8 @@ export class Enemy {
         this.y = y;
         this.speed = 1.5;
         this.health = health;
-        this.width = 15; 
-        this.height = 15;
+        this.width = 35; 
+        this.height = 40;
         this.damage = 1;        
         this.element = document.createElement('div');
         this.element.classList.add('enemy');

@@ -19,7 +19,7 @@ export class Character {
         this.invulnerableDuration = 1000; 
         this.experience = 0;
         this.level = 1;
-        this.expNextLevel = 25; 
+        this.expNextLevel = 50; 
         this.element = document.createElement('div');
         this.element.classList.add('character');
         document.getElementById('gameContainer').appendChild(this.element);       
@@ -141,37 +141,35 @@ export class Character {
 
     updateHealthDisplay() {
         const healthContainer = document.getElementById('healthContainer');
-        healthContainer.innerHTML = '';
+                healthContainer.innerHTML = '';
     
-        // Crear contenedor de la barra de salud
+       
         const healthBarContainer = document.createElement('div');
         healthBarContainer.classList.add('health-bar-container');
     
-        // Crear barra de salud máxima
+    
         const maxHealthBar = document.createElement('div');
         maxHealthBar.classList.add('max-health-bar');
-        maxHealthBar.style.width = `${this.maxLife * 10}px`; // Ajusta el ancho según la vida máxima
+        maxHealthBar.style.width = `${this.maxLife * 10}px`; 
     
-        // Crear barra de salud actual
+       
         const currentHealthBar = document.createElement('div');
         currentHealthBar.classList.add('current-health-bar');
-        currentHealthBar.style.width = `${this.health * 10}px`; // Ajusta el ancho según la salud actual
+        currentHealthBar.style.width = `${this.health * 10}px`; 
     
-        // Añadir barras al contenedor
+      
         healthBarContainer.appendChild(maxHealthBar);
-        healthBarContainer.appendChild(currentHealthBar);
-    
-        // Añadir el contenedor de la barra de salud al contenedor de la salud
+        healthBarContainer.appendChild(currentHealthBar);   
         healthContainer.appendChild(healthBarContainer);
     
-        // Actualizar la posición de la barra de salud para que siga al jugador
+    
         this.updateHealthBarPosition();
     }
 
     updateHealthBarPosition() {
         const healthContainer = document.getElementById('healthContainer');
-        healthContainer.style.top = `${this.y - 10}px`; // 20px por encima del jugador
-        healthContainer.style.left = `${this.x}px`; // Alineado horizontalmente con el jugador
+        healthContainer.style.top = `${this.y - 10}px`; 
+        healthContainer.style.left = `${this.x}px`; 
     }
 
     gainExperience(amount) {
@@ -275,12 +273,7 @@ export class Character {
                     name: 'Prozis',
                     effect: () => { this.projectileSize += 10; this.changeProjectileSize(this.projectileSize, this.projectileSize) },
                     description: 'El tamaño de los proyectiles de Laia aumenta ligeramente' // Descripción pendiente
-                },
-                {
-                    name: 'Hazte más pequeño',
-                    effect: () => { this.width -= 20; this.height -= 20; this.changeCaracterSize(this.width, this.height) },
-                    description: 'ljklkjlkj' // Descripción pendiente
-                },
+                },               
                 {
                     name: 'Disparo perforante',
                     effect: () => this.piercingShoot = true,
@@ -289,7 +282,7 @@ export class Character {
                 {
                     name: 'Cura media',
                     effect: () => this.incrementHealth(2),
-                    description: 'jlklkj' // Descripción pendiente
+                    description: 'Cura medianamente a Laia' // Descripción pendiente
                 },
                 {
                     name: 'Adrenalina',
@@ -382,14 +375,14 @@ export class Character {
                     description: 'aumenta moderadamente la velocidad de ataque de laia y ligeramente su fuerza de empuje a los enemigos' // Descripción pendiente
                 },
                 {
-                    name: 'Ataque ++ Velocidad de ataque-',
+                    name: 'Taekwondo',
                     effect: () => { this.attackPower *= 1.25; this.shotCooldown /= 0.9 },
-                    description: '' // Descripción pendiente
+                    description: 'Laia aumenta su poder de ataque pero dispara mas lento' // Descripción pendiente
                 },
                 {
-                    name: 'Hazte más grande Retroceso+++',
+                    name: 'Antidisturbios',
                     effect: () => { this.width += 10; this.height += 10; this.changeCaracterSize(this.width, this.width); this.knockBackForce += 15 },
-                    description: '' // Descripción pendiente
+                    description: 'Laia crece y hace retroceder mas a los enemigos' // Descripción pendiente
                 },
                 {
                     name: 'Hazte más pequeño Velocidad++',
@@ -405,12 +398,7 @@ export class Character {
                     name: 'Vampirismo',
                     effect: () => { this.shotCooldown *= 0.5; this.lifeSteal = true },
                     description: 'Aumenta drasticamente la velocidad de ataque de Laia y probabilidad de curarte al mayar a un enemigo' // Descripción pendiente
-                },
-                {
-                    name: 'Salud--- Opciones+++',
-                    effect: () => { this.health = 1; this.upgrades += 5 },
-                    description: '' // Descripción pendiente
-                },
+                },                
                 {
                     name: 'Psicologo',
                     effect: () => { this.maxLife += 1; this.incrementHealth(1) },

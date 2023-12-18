@@ -232,6 +232,8 @@ function showGameOverScreen() {
     const restartButton = document.getElementById('restartGameButton');
     restartButton.style.display = 'block';    
 
+    restartButton.addEventListener('click', restartGame);
+    
     gameOverScreen.appendChild(gameOverText);
     gameOverScreen.appendChild(form);    
     gameOverScreen.appendChild(restartButton);
