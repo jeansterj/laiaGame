@@ -346,12 +346,12 @@ export class Character {
                 },
                 {
                     name: 'Black Friday',
-                    effect: () => { this.shotCooldown /= 0.8; this.attackPower *= 0.8; this.speed *= 0.8; this.upgrades == 5 },
+                    effect: () => { this.shotCooldown /= 0.8; this.attackPower *= 0.8; this.speed *= 0.8; this.upgrades = 5 },
                     description: 'Laia se vuelve mas debil pero tiene mas poderes que elegir cuando sube de nivel' // Descripción pendiente
                 },
                 {
                     name: 'Loba solitaria',
-                    effect: () => { this.shotCooldown *= 0.6; this.attackPower *= 1.5; this.speed *= 1.3; this.upgrades == 1 },
+                    effect: () => { this.shotCooldown *= 0.6; this.attackPower *= 1.5; this.speed *= 1.3; this.upgrades = 1 },
                     description: 'Laia se vuelve mas poderosa pero tiene menos poderes que elegir cuando sube de nivel' // Descripción pendiente
                 },
                 {
