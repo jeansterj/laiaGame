@@ -1,7 +1,7 @@
 <?php
 
 
-include('../php_librarys/bdlaia.php');
+include('../../php_librarys/bdlaia.php');
 
 ?>
 
