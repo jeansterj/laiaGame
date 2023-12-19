@@ -157,7 +157,7 @@ minMoves = maxAciertos*2;
         
     } else   if (tamanoArray >= 16 && tamanoArray <=23){
 
-        minTime = 100;
+        minTime = 80;
         minMoves = maxAciertos*2;
         madTime = minTime+10;
         madMoves = minMoves+10;
