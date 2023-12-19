@@ -25,13 +25,13 @@ export class OrbitingEnemy extends Enemy {
         this.orbitalAngle += this.orbitalSpeed;
         this.updateOrbitalPosition();
 
-        // Comprobar colisión con el personaje
+        
         this.checkCollisionWithCharacter(character);
     }
 
     updateOrbitalPosition() {
-        const orbitalX = this.x + this.width / 2 + this.orbitalRadius * Math.cos(this.orbitalAngle) - 5; // -5 para centrar
-        const orbitalY = this.y + this.height / 2 + this.orbitalRadius * Math.sin(this.orbitalAngle) - 5; // -5 para centrar
+        const orbitalX = this.x + this.width / 2 + this.orbitalRadius * Math.cos(this.orbitalAngle) - 5;
+        const orbitalY = this.y + this.height / 2 + this.orbitalRadius * Math.sin(this.orbitalAngle) - 5;
         this.orbital.style.left = `${orbitalX}px`;
         this.orbital.style.top = `${orbitalY}px`;
     }
@@ -42,13 +42,13 @@ export class OrbitingEnemy extends Enemy {
 
         if (rect1.left < rect2.right && rect1.right > rect2.left &&
             rect1.top < rect2.bottom && rect1.bottom > rect2.top) {
-            // Colisión detectada
-            character.takeDamage(1); // Ajusta el daño según sea necesario
+            
+            character.takeDamage(1);
         }
     }
 
     destroy() {
         super.destroy();
-        this.orbital.remove(); // Eliminar el objeto orbital del DOM
+        this.orbital.remove();
     }
 }

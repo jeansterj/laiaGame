@@ -474,7 +474,7 @@ export class Character {
             const upgradeElement = document.createElement('div');
             upgradeElement.className = 'upgrade-option';
         
-            const title = document.createElement('p'); // Usar párrafo para el título
+            const title = document.createElement('p'); 
             title.innerText = option.name;
             title.className = 'upgrade-title';
         
@@ -482,7 +482,7 @@ export class Character {
             description.innerText = option.description;
             description.className = 'upgrade-description';
         
-            upgradeElement.onclick = () => { // El evento onclick ahora está en upgradeElement
+            upgradeElement.onclick = () => { 
                 option.effect();
                 this.fadeOutMenu();
                 setTimeout(() => {
@@ -497,7 +497,7 @@ export class Character {
     });
 
     this.isChoosing = true;
-    this.fadeInMenu(); // Asegúrate de que el fade in se inicie aquí si es necesario
+    this.fadeInMenu(); 
     }
 
     selectRandomUpgrades(upgrades, count) {

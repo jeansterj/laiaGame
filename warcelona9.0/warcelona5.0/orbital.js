@@ -11,14 +11,14 @@ export class Orbital {
     }
 
     update(character, enemies) {
-        // Actualizar la posición del orbital
+        
         this.orbitalAngle += this.speed;
         const orbitalX = character.x + character.width / 2 + this.orbitDistance * Math.cos(this.orbitalAngle);
         const orbitalY = character.y + character.height / 2 + this.orbitDistance * Math.sin(this.orbitalAngle);
         this.element.style.left = `${orbitalX}px`;
         this.element.style.top = `${orbitalY}px`;
 
-        // Comprobar colisión con enemigos
+        
         enemies.forEach(enemy => {
             if (this.checkCollision(this.element, enemy.element)) {
                 enemy.takeDamage(this.damage);

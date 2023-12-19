@@ -184,8 +184,8 @@ html, body {
 }
 
 .health-bar-container {
-    position: absolute; /* Posición absoluta para seguir al jugador */
-    bottom: 0px; /* Posición debajo del jugador */
+    position: absolute; 
+    bottom: 0px; 
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -193,13 +193,13 @@ html, body {
 }
 
 .max-health-bar {
-    background-color: darkred; /* Fondo para la vida máxima */
-    height: 10px; /* Altura de la barra */
-    opacity: 0.6; /* Opacidad para diferenciar de la salud actual */
+    background-color: darkred; 
+    height: 10px; 
+    opacity: 0.6;
 }
 
 .current-health-bar {
-    background-color: red; /* Fondo para la salud actual */
+    background-color: red; 
     height: 10px;
     position: absolute;
     top: 0;
@@ -241,29 +241,29 @@ html, body {
 
   #upgrade-menu {
     display: flex;
-    flex-direction: row; /* Disposición horizontal */
-    flex-wrap: wrap; /* Permite múltiples filas */
+    flex-direction: row; 
+    flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: center; /* Centra horizontalmente */
-    gap: 30px; /* Espacio entre las columnas y filas */
+    justify-content: center; 
+    gap: 30px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     z-index: 1000;
     width: 80%;
-    max-width: 900px; /* Ajuste el ancho máximo según sea necesario */
+    max-width: 900px; 
     box-sizing: border-box;
 }
 
 .upgrade-option {
-    background-color: rgba(255, 255, 255, 0.2); /* Rectángulo vertical transparente */
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px;
-    width: calc(33% - 30px); /* Ancho para 3 columnas, ajustar el 30px según el gap */
+    width: calc(33% - 30px); 
     box-sizing: border-box;
     cursor: pointer;
     text-align: center;
@@ -296,25 +296,25 @@ html, body {
     box-sizing: border-box; /* Asegurar que el padding no afecte el ancho total */
     left: 50%; /* Posicionamiento horizontal */
     transform: translateX(-50%); /* Centrar el título horizontalmente */
-    z-index: 1; /* Asegurar que el título esté sobre el fondo */
+    z-index: 1; 
 }
 
 
-/* Ocultar los botones, ya que el clic se maneja en el div */
+
 #upgrade-menu button {
     display: none;
 }
 
 .upgrade-panel {
-    background-color: #4CAF50; /* Cambia el color de fondo de cada panel aquí */
-    border-radius: 10px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera para profundidad */
-    width: 200px; /* Ancho del panel */
+    background-color: #4CAF50;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 200px; 
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Espacio entre elementos dentro del panel */
+    gap: 10px; 
   }  
 
   .fade-in {
