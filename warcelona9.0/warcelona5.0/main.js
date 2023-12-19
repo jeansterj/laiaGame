@@ -272,6 +272,11 @@ function gameLoop() {
             return; 
         }
 
+        if(character.shotCooldown <= 100)
+        {
+            character.shotCooldown = 100;
+        }
+
         let  puntuacionInput = document.getElementsByName("puntuacion")[0];        
         puntuacionInput.value = character.level; 
        
@@ -425,16 +430,26 @@ function handleProjectileCreation(direction, middleX, middleY) {
         projectiles.push(new Projectile(middleX - offsetX-10, middleY - offsetY, direction));
         projectiles.push(new Projectile(middleX - offsetX + 10, middleY - offsetY, direction));
     }
+    else if(character.miope)
+    {
+        const diagonalDirection1 = direction + '-right';
+        const diagonalDirection2 = direction + '-left';      
+        projectiles.push(new Projectile(middleX, middleY, diagonalDirection1));
+        projectiles.push(new Projectile(middleX, middleY, diagonalDirection2));           
+
+    }
     else {
         projectiles.push(new Projectile(middleX, middleY, direction));
     }
 
     if (character.doubleshoot) {
         const diagonalDirection1 = direction + '-right';
-        const diagonalDirection2 = direction + '-left';  98      
+        const diagonalDirection2 = direction + '-left';      
         projectiles.push(new Projectile(middleX, middleY, diagonalDirection1));
         projectiles.push(new Projectile(middleX, middleY, diagonalDirection2));    
     }  
+
+   
 }
 
 function handleOmnishoot() {
