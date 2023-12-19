@@ -21,8 +21,8 @@ let dificultad1 = 1000;
 let dificultad2 = 700;
 let dificultad3 = 500;
 let botondificultad1 = document.getElementById("botondifi");
-let puntdorado =5;
-let puntnormal =1;
+let puntdorado =10;
+let puntnormal =2;
 let puntneg =1;
 
 

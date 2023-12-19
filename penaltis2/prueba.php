@@ -47,9 +47,9 @@ include('../php_librarys/bdlaia.php');
       <br>
       <div>Clicka lo mas rapido que puedas en las dianas</div>
       <br>
-      <div><img src="./img/diananorm.png" alt=""> +1 P</div>
+      <div><img src="./img/diananorm.png" alt=""> +2 P</div>
       <br>
-      <div><img src="./img/dianadoble.png" alt=""> +5 P</div>
+      <div><img src="./img/dianadoble.png" alt=""> +10 P</div>
       <br>
       <div><img src="./img/diananeg.png" alt=""> -1 P</div>
       <br>
@@ -169,9 +169,9 @@ include('../php_librarys/bdlaia.php');
         <div class="col-md-2 custom-card text-light bg-transparent">
           <div class="card p-0 d-flex bg-transparent text-light" style="width: 18rem ">
             <div class="container  bg-transparent text-light " id="explicacion">
-              <div class="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 5 P </div>
+              <div class="font-weight-bold"><img src="./img/dianadoble.png" alt="diana2" /> + 10 P </div>
               <br>
-              <div><img src="./img/diananorm.png" alt="diana1" /> + 1 P</div>
+              <div><img src="./img/diananorm.png" alt="diana1" /> + 2 P</div>
 
 
               <br>
