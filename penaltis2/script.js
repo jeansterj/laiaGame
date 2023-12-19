@@ -609,7 +609,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function abrirmodal() {
-  let tiempo = 10;
+  let tiempo = 5;
   let botonendendido = document.getElementById("botonendendido");
 let timermodal = document.getElementById("timermodal");
 let tiemporestante = document.getElementById("tiemporestante");
