@@ -80,7 +80,7 @@ include('../php_librarys/bdlaia.php');
 
             </div>
             <div class="modal-footer">
-            <div id="tiemporestante">Tiempo restante: <span id="timermodal">10</span></div>
+            <div id="tiemporestante">Tiempo restante: <span id="timermodal">5</span></div>
 
               <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="botonendendido"
                 onclick="habilitarboton();" disabled>Entendido</button>
