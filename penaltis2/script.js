@@ -425,8 +425,7 @@ function showEndScren(){
     document.getElementById("content").style.display = "none";
    
     // cambiar el value del input para enviar la puntuacion
-     let  puntuacionInput = document.getElementsByName("puntuacion")[0];
-       puntuacionInput.value = puntuacion;
+    
 
 
 
@@ -441,11 +440,13 @@ function showEndScren(){
 
 
      switch (dificultad) {
-
+     
 
 
       case dificultad1:
         if(puntuacion>=70&&dificultad===dificultad1){
+
+      
      
           document.querySelector('input[name="puntuacion"]').value = puntuacion;
           infofinal.textContent=infovictoria;
@@ -454,6 +455,8 @@ function showEndScren(){
           imgpieza.style.display="block";
           
           textovolver.textContent="";
+          let  puntuacionInput = document.getElementsByName("puntuacion")[0];
+          puntuacionInput.value = puntuacion;
           
     
         }else{
@@ -479,6 +482,8 @@ function showEndScren(){
           botonfail.style.display="none";
           siguientejuego.style.display="block";
           imgpieza.style.display="block";
+          let  puntuacionInput = document.getElementsByName("puntuacion")[0];
+          puntuacionInput.value = puntuacion;
           
           textovolver.textContent="";
           
@@ -506,7 +511,8 @@ function showEndScren(){
       botonfail.style.display="none";
       siguientejuego.style.display="block";
       imgpieza.style.display="block";
-      
+      let  puntuacionInput = document.getElementsByName("puntuacion")[0];
+      puntuacionInput.value = puntuacion;
       textovolver.textContent="";
       
 
