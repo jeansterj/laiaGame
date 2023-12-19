@@ -45,6 +45,7 @@ export class Character {
         this.chispas = false; 
         this.chispitas = false;
         this.friendship = false;
+        this.miope = false;
         this.electro = false;
 
     }
@@ -283,8 +284,8 @@ export class Character {
                 },               
                 {
                     name: 'Disparo perforante',
-                    effect: () => this.piercingShoot = true,
-                    description: 'Los disparos de Laia atraviesan ligeramente a los enemigos' // Descripción pendiente
+                    effect: () => { this.attackPower = 2;this.piercingShoot = true},
+                    description: 'Los disparos de Laia atraviesan ligeramente a los enemigos aunque baja drasticamente el ataque ede Laia' // Descripción pendiente
                 },
                 {
                     name: 'Cura media',
@@ -456,6 +457,11 @@ export class Character {
                     name: 'Electromagnetismo',
                     effect: () => this.electro = true,
                     description: 'Laia genera un campo magnetico a su alrededor que daña levemente a sus enemigos' 
+                },
+                {
+                    name: 'Miopia',
+                    effect: () => this.miope = true,
+                    description: 'Laia padece miopia, al ponerse las gafas dispara doble pero es incapaz de apuntar' 
                 }
         ];
 
