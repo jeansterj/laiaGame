@@ -22,9 +22,18 @@ let keysPressed = {};
 
 let omnishootInterval;
 
-const orbital = new Orbital(15,0.015,60);
+const orbital = new Orbital(30,0.015,40);
+const orbitalcm = new Orbital(3,0.25,150);
+const orbital2 = new Orbital(3,0.03,50);
+const orbital3 = new Orbital(3,0.03,30);
+const orbital4 = new Orbital(3,0.03,30);
+const orbitals1 = new Orbital(10,0.05,70);
+const orbitals2 = new Orbital(10,0.05,100)
+const orbitals3 = new Orbital(10,0.05,130)
+
 
 const chispas = new ChasingEnemy(-40,-40);
+const chispitas = new ChasingEnemy(-40,-40);
 
 window.addEventListener('keydown', (event) => {
     keysPressed[event.code] = true;
@@ -276,14 +285,46 @@ function gameLoop() {
 
         let toDestroy = { enemies: [], projectiles: [] };
 
+        if(character.friendship ==true)
+        {
+            orbital2.update(character,enemySpawner.enemies);
+        }
+
         if(character.orbital1 == true)
         {
         orbital.update(character, enemySpawner.enemies);
         }
 
+        if(character.electro == true)
+        {
+        orbitalcm.update(character, enemySpawner.enemies);
+        }
+
+        if(character.chispitas == true)
+        {
+            chispitas.update(enemySpawner.enemies);
+            if(character.friendship ==true)
+            {
+                orbital3.update(chispitas,enemySpawner.enemies);
+            }
+        }
+
+        if(character.damocles == true)
+        {
+        orbitals1.update(character, enemySpawner.enemies);
+
+        orbitals2.update(character, enemySpawner.enemies);
+
+        orbitals3.update(character, enemySpawner.enemies);
+        }
+
         if(character.chispas == true)
         {
         chispas.update(enemySpawner.enemies);
+        if(character.friendship ==true)
+        {
+            orbital4.update(chispas,enemySpawner.enemies);
+        }
         }
 
         if (!omnishootInterval && character.omnishoot) {

@@ -41,14 +41,20 @@ export class Character {
         this.hasShield = false;
         this.shieldRegenerationTime = 30000;   
         this.orbital1 = false;
+        this.damocles = false;
         this.chispas = false; 
+        this.chispitas = false;
+        this.friendship = false;
+        this.electro = false;
+
     }
     
     takeDamage(damage) {
 
         if (this.hasShield) {
             this.hasShield = false;
-            this.resetShieldTimer();             
+            this.resetShieldTimer();   
+            this.blinkCharacter();             
         }
         else{
          if(Date.now() > this.invulnerableUntil) {
@@ -204,6 +210,7 @@ export class Character {
 
     showUpgradeOptions() {        
             const upgradeOptions = [
+                
                 {
                     name: 'Gym',
                     effect: () => this.attackPower += 1,
@@ -258,12 +265,12 @@ export class Character {
                     name: 'Leche de soja',
                     effect: () => { this.shotCooldown *= 0.4; this.attackPower *= 0.3 },
                     description: 'Aumenta al maximo la velocidad de Laia pero reduce su ataque al maximo' // Descripción pendiente
-                },
+                },                
                 {
                     name: 'Triple Disparo',
                     effect: () => this.doubleshoot = true,
                     description: 'Laia dispara el triple de proyectiles' // Descripción pendiente
-                },
+                },                
                 {
                     name: 'Creatina',
                     effect: () => { this.shotCooldown /= 0.6; this.attackPower += 10; this.projectileSize += 40; this.changeProjectileSize(this.projectileSize, this.projectileSize) },
@@ -419,15 +426,36 @@ export class Character {
                     effect: () => this.hasShield = true,
                     description: 'Cada 30 segundos Laia obtiene un escudo que la protege del siguiente golpe que reciba ' // Descripción pendiente
                 },
+                
                 {
                     name: 'Chispas!',
                     effect: () => this.chispas = true,
                     description: 'Chispas, el perro de Laia acude en su ayuda' // Descripción pendiente
                 },
                 {
-                    name: 'Mosquito',
+                    name: 'Rayo',
                     effect: () => this.orbital1 = true,
-                    description: 'A Laia la acosan los mosquitos que dañan a los enemigos alrededor' // Descripción pendiente
+                    description: 'Laia obtiene un rayo protector que daña a sus enemigos' // Descripción pendiente
+                },
+                {
+                    name: 'Espada de Damocles',
+                    effect: () => this.damocles = true,
+                    description: 'Laia genera una espada de rayos que barre a los enemigos a su paso' 
+                },
+                {
+                    name: 'Chispitas!',
+                    effect: () => this.chispitas = true,
+                    description: 'Chispitas, la hija de la perra de Laia acude en tu ayuda' 
+                },
+                {
+                    name: 'Poder de la amistad',
+                    effect: () => this.friendship = true,
+                    description: 'Laia y todos sus aliados en pantalla obtienen un rayo protector' 
+                },
+                {
+                    name: 'Electromagnetismo',
+                    effect: () => this.electro = true,
+                    description: 'Laia genera un campo magnetico a su alrededor que daña levemente a sus enemigos' 
                 }
         ];
 

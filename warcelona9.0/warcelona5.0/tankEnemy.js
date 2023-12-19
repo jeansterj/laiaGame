@@ -10,7 +10,7 @@ export class TankEnemy extends Enemy {
         this.damage = 2;
         this.isCharging = false;
         this.chargePreparationTime = 750;
-        this.chargeDistance = 175;
+        this.chargeDistance = 200;
         this.lastDirection = null;
         this.element.classList.add('tank');
     }

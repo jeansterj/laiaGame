@@ -6,12 +6,7 @@ export class Orbital {
         this.orbitalAngle = 0;
 
         this.element = document.createElement('div');
-        this.element.classList.add('orbital');
-        this.element.style.position = 'absolute';
-        this.element.style.width = '10px';
-        this.element.style.height = '10px';
-        this.element.style.borderRadius = '50%';
-        this.element.style.backgroundColor = 'blue';
+        this.element.classList.add('orbital');        
         document.getElementById('gameContainer').appendChild(this.element);
     }
 

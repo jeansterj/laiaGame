@@ -76,7 +76,7 @@ html, body {
     width: 50%; 
     background-image: url("images/warcelonaButton.png");
     height: auto;
-    transition: opacity 2s ease-in-out; /* Transición suave de la opacidad */
+    transition: opacity 2s ease-in-out; 
 }
 
 
@@ -132,6 +132,16 @@ html, body {
     width: 60px;
     height: 60px;
     background-image: url("images/Tanque.png");  
+}
+
+.orbital
+{
+    position : absolute;
+    width : 15px;
+    height : 20px;
+    background-image: url("images/rayo.png");
+    background-size: cover;
+    
 }
 
 .explosion{
